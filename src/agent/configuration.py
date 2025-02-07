@@ -10,13 +10,14 @@ from langchain_core.runnables import RunnableConfig
 
 @dataclass(kw_only=True)
 class Configuration:
-    """The configuration for the agent."""
+    """The configuration for the agent.
+    
+    This defines the interface that will be shown in LangGraph Studio.
+    """
 
-    # Changeme: Add configurable values here!
-    # these values can be pre-set when you
-    # create assistants (https://langchain-ai.github.io/langgraph/cloud/how-tos/configuration_cloud/)
-    # and when you invoke the graph
-    my_configurable_param: str = "changeme"
+    # Required parameters
+    deck_id: str  # ID of the deck to process
+    deck_title: str  # Title of the deck
 
     @classmethod
     def from_runnable_config(

@@ -1,7 +1,7 @@
 [project]
 name = "agent"
 version = "0.0.1"
-description = "Starter template for making a new agent LangGraph."
+description = "Agent for processing decks"
 authors = [
     { name = "William Fu-Hinthorn", email = "13333726+hinthornw@users.noreply.github.com" },
 ]
@@ -11,6 +11,9 @@ requires-python = ">=3.9"
 dependencies = [
     "langgraph>=0.2.6",
     "python-dotenv>=1.0.1",
+    "pdf2image>=1.17.0",
+    "pillow>=11.1.0",
+    "langchain-openai>=0.0.5"
 ]
 
 
@@ -18,8 +21,8 @@ dependencies = [
 dev = ["mypy>=1.11.1", "ruff>=0.6.1"]
 
 [build-system]
-requires = ["setuptools>=73.0.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.setuptools]
 packages = ["langgraph.templates.agent", "agent"]
@@ -32,25 +35,14 @@ packages = ["langgraph.templates.agent", "agent"]
 "*" = ["py.typed"]
 
 [tool.ruff]
-lint.select = [
-    "E",    # pycodestyle
-    "F",    # pyflakes
-    "I",    # isort
-    "D",    # pydocstyle
-    "D401", # First line should be in imperative mood
-    "T201",
-    "UP",
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
 ]
-lint.ignore = [
-    "UP006",
-    "UP007",
-    # We actually do want to import from typing_extensions
-    "UP035",
-    # Relax the convention by _not_ requiring documentation for every function parameter.
-    "D417",
-    "E501",
-]
-[tool.ruff.lint.per-file-ignores]
-"tests/*" = ["D", "UP"]
-[tool.ruff.lint.pydocstyle]
-convention = "google"

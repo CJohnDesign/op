@@ -1,38 +1,33 @@
 """Define a simple chatbot agent.
 
-This agent returns a predefined response without using an actual LLM.
+This agent processes deck information.
 """
 
 from typing import Any, Dict
 
 from langchain_core.runnables import RunnableConfig
-from langgraph.graph import StateGraph
+from langgraph.graph import END, StateGraph
 
 from agent.configuration import Configuration
+from agent.nodes import InitNode, ProcessImagesNode
 from agent.state import State
 
-
-async def my_node(state: State, config: RunnableConfig) -> Dict[str, Any]:
-    """Each node does work."""
-    configuration = Configuration.from_runnable_config(config)
-    # configuration = Configuration.from_runnable_config(config)
-    # You can use runtime configuration to alter the behavior of your
-    # graph.
-    return {
-        "changeme": "output from my_node. "
-        f"Configured with {configuration.my_configurable_param}"
-    }
-
+# Create node instances
+init_node = InitNode()
+process_images_node = ProcessImagesNode()
 
 # Define a new graph
 workflow = StateGraph(State, config_schema=Configuration)
 
-# Add the node to the graph
-workflow.add_node("my_node", my_node)
+# Add nodes to the graph
+workflow.add_node("init", init_node)
+workflow.add_node("process_images", process_images_node)
 
-# Set the entrypoint as `call_model`
-workflow.add_edge("__start__", "my_node")
+# Set up the graph edges
+workflow.add_edge("__start__", "init")  # Start with init
+workflow.add_edge("init", "process_images")  # Process images after init
+workflow.add_edge("process_images", END)  # End after processing images
 
 # Compile the workflow into an executable graph
 graph = workflow.compile()
-graph.name = "New Graph"  # This defines the custom name in LangSmith
+graph.name = "Deck Processing Graph"
