@@ -13,6 +13,8 @@ from typing import Any, Dict, TypeVar, Generic
 from langchain_core.runnables import RunnableConfig
 from typing_extensions import TypedDict
 
+from agent.tracer import trace_node
+
 # Set up logging
 logger = logging.getLogger(__name__)
 
@@ -31,6 +33,7 @@ class BaseNode(Generic[StateType], abc.ABC):
         self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
     
     @abc.abstractmethod
+    @trace_node(run_type="chain")
     def process(self, state: StateType, config: RunnableConfig) -> Dict[str, Any]:
         """Process the current state and return the next state.
         
