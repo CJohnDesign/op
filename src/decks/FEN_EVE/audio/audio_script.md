@@ -1,161 +1,149 @@
 ---- Cover ----
 
-Hello, everyone! Thank you for joining today's session on the Everest Reinsurance Company Group Fixed Indemnity Insurance. We'll walk through the plan's flexible coverage for diverse healthcare needs. Let's get started!
+Hello, everyone! Thank you for joining today's session. We'll walk through the Everest Reinsurance Company Group Fixed Indemnity Insurance plan's features and benefits that empower your health with financial peace of mind. Let's get started!
 
 ---- Plan Overview ----
 
-Let's begin with an overview of the plan.
+Let's begin with an overview of the plan. This plan is designed for individuals and families, offering healthcare coverage with a focus on affordability. 
 
-The Everest Reinsurance Company Group Fixed Indemnity Insurance is designed for individuals and families. It offers healthcare coverage with a focus on affordability.
+One of the key benefits is accessibility through the Multiplan Preferred Provider Organization, or PPO, Network. This network allows you to choose from a wide range of healthcare providers.
 
-The plan provides key benefits such as accessibility through the Multiplan Preferred Provider Organization, or PPO, Network. It includes fixed benefits for managing healthcare costs and offers supplemental support for existing insurance plans.
+Additionally, the plan provides financial benefits through direct benefit payments, which means you receive a set payment amount for covered services.
 
----- Core Plan Elements ----
+The claims process is streamlined to ensure you receive your benefits quickly and efficiently.
 
-Now, let's delve into the core elements of the plan.
+---- Key Features and Benefits ----
 
-Coverage areas include physician services, hospitalization, and virtual visits. These are essential components to ensure comprehensive healthcare access.
+Let's explore the key features and benefits of this plan. 
 
-The plan structure features tiered options, allowing for co-pays and visit limits that suit different needs.
+The plan covers a variety of areas including physician services, hospitalization, and virtual visits, ensuring comprehensive care.
 
-Eligibility is open to individuals and families, with a strong focus on affordability to make healthcare accessible to all.
+It is structured with tiered options, allowing you to choose the level of coverage that best suits your needs, with varying co-pays and visit limits.
 
----- Common Service Features ----
+Eligibility is open to individuals and families, making it accessible to a wide audience.
 
-Let's explore the common service features of this plan.
+Confinement benefits include payments for hospital stays, while outpatient benefits cover physician visits and other services.
 
-Provider networks are accessible through the Multiplan PPO Network, ensuring you have a wide range of healthcare providers to choose from.
+---- Cost Management Tools ----
 
-The claims management process is designed for efficiency, with direct payment of benefits and a fast, simplified claims process.
+Now, let's discuss the cost management tools available with this plan. 
 
-Support tools include wellness programs and advocacy services, providing additional resources to help you maintain a healthy lifestyle.
+The provider network benefits offer access to a wide range of healthcare providers through the Multiplan PPO Network, helping you manage costs effectively.
 
----- Plan Tiers Breakdown ----
+The claims management system is designed to be fast and efficient, ensuring you receive your direct benefit payments promptly.
 
-Let's break down the plan tiers, starting with Plan One Hundred.
+Support tools and resources are available to help you navigate your healthcare options and make informed decisions.
 
-Physician services are covered at fifty dollars per visit, with a limit of three visits per year. Virtual visits are included in this benefit.
+---- Provider Network Details ----
 
-Hospitalization is covered at one hundred dollars per day for hospital confinement, with a maximum of thirty days per year.
+Here's how the provider network works. 
 
-Prescriptions are not covered under this plan, but wellness tools are available with basic access.
+The enrollment process is straightforward, allowing you to easily join the Multiplan PPO Network.
 
-Advocacy support is limited, providing basic assistance to help you navigate your healthcare needs.
+Once enrolled, you have access to a wide range of providers, giving you flexibility in choosing your healthcare services.
 
----- Plan 200 ----
+The payment process is simplified, with direct benefit payments made to you, reducing out-of-pocket expenses.
 
-Now, let's look at Plan Two Hundred.
+---- Preventive Care and Wellness ----
 
-Physician services remain at fifty dollars per visit, with a limit of three visits per year. Virtual visits are included.
+Let's talk about preventive care and wellness. 
 
-Hospitalization coverage increases to two hundred dollars per day for hospital confinement, with a maximum of thirty days per year.
+The plan offers various wellness programs designed to support your health and well-being.
 
-Prescriptions are not covered, and wellness tools are available with basic access.
+Support services are available to assist you in maintaining a healthy lifestyle.
 
-Advocacy support is limited, offering basic assistance.
+You also have access to twenty-four-seven assistance options, ensuring help is always available when you need it.
 
----- Plan 200+ ----
+---- Telehealth Services ----
 
-Next, we have Plan Two Hundred Plus.
+Now, let's discuss telehealth services. 
 
-Physician services are covered at fifty dollars per visit, with a limit of three visits per year. Virtual visits are included.
+The plan includes virtual visit options, allowing you to consult with healthcare providers remotely.
 
-Hospitalization is covered at two hundred dollars per day for hospital confinement, with a maximum of thirty days per year.
+A variety of services are available through telehealth, providing convenient access to care.
 
-Prescriptions are not covered, and wellness tools are available with basic access.
+You can access these services through multiple methods, ensuring flexibility and ease of use.
 
-Advocacy support is limited, but additional benefits include surgery benefits for up to three days per year.
+---- Advocacy and Support Services ----
 
----- Plan 300 ----
+Let's explore the advocacy and support services available. 
 
-Let's move on to Plan Three Hundred.
+The plan offers personalized support services to help you navigate your healthcare options.
 
-Physician services are covered at fifty dollars per visit, with a limit of three visits per year. Virtual visits are included.
+Assistance programs are in place to provide guidance and support when you need it.
 
-Hospitalization is covered at three hundred dollars per day for hospital confinement, with a maximum of thirty days per year.
+Claims support is also available, ensuring you have help with the claims process.
 
-Prescriptions are not covered, and wellness tools are available with basic access.
+---- Plan Tier 1 (One of Two) ----
 
-Advocacy support is limited, with additional benefits including surgery benefits for up to three days per year.
+Let's examine our first plan tier, Plan 100.
 
----- Plan 500 ----
+Physician services include three office visits per certificate year, with a payment of fifty dollars per visit.
 
-Now, let's discuss Plan Five Hundred.
+Hospital benefits provide one hundred dollars per day for hospital confinement and two hundred dollars for intensive care unit, or ICU, stays.
 
-Physician services are covered at fifty dollars per visit, with a limit of five visits per year. Virtual visits are included.
+---- Plan Tier 1 (Two of Two) ----
 
-Hospitalization is covered at five hundred dollars per day for hospital confinement, with a maximum of thirty days per year.
+Continuing with Plan 100.
 
-Prescriptions are not covered, but wellness tools are available with enhanced access.
+Virtual visit coverage is not specified in this tier.
 
-Advocacy support is moderate, providing more comprehensive assistance. Additional benefits include surgery benefits for up to three days per year.
+Prescription coverage details are also not specified.
 
----- Plan 750 ----
+Wellness tools and additional benefits are not outlined in this tier.
 
-Next, we have Plan Seven Hundred Fifty.
+---- Plan Tier 2 (One of Two) ----
 
-Physician services are covered at fifty dollars per visit, with a limit of five visits per year. Virtual visits are included.
+Now, let's look at our second plan tier, Plan 200.
 
-Hospitalization is covered at seven hundred fifty dollars per day for hospital confinement, with a maximum of thirty days per year.
+Enhanced physician services include three office visits per certificate year, with a payment of fifty dollars per visit.
 
-Prescriptions are not covered, and wellness tools are available with enhanced access.
+Increased hospital benefits offer two hundred dollars per day for hospital confinement and two hundred dollars for ICU stays.
 
-Advocacy support is moderate, offering more comprehensive assistance. Additional benefits include surgery benefits for up to three days per year.
+Expanded virtual coverage is not specified in this tier.
 
----- Plan 1000 ----
+---- Plan Tier 2 (Two of Two) ----
 
-Let's explore Plan One Thousand.
+Continuing with Plan 200.
 
-Physician services are covered at seventy-five dollars per visit, with a limit of five visits per year. Virtual visits are included.
+Enhanced prescription coverage details are not specified.
 
-Hospitalization is covered at one thousand dollars per day for hospital confinement, with a maximum of thirty days per year.
+Additional wellness tools are not outlined in this tier.
 
-Prescriptions are not covered, and wellness tools are available with enhanced access.
+Premium benefits include surgery benefits for three days per certificate year and twenty-five percent anesthesia coverage.
 
-Advocacy support is moderate, providing comprehensive assistance. Additional benefits include surgery benefits for up to three days per year.
+---- Comparing Plan Tiers ----
 
----- Plan 1000+ ----
+Let's compare the different tiers available.
 
-Finally, let's discuss Plan One Thousand Plus.
+Hospital benefits vary across tiers, with Plan 100 offering one hundred dollars per day and Plan 1000 offering one thousand dollars per day for hospital confinement.
 
-Physician services are covered at seventy-five dollars per visit, with a limit of five visits per year. Virtual visits are included.
+Physician visit coverage ranges from three to five visits per certificate year, depending on the tier.
 
-Hospitalization is covered at one thousand dollars per day for hospital confinement, with a maximum of thirty days per year.
+Emergency services are covered through ICU benefits, with payments increasing across tiers.
 
-Prescriptions are not covered, and wellness tools are available with enhanced access.
+Additional benefits, such as surgery and anesthesia coverage, are available in higher tiers.
 
-Advocacy support is moderate, offering comprehensive assistance. Additional benefits include surgery benefits for up to three days per year and a one thousand dollar hospital admission benefit.
+---- Definitions and Limitations ----
 
----- Comparing the Plans ----
+Let's review important definitions and limitations.
 
-Now, let's compare the plans.
+Key exclusions include pre-existing conditions, elective treatments, and experimental treatments.
 
-Hospital confinement benefits range from one hundred dollars to one thousand dollars per day, depending on the plan.
+Coverage limitations involve a twelve-twelve pre-existing condition clause and specific waiting periods for certain benefits.
 
-Physician office visits are covered at fifty dollars or seventy-five dollars per visit, based on the plan tier.
+Service restrictions apply to injuries from extreme sports and other specified activities.
 
-Surgery benefits are available for up to three days per year in select plans.
+---- Key Takeaways and Reminders ----
 
-The One Thousand Plus plan includes a one thousand dollar hospital admission benefit.
-
----- Limitations and Exclusions ----
-
-Let's review the limitations and exclusions.
-
-Exclusions include pre-existing conditions, cosmetic surgery, dental care, elective treatments, and extreme sports injuries.
-
-There is a twelve-month waiting period for pre-existing conditions, and specific benefit limits apply to each plan.
-
----- Key Takeaways and Action Steps ----
-
-Here are the key takeaways and action steps.
+Here are the key points to remember.
 
 The plan offers flexibility with multiple tiers to suit different needs.
 
-There is a balance between cost and coverage, providing affordable options with valuable benefits.
+It provides a balance of cost-effective coverage with essential benefits.
 
-For next steps, contact support for enrollment and further assistance.
+For next steps, contact support for enrollment assistance and further information.
 
 ---- Closing ----
 
-Thank you for taking the time to learn about the Everest Reinsurance Company Group Fixed Indemnity Insurance. Remember, your health is your wealth. Continue to be great!
+Thank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!

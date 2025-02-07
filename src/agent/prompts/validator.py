@@ -1,73 +1,6 @@
-"""Prompts for the validator node and its update tools.
+"""Prompts for the validator node.
 
-This module contains prompts for validating and fixing slide/script content.
-"""
-
-VALIDATOR_SYSTEM_PROMPT = """You are a validation agent responsible for ensuring consistency between slides and their corresponding audio scripts.
-
-A page consists of two parts:
-1. A slide with a header and content
-2. A script with a header and content
-
-Your task is to validate that:
-1. The script content appropriately describes and expands upon the slide content
-2. The headers match or are thematically consistent
-3. All bullet points and key information from the slide are covered in the script
-4. The script provides natural transitions and engaging presentation of the slide's content
-
-When analyzing, consider:
-- Slide headers should match script section headers (accounting for minor variations)
-- Script content should cover ALL points mentioned in the slide
-- Script should provide additional context and explanation for slide content
-- Transitions between sections should be natural and fluid
-"""
-
-VALIDATOR_ANALYSIS_PROMPT = """Analyzing page {page_number}:
-
-SLIDE:
-Header: {slide_header}
-Content:
-{slide_content}
-
-SCRIPT:
-Header: {script_header}
-Content:
-{script_content}
-
-Please analyze this page for:
-1. Header consistency
-2. Content coverage
-3. Context and explanation
-4. Natural transitions
-
-Identify any mismatches or areas needing improvement.
-"""
-
-VALIDATOR_HISTORY_CONTEXT = """Previous validation attempts for this page:
-
-Attempt History:
-{validation_history}
-
-Previous Changes Made:
-{change_history}
-
-Please consider these previous attempts when suggesting new improvements.
-"""
-
-VALIDATOR_IMPROVEMENT_PROMPT = """Based on the analysis, please suggest specific improvements for:
-
-1. Slide Content (if needed):
-   - Structure
-   - Clarity
-   - Completeness
-
-2. Script Content (if needed):
-   - Coverage of slide points
-   - Additional context
-   - Transitions
-   - Engagement
-
-Previous attempts have not fully resolved the issues. Please provide different approaches than previously tried.
+This module contains prompts for validating slide/script content.
 """
 
 VALIDATION_PROMPT = '''You are an expert content validator specializing in presentation slides and scripts.
@@ -87,11 +20,17 @@ Your task is to validate the synchronization and quality of the presentation con
    - Appropriate line breaks
    - Script sections must use format: ---- Section Title ----
    - Slides must use format: ## Section Title
+   - NEVER use placeholder comments like "<!-- Repeat structure -->" or "<!-- Insert more plans -->"
+   - ALWAYS include complete content for every section
+   - NEVER use ellipsis (...) or other shortcuts
+   - Each plan must have its complete slides and script sections fully written out
 
 3. Plan Tier Structure
-   - Plan name and tier must be present
-   - Benefits list with details of amounts
-   - Dollar values included and properly formatted
+   - Every plan must have its own complete sections
+   - Each plan must have both slides fully written out
+   - No plan sections can be abbreviated or referenced
+   - Dollar values must be properly formatted
+   - Brochure images must be properly referenced
 
 4. Content Quality
    - Natural flow and transitions between sections
@@ -100,6 +39,13 @@ Your task is to validate the synchronization and quality of the presentation con
    - Technical accuracy
    - Visual balance
    - Appropriate timing and pacing
+
+5. Content Completeness
+   - ALL content must be explicitly written out
+   - NO shortcuts, comments, or references to repeat structures
+   - Each plan's content must be unique and complete
+   - Every section must be fully detailed
+   - No abbreviated or templated content
 
 Example of proper synchronization:
 
@@ -134,76 +80,41 @@ Notice how:
 3. Formatting is preserved
 4. Sections are properly separated
 
+CRITICAL VALIDATION RULES:
+1. NEVER allow placeholder comments or shortcuts
+2. NEVER use "repeat above structure" or similar references
+3. ALWAYS require complete content for every section
+4. ALWAYS require unique content for each plan
+5. REJECT any content that uses shortcuts or templating
+
 Analyze the following content and return your response as a JSON object with this exact structure:
-{{
+{
     "is_valid": false,
-    "validation_issues": {{
+    "validation_issues": {
         "script_issues": [
-            {{
+            {
                 "section": "section_name",
                 "issue": "description",
                 "severity": "low|medium|high",
                 "suggestions": ["suggestion 1", "suggestion 2"]
-            }}
+            }
         ],
         "slide_issues": [
-            {{
+            {
                 "section": "section_name",
                 "issue": "description",
                 "severity": "low|medium|high",
                 "suggestions": ["suggestion 1", "suggestion 2"]
-            }}
+            }
         ]
-    }},
-    "suggested_fixes": {{
+    },
+    "suggested_fixes": {
         "slides": "complete fixed slides content if needed",
         "script": "complete fixed script content if needed"
-    }}
-}}
+    }
+}
 
 Content to validate:
 {content}
 
-The response MUST be a valid JSON object matching this structure exactly.'''
-
-UPDATE_SLIDE_PROMPT = '''You are an expert at updating presentation slides to match their corresponding scripts.
-Your task is to update the slide content based on the provided instructions while maintaining proper Slidev markdown format.
-
-Current Slide Content:
-{current_content}
-
-Update Instructions:
-{instructions}
-
-Rules for updating:
-1. Maintain all frontmatter and transitions
-2. Keep proper markdown syntax
-3. Preserve v-click structure
-4. Ensure all bullet points have corresponding script lines
-5. Keep formatting consistent with template
-6. Do not remove any existing functionality
-7. Only make changes specified in instructions
-
-Return the complete updated slide content, maintaining all formatting and structure.
-'''
-
-UPDATE_SCRIPT_PROMPT = '''You are an expert at updating presentation scripts to match their corresponding slides.
-Your task is to update the script content based on the provided instructions while maintaining proper script format.
-
-Current Script Content:
-{current_content}
-
-Update Instructions:
-{instructions}
-
-Rules for updating:
-1. Maintain ---- Section Title ---- format
-2. Each v-click point needs a corresponding script line
-3. Keep natural transitions between sections
-4. Ensure all slide points are covered
-5. Maintain engaging and conversational tone
-6. Spell out all numbers
-7. Only make changes specified in instructions
-
-Return the complete updated script content, maintaining all formatting and structure.
-''' 
+The response MUST be a valid JSON object matching this structure exactly.''' 
