@@ -27,7 +27,7 @@ class UpdateSlideNode(BaseNode[AgentState]):
     """
     
     def __init__(self) -> None:
-        """Initialize the node with GPT-4 model."""
+        """Initialize the node with GPT-4o model."""
         super().__init__()
         self.model = ChatOpenAI(
             model="gpt-4o",
@@ -80,7 +80,7 @@ class UpdateSlideNode(BaseNode[AgentState]):
                 )
             )
             
-            # Get updated content from GPT-4
+            # Get updated content from GPT-4o
             self.logger.info("Updating slide content")
             response = self.model.invoke([message])
             

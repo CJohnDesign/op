@@ -7,14 +7,15 @@ Following Single Responsibility Principle, this module only handles workflow con
 from __future__ import annotations
 
 import logging
-from typing import Any, Callable, Dict, Optional, Type, Union, List, Set
+from typing import Any, Callable, Dict, Optional, Type, Union, List
 
 from langgraph.graph import END, START, StateGraph
+from langsmith import traceable
 
 from agent.configuration import Configuration
 from agent.types import AgentState
 
-
+@traceable(with_child_runs=True, name="Process Deck")
 class Workflow(StateGraph):
     """Custom workflow class for the agent.
     
@@ -44,7 +45,7 @@ class Workflow(StateGraph):
         if isinstance(node, type):
             return node in {END, START}
         return node in self.INTERNAL_NODES
-        
+    
     def add_edge(self, source: str, target: Union[str, Type[END]], **kwargs: Any) -> None:
         """Add an edge to the graph with logging.
         
@@ -66,7 +67,7 @@ class Workflow(StateGraph):
             **kwargs
         })
         super().add_edge(source, target, **kwargs)
-        
+    
     def add_node(self, name: str, node: Any) -> None:
         """Add a node to the graph with logging.
         
@@ -80,7 +81,7 @@ class Workflow(StateGraph):
         self.logger.info(f"Adding node: {name}")
         self._nodes[name] = node
         super().add_node(name, node)
-        
+    
     def set_entry_point(self, node: str) -> None:
         """Set the entry point for the graph.
         
@@ -92,7 +93,7 @@ class Workflow(StateGraph):
             
         self.logger.info(f"Setting entry point to: {node}")
         super().set_entry_point(node)
-        
+    
     def add_conditional_edges(
         self,
         source: str,
@@ -145,4 +146,37 @@ class Workflow(StateGraph):
             
         except Exception as e:
             self.logger.error(f"Failed to add conditional edges from {source}: {str(e)}")
-            raise 
+            raise
+            
+    def compile(self) -> StateGraph:
+        """Compile the workflow into an executable graph.
+        
+        Returns:
+            Compiled StateGraph ready for execution
+        """
+        self.logger.info("Compiling workflow graph")
+        return super().compile()
+        
+    def invoke(self, state: Dict[str, Any], config: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Execute the graph with tracing.
+        
+        This override ensures all node executions are nested under a single trace.
+        
+        Args:
+            state: Initial state
+            config: Optional configuration
+            
+        Returns:
+            Final state after execution
+        """
+        if config is None:
+            config = {}
+            
+        # Add metadata about the execution
+        config["metadata"] = {
+            "deck_id": state.get("deck_id", "unknown"),
+            "deck_title": state.get("deck_title", "unknown"),
+            "graph_name": self.name
+        }
+        
+        return super().invoke(state, config) 

@@ -89,7 +89,7 @@ CRITICAL VALIDATION RULES:
 
 Analyze the following content and return your response as a JSON object with this exact structure:
 {
-    "is_valid": false,
+    "is_valid": true/false,
     "validation_issues": {
         "script_issues": [
             {

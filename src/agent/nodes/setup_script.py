@@ -28,7 +28,7 @@ class SetupScriptNode(BaseNode[AgentState]):
     """
     
     def __init__(self) -> None:
-        """Initialize the node with GPT-4 model."""
+        """Initialize the node with GPT-4o model."""
         super().__init__()
         self.model = ChatOpenAI(
             model="gpt-4o",
@@ -36,13 +36,14 @@ class SetupScriptNode(BaseNode[AgentState]):
             temperature=0
         )
     
-    def _generate_script(self, template: str, processed_summaries: str, slides_content: str) -> str:
-        """Generate script content using GPT-4.
+    def _generate_script(self, template: str, processed_summaries: str, slides_content: str, extracted_tables: str) -> str:
+        """Generate script content using GPT-4o.
         
         Args:
             template: The script template to use
             processed_summaries: The processed content summaries
             slides_content: The generated slide content
+            extracted_tables: The extracted tables content
             
         Returns:
             Generated script content
@@ -50,17 +51,21 @@ class SetupScriptNode(BaseNode[AgentState]):
         try:
             # Create messages with system and human prompts
             messages = [
-                SystemMessage(content=SCRIPT_WRITER_SYSTEM_PROMPT),
+                SystemMessage(
+                    content=SCRIPT_WRITER_SYSTEM_PROMPT.format(
+                        template=template
+                    )
+                ),
                 HumanMessage(
                     content=SCRIPT_WRITER_HUMAN_PROMPT.format(
-                        template=template,
                         processed_summaries=processed_summaries,
-                        slides_content=slides_content
+                        slides_content=slides_content,
+                        extracted_tables=extracted_tables
                     )
                 )
             ]
             
-            # Get script content from GPT-4
+            # Get script content from GPT-4o
             self.logger.info("Generating script content")
             response = self.model.invoke(messages)
             
@@ -98,16 +103,25 @@ class SetupScriptNode(BaseNode[AgentState]):
             # Read template
             template = template_file.read_text()
             
-            # Get processed summaries and slides content from state
+            # Get processed summaries, slides content and extracted tables from state
             processed_summaries = state.get("presentation", {}).get("content", "")
             slides_content = state.get("slides", {}).get("content", "")
+            extracted_tables = state.get("extracted_tables", {})
+            
+            # Convert extracted tables to string format
+            tables_str = json.dumps(extracted_tables, indent=2)
             
             if not processed_summaries or not slides_content:
                 self.logger.warning("Missing required content in state")
                 return state
             
-            # Generate script content
-            script_content = self._generate_script(template, processed_summaries, slides_content)
+            # Generate script content with tables
+            script_content = self._generate_script(
+                template, 
+                processed_summaries, 
+                slides_content,
+                tables_str
+            )
             
             # Create updated state
             updated_state = dict(state)

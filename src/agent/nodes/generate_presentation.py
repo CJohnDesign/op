@@ -29,7 +29,7 @@ class GeneratePresentationNode(BaseNode[AgentState]):
     """
     
     def __init__(self) -> None:
-        """Initialize the node with GPT-4 model."""
+        """Initialize the node with GPT-4o model."""
         super().__init__()
         self.model = ChatOpenAI(
             model="gpt-4o",
@@ -38,7 +38,7 @@ class GeneratePresentationNode(BaseNode[AgentState]):
         )
     
     def _generate_presentation(self, summaries: List[Dict[str, Any]], tables: List[Dict[str, Any]]) -> str:
-        """Generate presentation content using GPT-4.
+        """Generate presentation content using GPT-4o.
         
         Args:
             summaries: List of page summaries
@@ -60,7 +60,7 @@ class GeneratePresentationNode(BaseNode[AgentState]):
                 )
             )
             
-            # Get presentation content from GPT-4
+            # Get presentation content from GPT-4o
             self.logger.info("Generating presentation content")
             response = self.model.invoke([message])
             

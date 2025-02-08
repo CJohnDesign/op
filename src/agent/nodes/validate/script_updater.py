@@ -17,7 +17,7 @@ class ScriptUpdater:
     """Tool for updating script content based on validation instructions."""
     
     def __init__(self) -> None:
-        """Initialize the updater with GPT-4 model."""
+        """Initialize the updater with GPT-4o model."""
         self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
         self.model = ChatOpenAI(
             model="gpt-4o",

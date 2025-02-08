@@ -1,54 +1,52 @@
-"""Base node interface for the agent graph.
+"""Base node implementation.
 
-This module defines the base interface that all nodes must implement.
-Following Interface Segregation Principle, we keep the interface minimal.
+This module contains the base node class that all other nodes inherit from.
+Following Single Responsibility Principle, this module only handles base node functionality.
 """
 
 from __future__ import annotations
 
-import abc
 import logging
-from typing import Any, Dict, TypeVar, Generic
+from typing import Any, Dict, Generic, TypeVar
 
 from langchain_core.runnables import RunnableConfig
-from typing_extensions import TypedDict
 
-from agent.tracer import trace_node
+T = TypeVar("T", bound=Dict[str, Any])
 
-# Set up logging
-logger = logging.getLogger(__name__)
-
-# Generic type for state
-StateType = TypeVar("StateType", bound=TypedDict)
-
-class BaseNode(Generic[StateType], abc.ABC):
-    """Base class for all nodes in the graph.
+class BaseNode(Generic[T]):
+    """Base node class that all other nodes inherit from.
     
-    Following Single Responsibility Principle, each node should do one thing well.
-    Following Open/Closed Principle, this base class is open for extension but closed for modification.
+    Following Single Responsibility Principle, this class only handles
+    common node functionality.
     """
     
     def __init__(self) -> None:
-        """Initialize the node."""
+        """Initialize the node with a logger."""
         self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
     
-    @abc.abstractmethod
-    @trace_node(run_type="chain")
-    def process(self, state: StateType, config: RunnableConfig) -> Dict[str, Any]:
-        """Process the current state and return the next state.
+    def __call__(self, state: T, config: RunnableConfig) -> Dict[str, Any]:
+        """Process the current state.
         
         Args:
-            state: The current state
-            config: The configuration for this run
+            state: Current state to process
+            config: Runtime configuration
             
         Returns:
-            The next state
+            Updated state after processing
         """
-        raise NotImplementedError()
+        return self.process(state, config)
     
-    def __call__(self, state: StateType, config: RunnableConfig) -> Dict[str, Any]:
-        """Make the node callable.
+    def process(self, state: T, config: RunnableConfig) -> Dict[str, Any]:
+        """Process the current state. Must be implemented by child classes.
         
-        This allows nodes to be used directly in the graph.
+        Args:
+            state: Current state to process
+            config: Runtime configuration
+            
+        Returns:
+            Updated state after processing
+            
+        Raises:
+            NotImplementedError: If child class doesn't implement this method
         """
-        return self.process(state, config) 
+        raise NotImplementedError("Child classes must implement process method") 

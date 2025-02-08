@@ -7,11 +7,12 @@ Following Single Responsibility Principle, this node only handles image processi
 from __future__ import annotations
 
 import base64
+import concurrent.futures
 import json
 import logging
 import os
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Tuple, TypedDict
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
@@ -21,6 +22,11 @@ from agent.nodes.base import BaseNode
 from agent.prompts.analyze_insurance_page import ANALYZE_PAGE_PROMPT
 from agent.types import AgentState, ProcessedImage
 
+class ImageMapping(TypedDict):
+    original_name: str
+    new_name: str
+    page_number: int
+    page_title: str
 
 class ProcessImagesNode(BaseNode[AgentState]):
     """Node for processing images in the graph.
@@ -30,9 +36,10 @@ class ProcessImagesNode(BaseNode[AgentState]):
     """
     
     BATCH_SIZE = 8  # Process 8 images at a time
+    MAX_WORKERS = 4  # Maximum number of parallel workers
     
     def __init__(self) -> None:
-        """Initialize the node with GPT-4 model."""
+        """Initialize the node with GPT-4o model."""
         super().__init__()
         self.model = ChatOpenAI(
             model="gpt-4o",
@@ -53,7 +60,7 @@ class ProcessImagesNode(BaseNode[AgentState]):
             return base64.b64encode(image_file.read()).decode()
     
     def _analyze_image(self, image_path: Path) -> ProcessedImage:
-        """Analyze a single image using GPT-4.
+        """Analyze a single image using GPT-4o.
         
         Args:
             image_path: Path to the image file
@@ -82,7 +89,7 @@ class ProcessImagesNode(BaseNode[AgentState]):
                 ]
             )
             
-            # Get analysis from GPT-4
+            # Get analysis from GPT-4o
             self.logger.info(f"Analyzing {image_path.name}")
             response = self.model.invoke([message])
             
@@ -106,7 +113,7 @@ class ProcessImagesNode(BaseNode[AgentState]):
                     "page_title": f"Error analyzing {image_path.name}",
                     "summary": "Failed to parse analysis results",
                     "tableDetails": {
-                        "hasBenefitsTable": False,
+                        "hasBenefitsComparisonTable": False,
                         "hasLimitations": False
                     }
                 }
@@ -116,7 +123,7 @@ class ProcessImagesNode(BaseNode[AgentState]):
                 "page_title": f"Error analyzing {image_path.name}",
                 "summary": f"Failed to analyze image: {str(e)}",
                 "tableDetails": {
-                    "hasBenefitsTable": False,
+                    "hasBenefitsComparisonTable": False,
                     "hasLimitations": False
                 }
             }
@@ -224,44 +231,42 @@ class ProcessImagesNode(BaseNode[AgentState]):
             total_images = len(image_files)
             self.logger.info(f"Found {total_images} images to process")
             
-            # Process images in batches
+            # Process images in batches with parallel execution
             processed_images: Dict[int, ProcessedImage] = {}
             
-            for batch_start in range(0, total_images, self.BATCH_SIZE):
-                batch_end = min(batch_start + self.BATCH_SIZE, total_images)
-                self.logger.info(f"Processing batch {batch_start//self.BATCH_SIZE + 1} (images {batch_start + 1}-{batch_end})")
+            with concurrent.futures.ThreadPoolExecutor(max_workers=self.MAX_WORKERS) as executor:
+                # Submit batch processing tasks
+                future_to_batch = {}
+                for batch_start in range(0, total_images, self.BATCH_SIZE):
+                    batch_end = min(batch_start + self.BATCH_SIZE, total_images)
+                    batch_files = image_files[batch_start:batch_end]
+                    
+                    self.logger.info(f"Submitting batch {batch_start//self.BATCH_SIZE + 1} (images {batch_start + 1}-{batch_end})")
+                    future = executor.submit(self._process_image_batch, batch_files, batch_start)
+                    future_to_batch[future] = (batch_start, batch_end)
                 
-                # Get current batch
-                batch_files = image_files[batch_start:batch_end]
-                
-                # Process each image in the batch
-                for i, image_file in enumerate(batch_files, batch_start + 1):
+                # Process results as they complete
+                for future in concurrent.futures.as_completed(future_to_batch):
+                    batch_start, batch_end = future_to_batch[future]
                     try:
-                        # Analyze image
-                        analysis_result = self._analyze_image(image_file)
+                        analysis_results, image_mappings = future.result()
                         
-                        # Rename image based on analysis
-                        new_path, new_name = self._rename_image(
-                            image_file,
-                            analysis_result.get("page_title", f"page_{i}"),
-                            i
-                        )
-                        
-                        # Create processed image entry
-                        processed_images[i] = {
-                            "page_number": i,
-                            "original_name": image_file.name,
-                            "new_name": new_name,
-                            "page_title": analysis_result.get("page_title", ""),
-                            "summary": analysis_result.get("summary", ""),
-                            "table_details": analysis_result.get("tableDetails", {
-                                "hasBenefitsTable": False,
-                                "hasLimitations": False
-                            })
-                        }
-                        
+                        # Add results to processed_images
+                        for i, (result, mapping) in enumerate(zip(analysis_results, image_mappings), batch_start + 1):
+                            processed_images[i] = {
+                                "page_number": mapping["page_number"],
+                                "original_name": mapping["original_name"],
+                                "new_name": mapping["new_name"],
+                                "page_title": mapping["page_title"],
+                                "summary": result.get("summary", ""),
+                                "table_details": result.get("tableDetails", {
+                                    "hasBenefitsComparisonTable": False,
+                                    "hasLimitations": False
+                                })
+                            }
+                            
                     except Exception as e:
-                        self.logger.error(f"Error processing {image_file.name}: {str(e)}")
+                        self.logger.error(f"Error processing batch {batch_start//self.BATCH_SIZE + 1}: {str(e)}")
             
             # Create updated state
             updated_state = dict(state)

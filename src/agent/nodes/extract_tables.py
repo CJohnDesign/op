@@ -33,13 +33,14 @@ class ExtractTablesNode(BaseNode[AgentState]):
     MAX_WORKERS = 4  # Maximum number of parallel workers
     
     def __init__(self) -> None:
-        """Initialize the node with GPT-4 model."""
+        """Initialize the node with GPT-40 model."""
         super().__init__()
         self.model = ChatOpenAI(
             model="gpt-4o",
             max_tokens=4096,
             temperature=0
         )
+        self.executor = concurrent.futures.ThreadPoolExecutor(max_workers=self.MAX_WORKERS)
     
     def _encode_image(self, image_path: Path) -> str:
         """Encode image to base64 string.
@@ -69,7 +70,7 @@ class ExtractTablesNode(BaseNode[AgentState]):
         return None
     
     def _extract_table(self, image_path: Path) -> Dict[str, Any]:
-        """Extract table from a single image using GPT-4.
+        """Extract table from a single image using GPT-4o.
         
         Args:
             image_path: Path to the image file
@@ -98,61 +99,37 @@ class ExtractTablesNode(BaseNode[AgentState]):
                 ]
             )
             
-            # Get table extraction from GPT-4
+            # Get table extraction from GPT-4o
             self.logger.info(f"Extracting tables from {image_path.name}")
             response = self.model.invoke([message])
             
             # Parse JSON response
             try:
-                # Extract JSON from the response
                 response_text = response.content
-                self.logger.debug(f"Raw GPT response for {image_path.name}: {response_text}")
-                
-                # Find the first { and last } to extract the JSON object
                 start = response_text.find("{")
                 end = response_text.rfind("}") + 1
                 
                 if start >= 0 and end > start:
                     json_str = response_text[start:end]
-                    try:
-                        parsed_data = json.loads(json_str)
-                        
-                        # Validate the parsed data has the required structure
-                        if "tables" not in parsed_data:
-                            self.logger.error(f"Missing 'tables' array in response for {image_path.name}")
-                            return {"tables": []}
-                            
-                        # Validate each table in the array
-                        valid_tables = []
-                        for table in parsed_data["tables"]:
-                            if all(key in table for key in ["table_title", "headers", "rows"]):
-                                valid_tables.append(table)
-                            else:
-                                self.logger.warning(f"Skipping invalid table structure in {image_path.name}: {table}")
-                                
-                        if valid_tables:
-                            self.logger.info(f"Successfully extracted {len(valid_tables)} tables from {image_path.name}")
-                            return {"tables": valid_tables}
-                        else:
-                            self.logger.info(f"No valid tables found in {image_path.name}")
-                            return {"tables": []}
-                            
-                    except json.JSONDecodeError as je:
-                        self.logger.error(f"JSON parsing error for {image_path.name}: {str(je)}")
-                        self.logger.error(f"Attempted to parse: {json_str}")
-                        return {"tables": [], "error": str(je)}
+                    parsed_data = json.loads(json_str)
+                    
+                    if "tables" in parsed_data:
+                        self.logger.info(f"Successfully extracted tables from {image_path.name}")
+                        return parsed_data
+                    else:
+                        self.logger.warning(f"No tables found in {image_path.name}")
+                        return {"tables": []}
                 else:
                     self.logger.error(f"No JSON object found in response for {image_path.name}")
-                    self.logger.error(f"Response text: {response_text}")
-                    return {"tables": [], "error": "No JSON object found in response"}
+                    return {"tables": []}
                     
             except Exception as e:
-                self.logger.error(f"Error processing response for {image_path.name}: {str(e)}")
-                return {"tables": [], "error": str(e)}
+                self.logger.error(f"Error parsing response for {image_path.name}: {str(e)}")
+                return {"tables": []}
                 
         except Exception as e:
             self.logger.error(f"Error extracting tables from {image_path.name}: {str(e)}")
-            return {"tables": [], "error": str(e)}
+            return {"tables": []}
     
     def _process_table_item(self, item: Tuple[int, ProcessedImage, Path]) -> Optional[Tuple[int, ExtractedTable, ProcessedImage]]:
         """Process a single table item.
@@ -179,58 +156,40 @@ class ExtractTablesNode(BaseNode[AgentState]):
             return None
     
     def _process_table_batch(self, items: List[Tuple[int, ProcessedImage, Path]]) -> Tuple[List[ExtractedTable], List[ProcessedImage]]:
-        """Process a batch of table items in parallel.
-        
-        Args:
-            items: List of (index, page, image_path) tuples
-            
-        Returns:
-            Tuple of (extracted_tables, pages_with_tables)
-        """
+        """Process a batch of table items in parallel."""
         extracted_tables: List[ExtractedTable] = []
         pages_with_tables: List[ProcessedImage] = []
         
-        # Process items in parallel
-        with concurrent.futures.ThreadPoolExecutor(max_workers=self.MAX_WORKERS) as executor:
-            # Submit all tasks
-            future_to_item = {
-                executor.submit(self._process_table_item, item): item 
-                for item in items
-            }
-            
-            # Collect results as they complete
-            results = []
-            for future in concurrent.futures.as_completed(future_to_item):
-                result = future.result()
-                if result is not None:
-                    results.append(result)
-            
-            # Sort results by original index to maintain order
-            results.sort(key=lambda x: x[0])
-            
-            # Extract tables and pages
-            for _, table, page in results:
-                extracted_tables.append(table)
-                pages_with_tables.append(page)
+        # Submit all tasks
+        future_to_item = {
+            self.executor.submit(self._process_table_item, item): item 
+            for item in items
+        }
+        
+        # Collect results as they complete
+        results = []
+        for future in concurrent.futures.as_completed(future_to_item):
+            result = future.result()
+            if result is not None:
+                results.append(result)
+        
+        # Sort results by original index to maintain order
+        results.sort(key=lambda x: x[0])
+        
+        # Extract tables and pages
+        for _, table, page in results:
+            extracted_tables.append(table)
+            pages_with_tables.append(page)
         
         return extracted_tables, pages_with_tables
     
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
-        """Process the analyzed data to extract tables.
-        
-        Args:
-            state: The current state containing deck_id and deck_title
-            config: Runtime configuration
-            
-        Returns:
-            Updated state with extracted tables
-        """
+        """Process the analyzed data to extract tables."""
         self.logger.info("Extracting tables from analyzed pages")
         
         try:
             # Get parameters from state
             deck_id = state["deck_id"]
-            deck_title = state["deck_title"]
             processed_images = state.get("processed_images", {})
             
             if not processed_images:
@@ -245,66 +204,55 @@ class ExtractTablesNode(BaseNode[AgentState]):
                 self.logger.warning(f"Pages directory not found at {pages_dir}")
                 return state
             
-            # Collect all table items to process
-            table_items: List[Tuple[int, ProcessedImage, Path]] = []
-            
+            # Find pages with tables
+            table_items = []
             for page_num, page_data in processed_images.items():
-                if page_data.get("table_details", {}).get("hasBenefitsTable", False):
+                if page_data.get("table_details", {}).get("hasBenefitsComparisonTable", False):
                     image_path = pages_dir / page_data["new_name"]
                     if image_path.exists():
                         table_items.append((page_num, page_data, image_path))
             
-            if not table_items:
-                self.logger.info("No tables found to process")
-                return state
-            
             self.logger.info(f"Found {len(table_items)} pages with tables to process")
             
-            # Process tables in batches
+            # Process tables in batches with parallel execution
             extracted_tables: Dict[int, ExtractedTable] = {}
             
+            # Process batches
             for batch_start in range(0, len(table_items), self.BATCH_SIZE):
                 batch_end = min(batch_start + self.BATCH_SIZE, len(table_items))
                 batch_items = table_items[batch_start:batch_end]
                 
                 self.logger.info(f"Processing batch {batch_start//self.BATCH_SIZE + 1} (pages {batch_start + 1}-{batch_end})")
                 
-                # Process each item in the batch in parallel
-                with concurrent.futures.ThreadPoolExecutor(max_workers=self.MAX_WORKERS) as executor:
-                    # Submit all tasks
-                    future_to_item = {
-                        executor.submit(self._extract_table, item[2]): item 
-                        for item in batch_items
-                    }
-                    
-                    # Collect results as they complete
-                    for future in concurrent.futures.as_completed(future_to_item):
-                        try:
-                            page_num, _, image_path = future_to_item[future]
-                            table_data = future.result()
+                # Submit tasks
+                future_to_item = {
+                    self.executor.submit(self._extract_table, item[2]): item 
+                    for item in batch_items
+                }
+                
+                # Collect results
+                for future in concurrent.futures.as_completed(future_to_item):
+                    try:
+                        page_num, _, image_path = future_to_item[future]
+                        table_data = future.result()
+                        
+                        if table_data.get("tables"):
+                            extracted_tables[page_num] = {
+                                "page_number": page_num,
+                                "tables": table_data["tables"]
+                            }
+                            self.logger.info(f"Extracted {len(table_data['tables'])} tables from page {page_num}")
+                        else:
+                            self.logger.info(f"No tables found in page {page_num}")
                             
-                            # If we got a valid response with tables
-                            if isinstance(table_data, dict) and "tables" in table_data:
-                                tables = table_data["tables"]
-                                if tables:  # If we found any tables
-                                    extracted_tables[page_num] = {
-                                        "page_number": page_num,
-                                        "tables": tables
-                                    }
-                                    self.logger.info(f"Extracted {len(tables)} tables from page {page_num}")
-                                else:
-                                    self.logger.info(f"No tables found in page {page_num}")
-                            else:
-                                self.logger.warning(f"Invalid table data format for page {page_num}")
-                                
-                        except Exception as e:
-                            self.logger.error(f"Error processing table from {image_path}: {str(e)}")
+                    except Exception as e:
+                        self.logger.error(f"Error processing page {page_num}: {str(e)}")
             
-            # Create updated state
+            # Update state
             updated_state = dict(state)
             updated_state["extracted_tables"] = extracted_tables
             
-            # Save state to file
+            # Save state
             state_file = deck_dir / "state.json"
             with open(state_file, "w") as f:
                 json.dump(updated_state, f, indent=2)

@@ -1,12 +1,19 @@
-"""CLI interface for running the agent graph."""
+"""Command line interface for the agent.
+
+This module provides the CLI entry point for running the agent.
+Following Single Responsibility Principle, this module only handles CLI interaction.
+"""
 
 import argparse
 import json
 import logging
+import sys
 from pathlib import Path
-from typing import Optional, Dict, Any
+from typing import Optional
 
-from agent.graph import graph
+from langsmith import Client
+
+from agent import graph
 
 # Set up logging
 logging.basicConfig(
@@ -15,59 +22,72 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-
-def load_state_file(state_file: str) -> Dict[str, Any]:
-    """Load state from a JSON file.
-    
-    Args:
-        state_file: Path to the state JSON file
-        
-    Returns:
-        Dict containing the loaded state
-    """
-    state_path = Path(state_file)
-    if not state_path.exists():
-        raise FileNotFoundError(f"State file not found: {state_file}")
-        
-    logger.info(f"Loading state from {state_file}")
-    with open(state_file) as f:
-        return json.load(f)
-
+def load_state(state_file: Optional[Path]) -> dict:
+    """Load state from a file if provided."""
+    if state_file and state_file.exists():
+        logger.info(f"Loading state from {state_file}")
+        with open(state_file) as f:
+            return json.load(f)
+    return {}
 
 def main(deck_id: str, deck_title: str, state_file: Optional[str] = None) -> None:
-    """Run the graph with the given deck information.
+    """Main entry point for the CLI.
     
     Args:
-        deck_id: The ID of the deck to process
-        deck_title: The title of the deck
-        state_file: Optional path to a JSON file containing initial state
+        deck_id: ID of the deck to process
+        deck_title: Title of the deck
+        state_file: Optional path to state file
     """
-    # Create initial state
-    if state_file:
-        state = load_state_file(state_file)
-        # Ensure deck_id and title match
-        if state["deck_id"] != deck_id or state["deck_title"] != deck_title:
-            logger.warning("State file deck_id/title don't match provided arguments")
-            state["deck_id"] = deck_id
-            state["deck_title"] = deck_title
-    else:
-        state = {
+    try:
+        # Initialize LangSmith client
+        client = Client()
+        
+        # Set up initial state
+        state = load_state(Path(state_file) if state_file else None)
+        state.update({
             "deck_id": deck_id,
             "deck_title": deck_title
-        }
-    
-    # Run the graph
-    logger.info(f"Running graph with state: {state}")
-    result = graph.invoke(state)
-    logger.info("Graph execution completed")
-    logger.info(f"Final state: {result}")
+        })
+        logger.info(f"Running graph with state: {state}")
+        
+        # Run the graph
+        result = graph.invoke(state)
+        
+        # Save final state
+        output_file = Path(f"src/decks/{deck_id}/final_state.json")
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_file, "w") as f:
+            json.dump(result, f, indent=2)
+            
+        logger.info(f"Final state saved to {output_file}")
+        
+    except Exception as e:
+        logger.error(f"Error running graph: {str(e)}")
+        sys.exit(1)
 
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments.
+    
+    Returns:
+        Parsed arguments
+    """
+    parser = argparse.ArgumentParser(description="Run the agent on a deck")
+    parser.add_argument(
+        "--deck-id",
+        required=True,
+        help="ID of the deck to process"
+    )
+    parser.add_argument(
+        "--deck-title",
+        required=True,
+        help="Title of the deck"
+    )
+    parser.add_argument(
+        "--state-file",
+        help="Path to state file"
+    )
+    return parser.parse_args()
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run the deck processing graph")
-    parser.add_argument("--deck-id", required=True, help="ID of the deck to process")
-    parser.add_argument("--deck-title", required=True, help="Title of the deck")
-    parser.add_argument("--state-file", help="Path to JSON file containing initial state")
-    
-    args = parser.parse_args()
+    args = parse_args()
     main(args.deck_id, args.deck_title, args.state_file) 

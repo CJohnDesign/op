@@ -15,17 +15,28 @@ Guidelines for slide content:
 - Maintain consistent formatting throughout
 - Include clear section transitions
 - Do not wrap the content in ```markdown or ``` tags
-- Maintain all frontmatter exactly as provided"""
+- Maintain all frontmatter exactly as provided
+- When showing tables, use the table layout and format them properly for Slidev
+
+** ALWAYS INCLUDE THE PLAN TIERS SECTION IN FULL **
+"""
 
 SETUP_SLIDES_HUMAN_TEMPLATE = """
-Use this exact template structure - maintain all formatting, frontmatter, and sections:
-
+Use this template structure - maintain all formatting but adding the content as needed, especially on sections that give details of plan benefits:
 {template}
 
-Generate a complete Slidev markdown presentation using this processed summary content:
+Generate a complete Slidev markdown presentation using:
+
+PROCESSED SUMMARIES:
 {processed_summaries}
 
-** DONT SKIP ANY SECTIONS, ESSPECIALLY THE PLAN TIERS SECTIONS **
+EXTRACTED TABLES:
+{extracted_tables}
+
+I am just putting the tables so you can see the information per each plan. 
+
+** RETURN THE SLIDES IN FULL, DONT SKIP ANY SECTIONS, ESSPECIALLY THE PLAN TIERS SECTIONS **
 
 Maintain all existing slides (intro, overview, thank you) and add the content slides in between.
-Each content slide should use the appropriate layout and include v-clicks for progressive reveals.""" 
+Each content slide should use the appropriate layout and include v-clicks for progressive reveals.
+""" 

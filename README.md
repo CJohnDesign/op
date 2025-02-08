@@ -49,7 +49,7 @@ End setup instructions
 ## How to customize
 
 1. **Modify the system prompt**: The default system prompt is defined in [configuration.py](./src/agent/configuration.py). You can easily update this via configuration in the studio to change the chatbot's personality or behavior.
-2. **Select a different model**: We default to Anthropic's Claude 3 Sonnet. You can select a compatible chat model using `provider/model-name` via configuration. Example: `openai/gpt-4-turbo-preview`.
+2. **Select a different model**: We default to Anthropic's Claude 3 Sonnet. You can select a compatible chat model using `provider/model-name` via configuration. Example: `openai/gpt-4o`.
 3. **Extend the graph**: The core logic of the chatbot is defined in [graph.py](./src/agent/graph.py). You can modify this file to add new nodes, edges, or change the flow of the conversation.
 
 You can also quickly extend this template by:

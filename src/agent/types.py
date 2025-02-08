@@ -18,7 +18,7 @@ class DeckInfo(TypedDict):
 
 class TableDetails(TypedDict):
     """Type definition for table detection details."""
-    hasBenefitsTable: bool
+    hasBenefitsComparisonTable: bool
     hasLimitations: bool
 
 

@@ -55,43 +55,54 @@ class ValidatorNode(BaseNode[AgentState]):
                 "script": page["script"]
             }, indent=2)
             
-            # Create validation message
+            # Create validation message with explicit JSON response format
             message = HumanMessage(content=VALIDATION_PROMPT.format(content=content_str))
             
             # Get validation results
-            response = self.model.invoke([message])
-            result = json.loads(response.content)
+            self.logger.info("Validating page content")
+            response = self.model.invoke(
+                input={"messages": [message]},
+                config={"response_format": { "type": "json_object" }}
+            )
             
-            # Extract validation results
-            validation_result = {
-                "is_valid": result.get("is_valid", False),
-                "update_instructions": None,
-                "validation_messages": []
-            }
-            
-            if not result["is_valid"]:
-                # Get validation messages
-                slide_issues = result.get("validation_issues", {}).get("slide_issues", [])
-                script_issues = result.get("validation_issues", {}).get("script_issues", [])
+            try:
+                result = json.loads(response.content)
                 
-                validation_result["validation_messages"] = [
-                    f"Slide: {issue['issue']}" for issue in slide_issues
-                ] + [
-                    f"Script: {issue['issue']}" for issue in script_issues
-                ]
+                # Extract validation results
+                validation_result = {
+                    "is_valid": result.get("is_valid", False),
+                    "update_instructions": None,
+                    "validation_messages": []
+                }
                 
-                # Get update instructions
-                suggested_fixes = result.get("suggested_fixes", {})
-                if suggested_fixes:
-                    validation_result["update_instructions"] = json.dumps(suggested_fixes)
+                if not result["is_valid"]:
+                    # Collect all validation messages
+                    messages = []
+                    for issue_type in ["script_issues", "slide_issues"]:
+                        if issue_type in result.get("validation_issues", {}):
+                            for issue in result["validation_issues"][issue_type]:
+                                messages.append(f"{issue_type}: {issue['issue']}")
+                    
+                    validation_result["validation_messages"] = messages
+                    
+                    # Store update instructions if available
+                    if "suggested_fixes" in result:
+                        validation_result["update_instructions"] = json.dumps(result["suggested_fixes"])
                 
-                # Log validation issues
+                self.logger.info(f"Validation complete - Valid: {validation_result['is_valid']}")
                 if validation_result["validation_messages"]:
-                    self.logger.info("Validation issues found:")
-                    for msg in validation_result["validation_messages"]:
-                        self.logger.info(f"  - {msg}")
-            
-            return validation_result
+                    self.logger.info(f"Validation messages: {validation_result['validation_messages']}")
+                
+                return validation_result
+                
+            except json.JSONDecodeError as e:
+                self.logger.error(f"Error parsing validation response: {str(e)}")
+                self.logger.error(f"Raw response: {response.content}")
+                return {
+                    "is_valid": False,
+                    "update_instructions": None,
+                    "validation_messages": ["Error parsing validation response"]
+                }
             
         except Exception as e:
             self.logger.error(f"Error validating page: {str(e)}")
@@ -114,39 +125,18 @@ class ValidatorNode(BaseNode[AgentState]):
     def _validate_current_page(self, state: AgentState) -> PageValidationState:
         """Think step: Analyze validation results and determine next action."""
         current_page = state["validation_state"]["current_page"]
-        # Access page from the content list (1-based indexing)
-        page = state["pages"]["content"][current_page - 1]
+        page = state["pages"]["content"][current_page - 1]  # Convert to 0-based index
         
         # Observe: Validate page
         validation_result = self._validate_page(page)
-        
-        # Log validation status
-        if validation_result["is_valid"]:
-            self.logger.info(f"Page {current_page} is valid")
-        else:
-            self.logger.info(f"Page {current_page} needs updates")
-            if validation_result["validation_messages"]:
-                for msg in validation_result["validation_messages"]:
-                    self.logger.info(f"  - {msg}")
-        
-        # Parse update instructions if any
-        slide_instructions = None
-        script_instructions = None
-        if validation_result["update_instructions"]:
-            try:
-                fixes = json.loads(validation_result["update_instructions"])
-                slide_instructions = fixes.get("slides")
-                script_instructions = fixes.get("script")
-            except Exception as e:
-                self.logger.error(f"Error parsing update instructions: {str(e)}")
         
         # Think: Determine what needs updating
         return {
             "page_number": current_page,
             "slide_valid": validation_result["is_valid"],
             "script_valid": validation_result["is_valid"],
-            "slide_update_instructions": slide_instructions,
-            "script_update_instructions": script_instructions,
+            "slide_update_instructions": validation_result["update_instructions"],
+            "script_update_instructions": validation_result["update_instructions"],
             "updated_slide": None,
             "updated_script": None
         }

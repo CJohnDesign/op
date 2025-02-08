@@ -1,11 +1,11 @@
 ---
-id: FEN_everest_reinsurance
+id: FEN_everest_reinsurance_group_fixed_indemnity_insurance_with_multiplan_ppo_network
 theme: ../../
 title: | 
-  Everest Reinsurance Company Group Fixed Indemnity Insurance
+  Everest Reinsurance Group Fixed Indemnity Insurance
 info: |
-  ## Everest Reinsurance Company Group Fixed Indemnity Insurance Review
-  A look at the Everest Reinsurance Company Group Fixed Indemnity Insurance benefits and details.
+  ## Everest Reinsurance Group Fixed Indemnity Insurance Review
+  A look at the Everest Reinsurance Group Fixed Indemnity Insurance benefits and details.
 verticalCenter: true
 layout: intro
 themeConfig:
@@ -16,24 +16,26 @@ drawings:
   persist: false
 ---
 
-<SlideAudio deckKey="FEN_everest_reinsurance" />
+<SlideAudio deckKey="FEN_everest_reinsurance_group_fixed_indemnity_insurance_with_multiplan_ppo_network" />
 
-# Everest Reinsurance Company Group Fixed Indemnity Insurance Review
+# Everest Reinsurance Group Fixed Indemnity Insurance Review
 
-Understanding the details and benefits of the **Everest Reinsurance Company Group Fixed Indemnity Insurance**
+Understanding the details and benefits of the **Everest Reinsurance Group Fixed Indemnity Insurance with Multiplan PPO Network**
 
 ---
 transition: fade-out
 layout: default
 ---
 
-## Everest Reinsurance Company Overview
+## Everest Reinsurance Group Overview
 
 <v-clicks>
 
-- **Target Audience:** Individuals and Families
-- **Offerings:** Healthcare coverage with a focus on affordability
-- **Key Benefits:** Accessibility through Multiplan PPO Network, fixed benefits for managing healthcare costs, and flexibility to cater to diverse needs
+- Offered through **NCE**
+- **Fixed Indemnity Insurance** for various situations
+- **Multiplan PPO Network** and support tools
+- **Structured Benefits** through fixed payments
+- **Wide Network** support
 
 </v-clicks>
 
@@ -46,17 +48,21 @@ layout: default
 
 <v-clicks>
 
-**Coverage Areas:** Physician services, hospitalization, virtual visits
+**Fixed Payments**
 
-**Plan Structure:** Tiered options with varying co-pays and visit limits
+**Supplemental Coverage**
 
-**Eligibility:** Available to individuals and families with a focus on affordability
+**Direct Payment of Benefits**
 
+**Fast Claims Process** (varies by plan)
 </v-clicks>
 
 <v-click>
 
-**Coverage Details:** Hospital confinement benefits, ICU confinement benefits, emergency room visits
+**Access to Multiplan PPO Network** through Everest
+<div class="grid grid-cols-1 gap-4 items-center px-8 py-4">
+  <img src="" class="h-12 mix-blend-multiply" alt="Everest Logo">
+</div>
 
 </v-click>
 
@@ -69,17 +75,17 @@ layout: default
 
 <v-click>
 
-**Provider Networks:** Access to a wide range of healthcare providers through the Multiplan PPO Network
+**Multiplan PPO Network** (MPN)
 </v-click>
 
 <v-click>
 
-**Claims Management:** Direct benefit payments and fast claims process
+**Direct Payment** System
 </v-click>
 
 <v-click>
 
-**Support Tools:** Wellness programs, advocacy services, and dashboards for managing healthcare needs
+**Fast Claims** Support
 </v-click>
 
 ---
@@ -87,16 +93,16 @@ transition: fade-out
 layout: default
 ---
 
-## How the Plan Works
+## How Multiplan PPO Network Works
 
 <v-clicks>
 
-1. Enroll through **Multiplan PPO Network**
-2. Choose a plan tier that fits your needs
-3. Access healthcare services as needed
-4. Receive direct benefit payments
-5. Utilize support tools for wellness and advocacy
-6. Enjoy flexibility and affordability
+1. Enroll through **NCE**
+2. Access a wide range of providers
+3. Utilize fixed benefits for services
+4. Receive **Explanation of Benefits** (EOB)
+5. Manage healthcare expenses effectively
+6. **Predictable Coverage**
 
 </v-clicks>
 
@@ -109,9 +115,9 @@ layout: default
 
 <v-clicks>
 
-- **Wellness Programs** Services
-- **Advocacy Services** Programs
-- **Multiplan PPO Network** provides comprehensive service access
+- **Routine Checkups** Services
+- **Wellness Programs** Initiatives
+- **Multiplan PPO Network** provides broad access
 
 </v-clicks>
 
@@ -124,10 +130,10 @@ layout: default
 
 <v-clicks>
 
-- **Virtual Visits** available
-- **24/7 Access** to care
-- **Convenient** healthcare solutions
-- **Flexible** service options
+- **24/7 Access**
+- **Virtual Consultations**
+- **Remote Monitoring** available
+- **Convenient Access** to care
 
 </v-clicks>
 
@@ -141,9 +147,9 @@ layout: default
 <v-clicks>
 
 - **Comprehensive** healthcare advocacy
-- **Enrollment** assistance
-- **Plan Selection** options
-- **Ongoing** support
+- **Claims Assistance** support
+- **Benefit Options** exploration
+- **Member Support** services
 
 </v-clicks>
 
@@ -157,18 +163,28 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Physician Services**
-- 3 office visits per certificate year
-- $50 per visit
+**Confinement Benefits**
+- 30 Days Per Confinement
+- 90 Days Per Certificate Year
+- Hospital Confinement: $100
+- ICU Confinement: $200
 <Arrow v-bind="{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Hospitalization**
-- $100 per day for hospital confinement
-- $100 for ICU confinement
+**Hospital Benefits**
+- Emergency Room: $50 per visit
+- 2 visits per certificate year
 <Arrow v-bind="{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Outpatient Benefits**
+- Physician's Office: $50 per visit
+- 3 visits per certificate year
+<Arrow v-bind="{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -181,15 +197,15 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Virtual Visits**
-- Not specified
+**Procedure Benefits**
+- Not Available
 <Arrow v-bind="{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Prescriptions**
-- Not specified
+**Additional Benefits**
+- Lab and X-Rays: Not Available
 <Arrow v-bind="{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
@@ -203,18 +219,28 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Physician Services**
-- 3 office visits per certificate year
-- $50 per visit
+**Confinement Benefits**
+- 30 Days Per Confinement
+- 90 Days Per Certificate Year
+- Hospital Confinement: $200
+- ICU Confinement: $200
 <Arrow v-bind="{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Hospitalization**
-- $200 per day for hospital confinement
-- $200 for ICU confinement
+**Hospital Benefits**
+- Emergency Room: $50 per visit
+- 2 visits per certificate year
 <Arrow v-bind="{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Outpatient Benefits**
+- Physician's Office: $50 per visit
+- 3 visits per certificate year
+<Arrow v-bind="{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -227,15 +253,15 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Virtual Visits**
-- Not specified
+**Procedure Benefits**
+- Not Available
 <Arrow v-bind="{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Prescriptions**
-- Not specified
+**Additional Benefits**
+- Lab and X-Rays: $50
 <Arrow v-bind="{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
@@ -249,18 +275,28 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Physician Services**
-- 3 office visits per certificate year
-- $50 per visit
+**Confinement Benefits**
+- 30 Days Per Confinement
+- 90 Days Per Certificate Year
+- Hospital Confinement: $200
+- ICU Confinement: $200
 <Arrow v-bind="{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Hospitalization**
-- $200 per day for hospital confinement
-- $200 for ICU confinement
+**Hospital Benefits**
+- Emergency Room: $50 per visit
+- 2 visits per certificate year
 <Arrow v-bind="{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Outpatient Benefits**
+- Physician's Office: $50 per visit
+- 3 visits per certificate year
+<Arrow v-bind="{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -273,15 +309,16 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Additional Benefits**
-- Surgery benefits for up to 3 days per certificate year
+**Procedure Benefits**
+- Surgery: $250 per day
+- 3 maximum days per certificate year
 <Arrow v-bind="{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Virtual Visits**
-- Not specified
+**Additional Benefits**
+- Lab and X-Rays: $50
 <Arrow v-bind="{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
@@ -295,18 +332,28 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Physician Services**
-- 3 office visits per certificate year
-- $50 per visit
+**Confinement Benefits**
+- 30 Days Per Confinement
+- 90 Days Per Certificate Year
+- Hospital Confinement: $300
+- ICU Confinement: $300
 <Arrow v-bind="{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Hospitalization**
-- $300 per day for hospital confinement
-- $300 for ICU confinement
+**Hospital Benefits**
+- Emergency Room: $50 per visit
+- 2 visits per certificate year
 <Arrow v-bind="{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Outpatient Benefits**
+- Physician's Office: $50 per visit
+- 3 visits per certificate year
+<Arrow v-bind="{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -319,15 +366,16 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Additional Benefits**
-- Surgery benefits for up to 3 days per certificate year
+**Procedure Benefits**
+- Surgery: $250 per day
+- 3 maximum days per certificate year
 <Arrow v-bind="{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Virtual Visits**
-- Not specified
+**Additional Benefits**
+- Lab and X-Rays: Not Available
 <Arrow v-bind="{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
@@ -341,18 +389,28 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Physician Services**
-- 5 office visits per certificate year
-- $50 per visit
+**Confinement Benefits**
+- 30 Days Per Confinement
+- 90 Days Per Certificate Year
+- Hospital Confinement: $500
+- ICU Confinement: $500
 <Arrow v-bind="{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Hospitalization**
-- $500 per day for hospital confinement
-- $500 for ICU confinement
+**Hospital Benefits**
+- Emergency Room: $50 per visit
+- 2 visits per certificate year
 <Arrow v-bind="{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Outpatient Benefits**
+- Physician's Office: $50 per visit
+- 5 visits per certificate year
+<Arrow v-bind="{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -365,15 +423,16 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Additional Benefits**
-- Surgery benefits for up to 3 days per certificate year
+**Procedure Benefits**
+- Surgery: $350 per day
+- 3 maximum days per certificate year
 <Arrow v-bind="{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Virtual Visits**
-- Not specified
+**Additional Benefits**
+- Lab and X-Rays: $50
 <Arrow v-bind="{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
@@ -387,18 +446,28 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Physician Services**
-- 5 office visits per certificate year
-- $50 per visit
+**Confinement Benefits**
+- 30 Days Per Confinement
+- 90 Days Per Certificate Year
+- Hospital Confinement: $750
+- ICU Confinement: $750
 <Arrow v-bind="{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Hospitalization**
-- $750 per day for hospital confinement
-- $750 for ICU confinement
+**Hospital Benefits**
+- Emergency Room: $75 per visit
+- 2 visits per certificate year
 <Arrow v-bind="{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Outpatient Benefits**
+- Physician's Office: $50 per visit
+- 5 visits per certificate year
+<Arrow v-bind="{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -411,15 +480,16 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Additional Benefits**
-- Surgery benefits for up to 3 days per certificate year
+**Procedure Benefits**
+- Surgery: $400 per day
+- 3 maximum days per certificate year
 <Arrow v-bind="{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Virtual Visits**
-- Not specified
+**Additional Benefits**
+- Lab and X-Rays: $50
 <Arrow v-bind="{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
@@ -433,18 +503,28 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Physician Services**
-- 5 office visits per certificate year
-- $75 per visit
+**Confinement Benefits**
+- 30 Days Per Confinement
+- 90 Days Per Certificate Year
+- Hospital Confinement: $1000
+- ICU Confinement: $1000
 <Arrow v-bind="{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Hospitalization**
-- $1000 per day for hospital confinement
-- $1000 for ICU confinement
+**Hospital Benefits**
+- Emergency Room: $100 per visit
+- 2 visits per certificate year
 <Arrow v-bind="{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Outpatient Benefits**
+- Physician's Office: $75 per visit
+- 5 visits per certificate year
+<Arrow v-bind="{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -457,15 +537,16 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Additional Benefits**
-- Surgery benefits for up to 3 days per certificate year
+**Procedure Benefits**
+- Surgery: $500 per day
+- 3 maximum days per certificate year
 <Arrow v-bind="{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Virtual Visits**
-- Not specified
+**Additional Benefits**
+- Lab and X-Rays: $75
 <Arrow v-bind="{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
@@ -479,18 +560,28 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Physician Services**
-- 5 office visits per certificate year
-- $75 per visit
+**Confinement Benefits**
+- 30 Days Per Confinement
+- 90 Days Per Certificate Year
+- Hospital Confinement: $1000
+- ICU Confinement: $1000
 <Arrow v-bind="{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Hospitalization**
-- $1000 per day for hospital confinement
-- $1000 for ICU confinement
+**Hospital Benefits**
+- Emergency Room: $100 per visit
+- 2 visits per certificate year
 <Arrow v-bind="{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Outpatient Benefits**
+- Physician's Office: $75 per visit
+- 5 visits per certificate year
+<Arrow v-bind="{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -503,16 +594,16 @@ image: img/pages/plan_brochure_image_1.jpg
 
 <v-click>
 
-**Additional Benefits**
-- Surgery benefits for up to 3 days per certificate year
-- $1000 hospital admission benefit
+**Procedure Benefits**
+- Surgery: $500 per day
+- 3 maximum days per certificate year
 <Arrow v-bind="{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Virtual Visits**
-- Not specified
+**Additional Benefits**
+- Lab and X-Rays: $100
 <Arrow v-bind="{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
@@ -524,12 +615,12 @@ layout: default
 ## Comparing the Plans
 
 | **Feature** | **Plan 100** | **Plan 200** | **Plan 200+** | **Plan 300** | **Plan 500** | **Plan 750** | **Plan 1000** | **Plan 1000+** |
-|-------------|--------------|--------------|---------------|--------------|--------------|--------------|---------------|----------------|
+|---------|----------|----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | Hospital Confinement | $100 | $200 | $200 | $300 | $500 | $750 | $1000 | $1000 |
-| ICU Confinement | $100 | $200 | $200 | $300 | $500 | $750 | $1000 | $1000 |
+| ICU Confinement | $200 | $200 | $200 | $300 | $500 | $750 | $1000 | $1000 |
 | Emergency Room | $50 | $50 | $50 | $50 | $50 | $75 | $100 | $100 |
-| Surgery Benefits | N/A | N/A | 3 days | 3 days | 3 days | 3 days | 3 days | 3 days |
-| Physician's Office | $50 | $50 | $50 | $50 | $50 | $50 | $75 | $75 |
+| Surgery | N/A | N/A | $250 | $250 | $350 | $400 | $500 | $500 |
+| Lab & X-Rays | N/A | $50 | $50 | N/A | $50 | $50 | $75 | $100 |
 
 ---
 transition: fade-out
@@ -541,19 +632,35 @@ image: img/pages/plan_brochure_image_final.jpg
 
 <v-click>
 
-**Exclusions**
-- Pre-existing conditions
-- Elective treatments
-- Experimental treatments
+**Pre-existing Conditions**
+- 12-12 Limitation
+- Applies to all plans
+- Exceptions for newborns/adopted children
 <Arrow v-bind="{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 <v-click>
 
-**Limitations**
-- Waiting periods
-- Specific conditions for coverage
+**Exclusions**
+- Chiropractic and Acupuncture
+- Cosmetic Surgery
 <Arrow v-bind="{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Limitations**
+- No benefits for extreme sports injuries
+- Excludes treatments from family members
+<Arrow v-bind="{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }" />
+</v-click>
+
+<v-click>
+
+**Coverage**
+- Not a substitute for major medical insurance
+- Limited benefit policies
+<Arrow v-bind="{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }" />
 </v-click>
 
 ---
@@ -565,16 +672,17 @@ layout: default
 
 <v-clicks>
 
-- **Flexibility:** Offers a range of plans to suit different needs
-- **Cost vs. Coverage:** Balances affordability with comprehensive coverage
-- **Next Steps:** Contact support for enrollment and further assistance
+- **Fixed Indemnity** benefits
+- **Multiplan PPO Network** included
+- **Direct Payment** benefits
+- **Enrollment** required
 
 </v-clicks>
 
 ---
 transition: fade-out
 layout: end
-line: Thank you for participating in the Everest Reinsurance Company Group Fixed Indemnity Insurance Review. Continue to be great!
+line: Thank you for participating in the Everest Reinsurance Group Fixed Indemnity Insurance Review. Continue to be great!
 ---
 
 # Thank You!

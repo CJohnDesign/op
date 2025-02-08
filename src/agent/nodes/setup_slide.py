@@ -28,7 +28,7 @@ class SetupSlideNode(BaseNode[AgentState]):
     """
     
     def __init__(self) -> None:
-        """Initialize the node with GPT-4 model."""
+        """Initialize the node with GPT-4o model."""
         super().__init__()
         self.model = ChatOpenAI(
             model="gpt-4o",
@@ -36,12 +36,13 @@ class SetupSlideNode(BaseNode[AgentState]):
             temperature=0
         )
     
-    def _generate_slides(self, template: str, processed_summaries: str) -> str:
-        """Generate slide content using GPT-4.
+    def _generate_slides(self, template: str, processed_summaries: str, extracted_tables: str) -> str:
+        """Generate slide content using GPT-4o.
         
         Args:
             template: The slide template to use
             processed_summaries: The processed content summaries
+            extracted_tables: The extracted table data
             
         Returns:
             Generated slide content
@@ -53,12 +54,13 @@ class SetupSlideNode(BaseNode[AgentState]):
                 HumanMessage(
                     content=SETUP_SLIDES_HUMAN_TEMPLATE.format(
                         template=template,
-                        processed_summaries=processed_summaries
+                        processed_summaries=processed_summaries,
+                        extracted_tables=extracted_tables
                     )
                 )
             ]
             
-            # Get slide content from GPT-4
+            # Get slide content from GPT-4o
             self.logger.info("Generating slide content")
             response = self.model.invoke(messages)
             
@@ -96,14 +98,31 @@ class SetupSlideNode(BaseNode[AgentState]):
             # Read template
             template = template_file.read_text()
             
-            # Get processed summaries from state
-            processed_summaries = state.get("presentation", {}).get("content", "")
-            if not processed_summaries:
-                self.logger.warning("No processed content found in state")
+            # Get processed images and extracted tables from state
+            processed_images = state.get("processed_images", {})
+            extracted_tables = state.get("extracted_tables", {})
+            
+            if not processed_images:
+                self.logger.warning("No processed images found in state")
                 return state
+                
+            # Prepare content summary including both images and tables
+            content_summary = []
+            for page_num in sorted(processed_images.keys()):
+                page_data = processed_images[page_num]
+                summary = {
+                    "page_number": page_data["page_number"],
+                    "page_title": page_data["page_title"],
+                    "summary": page_data["summary"]
+                }
+                content_summary.append(summary)
+            
+            # Convert to string format for the template
+            processed_summaries = json.dumps(content_summary, indent=2)
+            extracted_tables_str = json.dumps(extracted_tables, indent=2)
             
             # Generate slide content
-            slide_content = self._generate_slides(template, processed_summaries)
+            slide_content = self._generate_slides(template, processed_summaries, extracted_tables_str)
             
             # Create updated state
             updated_state = dict(state)
