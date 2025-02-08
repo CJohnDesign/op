@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import json
 import logging
-from typing import Any, Dict, List, TypedDict
+from typing import cast, Dict, Any
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
@@ -16,26 +16,24 @@ from langchain_openai import ChatOpenAI
 
 from agent.nodes.base import BaseNode
 from agent.prompts.validator import VALIDATION_PROMPT
-from agent.types import AgentState, Page
-
-
-class ValidationResult(TypedDict):
-    """Type definition for validation results."""
-    page_number: int
-    is_valid: bool
-    needs_slide_update: bool
-    needs_script_update: bool
-    slide_update_instructions: str | None
-    script_update_instructions: str | None
+from agent.types import (
+    AgentState,
+    Page,
+    ValidationResult,
+    ValidationState,
+    PageValidationState,
+    SlideContent,
+    ScriptContent
+)
 
 
 class ValidatorNode(BaseNode[AgentState]):
     """Node for validating and orchestrating updates to slides and scripts.
     
-    Following Single Responsibility Principle, this node only handles:
-    1. Validating content consistency for each page
-    2. Determining what needs updates
-    3. Providing update instructions
+    Following ReAct pattern:
+    1. Observe current state
+    2. Think about what needs to be done
+    3. Act by choosing appropriate tool
     """
     
     def __init__(self) -> None:
@@ -48,171 +46,109 @@ class ValidatorNode(BaseNode[AgentState]):
         )
         self.logger.setLevel(logging.INFO)
     
-    def _validate_page(self, page_number: int, page: Page) -> ValidationResult:
-        """Validate a single page's slide and script content for consistency.
-        
-        Args:
-            page_number: The index of the page being validated
-            page: The page containing slide and script content
-            
-        Returns:
-            ValidationResult for this page
-        """
+    def _validate_page(self, page: Page) -> ValidationResult:
+        """Observe step: Validate current page content."""
         try:
-            self.logger.info(f"\n=== Validating Page {page_number} ===")
-            self.logger.info(f"Slide header: {page['slide'].get('header', 'No header')}")
-            self.logger.info(f"Script header: {page['script'].get('header', 'No header')}")
-            
             # Format content as JSON string with both headers and content
             content_str = json.dumps({
-                "slides": {
-                    "header": page["slide"].get("header", ""),
-                    "content": page["slide"]["content"],
-                    "frontmatter": page["slide"].get("frontmatter", "")
-                },
-                "script": {
-                    "header": page["script"].get("header", ""),
-                    "content": page["script"]["content"]
-                }
+                "slide": page["slide"],
+                "script": page["script"]
             }, indent=2)
             
-            # Log the content being sent
-            self.logger.info("Content being sent to GPT:")
-            self.logger.info(content_str)
-            
-            # Create validation message with properly formatted content
-            message = HumanMessage(
-                content=VALIDATION_PROMPT.format(content=content_str)
-            )
+            # Create validation message
+            message = HumanMessage(content=VALIDATION_PROMPT.format(content=content_str))
             
             # Get validation results
-            self.logger.info(f"Sending page {page_number} content to GPT-4o for validation")
             response = self.model.invoke([message])
-            self.logger.info(f"Received validation response for page {page_number}")
+            result = json.loads(response.content)
             
-            # Log the raw response
-            self.logger.info("Raw GPT response:")
-            self.logger.info(response.content)
+            # Extract validation results
+            validation_result = {
+                "is_valid": result.get("is_valid", False),
+                "update_instructions": None,
+                "validation_messages": []
+            }
             
-            # Parse response
-            try:
-                self.logger.info("Parsing validation response")
-                result = json.loads(response.content)
-                
-                # Extract validation results
-                is_valid = result.get("is_valid", False)
-                validation_issues = result.get("validation_issues", {})
-                suggested_fixes = result.get("suggested_fixes", {})
-                
-                # Log validation details
-                self.logger.info(f"Page {page_number} valid: {is_valid}")
-                if not is_valid:
-                    self.logger.info(f"Found validation issues in page {page_number}:")
-                    if validation_issues.get("slide_issues"):
-                        self.logger.info("Slide issues:")
-                        for issue in validation_issues["slide_issues"]:
-                            self.logger.info(f"  - Section: {issue['section']}")
-                            self.logger.info(f"    Issue: {issue['issue']}")
-                            self.logger.info(f"    Severity: {issue['severity']}")
-                    
-                    if validation_issues.get("script_issues"):
-                        self.logger.info("Script issues:")
-                        for issue in validation_issues["script_issues"]:
-                            self.logger.info(f"  - Section: {issue['section']}")
-                            self.logger.info(f"    Issue: {issue['issue']}")
-                            self.logger.info(f"    Severity: {issue['severity']}")
-                
-                validation_result = {
-                    "page_number": page_number,
-                    "is_valid": is_valid,
-                    "needs_slide_update": not is_valid and bool(validation_issues.get("slide_issues")),
-                    "needs_script_update": not is_valid and bool(validation_issues.get("script_issues")),
-                    "slide_update_instructions": suggested_fixes.get("slides") if not is_valid else None,
-                    "script_update_instructions": suggested_fixes.get("script") if not is_valid else None
-                }
-                
-                self.logger.info(f"Page {page_number} validation result:")
-                self.logger.info(f"  Is valid: {validation_result['is_valid']}")
-                self.logger.info(f"  Needs slide update: {validation_result['needs_slide_update']}")
-                self.logger.info(f"  Needs script update: {validation_result['needs_script_update']}")
-                
-                return validation_result
-                
-            except json.JSONDecodeError as e:
-                self.logger.error(f"Error parsing validation response for page {page_number}: {str(e)}")
-                self.logger.error(f"Raw response: {response.content}")
-                return {
-                    "page_number": page_number,
-                    "is_valid": False,
-                    "needs_slide_update": False,
-                    "needs_script_update": False,
-                    "slide_update_instructions": None,
-                    "script_update_instructions": None
-                }
-                
+            if not result["is_valid"]:
+                validation_result["validation_messages"] = [
+                    issue["issue"]
+                    for issues in result.get("validation_issues", {}).values()
+                    for issue in issues
+                ]
+                validation_result["update_instructions"] = json.dumps(result.get("suggested_fixes", {}))
+            
+            return validation_result
+            
         except Exception as e:
-            self.logger.error(f"Error validating page {page_number}: {str(e)}")
-            raise
+            self.logger.error(f"Error validating page: {str(e)}")
+            return {
+                "is_valid": False,
+                "update_instructions": None,
+                "validation_messages": [f"Error during validation: {str(e)}"]
+            }
+    
+    def _initialize_validation_state(self, state: AgentState) -> None:
+        """Initialize validation state if not present."""
+        if "validation_state" not in state:
+            state["validation_state"] = {
+                "current_page": 1,
+                "total_pages": state["pages"]["count"],
+                "pages": {},
+                "update_type": "none"
+            }
+    
+    def _validate_current_page(self, state: AgentState) -> PageValidationState:
+        """Think step: Analyze validation results and determine next action."""
+        current_page = state["validation_state"]["current_page"]
+        # Access page from the content list (1-based indexing)
+        page = state["pages"]["content"][current_page - 1]
+        
+        # Observe: Validate page
+        validation_result = self._validate_page(page)
+        
+        # Think: Determine what needs updating
+        return {
+            "page_number": current_page,
+            "slide_valid": validation_result["is_valid"],
+            "script_valid": validation_result["is_valid"],
+            "slide_update_instructions": validation_result["update_instructions"],
+            "script_update_instructions": validation_result["update_instructions"],
+            "updated_slide": None,
+            "updated_script": None
+        }
     
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
-        """Process the current state to validate content.
+        """Act step: Choose next action based on validation results.
         
         Args:
-            state: The current state containing pages to validate
+            state: Current agent state
             config: Runtime configuration
             
         Returns:
-            Updated state with validation results
+            Updated agent state with validation results and next action
         """
-        self.logger.info("\n=== Starting Validation Process ===")
+        self._initialize_validation_state(state)
+        validation_state = cast(ValidationState, state["validation_state"])
         
-        try:
-            # Get pages from state
-            pages = state.get("pages", {}).get("content", [])
-            current_page = state.get("current_page", 0)
-            
-            self.logger.info("Current State Info:")
-            self.logger.info(f"  Total pages: {len(pages)}")
-            self.logger.info(f"  Current page: {current_page}")
-            
-            if not pages:
-                self.logger.warning("No pages found in state")
-                return state
-            
-            if current_page >= len(pages):
-                self.logger.info("All pages validated successfully")
-                return state
-            
-            # Validate current page
-            page = pages[current_page]
-            validation_result = self._validate_page(current_page, page)
-            
-            # Update state with validation results
-            self.logger.info("Updating state with validation results")
-            updated_state = dict(state)
-            
-            # Store validation result
-            updated_state["validation_results"] = validation_result
-            
-            # Track validation history
-            validation_history = state.get("validation_history", [])
-            validation_history.append({
-                "page_number": current_page,
-                "result": validation_result
-            })
-            updated_state["validation_history"] = validation_history
-            
-            # Update current page if validation passed
-            if validation_result["is_valid"]:
-                self.logger.info(f"Page {current_page} validated successfully, moving to next page")
-                updated_state["current_page"] = current_page + 1
-            
-            self.logger.info(f"Total validation attempts: {len(validation_history)}")
-            self.logger.info("=== Validation Process Complete ===")
-            
-            return updated_state
-            
-        except Exception as e:
-            self.logger.error(f"Error in validation process: {str(e)}")
-            self.logger.error("=== Validation Process Failed ===")
-            raise 
+        # Observe and Think: Validate current page
+        current_page_state = self._validate_current_page(state)
+        validation_state["pages"][current_page_state["page_number"]] = current_page_state
+        
+        # Act: Determine next action
+        if current_page_state["slide_valid"] and current_page_state["script_valid"]:
+            validation_state["update_type"] = "none"
+            # If both valid, prepare to move to next page
+            if validation_state["current_page"] < validation_state["total_pages"]:
+                validation_state["current_page"] += 1
+            # Otherwise, we're done with all pages
+        elif not current_page_state["slide_valid"] and not current_page_state["script_valid"]:
+            validation_state["update_type"] = "both"
+        elif not current_page_state["slide_valid"]:
+            validation_state["update_type"] = "slide_only"
+        else:
+            validation_state["update_type"] = "script_only"
+        
+        self.logger.info(f"Page {validation_state['current_page']} validation complete")
+        self.logger.info(f"Next action: {validation_state['update_type']}")
+        
+        return state 

@@ -124,9 +124,11 @@ workflow.add_edge("page_parser", "validator")  # Initial parsing to validation
 workflow.add_conditional_edges(
     "validator",
     route_on_validation
-)  # Route based on validation results
-workflow.add_edge("update_slide", "validator")  # Slide updates back to validation
-workflow.add_edge("update_script", "validator")  # Script updates back to validation
+)
+
+# Add edges from update nodes back to validator
+workflow.add_edge("update_slide", "validator")
+workflow.add_edge("update_script", "validator")
 
 # Compile the workflow into an executable graph
 graph = workflow.compile()
