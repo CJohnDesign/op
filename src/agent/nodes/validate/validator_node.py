@@ -70,12 +70,26 @@ class ValidatorNode(BaseNode[AgentState]):
             }
             
             if not result["is_valid"]:
+                # Get validation messages
+                slide_issues = result.get("validation_issues", {}).get("slide_issues", [])
+                script_issues = result.get("validation_issues", {}).get("script_issues", [])
+                
                 validation_result["validation_messages"] = [
-                    issue["issue"]
-                    for issues in result.get("validation_issues", {}).values()
-                    for issue in issues
+                    f"Slide: {issue['issue']}" for issue in slide_issues
+                ] + [
+                    f"Script: {issue['issue']}" for issue in script_issues
                 ]
-                validation_result["update_instructions"] = json.dumps(result.get("suggested_fixes", {}))
+                
+                # Get update instructions
+                suggested_fixes = result.get("suggested_fixes", {})
+                if suggested_fixes:
+                    validation_result["update_instructions"] = json.dumps(suggested_fixes)
+                
+                # Log validation issues
+                if validation_result["validation_messages"]:
+                    self.logger.info("Validation issues found:")
+                    for msg in validation_result["validation_messages"]:
+                        self.logger.info(f"  - {msg}")
             
             return validation_result
             
@@ -106,13 +120,33 @@ class ValidatorNode(BaseNode[AgentState]):
         # Observe: Validate page
         validation_result = self._validate_page(page)
         
+        # Log validation status
+        if validation_result["is_valid"]:
+            self.logger.info(f"Page {current_page} is valid")
+        else:
+            self.logger.info(f"Page {current_page} needs updates")
+            if validation_result["validation_messages"]:
+                for msg in validation_result["validation_messages"]:
+                    self.logger.info(f"  - {msg}")
+        
+        # Parse update instructions if any
+        slide_instructions = None
+        script_instructions = None
+        if validation_result["update_instructions"]:
+            try:
+                fixes = json.loads(validation_result["update_instructions"])
+                slide_instructions = fixes.get("slides")
+                script_instructions = fixes.get("script")
+            except Exception as e:
+                self.logger.error(f"Error parsing update instructions: {str(e)}")
+        
         # Think: Determine what needs updating
         return {
             "page_number": current_page,
             "slide_valid": validation_result["is_valid"],
             "script_valid": validation_result["is_valid"],
-            "slide_update_instructions": validation_result["update_instructions"],
-            "script_update_instructions": validation_result["update_instructions"],
+            "slide_update_instructions": slide_instructions,
+            "script_update_instructions": script_instructions,
             "updated_slide": None,
             "updated_script": None
         }

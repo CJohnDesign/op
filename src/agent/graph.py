@@ -55,11 +55,12 @@ def route_on_validation(state: AgentState) -> Union[NodeType, Type[END]]:
     Returns:
         Next node to route to or END if validation complete
     """
-    validation_results = state.get("validation_results", {})
-    logger.info(f"Routing based on validation results: {validation_results}")
+    validation_state = state.get("validation_state", {})
+    logger.info(f"Routing based on validation state: {validation_state}")
     
-    if validation_results.get("is_valid", False):
-        # If validation passes, save validated state and end
+    # If we've validated all pages successfully
+    if validation_state.get("current_page", 0) > validation_state.get("total_pages", 0):
+        # Save final state
         deck_id = state.get("deck_id")
         if deck_id:
             state_file = Path(f"src/decks/{deck_id}/validated_state.json")
@@ -69,16 +70,23 @@ def route_on_validation(state: AgentState) -> Union[NodeType, Type[END]]:
             logger.info(f"Saved validated state to {state_file}")
         return END
     
-    # Route to appropriate update node based on what needs updating
-    if validation_results.get("needs_slide_update"):
+    # Route based on update type
+    update_type = validation_state.get("update_type")
+    if update_type == "none":
+        # Continue validation
+        return "validator"
+    elif update_type == "slide_only":
         logger.info("Routing to slide update")
         return "update_slide"
-    elif validation_results.get("needs_script_update"):
+    elif update_type == "script_only":
         logger.info("Routing to script update")
         return "update_script"
+    elif update_type == "both":
+        logger.info("Routing to slide update first")
+        return "update_slide"
     else:
         # If no specific updates needed but still invalid, end to avoid infinite loop
-        logger.warning("No specific updates needed but validation failed. Ending to avoid loop.")
+        logger.warning("No specific update type found. Ending to avoid loop.")
         return END
 
 # Create node instances
