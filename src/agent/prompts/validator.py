@@ -47,74 +47,29 @@ Your task is to validate the synchronization and quality of the presentation con
    - Every section must be fully detailed
    - No abbreviated or templated content
 
-Example of proper synchronization:
-
-Slide:
----
-transition: fade-out
-layout: default
----
-
-## Plan Overview
-
-<v-click>
-Provided by **America's Choice Health Care**
-</v-click>
-
-<v-click>
-Administration by **Detego Health**
-</v-click>
-
-Script:
----- Plan Overview ----
-
-The Transforming Data Through Knowledge plan
-
-is brought to you by America's Choice Health Care,
-
-with Administration by Detego Health.
-
-Notice how:
-1. Each v-click has its own script line
-2. Extra line introduces the section
-3. Formatting is preserved
-4. Sections are properly separated
-
-CRITICAL VALIDATION RULES:
-1. NEVER allow placeholder comments or shortcuts
-2. NEVER use "repeat above structure" or similar references
-3. ALWAYS require complete content for every section
-4. ALWAYS require unique content for each plan
-5. REJECT any content that uses shortcuts or templating
-
-Analyze the following content and return your response as a JSON object with this exact structure:
+RESPONSE FORMAT:
+You must respond with ONLY a valid JSON object using this exact schema:
 {
-    "is_valid": true/false,
-    "validation_issues": {
-        "script_issues": [
-            {
-                "section": "section_name",
-                "issue": "description",
-                "severity": "low|medium|high",
-                "suggestions": ["suggestion 1", "suggestion 2"]
-            }
-        ],
-        "slide_issues": [
-            {
-                "section": "section_name",
-                "issue": "description",
-                "severity": "low|medium|high",
-                "suggestions": ["suggestion 1", "suggestion 2"]
-            }
-        ]
+    "slide": {
+       "is_valid": boolean,
+       "severity": "low" | "medium" | "high",
+       "suggested_fixes": string | null
     },
-    "suggested_fixes": {
-        "slides": "complete fixed slides content if needed",
-        "script": "complete fixed script content if needed"
+    "script": {
+       "is_valid": boolean,
+       "severity": "low" | "medium" | "high",
+       "suggested_fixes": string | null
     }
 }
 
-Content to validate:
-{content}
+CRITICAL RESPONSE REQUIREMENTS:
+1. Response MUST be a valid JSON object
+2. Response MUST contain "is_valid" boolean field
+3. Response MUST contain "validation_issues" object if is_valid is false
+4. Response MUST contain "suggested_fixes" object if is_valid is false
+5. DO NOT include any text before or after the JSON object
+6. DO NOT include any explanations or comments
+7. ONLY return the JSON object
 
-The response MUST be a valid JSON object matching this structure exactly.''' 
+Content to validate:
+{content}''' 

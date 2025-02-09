@@ -10,7 +10,7 @@ import logging
 from pathlib import Path
 from typing import Literal, Union, Type
 
-from langgraph.graph import END, StateGraph
+from langgraph.graph import END, START, StateGraph
 from langsmith import traceable
 
 from agent.nodes.validate import (
@@ -59,7 +59,13 @@ def route_on_validation(state: AgentState) -> Union[NodeType, Type[END]]:
     validation_results = state.get("validation_results", {})
     logger.info(f"Routing based on validation results: {validation_results}")
     
-    if validation_results.get("is_valid", False):
+    # Get validation status for each component
+    slide_valid = validation_results.get("slide", {}).get("is_valid", False)
+    script_valid = validation_results.get("script", {}).get("is_valid", False)
+    
+    logger.info(f"Validation status - Slide: {slide_valid}, Script: {script_valid}")
+    
+    if slide_valid and script_valid:
         # If validation passes, save validated state and end
         deck_id = state.get("deck_id")
         if deck_id:
@@ -71,15 +77,14 @@ def route_on_validation(state: AgentState) -> Union[NodeType, Type[END]]:
         return END
     
     # Route to appropriate update node based on what needs updating
-    if validation_results.get("needs_slide_update"):
+    if not slide_valid:
         logger.info("Routing to slide update")
         return "update_slide"
-    elif validation_results.get("needs_script_update"):
+    elif not script_valid:
         logger.info("Routing to script update")
         return "update_script"
     else:
-        # If no specific updates needed but still invalid, end to avoid infinite loop
-        logger.warning("No specific updates needed but validation failed. Ending to avoid loop.")
+        logger.info("No updates needed")
         return END
 
 def initialize_graph() -> StateGraph:
@@ -115,8 +120,13 @@ def initialize_graph() -> StateGraph:
     workflow.add_node("update_slide", update_slide_node)
     workflow.add_node("update_script", update_script_node)
 
-    # Set entry point - start with initialization
-    workflow.set_entry_point("init")
+    # Add a dynamic entry router
+    def entry_router(state: AgentState) -> str:
+        """Route to the specified start node from state."""
+        return state.get("_start_node", "init")
+        
+    # Set entry point using the router
+    workflow.add_conditional_edges(START, entry_router)
 
     # Add edges for complete workflow
     workflow.add_edge("init", "process_images")  # Start with image processing

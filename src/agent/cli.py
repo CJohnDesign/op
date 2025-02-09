@@ -30,23 +30,29 @@ def load_state(state_file: Optional[Path]) -> dict:
             return json.load(f)
     return {}
 
-def main(deck_id: str, deck_title: str, state_file: Optional[str] = None) -> None:
+def main(deck_id: str, deck_title: str, start_node: str = "init", state_file: Optional[str] = None) -> None:
     """Main entry point for the CLI.
     
     Args:
         deck_id: ID of the deck to process
         deck_title: Title of the deck
-        state_file: Optional path to state file
+        start_node: Node to start execution from
+        state_file: Optional path to state file. If not provided, will use deck-specific state file
     """
     try:
         # Initialize LangSmith client
         client = Client()
         
+        # If state_file not provided, use deck-specific path
+        if not state_file:
+            state_file = f"src/decks/{deck_id}/state.json"
+        
         # Set up initial state
         state = load_state(Path(state_file) if state_file else None)
         state.update({
             "deck_id": deck_id,
-            "deck_title": deck_title
+            "deck_title": deck_title,
+            "_start_node": start_node  # Add start node to state
         })
         logger.info(f"Running graph with state: {state}")
         
@@ -84,10 +90,15 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--state-file",
-        help="Path to state file"
+        help="Optional path to state file. If not provided, will use deck-specific state file"
+    )
+    parser.add_argument(
+        "--start-node",
+        default="init",
+        help="Node to start execution from (default: init)"
     )
     return parser.parse_args()
 
 if __name__ == "__main__":
     args = parse_args()
-    main(args.deck_id, args.deck_title, args.state_file) 
+    main(args.deck_id, args.deck_title, args.start_node, args.state_file) 

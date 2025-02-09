@@ -78,21 +78,22 @@ class UpdateScriptNode(BaseNode[AgentState]):
         try:
             # Get validation results and current content
             validation_results = state.get("validation_results", {})
-            current_script = state.get("script", {}).get("content", "")
+            current_script = state.get("script", {}).get("content")
             
             if not validation_results or not current_script:
-                self.logger.warning("Missing validation results or script content")
+                self.logger.warning("Missing required state information")
                 return state
             
-            # Check if script needs updating
-            if not validation_results.get("needs_script_update"):
+            # Check if script update is needed
+            script_validation = validation_results.get("script", {})
+            if script_validation.get("is_valid", True):
                 self.logger.info("No script updates needed")
                 return state
             
             # Get update instructions
-            instructions = validation_results.get("script_update_instructions")
+            instructions = script_validation.get("suggested_fixes")
             if not instructions:
-                self.logger.warning("No update instructions provided")
+                self.logger.warning("No script update instructions provided")
                 return state
             
             # Update script content

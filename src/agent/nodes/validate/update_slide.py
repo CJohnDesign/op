@@ -105,23 +105,24 @@ class UpdateSlideNode(BaseNode[AgentState]):
         try:
             # Get validation results and current content
             validation_results = state.get("validation_results", {})
-            current_slides = state.get("slides", {}).get("content", "")
+            current_slides = state.get("slides", {}).get("content")
             deck_id = state.get("deck_id")
-            processed_images = state.get("processed_images", {})
+            processed_images = state.get("processed_images", [])
             
             if not validation_results or not current_slides or not deck_id or not processed_images:
                 self.logger.warning("Missing required state information")
                 return state
             
-            # Check if slides need updating
-            if not validation_results.get("needs_slide_update"):
+            # Check if slide update is needed
+            slide_validation = validation_results.get("slide", {})
+            if slide_validation.get("is_valid", True):
                 self.logger.info("No slide updates needed")
                 return state
             
             # Get update instructions
-            instructions = validation_results.get("slide_update_instructions")
+            instructions = slide_validation.get("suggested_fixes")
             if not instructions:
-                self.logger.warning("No update instructions provided")
+                self.logger.warning("No slide update instructions provided")
                 return state
             
             # Update slide content with brochure pages

@@ -68,6 +68,24 @@ class PageParserNode(BaseNode[AgentState]):
         logger.info(f"Parsed {len(script_sections)} script sections")
         return script_sections
     
+    def _clean_dict_keys(self, d: Dict[str, Any]) -> Dict[str, Any]:
+        """Clean dictionary keys by removing whitespace and quotes.
+        
+        Args:
+            d: Dictionary to clean
+            
+        Returns:
+            Dictionary with cleaned keys
+        """
+        if not isinstance(d, dict):
+            return d
+            
+        return {
+            k.strip().strip('"').strip("'"): 
+            self._clean_dict_keys(v) if isinstance(v, dict) else v
+            for k, v in d.items()
+        }
+
     def _create_pages(self, slides: List[Dict[str, str]], script_sections: List[Dict[str, str]]) -> List[Dict[str, Dict[str, str]]]:
         """Create pages by matching slides with script sections."""
         pages = []
@@ -80,6 +98,8 @@ class PageParserNode(BaseNode[AgentState]):
                 'slide': slides[i] if i < len(slides) else {'header': '', 'content': '', 'frontmatter': ''},
                 'script': script_sections[i] if i < len(script_sections) else {'header': '', 'content': ''}
             }
+            # Clean the page structure before adding
+            page = self._clean_dict_keys(page)
             pages.append(page)
         
         logger.info(f"Created {len(pages)} pages")
@@ -110,8 +130,13 @@ class PageParserNode(BaseNode[AgentState]):
             slides = self._parse_slides(slides_content)
             script_sections = self._parse_script(script_content)
             
-            # Create pages
+            # Create pages with clean structure
             pages = self._create_pages(slides, script_sections)
+            
+            # Log the first page structure for verification
+            if pages:
+                logger.info("First page structure:")
+                logger.info(json.dumps(pages[0], indent=2))
             
             # Create updated state
             updated_state = dict(state)
