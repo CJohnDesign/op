@@ -54,7 +54,7 @@ def main(deck_id: str, deck_title: str, start_node: str = "init", state_file: Op
             "deck_title": deck_title,
             "_start_node": start_node  # Add start node to state
         })
-        logger.info(f"Running graph with state: {state}")
+        logger.info(f"Running graph with state")
         
         # Run the graph
         result = graph.invoke(state)

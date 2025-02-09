@@ -6,14 +6,44 @@ Following Single Responsibility Principle, this module only handles workflow con
 
 from __future__ import annotations
 
+import copy
 import logging
-from typing import Any, Callable, Dict, Optional, Type, Union, List
+from typing import Any, Callable, Dict, Optional, Type, Union, List, TypedDict, Annotated
+import operator
+from functools import partial
 
 from langgraph.graph import END, START, StateGraph
 from langsmith import traceable
 
 from agent.configuration import Configuration
 from agent.types import AgentState
+
+def merge_dicts(old_dict: Dict, new_dict: Dict) -> Dict:
+    """Merge two dictionaries, with new_dict taking precedence."""
+    result = old_dict.copy()
+    result.update(new_dict)
+    return result
+
+# Define state with proper reducers
+class WorkflowState(TypedDict):
+    # Use operator.add as reducer to append values
+    validation_history: Annotated[List[Dict], operator.add]
+    # Use merge_dicts for dictionary updates
+    validation_results: Annotated[Dict, merge_dicts]
+    validation_metadata: Annotated[Dict, merge_dicts]
+    current_validation: Annotated[Dict, merge_dicts]
+    # Use direct assignment for primitive values
+    current_page_index: int
+    is_valid: bool
+    # Base state items that need to be preserved
+    deck_id: str
+    deck_title: str
+    processed_images: Dict
+    extracted_tables: Dict
+    presentation: Dict
+    slides: Dict
+    script: Dict
+    pages: Dict
 
 @traceable(with_child_runs=True, name="Process Deck")
 class Workflow(StateGraph):
@@ -27,7 +57,7 @@ class Workflow(StateGraph):
     
     def __init__(self) -> None:
         """Initialize the workflow with our state and config types."""
-        super().__init__(AgentState, config_schema=Configuration)
+        super().__init__(WorkflowState, config_schema=Configuration)
         self.name = "Deck Processing Graph"
         self.logger = logging.getLogger(self.__class__.__name__)
         self._nodes: Dict[str, Any] = {}
@@ -80,6 +110,24 @@ class Workflow(StateGraph):
             
         self.logger.info(f"Adding node: {name}")
         self._nodes[name] = node
+        
+        # Wrap the node's process method to preserve state
+        original_process = node.process
+        
+        def wrapped_process(state: AgentState, config: Any) -> AgentState:
+            # Log state before processing
+            self.logger.debug(f"[{name}] Pre-process state keys: {list(state.keys())}")
+            
+            # Process with original method
+            result = original_process(state, config)
+            
+            # Log state after processing
+            self.logger.debug(f"[{name}] Post-process state keys: {list(result.keys())}")
+            
+            # Return result directly - let LangGraph handle state updates
+            return result
+            
+        node.process = wrapped_process
         super().add_node(name, node)
     
     def set_entry_point(self, node: str) -> None:
@@ -131,18 +179,15 @@ class Workflow(StateGraph):
                         next_node not in self._nodes):
                         self.logger.error(f"Invalid next node '{next_node}' returned by condition")
                         raise ValueError(f"Node '{next_node}' not found in graph")
-                        
+                    
                     return next_node
+                    
                 except Exception as e:
                     self.logger.error(f"Error in conditional routing from {source}: {str(e)}")
                     raise
                     
             # Add conditional edges with wrapped function
-            super().add_conditional_edges(
-                source,
-                wrapped_condition,
-                **kwargs
-            )
+            super().add_conditional_edges(source, wrapped_condition)
             
         except Exception as e:
             self.logger.error(f"Failed to add conditional edges from {source}: {str(e)}")

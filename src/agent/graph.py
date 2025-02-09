@@ -57,35 +57,42 @@ def route_on_validation(state: AgentState) -> Union[NodeType, Type[END]]:
         Next node to route to or END if validation complete
     """
     validation_results = state.get("validation_results", {})
-    logger.info(f"Routing based on validation results: {validation_results}")
+    logger.info(f"Processing validation results: {validation_results}")
+    logger.debug(f"Current state keys: {list(state.keys())}")
     
-    # Get validation status for each component
-    slide_valid = validation_results.get("slide", {}).get("is_valid", False)
-    script_valid = validation_results.get("script", {}).get("is_valid", False)
-    
-    logger.info(f"Validation status - Slide: {slide_valid}, Script: {script_valid}")
-    
-    if slide_valid and script_valid:
-        # If validation passes, save validated state and end
-        deck_id = state.get("deck_id")
-        if deck_id:
-            state_file = Path(f"src/decks/{deck_id}/validated_state.json")
-            state_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(state_file, "w") as f:
-                json.dump(state, f, indent=2)
-            logger.info(f"Saved validated state to {state_file}")
+    if not validation_results:
+        logger.warning("No validation results found")
         return END
     
-    # Route to appropriate update node based on what needs updating
-    if not slide_valid:
-        logger.info("Routing to slide update")
-        return "update_slide"
-    elif not script_valid:
-        logger.info("Routing to script update")
-        return "update_script"
-    else:
-        logger.info("No updates needed")
-        return END
+    # Check if validation passed
+    if not validation_results.get("is_valid", False):
+        # Get validation details
+        slide_valid = validation_results.get("slide", {}).get("is_valid", False)
+        script_valid = validation_results.get("script", {}).get("is_valid", False)
+        
+        logger.info(f"Validation status - Slide: {slide_valid}, Script: {script_valid}")
+        
+        # Route based on which validation failed
+        if not slide_valid:
+            logger.info("Routing to slide update")
+            return "update_slide"
+        elif not script_valid:
+            logger.info("Routing to script update")
+            return "update_script"
+    
+    # If we get here, all slides and scripts are valid
+    logger.info("All slides and scripts validated successfully")
+    
+    # Save validated state if we have a deck_id
+    deck_id = state.get("deck_id")
+    if deck_id:
+        state_file = Path(f"src/decks/{deck_id}/validated_state.json")
+        state_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(state_file, "w") as f:
+            json.dump(state, f, indent=2)
+        logger.info(f"Saved validated state to {state_file}")
+    
+    return END
 
 def initialize_graph() -> StateGraph:
     """Initialize and configure the graph.
@@ -123,7 +130,9 @@ def initialize_graph() -> StateGraph:
     # Add a dynamic entry router
     def entry_router(state: AgentState) -> str:
         """Route to the specified start node from state."""
-        return state.get("_start_node", "init")
+        start_node = state.get("_start_node", "init")
+        logger.info(f"Starting workflow at node: {start_node}")
+        return start_node
         
     # Set entry point using the router
     workflow.add_conditional_edges(START, entry_router)
@@ -144,8 +153,15 @@ def initialize_graph() -> StateGraph:
     )
 
     # Add edges from update nodes back to validator
-    workflow.add_edge("update_slide", "validator")
-    workflow.add_edge("update_script", "validator")
+    workflow.add_edge("update_slide", "validator")  # Return to validation after slide update
+    workflow.add_edge("update_script", "validator")  # Return to validation after script update
+
+    # Log the graph structure
+    logger.info("Graph structure initialized:")
+    logger.info("- Nodes: %s", workflow.nodes.keys())
+    logger.info("- Edges:")
+    for edge in workflow._edges:
+        logger.info(f"  {edge['source']} -> {edge['target']}")
 
     # Compile the workflow into an executable graph
     graph = workflow.compile()

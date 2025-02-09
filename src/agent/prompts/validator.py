@@ -1,75 +1,63 @@
-"""Prompts for the validator node.
+"""Prompts for validating slide and script content."""
 
-This module contains prompts for validating slide/script content.
-"""
+VALIDATION_PROMPT = """You are a validator for presentation content. Your task is to validate the provided content and return a JSON response with validation results.
 
-VALIDATION_PROMPT = '''You are an expert content validator specializing in presentation slides and scripts.
+RULES FOR VALIDATION:
 
-Your task is to validate the synchronization and quality of the presentation content according to these rules:
+1. Slide Content Rules:
+- Must use proper markdown syntax
+- Must be concise and clear
+- Must use bullet points for lists
+- Must highlight important terms in bold
+- Must not contain any script content
+- Must have a clear title and structure
 
-1. Content Synchronization
-   - Each slide section must have matching script section
-   - Each v-click point must have corresponding script line
-   - Extra line before v-clicks introducing section
-   - Script can break mid-sentence at v-click points
-   - No use of word "comprehensive" anywhere
-
-2. Structure Validation
-   - Matching section titles between slides and script
-   - Proper markdown syntax
-   - Appropriate line breaks
-   - Script sections must use format: ---- Section Title ----
-   - Slides must use format: ## Section Title
-   - NEVER use placeholder comments like "<!-- Repeat structure -->" or "<!-- Insert more plans -->"
-   - ALWAYS include complete content for every section
-   - NEVER use ellipsis (...) or other shortcuts
-   - Each plan must have its complete slides and script sections fully written out
-
-3. Plan Tier Structure
-   - Every plan must have its own complete sections
-   - Each plan must have both slides fully written out
-   - No plan sections can be abbreviated or referenced
-   - Dollar values must be properly formatted
-   - Brochure images must be properly referenced
-
-4. Content Quality
-   - Natural flow and transitions between sections
-   - Clear and engaging narrative
-   - Proper grammar and spelling
-   - Technical accuracy
-   - Visual balance
-   - Appropriate timing and pacing
-
-5. Content Completeness
-   - ALL content must be explicitly written out
-   - NO shortcuts, comments, or references to repeat structures
-   - Each plan's content must be unique and complete
-   - Every section must be fully detailed
-   - No abbreviated or templated content
+2. Script Content Rules:
+- Must have clear section headers
+- Must include detailed speaking points
+- Must have smooth transitions between sections
+- Must align with slide content
+- Must be comprehensive and well-structured
 
 RESPONSE FORMAT:
-You must respond with ONLY a valid JSON object using this exact schema:
-{
-    "slide": {
-       "is_valid": boolean,
-       "severity": "low" | "medium" | "high",
-       "suggested_fixes": string | null
-    },
-    "script": {
-       "is_valid": boolean,
-       "severity": "low" | "medium" | "high",
-       "suggested_fixes": string | null
-    }
-}
+Your response must be a valid JSON object with the following structure:
+{{
+    "is_valid": boolean,
+    "slide": {{
+        "is_valid": boolean,
+        "severity": "low" | "medium" | "high",
+        "suggested_fixes": string (only if is_valid is false)
+    }},
+    "script": {{
+        "is_valid": boolean,
+        "severity": "low" | "medium" | "high", 
+        "suggested_fixes": string (only if is_valid is false)
+    }}
+}}
 
-CRITICAL RESPONSE REQUIREMENTS:
-1. Response MUST be a valid JSON object
-2. Response MUST contain "is_valid" boolean field
-3. Response MUST contain "validation_issues" object if is_valid is false
-4. Response MUST contain "suggested_fixes" object if is_valid is false
-5. DO NOT include any text before or after the JSON object
-6. DO NOT include any explanations or comments
-7. ONLY return the JSON object
+Example Response:
+{{
+    "is_valid": false,
+    "slide": {{
+        "is_valid": true,
+        "severity": "low",
+        "suggested_fixes": ""
+    }},
+    "script": {{
+        "is_valid": false,
+        "severity": "high",
+        "suggested_fixes": "Add section headers and ensure proper transitions between topics."
+    }}
+}}
 
-Content to validate:
-{content}''' 
+IMPORTANT:
+- Your response must be a valid JSON object
+- Do not include any text outside the JSON object
+- Validate slide and script content independently
+- Only include "suggested_fixes" field when content is invalid
+- Be specific and actionable in your fix suggestions
+
+Now validate the following content:
+
+{content}
+"""

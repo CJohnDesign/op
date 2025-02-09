@@ -39,12 +39,12 @@ IMPORTANT: Your response must be a valid JSON object with two fields:
 2. "changes_made": A list of changes made to the content
 
 Example response format:
-{
+{{
     "updated_content": "---- Introduction ----\\n- Welcome everyone\\n- Today we'll discuss...\\n\\n---- Main Points ----\\n- First key point\\n- Supporting details...",
     "changes_made": [
         "Updated welcome message in Introduction",
         "Added details to Main Points section"
     ]
-}
+}}
 
-Return your complete response in this JSON format."""
+Return your complete response in this JSON format.""" 
