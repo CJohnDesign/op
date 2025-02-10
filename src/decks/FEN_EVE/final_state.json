@@ -777,5 +777,21 @@
       }
     ],
     "count": 16
+  },
+  "validation_state": {
+    "current_page": 1,
+    "total_pages": 16,
+    "pages": {
+      "1": {
+        "page_number": 1,
+        "slide_valid": false,
+        "script_valid": false,
+        "slide_update_instructions": null,
+        "script_update_instructions": null,
+        "updated_slide": null,
+        "updated_script": null
+      }
+    },
+    "update_type": "both"
   }
 }

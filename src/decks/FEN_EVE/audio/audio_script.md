@@ -1,149 +1,165 @@
 ---- Cover ----
 
-Hello, everyone! Thank you for joining today's session. We'll walk through the Everest Reinsurance Company Group Fixed Indemnity Insurance plan's features and benefits that empower your health with financial peace of mind. Let's get started!
+Hello, everyone! Thank you for joining today's session on the Everest Reinsurance Group Fixed Indemnity Insurance. We'll walk through this plan's features and benefits, designed to provide predictable coverage with flexible choices. Let's get started!
 
----- Plan Overview ----
+---- Everest Reinsurance Group Overview ----
 
-Let's begin with an overview of the plan. This plan is designed for individuals and families, offering healthcare coverage with a focus on affordability. 
+The Everest Reinsurance Group Fixed Indemnity Insurance is offered through NCE. 
 
-One of the key benefits is accessibility through the Multiplan Preferred Provider Organization, or PPO, Network. This network allows you to choose from a wide range of healthcare providers.
+This plan provides fixed indemnity benefits, which means you receive a set payment amount for covered services, ensuring predictable expenses. 
 
-Additionally, the plan provides financial benefits through direct benefit payments, which means you receive a set payment amount for covered services.
+With access to the Multiplan PPO Network, you have a wide range of provider options. 
 
-The claims process is streamlined to ensure you receive your benefits quickly and efficiently.
+Everest's reinsurance capabilities enhance the plan's reliability. 
+
+Flexible coverage options are available to suit your needs.
+
+Now, let's explore the key features and benefits.
 
 ---- Key Features and Benefits ----
 
-Let's explore the key features and benefits of this plan. 
+This plan offers fixed payments, providing financial predictability. 
 
-The plan covers a variety of areas including physician services, hospitalization, and virtual visits, ensuring comprehensive care.
+It serves as supplemental coverage, complementing other insurance you may have. 
 
-It is structured with tiered options, allowing you to choose the level of coverage that best suits your needs, with varying co-pays and visit limits.
+The wide provider network ensures you have access to numerous healthcare professionals. 
 
-Eligibility is open to individuals and families, making it accessible to a wide audience.
+Direct payment of benefits varies by plan, offering convenience. 
 
-Confinement benefits include payments for hospital stays, while outpatient benefits cover physician visits and other services.
+The fast claims process through Multiplan ensures quick resolution.
+
+Let's move on to cost management tools.
 
 ---- Cost Management Tools ----
 
-Now, let's discuss the cost management tools available with this plan. 
+The Multiplan PPO Network, or MPN, is a key component of cost management. 
 
-The provider network benefits offer access to a wide range of healthcare providers through the Multiplan PPO Network, helping you manage costs effectively.
+The direct payment system simplifies transactions. 
 
-The claims management system is designed to be fast and efficient, ensuring you receive your direct benefit payments promptly.
+Simplified claims support makes managing your benefits straightforward.
 
-Support tools and resources are available to help you navigate your healthcare options and make informed decisions.
+Next, we'll discuss how the Multiplan PPO Network works.
 
----- Provider Network Details ----
+---- How Multiplan PPO Network Works ----
 
-Here's how the provider network works. 
+To begin, enroll through NCE. 
 
-The enrollment process is straightforward, allowing you to easily join the Multiplan PPO Network.
+You'll have access to a wide range of providers within the network. 
 
-Once enrolled, you have access to a wide range of providers, giving you flexibility in choosing your healthcare services.
+Utilize fixed indemnity benefits for covered services. 
 
-The payment process is simplified, with direct benefit payments made to you, reducing out-of-pocket expenses.
+You'll receive an Explanation of Benefits, or EOB, detailing your coverage. 
+
+Manage your out-of-pocket expenses with predictable costs.
+
+Now, let's look at preventive care and wellness.
 
 ---- Preventive Care and Wellness ----
 
-Let's talk about preventive care and wellness. 
+Routine checkups are part of the services offered. 
 
-The plan offers various wellness programs designed to support your health and well-being.
+Wellness programs provide additional health support. 
 
-Support services are available to assist you in maintaining a healthy lifestyle.
+Multiplan ensures network access for these services.
 
-You also have access to twenty-four-seven assistance options, ensuring help is always available when you need it.
+Let's explore telehealth services next.
 
 ---- Telehealth Services ----
 
-Now, let's discuss telehealth services. 
+You have twenty-four/seven access to healthcare professionals. 
 
-The plan includes virtual visit options, allowing you to consult with healthcare providers remotely.
+Virtual consultations offer convenience and flexibility. 
 
-A variety of services are available through telehealth, providing convenient access to care.
+Remote monitoring is available for ongoing care. 
 
-You can access these services through multiple methods, ensuring flexibility and ease of use.
+This provides convenient access to necessary care.
+
+Now, let's discuss advocacy and support services.
 
 ---- Advocacy and Support Services ----
 
-Let's explore the advocacy and support services available. 
+Personalized healthcare advocacy is available to assist you. 
 
-The plan offers personalized support services to help you navigate your healthcare options.
+Claims assistance support helps navigate the claims process. 
 
-Assistance programs are in place to provide guidance and support when you need it.
+Benefit options guidance ensures you understand your choices. 
 
-Claims support is also available, ensuring you have help with the claims process.
+Member support services are there to help with any questions.
 
----- Plan Tier 1 (One of Two) ----
+Let's examine the details of Plan 100, Plan 200, and Plan 300.
 
-Let's examine our first plan tier, Plan 100.
+---- Plan 100, Plan 200, Plan 300 (One of Two) ----
 
-Physician services include three office visits per certificate year, with a payment of fifty dollars per visit.
+Confinement benefits include thirty days per confinement and ninety days per certificate year, with guaranteed issue underwriting. 
 
-Hospital benefits provide one hundred dollars per day for hospital confinement and two hundred dollars for intensive care unit, or ICU, stays.
+Hospital confinement benefits are one hundred dollars for Plan 100, two hundred dollars for Plan 200, and three hundred dollars for Plan 300. 
 
----- Plan Tier 1 (Two of Two) ----
+ICU confinement benefits are two hundred dollars for Plan 100 and Plan 200, and three hundred dollars for Plan 300.
 
-Continuing with Plan 100.
+Continuing with these plans, let's look at outpatient benefits.
 
-Virtual visit coverage is not specified in this tier.
+---- Plan 100, Plan 200, Plan 300 (Two of Two) ----
 
-Prescription coverage details are also not specified.
+Emergency room visits are covered at fifty dollars per visit, with two visits per certificate year. 
 
-Wellness tools and additional benefits are not outlined in this tier.
+Outpatient benefits include physician's office visits at fifty dollars per visit, and X-rays and labs at fifty dollars per service.
 
----- Plan Tier 2 (One of Two) ----
+Now, let's explore Plan 500, Plan 750, Plan 1000, and Plan 1000+.
 
-Now, let's look at our second plan tier, Plan 200.
+---- Plan 500, Plan 750, Plan 1000, Plan 1000+ (One of Two) ----
 
-Enhanced physician services include three office visits per certificate year, with a payment of fifty dollars per visit.
+Confinement benefits remain consistent with thirty days per confinement and ninety days per certificate year, with guaranteed issue underwriting. 
 
-Increased hospital benefits offer two hundred dollars per day for hospital confinement and two hundred dollars for ICU stays.
+Hospital confinement benefits are five hundred dollars for Plan 500, seven hundred fifty dollars for Plan 750, and one thousand dollars for Plan 1000 and Plan 1000+. 
 
-Expanded virtual coverage is not specified in this tier.
+ICU confinement benefits match the hospital confinement amounts for each plan.
 
----- Plan Tier 2 (Two of Two) ----
+Let's continue with the emergency room and outpatient benefits.
 
-Continuing with Plan 200.
+---- Plan 500, Plan 750, Plan 1000, Plan 1000+ (Two of Two) ----
 
-Enhanced prescription coverage details are not specified.
+Emergency room benefits are fifty dollars for Plan 500, seventy-five dollars for Plan 750, and one hundred dollars for Plan 1000 and Plan 1000+. 
 
-Additional wellness tools are not outlined in this tier.
+Outpatient benefits include lab and X-ray services ranging from fifty to one hundred dollars, and advanced diagnostic services also ranging from fifty to one hundred dollars.
 
-Premium benefits include surgery benefits for three days per certificate year and twenty-five percent anesthesia coverage.
+Now, let's compare the plans.
 
----- Comparing Plan Tiers ----
+---- Comparing the Plans ----
 
-Let's compare the different tiers available.
+Here is a comparison of the plans. 
 
-Hospital benefits vary across tiers, with Plan 100 offering one hundred dollars per day and Plan 1000 offering one thousand dollars per day for hospital confinement.
+Hospital confinement benefits range from one hundred dollars in Plan 100 to one thousand dollars in Plan 1000 and Plan 1000+. 
 
-Physician visit coverage ranges from three to five visits per certificate year, depending on the tier.
+ICU confinement benefits are consistent with hospital confinement amounts. 
 
-Emergency services are covered through ICU benefits, with payments increasing across tiers.
+Emergency room coverage starts at fifty dollars and increases to one hundred dollars in higher tiers. 
 
-Additional benefits, such as surgery and anesthesia coverage, are available in higher tiers.
+Surgery benefits are available in Plan 300 and above, with varying daily amounts.
+
+Let's review definitions and limitations.
 
 ---- Definitions and Limitations ----
 
-Let's review important definitions and limitations.
+Pre-existing conditions are subject to a twelve-twelve clause, excluding coverage for the first twelve months, but guaranteed issue is available. 
 
-Key exclusions include pre-existing conditions, elective treatments, and experimental treatments.
+Exclusions include cosmetic surgery and dental care, except for injury-related treatments. 
 
-Coverage limitations involve a twelve-twelve pre-existing condition clause and specific waiting periods for certain benefits.
+Limitations apply to services like chiropractic and acupuncture, as well as experimental treatments. 
 
-Service restrictions apply to injuries from extreme sports and other specified activities.
+Coverage variations may occur due to state-specific terms, but there is no cancellation age.
+
+Finally, let's summarize the key takeaways and reminders.
 
 ---- Key Takeaways and Reminders ----
 
-Here are the key points to remember.
+The plan offers fixed indemnity benefits for predictable expenses. 
 
-The plan offers flexibility with multiple tiers to suit different needs.
+A wide network is included for extensive provider access. 
 
-It provides a balance of cost-effective coverage with essential benefits.
+Predictable costs help manage your healthcare budget. 
 
-For next steps, contact support for enrollment assistance and further information.
+Enrollment is required to take advantage of these benefits.
 
 ---- Closing ----
 
-Thank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!
+Thank you for participating in the Everest Reinsurance Group Fixed Indemnity Insurance Review. We look forward to serving your healthcare needs. Continue to be great!
