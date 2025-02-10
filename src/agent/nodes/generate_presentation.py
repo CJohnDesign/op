@@ -15,6 +15,7 @@ from typing import Any, Dict, List
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
+from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.generate_presentation import GENERATE_PRESENTATION_PROMPT
@@ -31,34 +32,46 @@ class GeneratePresentationNode(BaseNode[AgentState]):
     def __init__(self) -> None:
         """Initialize the node with GPT-4o model."""
         super().__init__()
+        # Initialize OpenAI client directly - no need to wrap for LangChain
         self.model = ChatOpenAI(
             model="gpt-4o",
             max_tokens=4096,
             temperature=0
         )
     
-    def _generate_presentation(self, summaries: List[Dict[str, Any]], tables: List[Dict[str, Any]]) -> str:
+    @traceable(name="generate_presentation_with_gpt4")
+    def _generate_presentation(
+        self,
+        page_summaries: List[Dict[str, Any]],
+        tables_list: List[Dict[str, Any]],
+        instructions: str
+    ) -> str:
         """Generate presentation content using GPT-4o.
         
         Args:
-            summaries: List of page summaries
-            tables: List of extracted tables
+            page_summaries: List of page summaries
+            tables_list: List of extracted tables
+            instructions: Initial deck instructions
             
         Returns:
-            Generated presentation content as string
+            Generated presentation content
         """
         try:
             # Format the input data
-            summaries_text = json.dumps(summaries, indent=2)
-            tables_text = json.dumps(tables, indent=2)
+            summaries_text = json.dumps(page_summaries, indent=2)
+            tables_text = json.dumps(tables_list, indent=2)
             
-            # Create message with formatted data
+            # Create message with formatted data and instructions
             message = HumanMessage(
                 content=GENERATE_PRESENTATION_PROMPT.format(
-                    individual_summaries=summaries_text,
-                    extracted_tables=tables_text
+                    page_summaries=summaries_text,
+                    tables_list=tables_text,
+                    instructions=instructions or "No specific instructions provided"
                 )
             )
+            
+            # Log the formatted prompt for debugging
+            self.logger.info(f"Instructions being used: {instructions}")
             
             # Get presentation content from GPT-4o
             self.logger.info("Generating presentation content")
@@ -70,6 +83,7 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             self.logger.error(f"Error generating presentation: {str(e)}")
             return f"Error generating presentation: {str(e)}"
     
+    @traceable(name="generate_presentation_with_gpt4")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Process the analyzed data to generate presentation content.
         
@@ -117,8 +131,15 @@ class GeneratePresentationNode(BaseNode[AgentState]):
                             "rows": table["rows"]
                         })
             
+            # Get instructions from initial deck
+            instructions = state.get("initial_deck", {}).get("instructions", "")
+            
             # Generate presentation content
-            presentation_content = self._generate_presentation(page_summaries, tables_list)
+            presentation_content = self._generate_presentation(
+                page_summaries, 
+                tables_list,
+                instructions
+            )
             
             # Create updated state
             updated_state = dict(state)

@@ -14,6 +14,7 @@ from typing import Any, Dict
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
+from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.setup_slides import SETUP_SLIDES_PROMPT, SETUP_SLIDES_HUMAN_TEMPLATE
@@ -30,12 +31,14 @@ class SetupSlideNode(BaseNode[AgentState]):
     def __init__(self) -> None:
         """Initialize the node with GPT-4o model."""
         super().__init__()
+        # Initialize OpenAI client directly - no need to wrap for LangChain
         self.model = ChatOpenAI(
             model="gpt-4o",
             max_tokens=8192,
             temperature=0
         )
     
+    @traceable(name="generate_slides_with_gpt4")
     def _generate_slides(self, template: str, processed_summaries: str, extracted_tables: str) -> str:
         """Generate slide content using GPT-4o.
         
@@ -70,6 +73,7 @@ class SetupSlideNode(BaseNode[AgentState]):
             self.logger.error(f"Error generating slides: {str(e)}")
             return f"Error generating slides: {str(e)}"
     
+    @traceable(name="setup_slides_with_gpt4")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Process the current state to set up slides.
         

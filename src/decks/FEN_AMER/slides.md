@@ -1,0 +1,1 @@
+Error generating slides: 'OpenAI' object has no attribute 'create'

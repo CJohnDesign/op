@@ -9,6 +9,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from langchain_core.runnables import RunnableConfig
+from langsmith import traceable
 
 from agent.configuration import Configuration
 from agent.nodes.base import BaseNode
@@ -22,6 +23,7 @@ class MessageProcessorNode(BaseNode[AgentState]):
     rather than concrete implementations.
     """
     
+    @traceable(name="process_messages")
     async def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Process the messages in the current state.
         

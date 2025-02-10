@@ -1,0 +1,1 @@
+Error generating script: 'OpenAI' object has no attribute 'create'

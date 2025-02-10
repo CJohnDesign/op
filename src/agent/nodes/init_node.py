@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from langchain_core.runnables import RunnableConfig
+from langsmith import traceable
 from pdf2image import convert_from_path
 from PIL import Image
 
@@ -92,6 +93,7 @@ class InitNode(BaseNode[AgentState]):
             except Exception as e:
                 self.logger.error(f"Error converting {pdf_file.name}: {str(e)}")
     
+    @traceable(name="init_deck")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Initialize the deck information in the state.
         
@@ -143,6 +145,7 @@ class InitNode(BaseNode[AgentState]):
             # Read markdown files
             slides_content = self._read_file_content(dest_dir / "slides.md")
             script_content = self._read_file_content(dest_dir / "audio" / "audio_script.md")
+            instructions = self._read_file_content(dest_dir / "instructions.md")
             
             # Create state.json with deck information
             state_file = dest_dir / "state.json"
@@ -153,17 +156,20 @@ class InitNode(BaseNode[AgentState]):
                 },
                 "initial_deck": {
                     "slides": slides_content,
-                    "scripts": script_content
+                    "scripts": script_content,
+                    "instructions": instructions
                 }
             }
             
-            self.logger.info(f"Saving state information to {state_file}")
-            with open(state_file, 'w') as f:
-                json.dump(state_data, f, indent=2)
-            self.logger.info("State file created successfully")
+            # Create updated state
+            updated_state = dict(state)
+            updated_state.update(state_data)  # Merge the new data into state
             
-            # Return validated state
-            return state
+            # Save to file
+            with open(state_file, 'w') as f:
+                json.dump(updated_state, f, indent=2)
+            
+            return updated_state
             
         except Exception as e:
             self.logger.error(f"Error initializing deck information: {str(e)}")

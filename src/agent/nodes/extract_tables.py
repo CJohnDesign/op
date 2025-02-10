@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
+from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.extract_tables import EXTRACT_TABLES_PROMPT
@@ -35,6 +36,7 @@ class ExtractTablesNode(BaseNode[AgentState]):
     def __init__(self) -> None:
         """Initialize the node with GPT-40 model."""
         super().__init__()
+        # Initialize OpenAI client directly - no need to wrap for LangChain
         self.model = ChatOpenAI(
             model="gpt-4o",
             max_tokens=4096,
@@ -69,6 +71,7 @@ class ExtractTablesNode(BaseNode[AgentState]):
             return pages_dir / processed_images[page_number]["new_name"]
         return None
     
+    @traceable(name="extract_tables_with_gpt4")
     def _extract_table(self, image_path: Path) -> Dict[str, Any]:
         """Extract table from a single image using GPT-4o.
         
@@ -183,6 +186,7 @@ class ExtractTablesNode(BaseNode[AgentState]):
         
         return extracted_tables, pages_with_tables
     
+    @traceable(name="extract_tables_with_gpt4")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Process the analyzed data to extract tables."""
         self.logger.info("Extracting tables from analyzed pages")

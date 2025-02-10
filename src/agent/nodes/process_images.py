@@ -17,6 +17,7 @@ from typing import Any, Dict, List, Tuple, TypedDict
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
+from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.analyze_insurance_page import ANALYZE_PAGE_PROMPT
@@ -41,6 +42,7 @@ class ProcessImagesNode(BaseNode[AgentState]):
     def __init__(self) -> None:
         """Initialize the node with GPT-4o model."""
         super().__init__()
+        # Initialize OpenAI client directly - no need to wrap for LangChain
         self.model = ChatOpenAI(
             model="gpt-4o",
             max_tokens=4096,
@@ -59,6 +61,7 @@ class ProcessImagesNode(BaseNode[AgentState]):
         with open(image_path, "rb") as image_file:
             return base64.b64encode(image_file.read()).decode()
     
+    @traceable(name="analyze_insurance_page_with_gpt4")
     def _analyze_image(self, image_path: Path) -> ProcessedImage:
         """Analyze a single image using GPT-4o.
         
@@ -197,6 +200,7 @@ class ProcessImagesNode(BaseNode[AgentState]):
         
         return analysis_results, image_mappings
     
+    @traceable(name="process_images_with_gpt4")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Process images in the current state.
         

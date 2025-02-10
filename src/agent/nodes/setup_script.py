@@ -14,6 +14,7 @@ from typing import Any, Dict
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
+from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.setup_script import SCRIPT_WRITER_SYSTEM_PROMPT, SCRIPT_WRITER_HUMAN_PROMPT
@@ -30,12 +31,14 @@ class SetupScriptNode(BaseNode[AgentState]):
     def __init__(self) -> None:
         """Initialize the node with GPT-4o model."""
         super().__init__()
+        # Initialize OpenAI client directly - no need to wrap for LangChain
         self.model = ChatOpenAI(
             model="gpt-4o",
             max_tokens=8192,
             temperature=0
         )
     
+    @traceable(name="generate_script_with_gpt4")
     def _generate_script(self, template: str, processed_summaries: str, slides_content: str, extracted_tables: str) -> str:
         """Generate script content using GPT-4o.
         
@@ -75,6 +78,7 @@ class SetupScriptNode(BaseNode[AgentState]):
             self.logger.error(f"Error generating script: {str(e)}")
             return f"Error generating script: {str(e)}"
     
+    @traceable(name="setup_script_with_gpt4")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Process the current state to set up script.
         

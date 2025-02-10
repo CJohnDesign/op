@@ -11,7 +11,11 @@ from pathlib import Path
 from typing import Literal, Union, Type
 
 from langgraph.graph import END, StateGraph
+from langchain_core.runnables import RunnableConfig
 from langsmith import traceable
+from langchain_openai import ChatOpenAI
+from openai import OpenAI
+from langsmith.wrappers import wrap_openai
 
 from agent.nodes.validate import (
     ValidatorNode,
@@ -32,6 +36,17 @@ from agent.types import AgentState
 
 # Set up logging
 logger = logging.getLogger(__name__)
+
+# Create traced OpenAI client
+openai_client = wrap_openai(OpenAI())
+
+# Create traced LLM instance
+llm = ChatOpenAI(
+    model="gpt-4o",
+    max_tokens=4096,
+    temperature=0,
+    client=openai_client
+)
 
 # Define valid node types for type checking
 NodeType = Literal[
@@ -82,23 +97,32 @@ def route_on_validation(state: AgentState) -> Union[NodeType, Type[END]]:
         logger.warning("No specific updates needed but validation failed. Ending to avoid loop.")
         return END
 
-def initialize_graph() -> StateGraph:
-    """Initialize and configure the graph.
+@traceable(name="deck_processing_workflow")
+def create_workflow() -> StateGraph:
+    """Create and configure the workflow graph.
     
     Returns:
-        Configured and compiled graph
+        Configured workflow graph
     """
-    # Create node instances
+    # Create node instances with traced LLM
     init_node = InitNode()
     process_images_node = ProcessImagesNode()
+    process_images_node.model = llm
     extract_tables_node = ExtractTablesNode()
+    extract_tables_node.model = llm
     generate_presentation_node = GeneratePresentationNode()
+    generate_presentation_node.model = llm
     setup_slide_node = SetupSlideNode()
+    setup_slide_node.model = llm
     setup_script_node = SetupScriptNode()
+    setup_script_node.model = llm
     page_parser_node = PageParserNode()
     validator_node = ValidatorNode()
+    validator_node.model = llm
     update_slide_node = UpdateSlideNode()
+    update_slide_node.model = llm
     update_script_node = UpdateScriptNode()
+    update_script_node.model = llm
 
     # Initialize workflow
     workflow = Workflow()
@@ -119,21 +143,14 @@ def initialize_graph() -> StateGraph:
     workflow.set_entry_point("init")
 
     # Add edges for complete workflow
-    workflow.add_edge("init", "process_images")  # Start with image processing
-    workflow.add_edge("process_images", "extract_tables")  # Extract tables from processed images
-    workflow.add_edge("extract_tables", "generate_presentation")  # Generate presentation from extracted data
-    workflow.add_edge("generate_presentation", "setup_slide")  # Set up slides from presentation
-    workflow.add_edge("setup_slide", "setup_script")  # Set up script from slides
-    workflow.add_edge("setup_script", "page_parser")  # Parse content into pages
-    workflow.add_edge("page_parser", "validator")  # Initial parsing to validation
-
-    # Add conditional edges for validation loop
-    workflow.add_conditional_edges(
-        "validator",
-        route_on_validation
-    )
-
-    # Add edges from update nodes back to validator
+    workflow.add_edge("init", "process_images")
+    workflow.add_edge("process_images", "extract_tables")
+    workflow.add_edge("extract_tables", "generate_presentation")
+    workflow.add_edge("generate_presentation", "setup_slide")
+    workflow.add_edge("setup_slide", "setup_script")
+    workflow.add_edge("setup_script", "page_parser")
+    workflow.add_edge("page_parser", "validator")
+    workflow.add_conditional_edges("validator", route_on_validation)
     workflow.add_edge("update_slide", "validator")
     workflow.add_edge("update_script", "validator")
 
@@ -143,5 +160,18 @@ def initialize_graph() -> StateGraph:
     
     return graph
 
-# Create the graph instance
-graph = initialize_graph()
+# Create the graph instance with tracing
+graph = create_workflow()
+
+@traceable(name="agent_execution")
+def execute_graph(state: AgentState, config: RunnableConfig | None = None) -> AgentState:
+    """Execute the graph with tracing.
+    
+    Args:
+        state: Initial state for the graph
+        config: Optional runtime configuration
+        
+    Returns:
+        Final state after graph execution
+    """
+    return graph.invoke(state, config)

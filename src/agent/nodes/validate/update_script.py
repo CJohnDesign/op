@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
+from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.update_script import UPDATE_SCRIPT_PROMPT
@@ -63,6 +64,7 @@ class UpdateScriptNode(BaseNode[AgentState]):
             self.logger.error(f"Error updating script content: {str(e)}")
             return current_content
     
+    @traceable(name="update_script")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Process the current state to update script.
         

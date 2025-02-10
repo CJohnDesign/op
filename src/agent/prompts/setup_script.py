@@ -177,7 +177,9 @@ Generate a complete presentation script using this slides content:
 EXTRACTED TABLES:
 {extracted_tables}
 
-**NEVER USE THE WORD COMPREHENSIVE**
+**NEVER USE THE WORD COMPREHENSIVE**  **NEVER USE THE WORD COMPREHENSIVE**  **NEVER USE THE WORD COMPREHENSIVE**
+
+These plans are not comprehensive and to use the word would confuse the audience. We need to make sure we never use the word comprehensive.
 
 Create a natural, engaging script that follows the template structure exactly.
 When discussing tables, reference them clearly and explain their key points.

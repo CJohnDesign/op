@@ -13,6 +13,7 @@ from typing import cast, Dict, Any
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
+from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.validator import VALIDATION_PROMPT
@@ -141,6 +142,7 @@ class ValidatorNode(BaseNode[AgentState]):
             "updated_script": None
         }
     
+    @traceable(name="validate_content")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Act step: Choose next action based on validation results.
         
