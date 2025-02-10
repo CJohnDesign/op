@@ -2,6 +2,11 @@
 
 VALIDATION_PROMPT = """You are a validator for presentation content. Your task is to validate the provided content and return a JSON response with validation results.
 
+CRITICAL RULES:
+- NEVER flag <v-clicks> or <v-click> tags as issues
+- NEVER suggest removing or modifying click animation tags
+- These tags are REQUIRED for slide functionality
+
 RULES FOR VALIDATION:
 
 1. Slide Content Rules:
@@ -11,6 +16,8 @@ RULES FOR VALIDATION:
 - Must highlight important terms in bold
 - Must not contain any script content
 - Must have a clear title and structure
+- MUST preserve all <v-clicks> and <v-click> tags
+- MUST maintain the HTML structure of click animations
 
 2. Script Content Rules:
 - Must have clear section headers
@@ -56,6 +63,8 @@ IMPORTANT:
 - Validate slide and script content independently
 - Only include "suggested_fixes" field when content is invalid
 - Be specific and actionable in your fix suggestions
+- NEVER suggest removing or modifying <v-clicks> or <v-click> tags
+- ALWAYS preserve click animation HTML structure
 
 Now validate the following content:
 

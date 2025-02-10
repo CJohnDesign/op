@@ -3,7 +3,7 @@
 This module contains prompts for updating slide content.
 """
 
-UPDATE_SLIDE_PROMPT = """You are a slide content updater for a presentation. Your task is to update ONLY the slide content based on the provided instructions.
+UPDATE_SLIDE_PROMPT = """You are an expert slide content editor. Your task is to update the slide content based on the provided instructions.
 
 Current slide content:
 {current_content}
@@ -11,8 +11,8 @@ Current slide content:
 Instructions for updating:
 {instructions}
 
-Image path to use (if needed):
-{image_path}
+Available images:
+{available_images}
 
 Rules for updating:
 1. ONLY update slide content - DO NOT include any script sections
@@ -26,13 +26,15 @@ Rules for updating:
 9. NO shortcuts or templated content
 10. NO script sections or speaking notes
 11. When adding images:
-    - Add to slide header: image: {image_path}
+    - Choose the most appropriate image from the available images list based on the content context
+    - Add to slide header: image: [chosen image path]
     - Add to slide header: layout: one-half-img
+    - All images are in the img/pages directory
 
 Example slide format:
 ---
 layout: one-half-img
-image: {image_path}
+image: src/decks/[deck_id]/img/pages/example.jpg
 ---
 # Slide Title
 
@@ -42,18 +44,17 @@ Understanding the key points about **Important Topic**
 - Second point with **bold text**
 - Third point with supporting details
 
-IMPORTANT: Your response must be a valid JSON object with two fields:
-1. "updated_content": The complete updated slide content (NO script sections)
-2. "changes_made": A list of changes made to the content
+IMPORTANT: Your response must be a valid JSON object with three fields:
+1. "frontmatter": The slide frontmatter (layout, image path, etc.)
+2. "content": The slide content in markdown format (NO script sections)
+3. "changes_made": A list of changes made to the content
 
 Example response format:
-{{
-    "updated_content": "---\\nlayout: one-half-img\\nimage: {image_path}\\n---\\n# Slide Title\\n\\nUnderstanding key points...\\n\\n- First point\\n- Second point",
+{
+    "frontmatter": "---\\nlayout: one-half-img\\nimage: [selected image path]\\n---",
+    "content": "[Updated slide content in markdown format]",
     "changes_made": [
-        "Updated slide title",
-        "Added bullet points for clarity",
-        "Added image to slide"
+        "List of specific changes made",
+        "Each change on a new line"
     ]
-}}
-
-Return your complete response in this JSON format.""" 
+}""" 

@@ -56,43 +56,118 @@ def route_on_validation(state: AgentState) -> Union[NodeType, Type[END]]:
     Returns:
         Next node to route to or END if validation complete
     """
-    validation_results = state.get("validation_results", {})
-    logger.info(f"Processing validation results: {validation_results}")
-    logger.debug(f"Current state keys: {list(state.keys())}")
+    # Get current page index and total pages
+    current_page_index = state.get("current_page_index", 0)
+    pages = state.get("pages", {}).get("content", [])
+    total_pages = len(pages) if pages else 0
     
-    if not validation_results:
-        logger.warning("No validation results found")
+    logger.info(f"Processing page {current_page_index + 1} of {total_pages}")
+    
+    # Check if we've reached the end of pages
+    if current_page_index >= total_pages:
+        logger.info("Reached end of pages, finishing validation")
         return END
+        
+    # Get validation attempts for current page
+    validation_attempts = state.get("validation_attempts", {})
+    current_page_key = str(current_page_index)
+    current_attempts = validation_attempts.get(current_page_key, 0)
+    
+    # Get current validation state
+    current_validation = state.get("current_validation", {})
+    validation_results = current_validation.get("validation", {})
+    
+    # Get update history for current attempt
+    update_history = state.get("update_history", {})
+    current_page_updates = update_history.get(current_page_key, {})
+    current_attempt_updates = current_page_updates.get(str(current_attempts), set())
+    
+    # Log validation state
+    logger.info(f"Current page {current_page_index + 1} attempt {current_attempts}")
+    logger.info(f"Validation state: {validation_results.get('is_valid', False)}")
+    logger.info(f"Updates performed this attempt: {current_attempt_updates}")
+    
+    # Check if we've exceeded max attempts for this page
+    MAX_ATTEMPTS = 3
+    if current_attempts >= MAX_ATTEMPTS:
+        logger.warning(f"Exceeded max validation attempts ({MAX_ATTEMPTS}) for page {current_page_index + 1}")
+        # Move to next page
+        next_page_index = current_page_index + 1
+        if next_page_index >= total_pages:
+            logger.info("No more pages to validate")
+            return END
+            
+        # Update state for next page
+        state["current_page_index"] = next_page_index
+        # Clear validation state for next page
+        state.pop("current_validation", None)
+        state.pop("validation_results", None)
+        # Reset attempts for next page
+        validation_attempts[str(next_page_index)] = 0
+        state["validation_attempts"] = validation_attempts
+        # Clear update history for next page
+        if str(next_page_index) in update_history:
+            del update_history[str(next_page_index)]
+        state["update_history"] = update_history
+        logger.info(f"Moving to next page {next_page_index + 1}")
+        return "validator"
     
     # Check if validation passed
-    if not validation_results.get("is_valid", False):
-        # Get validation details
-        slide_valid = validation_results.get("slide", {}).get("is_valid", False)
-        script_valid = validation_results.get("script", {}).get("is_valid", False)
-        
-        logger.info(f"Validation status - Slide: {slide_valid}, Script: {script_valid}")
-        
-        # Route based on which validation failed
-        if not slide_valid:
-            logger.info("Routing to slide update")
-            return "update_slide"
-        elif not script_valid:
-            logger.info("Routing to script update")
-            return "update_script"
+    if validation_results.get("is_valid", False):
+        # Move to next page
+        next_page_index = current_page_index + 1
+        logger.info(f"Validation passed for page {current_page_index + 1}")
+        if next_page_index >= total_pages:
+            logger.info("All pages validated successfully")
+            return END
+            
+        # Update state for next page
+        logger.info(f"Moving to page {next_page_index + 1}")
+        state["current_page_index"] = next_page_index
+        # Clear validation state for next page
+        state.pop("current_validation", None)
+        state.pop("validation_results", None)
+        # Reset attempts for next page
+        validation_attempts[str(next_page_index)] = 0
+        state["validation_attempts"] = validation_attempts
+        # Clear update history for next page
+        if str(next_page_index) in update_history:
+            del update_history[str(next_page_index)]
+        state["update_history"] = update_history
+        return "validator"
     
-    # If we get here, all slides and scripts are valid
-    logger.info("All slides and scripts validated successfully")
+    # Get validation details for failed validation
+    slide_valid = validation_results.get("slide", {}).get("is_valid", False)
+    script_valid = validation_results.get("script", {}).get("is_valid", False)
     
-    # Save validated state if we have a deck_id
-    deck_id = state.get("deck_id")
-    if deck_id:
-        state_file = Path(f"src/decks/{deck_id}/validated_state.json")
-        state_file.parent.mkdir(parents=True, exist_ok=True)
-        with open(state_file, "w") as f:
-            json.dump(state, f, indent=2)
-        logger.info(f"Saved validated state to {state_file}")
+    logger.info(f"Validation status - Slide: {slide_valid}, Script: {script_valid}")
+    logger.info(f"Attempt {current_attempts} of {MAX_ATTEMPTS}")
     
-    return END
+    # Initialize update history for current page and attempt if needed
+    if current_page_key not in update_history:
+        update_history[current_page_key] = {}
+    if str(current_attempts) not in update_history[current_page_key]:
+        update_history[current_page_key][str(current_attempts)] = set()
+    
+    # Route based on which validation failed and hasn't been updated yet
+    if not slide_valid and "slide" not in current_attempt_updates:
+        logger.info("Routing to slide update")
+        update_history[current_page_key][str(current_attempts)].add("slide")
+        state["update_history"] = update_history
+        return "update_slide"
+    elif not script_valid and "script" not in current_attempt_updates:
+        logger.info("Routing to script update")
+        update_history[current_page_key][str(current_attempts)].add("script")
+        state["update_history"] = update_history
+        return "update_script"
+    else:
+        # If we've updated both components but validation still fails
+        # Move to next attempt
+        logger.warning("All updates performed for this attempt, moving to next attempt")
+        # Clear validation state to force new validation
+        state.pop("current_validation", None)
+        state.pop("validation_results", None)
+        return "validator"
 
 def initialize_graph() -> StateGraph:
     """Initialize and configure the graph.

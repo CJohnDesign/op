@@ -16,7 +16,7 @@ from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
 
 from agent.nodes.base import BaseNode
-from agent.prompts.update_slide import UPDATE_SLIDE_PROMPT
+from agent.prompts.update_slide_prompt import UPDATE_SLIDE_PROMPT
 from agent.types import AgentState, ProcessedImage
 
 logger = logging.getLogger(__name__)
@@ -39,7 +39,8 @@ class UpdateSlideNode(BaseNode[AgentState]):
         self.system_message = SystemMessage(content="""You are a slide content updater that ONLY responds with valid JSON.
 Your responses must follow this exact schema:
 {
-    "updated_content": string,
+    "frontmatter": string,  // The slide frontmatter (e.g., layout, image path)
+    "content": string,      // The slide content without frontmatter
     "changes_made": string[]
 }
 
@@ -49,20 +50,15 @@ IMPORTANT:
 3. Do not include any text before or after the JSON
 4. Do not wrap the JSON in backticks or code blocks
 5. The response should start with { and end with }
+6. The frontmatter should be in YAML format with --- delimiters
+7. The content should contain the slide content with proper markdown
 
-Example of CORRECT response:
+Example response:
 {
-    "updated_content": "# Title\\n\\nContent",
-    "changes_made": ["Updated title"]
-}
-
-Example of INCORRECT response:
-```json
-{
-    "updated_content": "# Title\\n\\nContent",
-    "changes_made": ["Updated title"]
-}
-```""")
+    "frontmatter": "---\\nlayout: one-half-img\\nimage: path/to/image.jpg\\n---",
+    "content": "# Title\\n\\nContent with **bold** text",
+    "changes_made": ["Updated layout", "Added image path"]
+}""")
         self.state: Optional[AgentState] = None
     
     def _format_brochure_pages(self, processed_images: Dict[int, ProcessedImage], deck_id: str) -> str:
@@ -85,33 +81,45 @@ Example of INCORRECT response:
             )
         return "\n".join(pages_info)
     
-    def _get_default_image_path(self) -> str:
-        """Get default image path from state.
+    def _get_available_images(self) -> List[str]:
+        """Get list of all available images in the pages directory.
         
         Returns:
-            Path to default image
+            List of image paths relative to workspace
         """
         if not self.state:
-            self.logger.warning("No state available, using default image path")
-            return "src/decks/default/img/pages/default.jpg"
+            self.logger.warning("No state available")
+            return []
             
         # Get deck ID from state
         deck_id = self.state.get("deck_id", "")
         if not deck_id:
-            self.logger.warning("No deck ID found in state, using default")
-            deck_id = "default"
+            self.logger.warning("No deck ID found in state")
+            return []
             
         # Get processed images from state
         processed_images = self.state.get("processed_images", {})
         
-        # Try to find first available image
-        if processed_images:
-            first_image = next(iter(processed_images.values()))
-            if first_image and hasattr(first_image, "path"):
-                return first_image.path
-                
-        # Return default if no images found
-        return f"src/decks/{deck_id}/img/pages/default.jpg"
+        # Build list of image paths
+        image_paths = []
+        pages_dir = Path(f"src/decks/{deck_id}/img/pages")
+        
+        if pages_dir.exists():
+            # First add images from processed_images to maintain order
+            for _, image_data in sorted(processed_images.items()):
+                image_path = str(pages_dir / image_data["new_name"])
+                if Path(image_path).exists():
+                    image_paths.append(image_path)
+            
+            # Then add any additional jpg files not in processed_images
+            for image_file in pages_dir.glob("*.jpg"):
+                image_path = str(image_file)
+                if image_path not in image_paths:
+                    image_paths.append(image_path)
+        else:
+            self.logger.warning(f"Pages directory not found at {pages_dir}")
+            
+        return image_paths
     
     def _update_content(self, current_content: str, instructions: str, image_path: Optional[str] = None) -> str:
         """Update slide content based on validation instructions.
@@ -130,13 +138,24 @@ Example of INCORRECT response:
             if "script" in instructions.lower():
                 slide_instructions = "Update slide content only, ignoring script-related changes."
             
+            # Check if instructions mention v-clicks - if so, return current content
+            if "v-click" in slide_instructions.lower():
+                self.logger.info("Instructions mention v-clicks - preserving current content")
+                return {
+                    "frontmatter": current_page["slide"].get("frontmatter", ""),
+                    "content": current_content
+                }
+            
+            # Get available images
+            available_images = self._get_available_images()
+            
             # Create message with update prompt
             message = HumanMessage(
                 content=UPDATE_SLIDE_PROMPT.format(
                     current_content=current_content,
                     instructions=slide_instructions,
-                    image_path=image_path or self._get_default_image_path()
-                ) + "\n\nIMPORTANT: Return your response as a JSON object with 'updated_content' and 'changes_made' fields. The updated_content should ONLY contain slide content, no script sections."
+                    available_images="\n".join(available_images)
+                ) + "\n\nIMPORTANT: Return your response as a JSON object with 'frontmatter', 'content', and 'changes_made' fields."
             )
             
             # Get updated content from GPT-4o with system message
@@ -152,22 +171,26 @@ Example of INCORRECT response:
                     self.logger.error(f"Response is not a dictionary: {result}")
                     raise ValueError("Invalid response format - not a dictionary")
                     
-                if "updated_content" not in result:
-                    self.logger.error(f"Response missing updated_content: {result}")
-                    raise ValueError("Response missing updated_content field")
+                if "frontmatter" not in result or "content" not in result:
+                    self.logger.error(f"Response missing required fields: {result}")
+                    raise ValueError("Response missing required fields")
                     
                 # Get updated content
-                updated_content = result["updated_content"]
+                updated_content = result["content"]
+                frontmatter = result["frontmatter"]
                 
                 # Remove any script sections if present
                 if "----" in updated_content:
                     self.logger.warning("Found script section markers in slide content - removing")
                     updated_content = updated_content.split("----")[0].strip()
                 
-                # Verify the content actually changed
+                # If content is unchanged, that's okay - return it
                 if updated_content.strip() == current_content.strip():
-                    self.logger.error("Content unchanged after update")
-                    raise ValueError("Content unchanged after update")
+                    self.logger.info("Content unchanged - no updates needed")
+                    return {
+                        "frontmatter": frontmatter,
+                        "content": current_content
+                    }
                 
                 # Log the changes that were made
                 if "changes_made" in result:
@@ -175,7 +198,8 @@ Example of INCORRECT response:
                     for change in result["changes_made"]:
                         self.logger.info(f"- {change}")
                 
-                return updated_content
+                # Return both frontmatter and content
+                return {"frontmatter": frontmatter, "content": updated_content}
                 
             except json.JSONDecodeError as e:
                 self.logger.error(f"Failed to parse JSON response: {str(e)}")
@@ -206,53 +230,54 @@ Example of INCORRECT response:
         # Store state for use by other methods
         self.state = state
         
-        # Log initial state
-        self.logger.info("Initial State:")
-        self.logger.info(f"- State Keys: {list(state.keys())}")
-        self.logger.info(f"- Current Page Index: {state.get('current_page_index')}")
-        self.logger.info(f"- Has Current Validation: {bool(state.get('current_validation'))}")
-        
-        # Get validation details
-        current_validation = state.get("current_validation")
-        if not current_validation:
-            error_msg = "No current validation in state - workflow cannot continue"
-            self.logger.error(error_msg)
-            self.logger.error(f"Available state keys: {list(state.keys())}")
-            raise ValueError(error_msg)
-            
-        # Log validation details
-        self.logger.info("\nValidation Details:")
-        self.logger.info(f"- Page Index: {current_validation.get('page_index')}")
-        self.logger.info("- Slide Validation:")
-        validation = current_validation.get("validation", {})
-        slide_validation = validation.get("slide", {})
-        self.logger.info(f"  - Is Valid: {slide_validation.get('is_valid')}")
-        self.logger.info(f"  - Severity: {slide_validation.get('severity')}")
-        self.logger.info(f"  - Suggested Fixes: {slide_validation.get('suggested_fixes')}")
-        
-        # Get pages
-        pages = state.get("pages", {}).get("content", [])
-        if not pages:
-            error_msg = "No pages found in state - workflow cannot continue"
-            self.logger.error(error_msg)
-            raise ValueError(error_msg)
-            
-        page_index = current_validation.get("page_index")
-        if page_index is None or page_index >= len(pages):
-            error_msg = f"Invalid page index {page_index} (total pages: {len(pages)}) - workflow cannot continue"
-            self.logger.error(error_msg)
-            raise ValueError(error_msg)
-            
-        # Get current page
-        current_page = pages[page_index]
-        
-        # Log current content
-        self.logger.info("\nCurrent Content:")
-        self.logger.info("-" * 40)
-        self.logger.info(current_page["slide"].get("content", "No content"))
-        self.logger.info("-" * 40)
-        
         try:
+            # Get validation details
+            current_validation = state.get("current_validation")
+            if not current_validation:
+                error_msg = "No current validation in state - workflow cannot continue"
+                self.logger.error(error_msg)
+                self.logger.error(f"Available state keys: {list(state.keys())}")
+                raise ValueError(error_msg)
+                
+            # Get current page index
+            page_index = current_validation.get("page_index")
+            if page_index is None:
+                error_msg = "No page index in current validation"
+                self.logger.error(error_msg)
+                raise ValueError(error_msg)
+                
+            # Get pages
+            pages = state.get("pages", {}).get("content", [])
+            if not pages:
+                error_msg = "No pages found in state - workflow cannot continue"
+                self.logger.error(error_msg)
+                raise ValueError(error_msg)
+                
+            if page_index >= len(pages):
+                error_msg = f"Invalid page index {page_index} (total pages: {len(pages)})"
+                self.logger.error(error_msg)
+                raise ValueError(error_msg)
+                
+            # Get current page
+            current_page = pages[page_index]
+            
+            # Get validation details
+            validation = current_validation.get("validation", {})
+            slide_validation = validation.get("slide", {})
+            
+            # Log validation details
+            self.logger.info(f"\nValidating Page {page_index + 1}:")
+            self.logger.info(f"- Is Valid: {slide_validation.get('is_valid')}")
+            self.logger.info(f"- Severity: {slide_validation.get('severity')}")
+            self.logger.info(f"- Suggested Fixes: {slide_validation.get('suggested_fixes')}")
+            
+            # Log current content
+            self.logger.info("\nCurrent Content:")
+            self.logger.info("-" * 40)
+            self.logger.info(f"Frontmatter: {current_page['slide'].get('frontmatter', 'No frontmatter')}")
+            self.logger.info(f"Content: {current_page['slide'].get('content', 'No content')}")
+            self.logger.info("-" * 40)
+            
             # Get update instructions
             instructions = slide_validation.get("suggested_fixes", "")
             if not instructions:
@@ -265,30 +290,24 @@ Example of INCORRECT response:
             
             # Update the content
             current_content = current_page["slide"]["content"]
-            updated_content = self._update_content(
-                current_content,
-                instructions
-            )
-            
-            # Verify update was successful
-            if updated_content == current_content:
-                error_msg = "Update failed - content unchanged"
-                self.logger.error(error_msg)
-                raise ValueError(error_msg)
+            result = self._update_content(current_content, instructions)
             
             # Log content comparison
             self.logger.info("\nContent Comparison:")
             self.logger.info("- Original Content:")
             self.logger.info("-" * 40)
-            self.logger.info(current_content)
+            self.logger.info(f"Frontmatter: {current_page['slide'].get('frontmatter', 'No frontmatter')}")
+            self.logger.info(f"Content: {current_content}")
             self.logger.info("-" * 40)
             self.logger.info("- Updated Content:")
             self.logger.info("-" * 40)
-            self.logger.info(updated_content)
+            self.logger.info(f"Frontmatter: {result['frontmatter']}")
+            self.logger.info(f"Content: {result['content']}")
             self.logger.info("-" * 40)
             
             # Update the page in state
-            pages[page_index]["slide"]["content"] = updated_content
+            pages[page_index]["slide"]["frontmatter"] = result["frontmatter"]
+            pages[page_index]["slide"]["content"] = result["content"]
             state["pages"]["content"] = pages
             
             # Clear validation results to force revalidation
@@ -306,8 +325,9 @@ Example of INCORRECT response:
             self.logger.error("Stack trace:", exc_info=True)
             raise ValueError(error_msg)
             
-        self.logger.info("=" * 80)
-        self.logger.info("UPDATE SLIDE NODE END")
-        self.logger.info("=" * 80)
+        finally:
+            self.logger.info("=" * 80)
+            self.logger.info("UPDATE SLIDE NODE END")
+            self.logger.info("=" * 80)
             
         return state 

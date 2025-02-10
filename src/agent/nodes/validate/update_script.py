@@ -37,20 +37,37 @@ class UpdateScriptNode(BaseNode[AgentState]):
         self.system_message = SystemMessage(content="""You are a script content updater that ONLY responds with valid JSON.
 Your responses must follow this exact schema:
 {
-    "updated_content": string,
+    "header": string,  // The section header (e.g., "---- Introduction ----")
+    "content": string, // The script content without the header
     "changes_made": string[]
 }
-Do not include any additional text, explanations, or formatting.""")
+
+IMPORTANT:
+1. Return ONLY the JSON object - no markdown code blocks, no explanations
+2. The JSON must be valid and parseable
+3. Do not include any text before or after the JSON
+4. Do not wrap the JSON in backticks or code blocks
+5. The response should start with { and end with }
+6. The header should be in the format "---- Section Title ----"
+7. The content should contain detailed speaking points
+
+Example response:
+{
+    "header": "---- Introduction ----",
+    "content": "- Welcome everyone warmly\\n- Today we'll discuss...",
+    "changes_made": ["Updated welcome message", "Added speaking points"]
+}""")
     
-    def _update_content(self, current_content: str, instructions: str) -> str:
+    def _update_content(self, current_content: str, instructions: str, slide_content: str) -> str:
         """Update script content based on validation instructions.
         
         Args:
             current_content: Current script content to update
             instructions: Instructions for updating the content
+            slide_content: Content of the corresponding slide
             
         Returns:
-            Updated script content
+            Updated script content with header and content
         """
         try:
             # Filter instructions to only include script-related updates
@@ -62,7 +79,8 @@ Do not include any additional text, explanations, or formatting.""")
             message = HumanMessage(
                 content=UPDATE_SCRIPT_PROMPT.format(
                     current_content=current_content,
-                    instructions=script_instructions
+                    instructions=script_instructions,
+                    slide_content=slide_content
                 )
             )
             
@@ -79,15 +97,13 @@ Do not include any additional text, explanations, or formatting.""")
                     self.logger.error(f"Response is not a dictionary: {result}")
                     raise ValueError("Invalid response format - not a dictionary")
                     
-                if "updated_content" not in result:
-                    self.logger.error(f"Response missing updated_content: {result}")
-                    raise ValueError("Response missing updated_content field")
+                if "header" not in result or "content" not in result:
+                    self.logger.error(f"Response missing required fields: {result}")
+                    raise ValueError("Response missing required fields")
                     
-                # Verify script sections are properly formatted
-                updated_content = result["updated_content"]
-                if "----" not in updated_content:
-                    self.logger.error("Missing script section headers")
-                    raise ValueError("Script sections must use ---- Section Title ---- format")
+                # Get updated content
+                updated_content = result["content"]
+                header = result["header"]
                 
                 # Verify the content actually changed
                 if updated_content.strip() == current_content.strip():
@@ -100,7 +116,8 @@ Do not include any additional text, explanations, or formatting.""")
                     for change in result["changes_made"]:
                         self.logger.info(f"- {change}")
                 
-                return updated_content
+                # Return both header and content
+                return {"header": header, "content": updated_content}
                 
             except json.JSONDecodeError as e:
                 self.logger.error(f"Failed to parse JSON response: {str(e)}")
@@ -128,53 +145,53 @@ Do not include any additional text, explanations, or formatting.""")
         self.logger.info("UPDATE SCRIPT NODE START")
         self.logger.info("=" * 80)
         
-        # Log initial state
-        self.logger.info("Initial State:")
-        self.logger.info(f"- State Keys: {list(state.keys())}")
-        self.logger.info(f"- Current Page Index: {state.get('current_page_index')}")
-        self.logger.info(f"- Has Current Validation: {bool(state.get('current_validation'))}")
-        
-        # Get validation details
-        current_validation = state.get("current_validation")
-        if not current_validation:
-            error_msg = "No current validation in state - workflow cannot continue"
-            self.logger.error(error_msg)
-            self.logger.error(f"Available state keys: {list(state.keys())}")
-            raise ValueError(error_msg)
-            
-        # Log validation details
-        self.logger.info("\nValidation Details:")
-        self.logger.info(f"- Page Index: {current_validation.get('page_index')}")
-        self.logger.info("- Script Validation:")
-        validation = current_validation.get("validation", {})
-        script_validation = validation.get("script", {})
-        self.logger.info(f"  - Is Valid: {script_validation.get('is_valid')}")
-        self.logger.info(f"  - Severity: {script_validation.get('severity')}")
-        self.logger.info(f"  - Suggested Fixes: {script_validation.get('suggested_fixes')}")
-        
-        # Get pages
-        pages = state.get("pages", {}).get("content", [])
-        if not pages:
-            error_msg = "No pages found in state - workflow cannot continue"
-            self.logger.error(error_msg)
-            raise ValueError(error_msg)
-            
-        page_index = current_validation.get("page_index")
-        if page_index is None or page_index >= len(pages):
-            error_msg = f"Invalid page index {page_index} (total pages: {len(pages)}) - workflow cannot continue"
-            self.logger.error(error_msg)
-            raise ValueError(error_msg)
-            
-        # Get current page
-        current_page = pages[page_index]
-        
-        # Log current content
-        self.logger.info("\nCurrent Content:")
-        self.logger.info("-" * 40)
-        self.logger.info(current_page["script"].get("content", "No content"))
-        self.logger.info("-" * 40)
-        
         try:
+            # Get validation details
+            current_validation = state.get("current_validation")
+            if not current_validation:
+                error_msg = "No current validation in state - workflow cannot continue"
+                self.logger.error(error_msg)
+                self.logger.error(f"Available state keys: {list(state.keys())}")
+                raise ValueError(error_msg)
+                
+            # Get current page index
+            page_index = current_validation.get("page_index")
+            if page_index is None:
+                error_msg = "No page index in current validation"
+                self.logger.error(error_msg)
+                raise ValueError(error_msg)
+                
+            # Get pages
+            pages = state.get("pages", {}).get("content", [])
+            if not pages:
+                error_msg = "No pages found in state - workflow cannot continue"
+                self.logger.error(error_msg)
+                raise ValueError(error_msg)
+                
+            if page_index >= len(pages):
+                error_msg = f"Invalid page index {page_index} (total pages: {len(pages)})"
+                self.logger.error(error_msg)
+                raise ValueError(error_msg)
+                
+            # Get current page
+            current_page = pages[page_index]
+            
+            # Get validation details
+            validation = current_validation.get("validation", {})
+            script_validation = validation.get("script", {})
+            
+            # Log validation details
+            self.logger.info(f"\nValidating Page {page_index + 1}:")
+            self.logger.info(f"- Is Valid: {script_validation.get('is_valid')}")
+            self.logger.info(f"- Severity: {script_validation.get('severity')}")
+            self.logger.info(f"- Suggested Fixes: {script_validation.get('suggested_fixes')}")
+            
+            # Log current content
+            self.logger.info("\nCurrent Content:")
+            self.logger.info("-" * 40)
+            self.logger.info(current_page["script"].get("content", "No content"))
+            self.logger.info("-" * 40)
+            
             # Get update instructions
             instructions = script_validation.get("suggested_fixes", "")
             if not instructions:
@@ -187,27 +204,25 @@ Do not include any additional text, explanations, or formatting.""")
             
             # Update the content
             current_content = current_page["script"]["content"]
-            updated_content = self._update_content(current_content, instructions)
-            
-            # Verify update was successful
-            if updated_content == current_content:
-                error_msg = "Update failed - content unchanged"
-                self.logger.error(error_msg)
-                raise ValueError(error_msg)
+            slide_content = current_page["slide"]["content"]
+            result = self._update_content(current_content, instructions, slide_content)
             
             # Log content comparison
             self.logger.info("\nContent Comparison:")
             self.logger.info("- Original Content:")
             self.logger.info("-" * 40)
-            self.logger.info(current_content)
+            self.logger.info(f"Header: {current_page['script'].get('header', 'No header')}")
+            self.logger.info(f"Content: {current_content}")
             self.logger.info("-" * 40)
             self.logger.info("- Updated Content:")
             self.logger.info("-" * 40)
-            self.logger.info(updated_content)
+            self.logger.info(f"Header: {result['header']}")
+            self.logger.info(f"Content: {result['content']}")
             self.logger.info("-" * 40)
             
             # Update the page in state
-            pages[page_index]["script"]["content"] = updated_content
+            pages[page_index]["script"]["header"] = result["header"]
+            pages[page_index]["script"]["content"] = result["content"]
             state["pages"]["content"] = pages
             
             # Clear validation results to force revalidation
@@ -225,8 +240,9 @@ Do not include any additional text, explanations, or formatting.""")
             self.logger.error("Stack trace:", exc_info=True)
             raise ValueError(error_msg)
             
-        self.logger.info("=" * 80)
-        self.logger.info("UPDATE SCRIPT NODE END")
-        self.logger.info("=" * 80)
+        finally:
+            self.logger.info("=" * 80)
+            self.logger.info("UPDATE SCRIPT NODE END")
+            self.logger.info("=" * 80)
             
         return state 

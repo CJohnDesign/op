@@ -33,7 +33,7 @@ PROCESSED SUMMARIES:
 EXTRACTED TABLES:
 {extracted_tables}
 
-I am just putting the tables so you can see the information per each plan. 
+I am just putting the tables so you can see the information per each plan. The wellness plan counts as its own plan.
 
 ** RETURN THE SLIDES IN FULL, DONT SKIP ANY SECTIONS, ESSPECIALLY THE PLAN TIERS SECTIONS **
 
