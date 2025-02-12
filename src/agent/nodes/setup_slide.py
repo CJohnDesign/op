@@ -13,12 +13,12 @@ from typing import Any, Dict
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
-from langchain_openai import ChatOpenAI
 from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.setup_slides import SETUP_SLIDES_PROMPT, SETUP_SLIDES_HUMAN_TEMPLATE
 from agent.types import AgentState
+from agent.llm_config import llm
 
 
 class SetupSlideNode(BaseNode[AgentState]):
@@ -31,40 +31,59 @@ class SetupSlideNode(BaseNode[AgentState]):
     def __init__(self) -> None:
         """Initialize the node with GPT-4o model."""
         super().__init__()
-        # Initialize OpenAI client directly - no need to wrap for LangChain
-        self.model = ChatOpenAI(
-            model="gpt-4o",
-            max_tokens=8192,
-            temperature=0
-        )
+        # Use shared LLM instance
+        self.model = llm
     
     @traceable(name="generate_slides_with_gpt4")
-    def _generate_slides(self, template: str, processed_summaries: str, extracted_tables: str) -> str:
+    def _generate_slides(
+        self, 
+        template: str, 
+        processed_summaries: str, 
+        extracted_tables: str,
+        deck_id: str,
+        deck_title: str,
+        instructions: str
+    ) -> str:
         """Generate slide content using GPT-4o.
         
         Args:
             template: The slide template to use
             processed_summaries: The processed content summaries
             extracted_tables: The extracted table data
+            deck_id: ID of the current deck
+            deck_title: Title of the current deck
+            instructions: Instructions from instructions.md
             
         Returns:
             Generated slide content
         """
         try:
+            # Sanitize instructions to escape any curly braces that might interfere with formatting
+            instructions_safe = instructions.replace("{", "{{").replace("}", "}}")
+            
             # Create messages with system and human prompts
             messages = [
-                HumanMessage(content=SETUP_SLIDES_PROMPT),
+                HumanMessage(content=SETUP_SLIDES_PROMPT.format(
+                    template=template,
+                    deck_id=deck_id,
+                    deck_title=deck_title,
+                    instructions=instructions_safe
+                )),
                 HumanMessage(
                     content=SETUP_SLIDES_HUMAN_TEMPLATE.format(
-                        template=template,
                         processed_summaries=processed_summaries,
-                        extracted_tables=extracted_tables
+                        extracted_tables=extracted_tables,
+                        deck_id=deck_id,
+                        deck_title=deck_title,
+                        instructions=instructions_safe
                     )
                 )
             ]
             
             # Get slide content from GPT-4o
             self.logger.info("Generating slide content")
+            self.logger.info(f"Deck ID: {deck_id}")
+            self.logger.info(f"Deck Title: {deck_title}")
             response = self.model.invoke(messages)
             
             return response.content
@@ -112,10 +131,11 @@ class SetupSlideNode(BaseNode[AgentState]):
                 
             # Prepare content summary including both images and tables
             content_summary = []
-            for page_num in sorted(processed_images.keys()):
-                page_data = processed_images[page_num]
+            page_nums = sorted([int(k) if isinstance(k, str) else k for k in processed_images.keys()])
+            for page_num in page_nums:
+                page_data = processed_images[str(page_num) if isinstance(page_num, int) else page_num]
                 summary = {
-                    "page_number": page_data["page_number"],
+                    "page_number": page_num,
                     "page_title": page_data["page_title"],
                     "summary": page_data["summary"]
                 }
@@ -123,10 +143,31 @@ class SetupSlideNode(BaseNode[AgentState]):
             
             # Convert to string format for the template
             processed_summaries = json.dumps(content_summary, indent=2)
-            extracted_tables_str = json.dumps(extracted_tables, indent=2)
             
-            # Generate slide content
-            slide_content = self._generate_slides(template, processed_summaries, extracted_tables_str)
+            # Handle extracted tables with proper type conversion
+            tables_list = []
+            table_nums = sorted([int(k) if isinstance(k, str) else k for k in extracted_tables.keys()])
+            for page_num in table_nums:
+                table_data = extracted_tables[str(page_num) if isinstance(page_num, int) else page_num]
+                if isinstance(table_data, dict):
+                    tables_list.append({
+                        "page_number": page_num,
+                        "tables": table_data.get("tables", [])
+                    })
+            extracted_tables_str = json.dumps(tables_list, indent=2)
+            
+            # Get instructions from initial deck
+            instructions = state.get("initial_deck", {}).get("instructions", "")
+            
+            # Generate slide content with deck info
+            slide_content = self._generate_slides(
+                template, 
+                processed_summaries, 
+                extracted_tables_str,
+                deck_id,
+                deck_title,
+                instructions
+            )
             
             # Create updated state
             updated_state = dict(state)

@@ -27,7 +27,12 @@ Guidelines for script content:
 Use this template structure - maintain all formatting and sections:
 
 Template:
-{template}"""
+{template}
+
+Final Instructions (VERY IMPORTANT):
+----------------------------------------
+{instructions}
+----------------------------------------"""
 
 SCRIPT_WRITER_HUMAN_PROMPT = """
 
@@ -51,7 +56,10 @@ Important:
 
 Here is an example of 3 slides and the script that goes with them:
 
+
 # slides:
+
+```
 ---
 id: FEN_TDK
 theme: ../../
@@ -132,9 +140,11 @@ layout: default
 - Flexible coverage options
 
 </v-click>
+```
 
 
 script based on the slides above:
+```
 ---- Cover ----
 
 Hello, everyone! Thank you for joining today's session on the TDK, the Transforming Data Through Knowledge plan. We'll walk through this plan's unique features and benefits, designed to provide accessible healthcare solutions. Let's dive right in!
@@ -164,12 +174,11 @@ Each plan tier has specific co-pays, visit allowances, and maximum coverage limi
 Eligibility is focused on individuals and families who value affordability and health services.
 
 Now, let's look into the common service features.
+```
 
+**Notice that the script is broken up into sections that match the slides and the is always one extra line before the v-click points that speaks to the section title**
 
-**Notice that the script is broken up into sections that match the slides**
-
-Here are the processed summaries to use as source content:
-{processed_summaries}
+Allow for one sentence to be broken up into two lines if it is a long sentence the cover multiple benefits, like in the above example.
 
 Generate a complete presentation script using this slides content:
 {slides_content}
@@ -179,7 +188,12 @@ EXTRACTED TABLES:
 
 **NEVER USE THE WORD COMPREHENSIVE**  **NEVER USE THE WORD COMPREHENSIVE**  **NEVER USE THE WORD COMPREHENSIVE**
 
-These plans are not comprehensive and to use the word would confuse the audience. We need to make sure we never use the word comprehensive.
+These plans are not comprehensive and to use the word would confuse the audience. We need to make sure we never use the word comprehensive. use a different word if you have to describe a broad benefit
+
+Final Instructions (VERY IMPORTANT):
+----------------------------------------
+{instructions}
+----------------------------------------
 
 Create a natural, engaging script that follows the template structure exactly.
 When discussing tables, reference them clearly and explain their key points.

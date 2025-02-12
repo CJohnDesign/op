@@ -11,6 +11,7 @@ import json
 import logging
 import os
 import shutil
+import time
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -30,6 +31,35 @@ class InitNode(BaseNode[AgentState]):
     the initialization of deck information from input arguments.
     """
     
+    def _get_instructions(self, deck_id: str, template_dir: Path) -> str:
+        """Get instructions for the deck.
+        
+        Looks for deck-specific instructions first, falls back to default if not found.
+        
+        Args:
+            deck_id: ID of the current deck
+            template_dir: Path to the template directory
+            
+        Returns:
+            Instructions content as string
+        """
+        # Check for deck-specific instructions
+        instructions_dir = template_dir / "instructions"
+        specific_instructions = instructions_dir / f"{deck_id}_instructions.md"
+        
+        if specific_instructions.exists():
+            self.logger.info(f"Using deck-specific instructions: {specific_instructions}")
+            return self._read_file_content(specific_instructions)
+            
+        # Fall back to default instructions if specific not found
+        default_instructions = template_dir / "instructions.md"
+        if default_instructions.exists():
+            self.logger.warning(f"No deck-specific instructions found for {deck_id}, using default")
+            return self._read_file_content(default_instructions)
+            
+        self.logger.error("No instructions found")
+        return ""
+
     def _read_file_content(self, file_path: Path) -> str:
         """Read file content and return as a single string with \n for newlines.
         
@@ -45,8 +75,7 @@ class InitNode(BaseNode[AgentState]):
             
         try:
             content = file_path.read_text()
-            # Replace literal newlines with \n string
-            return content.replace('\n', '\\n')
+            return content  # Return content as-is, preserving newlines
         except Exception as e:
             self.logger.error(f"Error reading {file_path}: {str(e)}")
             return ""
@@ -58,41 +87,97 @@ class InitNode(BaseNode[AgentState]):
             deck_dir: Path to the deck directory
         """
         # Set up paths
-        pdf_dir = deck_dir / "img" / "pdfs"
+        template_dir = Path("src/decks/FEN_TEMPLATE")
+        pdf_base_dir = template_dir / "img" / "pdfs"
         pages_dir = deck_dir / "img" / "pages"
+        
+        # Get deck ID from deck_dir path
+        deck_id = deck_dir.name
+        
+        # Look in carrier-specific folder using full deck_id
+        pdf_dir = pdf_base_dir / deck_id
         
         # Create pages directory if it doesn't exist
         pages_dir.mkdir(exist_ok=True)
         
-        # Find all PDFs
-        pdf_files = list(pdf_dir.glob("*.pdf"))
+        # Find all PDFs in carrier folder
+        pdf_files = list(pdf_dir.glob("*.pdf")) if pdf_dir.exists() else []
         if not pdf_files:
-            self.logger.info("No PDF files found in img/pdfs")
+            self.logger.info(f"No PDF files found in carrier folder {pdf_dir}")
             return
             
-        self.logger.info(f"Found {len(pdf_files)} PDF files to convert")
+        self.logger.info(f"Found {len(pdf_files)} PDF files to convert in {deck_id} folder")
+        
+        # Track global page number across all PDFs
+        global_page_num = 1
         
         # Process each PDF
         for pdf_file in pdf_files:
             try:
                 self.logger.info(f"Converting {pdf_file.name}")
                 
-                # Convert PDF to images
-                images = convert_from_path(pdf_file)
+                # Get PDF name without extension for use in output filename
+                pdf_name = pdf_file.stem
+                
+                # Add a small delay before conversion to ensure PDF is loaded
+                time.sleep(1)  # 1 second delay
+                
+                # Convert PDF to images with dpi=300 for better quality
+                images = convert_from_path(pdf_file, dpi=300)
                 
                 # Save each page
                 for i, image in enumerate(images):
-                    # Format page number with leading zeros
-                    page_num = str(i + 1).zfill(2)
-                    output_file = pages_dir / f"slide_{page_num}.jpg"
+                    # Format global page number with leading zeros
+                    page_num = str(global_page_num).zfill(3)  # Use 3 digits for larger numbers
+                    # Include PDF name in output filename to prevent overwriting
+                    output_file = pages_dir / f"{pdf_name}_page_{page_num}.jpg"
+                    
+                    # Add a small delay before saving to ensure proper rendering
+                    time.sleep(0.5)  # 0.5 second delay
                     
                     # Save as high-quality JPEG
                     image.save(output_file, "JPEG", quality=95)
-                    self.logger.info(f"Saved page {i+1} as {output_file.name}")
+                    self.logger.info(f"Saved page {i+1} from {pdf_name} as {output_file.name}")
+                    
+                    # Increment global page counter
+                    global_page_num += 1
+                    
+                # Add a delay after processing each PDF
+                time.sleep(1)  # 1 second delay
                     
             except Exception as e:
                 self.logger.error(f"Error converting {pdf_file.name}: {str(e)}")
     
+    def _copy_instruction_file(self, deck_id: str, src_dir: Path, dest_dir: Path) -> None:
+        """Copy the appropriate instruction file to the destination.
+        
+        Args:
+            deck_id: ID of the current deck
+            src_dir: Source template directory
+            dest_dir: Destination directory
+        """
+        # Set up paths
+        src_instructions_dir = src_dir / "instructions"
+        dest_instructions_dir = dest_dir / "instructions"
+        dest_instructions_dir.mkdir(exist_ok=True)
+        
+        # Determine which instruction file to use
+        specific_instructions = src_instructions_dir / f"{deck_id}_instructions.md"
+        default_instructions = src_dir / "instructions.md"
+        
+        if specific_instructions.exists():
+            # Copy deck-specific instructions
+            dest_file = dest_instructions_dir / f"{deck_id}_instructions.md"
+            shutil.copy2(specific_instructions, dest_file)
+            self.logger.info(f"Copied deck-specific instructions: {specific_instructions.name}")
+        elif default_instructions.exists():
+            # Copy default instructions
+            dest_file = dest_instructions_dir / "instructions.md"
+            shutil.copy2(default_instructions, dest_file)
+            self.logger.warning(f"No deck-specific instructions found, copied default instructions")
+        else:
+            self.logger.error("No instructions file found to copy")
+
     @traceable(name="init_deck")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Initialize the deck information in the state.
@@ -135,8 +220,12 @@ class InitNode(BaseNode[AgentState]):
                 self.logger.warning(f"Destination directory {dest_dir} already exists. Skipping copy.")
             else:
                 self.logger.info(f"Copying template from {src_dir} to {dest_dir}")
-                shutil.copytree(src_dir, dest_dir)
+                # Copy template excluding instructions directory
+                shutil.copytree(src_dir, dest_dir, ignore=shutil.ignore_patterns('instructions', 'instructions/*'))
                 self.logger.info("Template directory copied successfully")
+            
+            # Copy appropriate instruction file
+            self._copy_instruction_file(deck_id, src_dir, dest_dir)
             
             # Convert PDFs to images
             self.logger.info("Converting PDF files to images")
@@ -145,10 +234,11 @@ class InitNode(BaseNode[AgentState]):
             # Read markdown files
             slides_content = self._read_file_content(dest_dir / "slides.md")
             script_content = self._read_file_content(dest_dir / "audio" / "audio_script.md")
-            instructions = self._read_file_content(dest_dir / "instructions.md")
             
-            # Create state.json with deck information
-            state_file = dest_dir / "state.json"
+            # Get instructions using new method
+            instructions = self._get_instructions(deck_id, src_dir)
+            
+            # Create state data
             state_data = {
                 "deck_info": {
                     "deck_id": deck_id,
@@ -161,13 +251,20 @@ class InitNode(BaseNode[AgentState]):
                 }
             }
             
-            # Create updated state
-            updated_state = dict(state)
-            updated_state.update(state_data)  # Merge the new data into state
+            # Create updated state by deep merging with existing state
+            updated_state = dict(state)  # Start with existing state
+            for key, value in state_data.items():
+                if key in updated_state and isinstance(updated_state[key], dict):
+                    updated_state[key].update(value)  # Update nested dicts
+                else:
+                    updated_state[key] = value  # Add new keys
             
-            # Save to file
-            with open(state_file, 'w') as f:
+            # Save state to file
+            state_file = dest_dir / "state.json"
+            with open(state_file, "w") as f:
                 json.dump(updated_state, f, indent=2)
+            
+            self.logger.info(f"Initialized state saved to {state_file}")
             
             return updated_state
             

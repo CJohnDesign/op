@@ -12,12 +12,12 @@ from typing import Any, Dict, Optional, List
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
-from langchain_openai import ChatOpenAI
 from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.update_slide import UPDATE_SLIDE_PROMPT
 from agent.types import AgentState, ProcessedImage
+from agent.llm_config import llm
 
 
 class UpdateSlideNode(BaseNode[AgentState]):
@@ -30,11 +30,8 @@ class UpdateSlideNode(BaseNode[AgentState]):
     def __init__(self) -> None:
         """Initialize the node with GPT-4o model."""
         super().__init__()
-        self.model = ChatOpenAI(
-            model="gpt-4o",
-            max_tokens=8192,
-            temperature=0
-        )
+        # Use shared LLM instance
+        self.model = llm
     
     def _format_brochure_pages(self, processed_images: Dict[int, ProcessedImage], deck_id: str) -> str:
         """Format brochure pages information for the prompt.

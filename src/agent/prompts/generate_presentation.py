@@ -5,10 +5,8 @@ This module contains the prompt for the GPT model to generate a structured prese
 
 GENERATE_PRESENTATION_PROMPT = '''You are an expert at summarizing insurance plan data into a cohesive aggregated summary for creating presentation slides and a narrative script.
 
-Here is a high level overview of the plan. It outlines the plan tiers and the benefits for each tier. Use this to inform the content without our structure.
-----------------------------------------
-{instructions}
-----------------------------------------
+Deck ID: {deck_id}
+Deck Title: {deck_title}
 
 Below are the standard instructions for the aggregated summary structure:
 
@@ -64,4 +62,7 @@ Outline your plan for the full presentation plan. add extra detail to the plan t
 When creating tables or listing benefits, use the EXACT values and details from the provided tables.
 Do not make up or estimate values - only use what is explicitly provided in the tables.
 
-return only the content without any other text or comments''' 
+Very important instructions:
+----------------------------------------
+{instructions}
+----------------------------------------''' 

@@ -30,6 +30,8 @@ class ProcessedImage(TypedDict):
     page_title: str
     summary: str
     table_details: TableDetails
+    pdf_source: str
+    global_page_num: int
 
 
 class TableData(TypedDict):

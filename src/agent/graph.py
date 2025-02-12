@@ -13,9 +13,6 @@ from typing import Literal, Union, Type
 from langgraph.graph import END, StateGraph
 from langchain_core.runnables import RunnableConfig
 from langsmith import traceable
-from langchain_openai import ChatOpenAI
-from openai import OpenAI
-from langsmith.wrappers import wrap_openai
 
 from agent.nodes.validate import (
     ValidatorNode,
@@ -33,20 +30,10 @@ from agent.nodes import (
 )
 from agent.workflow import Workflow
 from agent.types import AgentState
+from agent.llm_config import llm
 
 # Set up logging
 logger = logging.getLogger(__name__)
-
-# Create traced OpenAI client
-openai_client = wrap_openai(OpenAI())
-
-# Create traced LLM instance
-llm = ChatOpenAI(
-    model="gpt-4o",
-    max_tokens=4096,
-    temperature=0,
-    client=openai_client
-)
 
 # Define valid node types for type checking
 NodeType = Literal[
@@ -97,7 +84,7 @@ def route_on_validation(state: AgentState) -> Union[NodeType, Type[END]]:
         logger.warning("No specific updates needed but validation failed. Ending to avoid loop.")
         return END
 
-@traceable(name="deck_processing_workflow")
+@traceable(name="deck_processing_workflow", with_child_runs=True)
 def create_workflow() -> StateGraph:
     """Create and configure the workflow graph.
     
@@ -106,10 +93,12 @@ def create_workflow() -> StateGraph:
     """
     # Create node instances with traced LLM
     init_node = InitNode()
+    
+    # Image processing nodes use vision_llm
     process_images_node = ProcessImagesNode()
-    process_images_node.model = llm
     extract_tables_node = ExtractTablesNode()
-    extract_tables_node.model = llm
+
+    # Text generation nodes use llm
     generate_presentation_node = GeneratePresentationNode()
     generate_presentation_node.model = llm
     setup_slide_node = SetupSlideNode()

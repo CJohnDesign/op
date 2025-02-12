@@ -15,7 +15,7 @@ from langsmith import traceable
 from agent.configuration import Configuration
 from agent.types import AgentState
 
-@traceable(with_child_runs=True, name="Process Deck")
+@traceable(name="Process Deck")
 class Workflow(StateGraph):
     """Custom workflow class for the agent.
     

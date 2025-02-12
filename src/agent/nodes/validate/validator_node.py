@@ -12,7 +12,6 @@ from typing import cast, Dict, Any
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
-from langchain_openai import ChatOpenAI
 from langsmith import traceable
 
 from agent.nodes.base import BaseNode
@@ -26,6 +25,7 @@ from agent.types import (
     SlideContent,
     ScriptContent
 )
+from agent.llm_config import llm
 
 
 class ValidatorNode(BaseNode[AgentState]):
@@ -38,13 +38,10 @@ class ValidatorNode(BaseNode[AgentState]):
     """
     
     def __init__(self) -> None:
-        """Initialize the validator with GPT-4 model."""
+        """Initialize the node with GPT-4o model."""
         super().__init__()
-        self.model = ChatOpenAI(
-            model="gpt-4o",
-            max_tokens=8192,
-            temperature=0
-        )
+        # Use shared LLM instance
+        self.model = llm
         self.logger.setLevel(logging.INFO)
     
     def _validate_page(self, page: Page) -> ValidationResult:

@@ -1,0 +1,1086 @@
+{
+  "deck_id": "FEN_RLC",
+  "deck_title": "Reliant Care",
+  "deck_info": {
+    "deck_id": "FEN_RLC",
+    "deck_title": "Reliant Care"
+  },
+  "initial_deck": {
+    "slides": "---\nid: FEN_{{deck_key}}\ntheme: ../../\ntitle: | \n  {{ Plan Name }}\ninfo: |\n  ## {{ Plan Name }} Review\n  A look at the {{ Plan Name }} benefits and details.\nverticalCenter: true\nlayout: intro\nthemeConfig:\n  logoHeader: ./img/logos/FEN_logo.svg\n  audioEnabled: true\ntransition: fade-out\ndrawings:\n  persist: false\n---\n\n<SlideAudio deckKey=\"FEN_{{deck_key}}\" />\n\n# {{ Plan Name }} Review\n\nUnderstanding the details and benefits of the **{{ Plan Full Name }}**\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## {{ Plan Name }} Overview\n\n<v-clicks>\n\n- {{ Overview Point 1 }} through **{{ Organization }}**\n- **{{ Benefit Category 1 }}** for various situations\n- **{{ Benefit Category 2 }}** and support tools\n- **{{ Benefit Category 3 }}** through {{ Feature }}\n- **{{ Benefit Category 4 }}** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Features and Benefits\n\n<v-clicks>\n\n**{{ Benefit Type 1 }}**\n\n**{{ Benefit Type 2 }}**\n\n**{{ Benefit Type 3 }}**\n\n**{{ Benefit Type 4 }}** (varies by plan)\n</v-clicks>\n\n<v-click>\n\n**{{ Additional Benefit }}** through {{ Partner }}\n<div class=\"grid grid-cols-1 gap-4 items-center px-8 py-4\">\n  <img src=\"\" class=\"h-12 mix-blend-multiply\" alt=\"{{ Brand }} Logo\">\n</div>\n\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Cost Management Tools\n\n<v-click>\n\n**{{ Tool Name }}** ({{ Acronym }})\n</v-click>\n\n<v-click>\n\n**{{ Feature 1 }}** System\n</v-click>\n\n<v-click>\n\n**{{ Feature 2 }}** Support\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## How {{ Tool Name }} Works\n\n<v-clicks>\n\n1. Enroll through **{{ Organization }}**\n2. {{ Step 2 }}\n3. {{ Step 3 }}\n4. Receive {{ Document }} **({{ Acronym }})**\n5. {{ Step 5 }}\n6. **{{ Final Outcome }}**\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Preventive Care and Wellness\n\n<v-clicks>\n\n- **{{ Service 1 }}** Services\n- **{{ Service 2 }}** Programs\n- **{{ Partner }}** provides {{ service_type }}\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Telehealth Services\n\n<v-clicks>\n\n- **{{ Feature 1 }}**\n- **{{ Feature 2 }}**\n- **{{ Feature 3 }}** available\n- **{{ Feature 4 }}** to care\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Advocacy and Support Services\n\n<v-clicks>\n\n- **{{ Service Style }}** healthcare advocacy\n- **{{ Service 1 }}** assistance\n- **{{ Service 2 }}** options\n- **{{ Service 3 }}** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_1}}.jpg\n---\n\n## {{ Plan 1 Name }} (1/2)\n\n<v-click>\n\n**{{ Benefit Category 1 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n- {{ Detail 3 }}\n- {{ Detail 4 }}\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 2 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 3 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n- {{ Detail 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_1}}.jpg\n---\n\n## {{ Plan 1 Name }} (2/2)\n\n<v-click>\n\n**{{ Benefit Category 4 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 5 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<!-- Insert as many plans as needed. Make sure they are always returned as a two part section -->\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Comparing the Plans\n\n| **Feature** | **{{ Plan 1 }}** | **{{ Plan 2 }}** | **{{ Plan 3 }}** |\n|---------|----------|----------|-----------|\n| {{ Feature 1 }} | {{ Value 1.1 }} | {{ Value 1.2 }} | {{ Value 1.3 }} |\n| {{ Feature 2 }} | {{ Value 2.1 }} | {{ Value 2.2 }} | {{ Value 2.3 }} |\n| {{ Feature 3 }} | {{ Value 3.1 }} | {{ Value 3.2 }} | {{ Value 3.3 }} |\n| {{ Feature 4 }} | {{ Value 4.1 }} | {{ Value 4.2 }} | {{ Value 4.3 }} |\n| {{ Feature 5 }} | {{ Value 5.1 }} | {{ Value 5.2 }} | {{ Value 5.3 }} |\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_final}}.jpg\n---\n\n## Definitions and Limitations\n\n<v-click>\n\n**{{ Category 1 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n- {{ Limitation 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 2 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 3 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 4 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n- {{ Limitation 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Takeaways and Reminders\n\n<v-clicks>\n\n- **{{ Feature 1 }}** benefits\n- **{{ Feature 2 }}** included\n- **{{ Feature 3 }}** benefits\n- **{{ Requirement }}** required\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: end\nline: Thank you for participating in the {{ Plan Name }} Review. Continue to be great!\n---\n\n# Thank You!\n\nContinue to be great!\n\n<img src=\"./img/logos/FEN_logo.svg\" class=\"h-12 mt-32\" alt=\"FirstEnroll Logo\">\n\n",
+    "scripts": "---- Cover ----\n\nHello, everyone! Thank you for joining today's session. We'll walk through the plan's features and benefits that empower your health with financial peace of mind. Let's get started!\n\n---- Plan Overview ----\n\n{{ Generate script based on the slides content }}\n\n---- Key Features and Benefits ----\n\nLet's explore the key features and benefits of this plan.\n\n{{ Generate script based on the slides content }}\n\n---- Cost Management Tools ----\n\nNow, let's discuss the cost management tools available with this plan.\n\n{{ Generate script based on the slides content }}\n\n---- Provider Network Details ----\n\nHere's how the provider network works.\n\n{{ Generate script based on the slides content }}\n\n---- Preventive Care and Wellness ----\n\n{{ Generate script based on the slides content }}\n\n---- Telehealth Services ----\n\n{{ Generate script based on the slides content }}\n\n---- Advocacy and Support Services ----\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 1 (One of Two) ----\n\nLet's examine our first plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 1 (Two of Two) ----\n\nContinuing with our first plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 2 (One of Two) ----\n\nNow, let's look at our second plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 2 (Two of Two) ----\n\nContinuing with our second plan tier.\n\n{{ Generate script based on the slides content }}\n\n{{ Add as few or as many plan tiers as needed }}\n\n---- Comparing Plan Tiers ----\n\nLet's compare the different tiers available.\n\n{{ Generate script based on the slides content }}\n\n---- Definitions and Limitations ----\n\nLet's review important definitions and limitations.\n\n{{ Generate script based on the slides content }}\n\n---- Key Takeaways and Reminders ----\n\nHere are the key points to remember.\n\n{{ Generate script based on the slides content }}\n\n---- Closing ----\n\nThank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!",
+    "instructions": "# Instructions\n\n## Plan Tiers Overview\n\n### Plans Listed:\n1. **Reliant Care Wellness**  \n2. **Reliant Care 1**  \n3. **Reliant Care 2**  \n4. **Reliant Care 3**  \n5. **Reliant Care 4**  \n6. **Reliant Care 5**  \n\n**Always include all plans in the summary.**"
+  },
+  "processed_images": {
+    "2": {
+      "page_number": 2,
+      "original_name": "Reliant Care Three_page_002.jpg",
+      "original_path": "img/pages/Reliant Care Three_page_002.jpg",
+      "new_name": "02_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "new_path": "img/pages/02_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details",
+      "summary": "This document outlines the preventive health services covered under the MEC/Preventative Health Services plan. Benefits are automatically subject to 29 CFR \u00a7 2590.715-2713(a), with amendments incorporated through legislative acts or regulations. The preventive services include medical services rated 'A' or 'B' by the United States Preventive Services Task Force, preventive care for infants, children, and adolescents as per HRSA guidelines, and immunizations recommended by the Advisory Committee on Immunization Practices of the CDC.\n\nThe plan covers various screenings and preventive medications. Abdominal Aortic Aneurysm Screening is available once per lifetime for men aged 65-75 who have smoked. Adult Annual Standard Physicals are covered once per plan year for adults. Alcohol misuse screenings and counseling are provided annually for adults 18 and older, including pregnant women. Aspirin is prescribed for adults aged 50-59 at risk of cardiovascular diseases. Bacteriuria Screening is available once per plan year for pregnant women. BRCA Risk Assessment and Genetic Counseling/Testing are covered annually for women with a family history of certain cancers. Breast Cancer Preventive Medications are prescribed for women at increased risk. Breast Cancer Screening is available once every two years for women aged 50 and older, limited to 2D mammograms.\n\nIt is important to note that none of these preventive health services are covered if provided at a hospital.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Three",
+      "global_page_num": 2
+    },
+    "1": {
+      "page_number": 1,
+      "original_name": "Reliant Care Three_page_001.jpg",
+      "original_path": "img/pages/Reliant Care Three_page_001.jpg",
+      "new_name": "01_reliant_care_3_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "new_path": "img/pages/01_reliant_care_3_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "page_title": "reliant_care_3_plan_features_benefits_and_coverage_details_with_limitations",
+      "summary": "The Reliant Care 3 plan offers a structured set of benefits focusing on primary care, specialist visits, hospitalization, telemedicine, and prescription services. Members are entitled to four primary care office visits per year with a co-pay of $25 and a maximum charge of $150 per visit. Specialist or urgent care visits are also limited to four per year, with a $50 co-pay and a $300 maximum per visit. In-patient hospitalization benefits provide $1,000 per day, capped at $15,000 annually, with a 12-month pre-existing condition exclusion period.\n\nTelemedicine services are available with no consult fee and no maximum usage limit, enhancing accessibility to healthcare professionals. The prescription plan covers preventive and acute prescriptions, subject to a formulary. Generic drugs are available at no co-pay for a 30-day supply, while preferred generics incur a $5 co-pay. Non-preferred generics and brand drugs require member payment, with specific co-pays for retail and mail-order options.\n\nThe plan includes a 30-day waiting period for sickness benefits and requires the use of in-network providers for outpatient services. Hospitalization benefits are not payable for pre-existing conditions within the first 12 months. The plan does not cover specialty drugs and has specific terms for prescription benefits, including a $150 monthly limit for non-preventive maintenance prescriptions. Members must adhere to guidelines for prescription assistance programs and mail-order options.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Three",
+      "global_page_num": 1
+    },
+    "3": {
+      "page_number": 3,
+      "original_name": "Reliant Care Three_page_003.jpg",
+      "original_path": "img/pages/Reliant Care Three_page_003.jpg",
+      "new_name": "03_mec_preventative_health_services_summary_of_benefits_with_intervals_and_requirements.jpg",
+      "new_path": "img/pages/03_mec_preventative_health_services_summary_of_benefits_with_intervals_and_requirements.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_intervals_and_requirements",
+      "summary": "This document provides a detailed summary of the preventative health services covered under the MEC plan, focusing on the intervals and specific requirements for each benefit. The plan includes breastfeeding support, supplies, and counseling, which are provided in conjunction with each birth. Interventions during pregnancy and after birth are covered, including costs for renting breastfeeding equipment.\n\nCervical cancer screening with cytology is available once every three plan years for women aged 21 to 65. For those aged 30 to 65 with high-risk HPV, screening is available once every five years. Chlamydia screening is offered annually for sexually active women aged 24 and younger, as well as older women at increased risk.\n\nColorectal cancer screening is provided once every five plan years for adults aged 50 to 75, with benefits for a colonoscopy if initial screening is positive. Contraceptive methods and counseling are covered as prescribed, including FDA-approved methods and patient education.\n\nDental caries prevention for infants and children up to age 5 is available annually, with fluoride varnish application and oral fluoride supplementation starting at age 6 months. Depression screening is offered annually for the general adult population, including pregnant and postpartum women, with a focus on accurate diagnosis and follow-up.\n\nDiabetes screening is available annually for adults aged 40 to 70 who are overweight or obese, with counseling interventions for those with abnormal blood glucose. Fall prevention for older adults is provided annually for those aged 65 and older at risk for falls. Folic acid supplementation is covered as prescribed for women planning pregnancy. Gestational diabetes mellitus screening is available for asymptomatic pregnant women after 24 weeks of gestation.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Three",
+      "global_page_num": 3
+    },
+    "5": {
+      "page_number": 5,
+      "original_name": "Reliant Care Three_page_005.jpg",
+      "original_path": "img/pages/Reliant Care Three_page_005.jpg",
+      "new_name": "05_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/05_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, detailing various screenings and counseling services available to plan members. Each benefit is listed with its interval and specific requirements, ensuring clarity on eligibility and coverage. Preeclampsia screening is available once per plan year for pregnant women, focusing on blood pressure measurements throughout pregnancy. Rh incompatibility screening is provided during the first pregnancy visit and again at 24-28 weeks' gestation for unsensitized Rh (D)-negative women, unless the biological father is known to be Rh (D)-negative.\n\nSexually transmitted infections counseling is offered once per plan year for sexually active adolescents and adults at increased risk. Skin cancer behavioral counseling is available for young individuals aged 6 months to 24 years with fair skin types, emphasizing ultraviolet radiation exposure minimization. Statin preventive medication is prescribed for adults without a history of cardiovascular disease but with certain risk factors, including age and calculated risk scores.\n\nSyphilis screening is provided annually for non-pregnant persons at increased risk and all pregnant women. Tobacco use counseling and interventions are covered twice per plan year, with specific provisions for pregnant women and school-aged children. Tuberculosis screening is available annually for at-risk populations. Vision screening is offered once every two plan years for children aged 3 to 5 years. Well-woman visits and well-child visits are covered annually, focusing on age-appropriate preventive services and prenatal care.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care Three",
+      "global_page_num": 5
+    },
+    "6": {
+      "page_number": 6,
+      "original_name": "Reliant Care Three_page_006.jpg",
+      "original_path": "img/pages/Reliant Care Three_page_006.jpg",
+      "new_name": "06_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations.jpg",
+      "new_path": "img/pages/06_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention. The immunizations are categorized by age groups, specifically from birth through six years old and from seven through eighteen years old. \n\nFor children from birth through six years old, the document lists vaccines such as Hepatitis B, Diphtheria, Tetanus, and Acellular Pertussis (DTap), Haemophilus Influenzae Type B (Hib), Pneumococcal 13-valent Conjugate (PCV13), Inactivated Poliovirus (IPV), Influenza (yearly), Measles, Mumps, and Rubella (MMR), Varicella, Hepatitis A, and Rotavirus. Each vaccine is associated with specific age requirements and limitations, such as the age range for administration and any specific conditions for the doses.\n\nFor children from seven through eighteen years old, the document includes vaccines like Influenza (yearly), Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Human Papillomavirus (HPV), and Meningococcal Serogroups A, C, W, Y (MenACWY). The document specifies the age range for each vaccine and any additional notes, such as the need for a 3-shot series of the HPV vaccine for those with weakened immune systems.\n\nThe document emphasizes the importance of adhering to the recommended age requirements and limitations for each vaccine to ensure effective immunization.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Three",
+      "global_page_num": 6
+    },
+    "4": {
+      "page_number": 4,
+      "original_name": "Reliant Care Three_page_004.jpg",
+      "original_path": "img/pages/Reliant Care Three_page_004.jpg",
+      "new_name": "04_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "new_path": "img/pages/04_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, focusing on various screenings and counseling services. The benefits include Gonorrhea Prophylactic Medication, which is provided as prescribed for all newborns to prevent gonococcal ophthalmia neonatorum. Gonorrhea Screening is available once per plan year for sexually active women aged 24 years or younger and older women at increased risk. Healthy Diet and Physical Activity Counseling is offered once per plan year for adults who are overweight or obese with cardiovascular disease risk factors, aiming to promote a healthful diet and physical activity.\n\nHemoglobinopathies Screening is available once per plan year for sickle cell disease in newborns. Hepatitis B and C screenings are provided once per plan year for pregnant women at their first prenatal visit and for adults at high risk, respectively. High Blood Pressure Screening is available once per plan year for adults aged 18 or older. HIV Preexposure Prophylaxis is prescribed for individuals at high risk of HIV infection, while HIV Screening is available once per plan year for adolescents and adults aged 15 to 65 years, including pregnant women.\n\nAdditional screenings include Hypothyroidism Screening for newborns, Intimate Partner Violence Screening for women of reproductive age, and Lung Cancer Screening for adults aged 55 to 80 years with a significant smoking history. Obesity Screening and Counseling are provided for children and adolescents aged 6 years and older, with referrals for intensive behavioral interventions. Osteoporosis Screening is available for women aged 65 and older, and Phenylketonuria Screening is conducted for newborns.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care Three",
+      "global_page_num": 4
+    },
+    "8": {
+      "page_number": 8,
+      "original_name": "Reliant Care Three_page_008.jpg",
+      "original_path": "img/pages/Reliant Care Three_page_008.jpg",
+      "new_name": "08_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "new_path": "img/pages/08_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations",
+      "summary": "The document outlines the exclusions and limitations associated with the MEC/Preventative Health Services plan. It specifies that claims arising from service outside the United States are not covered, except for reasonable costs billed by the Veterans Administration or Department of Defense. Claims for services not medically necessary or those exceeding customary rates are excluded. Public health program reimbursements are not covered, regardless of participant election.\n\nThe plan excludes claims due to acts of war, terrorism, and certain medical procedures like abortion services unless specified in the schedule of benefits. Custodial care, investigatory treatments, and services not approved under clinical trials are also excluded. Claims related to self-inflicted injuries, illegal acts, and domestic violence are not covered. The plan does not cover treatments for weight control, infertility, or cosmetic surgery unless specified.\n\nAdditional exclusions include claims for disability from sterilization reversal, personal convenience items, and non-emergency care outside the U.S. Routine care for adults and newborns, alternative medicine, and certain therapies are not covered. The document emphasizes that the exclusions are meant to clarify non-covered treatments and should not imply coverage under the plan.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Three",
+      "global_page_num": 8
+    },
+    "7": {
+      "page_number": 7,
+      "original_name": "Reliant Care Three_page_007.jpg",
+      "original_path": "img/pages/Reliant Care Three_page_007.jpg",
+      "new_name": "07_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "new_path": "img/pages/07_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations for adults aged nineteen years or older. The immunizations covered include Influenza (IIV, RIV, LAIV), Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Measles, Mumps, and Rubella (MMR), Varicella (VAR), Zoster (RZV, ZVL), Human Papillomavirus (HPV-Female, HPV-Male), Pneumococcal (PCV13, PPSV23). Each vaccine has specific age requirements and limitations, such as annual doses or specific age ranges for administration. For example, the Influenza inactivated vaccine is recommended annually for ages 19 to 65, while the Tdap vaccine requires a booster every ten years for the same age group.\n\nThe document also outlines exclusions applicable to the benefits offered under this plan. These exclusions include office visits, physical examinations, and tests for various non-medical purposes such as sports, employment, and legal proceedings. Additionally, any medical service, treatment, or procedure not covered under this plan, including cosmetic surgery unless medically necessary, is excluded. Other exclusions cover treatments related to teeth or periodontium, and any claims related to employment or worker's compensation policies. The exclusions section provides a comprehensive list of scenarios and conditions that are not covered, ensuring clarity on the limitations of the plan.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Three",
+      "global_page_num": 7
+    },
+    "17": {
+      "page_number": 17,
+      "original_name": "Reliant Care_page_017.jpg",
+      "original_path": "img/pages/Reliant Care_page_017.jpg",
+      "new_name": "17_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "new_path": "img/pages/17_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling",
+      "summary": "This document provides a detailed summary of benefits under the MEC/Preventative Health Services plan, focusing on various screenings, counseling, and preventative measures. The plan includes breastfeeding support, supplies, and counseling, which are provided in conjunction with each birth. This benefit covers interventions during pregnancy and after birth, including the cost of renting breastfeeding equipment. Cervical cancer screenings are offered once every three plan years for women aged 21 to 65, and once every five plan years for women aged 30 to 65 with high-risk HPV testing. Chlamydia screening is available annually for sexually active women aged 24 and younger, as well as older women at increased risk of infection.\n\nColorectal cancer screening benefits are provided once every five plan years for adults aged 50 to 75, with additional benefits for colonoscopy if initial tests are positive. Contraceptive methods and counseling are covered as prescribed, including FDA-approved methods and patient education for all women with reproductive capacity. Dental caries prevention for infants and children up to age 5 is available annually, focusing on fluoride varnish application and oral fluoride supplementation.\n\nDepression screening is offered annually for the general adult population, including pregnant and postpartum women, with systems in place for accurate diagnosis and treatment. Diabetes screening is available annually for adults aged 40 to 70 who are overweight or obese, with referrals for intensive behavioral counseling if needed. Fall prevention for older adults is provided annually for those aged 65 and older at risk for falls. Folic acid supplementation is prescribed for women planning pregnancy, and gestational diabetes screening is available for asymptomatic pregnant women after 24 weeks of gestation.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 17
+    },
+    "18": {
+      "page_number": 18,
+      "original_name": "Reliant Care_page_018.jpg",
+      "original_path": "img/pages/Reliant Care_page_018.jpg",
+      "new_name": "18_mec_preventative_health_services_summary_of_benefits_including_screening_and_counseling.jpg",
+      "new_path": "img/pages/18_mec_preventative_health_services_summary_of_benefits_including_screening_and_counseling.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screening_and_counseling",
+      "summary": "This document provides a detailed summary of the preventative health services covered under the MEC plan, focusing on various screenings and counseling services. The benefits include Gonorrhea Prophylactic Medication, which is prescribed for all newborns to prevent gonococcal ophthalmia neonatorum. Gonorrhea Screening is available once per plan year for sexually active women aged 24 years or younger and older women at increased risk. Healthy Diet and Physical Activity Counseling is offered once per plan year for adults who are overweight or obese with additional cardiovascular disease risk factors, aiming to promote a healthful diet and physical activity. Hemoglobinopathies Screening is provided once per plan year for sickle cell disease in newborns.\n\nHepatitis B and C screenings are available once per plan year, targeting non-pregnant adolescents and adults at high risk, and adults born between 1945 and 1965, respectively. High Blood Pressure Screening is offered once per plan year for adults aged 18 or older. HIV Preexposure Prophylaxis is prescribed for individuals at high risk of HIV acquisition, while HIV Screening is available once per plan year for adolescents and adults aged 15 to 65 years, with additional screenings for younger and older individuals at increased risk. Pregnant women, including those in labor, are also screened.\n\nAdditional services include Hypothyroidism Screening for newborns, Intimate Partner Violence Screening for women of reproductive age, and Lung Cancer Screening for adults aged 55 to 80 years with a significant smoking history. Obesity Screening and Counseling are provided for children and adolescents aged 6 years and older, with a focus on intensive behavioral interventions. Osteoporosis Screening is available for women aged 65 and older, and Phenylketonuria Screening is conducted for newborns.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 18
+    },
+    "20": {
+      "page_number": 20,
+      "original_name": "Reliant Care_page_020.jpg",
+      "original_path": "img/pages/Reliant Care_page_020.jpg",
+      "new_name": "20_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_age_limitations.jpg",
+      "new_path": "img/pages/20_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_age_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_age_limitations",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention. It outlines the vaccines required for children from birth through eighteen years old, specifying age requirements and limitations for each vaccine. \n\nFor children from birth through six years old, the document lists vaccines such as Hepatitis B, Diphtheria, Tetanus, and Acellular Pertussis (DTap), Haemophilus Influenzae Type B (Hib), Pneumococcal 13-valent Conjugate (PCV13), Inactivated Poliovirus (IPV), Influenza, Measles, Mumps, and Rubella (MMR), Varicella, Hepatitis A, and Rotavirus. Each vaccine has specific age requirements, such as Hepatitis B being administered from ages 4 weeks to 2 months and again from 6 months to 18 months.\n\nFor children from seven through eighteen years old, the document includes vaccines like Influenza, Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Human Papillomavirus (HPV), and Meningococcal Serogroups A, C, W, Y (MenACWY). The HPV vaccine is noted to require a 3-shot series for those with weakened immune systems or those starting the series at 15 years or older. The document emphasizes age-specific recommendations, such as the MenACWY booster at age 16.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 20
+    },
+    "19": {
+      "page_number": 19,
+      "original_name": "Reliant Care_page_019.jpg",
+      "original_path": "img/pages/Reliant Care_page_019.jpg",
+      "new_name": "19_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/19_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "This document provides a detailed summary of benefits under the MEC/Preventative Health Services plan, focusing on various screenings and counseling services. The plan includes preeclampsia screening for pregnant women, which is available once per plan year and involves blood pressure measurements throughout pregnancy. Rh incompatibility screening is offered during the first pregnancy visit and again between 24-28 weeks' gestation for unsensitized Rh (D)-negative women, unless the biological father is known to be Rh (D)-negative. \n\nSexually transmitted infections counseling is available once per plan year for sexually active adolescents and adults at increased risk. Skin cancer behavioral counseling is provided annually for young adults, adolescents, children, and parents of young children to minimize ultraviolet radiation exposure. Statin preventive medication is prescribed for adults aged 40 to 75 without a history of cardiovascular disease but with certain risk factors. \n\nSyphilis screening is available annually for non-pregnant persons at increased risk and all pregnant women. Tobacco use counseling and interventions are offered twice per plan year, including behavioral interventions and FDA-approved pharmacotherapy for adults and pregnant women. Tuberculosis screening is provided annually for at-risk populations. Vision screening is available once every two plan years for children aged 3 to 5. Well-woman visits and well-child visits are offered annually, focusing on age-appropriate preventive services and developmental needs.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 19
+    },
+    "22": {
+      "page_number": 22,
+      "original_name": "Reliant Care Four_page_022.jpg",
+      "original_path": "img/pages/Reliant Care Four_page_022.jpg",
+      "new_name": "22_reliant_care_4_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "new_path": "img/pages/22_reliant_care_4_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "page_title": "reliant_care_4_plan_features_benefits_and_coverage_details_with_limitations",
+      "summary": "The Reliant Care 4 plan offers a range of healthcare services with specific coverage limits and co-pay structures. Physician services are provided through the First Health Network, with wellness exams covered for one visit per year at a $25 co-pay, capped at $150 per visit. Primary care office visits are allowed four times per year with a $50 co-pay, also capped at $150 per visit. Specialist or urgent care visits are similarly limited to four per year, with a $75 co-pay and a $300 maximum per visit.\n\nIn-patient hospitalization benefits are set at $1,000 per day, with a yearly maximum of $10,000, subject to a 12-month pre-existing condition exclusion. In/outpatient surgery is covered up to $1,000 per year, with a $2,000 annual maximum, also subject to the same pre-existing condition clause. Emergency room visits, if admitted, incur a $1,000 per incident charge, and ambulance services are covered at $500 per incident, both with the 12-month pre-existing condition limitation.\n\nTelemedicine services are available with no consult fee and no maximum limit. Pharmacy benefits include a 30-day supply of acute and preventive generic prescriptions, with member payments required for non-preferred generics and brand drugs. Preferred generics have a $5 co-pay, while brand drugs require prior authorization and have specific co-pay amounts for retail and mail orders. The plan includes a hospital bill reducer and is subject to a 30-day waiting period for sickness benefits. Coverage is limited to in-network providers, and certain specialty drugs are not covered. The plan does not cover services unless listed in the Schedule of Benefits, and all benefits are subject to specific terms, conditions, and limitations.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Four",
+      "global_page_num": 22
+    },
+    "21": {
+      "page_number": 21,
+      "original_name": "Reliant Care_page_021.jpg",
+      "original_path": "img/pages/Reliant Care_page_021.jpg",
+      "new_name": "21_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "new_path": "img/pages/21_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations for adults aged nineteen years or older. It outlines specific vaccines, including Influenza (IIV, RIV, LAIV), Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Measles, Mumps, and Rubella (MMR), Varicella (VAR), Zoster (RZV, ZVL), Human Papillomavirus (HPV-Female, HPV-Male), Pneumococcal (PCV13, PPSV23), and their respective age requirements and limitations. For instance, the Influenza vaccine is recommended annually for ages 19 to 65, while the Tdap vaccine is advised every 10 years for the same age group. The document also includes specific age-related guidelines for each vaccine, such as the requirement for 2 doses of Varicella for those born in 1980 or later.\n\nAdditionally, the document lists exclusions applicable to the benefits offered under this plan. These exclusions cover a range of scenarios, including injuries or conditions related to sports, employment, travel, and cosmetic surgery unless deemed medically necessary. It also specifies that any medical service, treatment, or procedure not covered under this plan, as well as any non-medical service expenses, are excluded. Claims related to congenital deformity correction within six years of birth or as a treatment of a diseased condition are also excluded unless specifically authorized. Furthermore, the document states that claims arising out of employment or covered by a Worker's Compensation policy are not included.\n\nThe document emphasizes that additional immunization scenarios, including vaccine type, age requirements, and frequency, are available online or through the Plan Administrator. This ensures that participants have access to the most current recommendations and guidelines.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 21
+    },
+    "23": {
+      "page_number": 23,
+      "original_name": "Reliant Care Four_page_023.jpg",
+      "original_path": "img/pages/Reliant Care Four_page_023.jpg",
+      "new_name": "23_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "new_path": "img/pages/23_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details",
+      "summary": "This document outlines the preventive health services covered under the MEC/Preventative Health Services plan. Benefits are automatically subject to 29 CFR \u00a7 2590.715-2713(a), with amendments incorporated through legislative acts or regulations. The preventive services include medical services rated 'A' or 'B' by the United States Preventive Services Task Force, preventive care for infants, children, and adolescents as per guidelines from the Health Resources and Services Administration, and immunizations recommended by the Advisory Committee on Immunization Practices of the CDC.\n\nThe benefits are detailed in a table format, listing various screenings and medications. For example, abdominal aortic aneurysm screening is available once per lifetime for men aged 65-75 who have smoked. An adult annual standard physical is covered once per plan year, and alcohol misuse screening is also available annually. Aspirin is prescribed for adults aged 50 to 59 at risk of cardiovascular diseases. Bacteriuria screening is provided once per plan year for pregnant women. BRCA risk assessment and genetic counseling/testing are available annually for women with a family history of certain cancers. Breast cancer preventive medications and screenings are also included, with specific intervals and requirements.\n\nThe document specifies that none of the preventive health services are covered if provided at a hospital, indicating a limitation in the coverage.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Four",
+      "global_page_num": 23
+    },
+    "24": {
+      "page_number": 24,
+      "original_name": "Reliant Care Four_page_024.jpg",
+      "original_path": "img/pages/Reliant Care Four_page_024.jpg",
+      "new_name": "24_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "new_path": "img/pages/24_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling",
+      "summary": "This document provides a detailed summary of benefits under the MEC/Preventative Health Services plan, focusing on various preventative health services. The plan includes breastfeeding support, supplies, and counseling, which are provided in conjunction with each birth. This benefit covers interventions during pregnancy and after birth, including costs for renting breastfeeding equipment. Cervical cancer screening is offered with cytology every three years for women aged 21 to 65, and with a combination of cytology and HPV testing every five years for women aged 30 to 65 with high-risk HPV. Chlamydia screening is available annually for sexually active women aged 24 and younger, and older women at increased risk.\n\nColorectal cancer screening is provided once every five years for adults aged 50 to 75, with benefits for a colonoscopy if initial tests are positive. Contraceptive methods and counseling are covered as prescribed, including FDA-approved methods and patient education for all women with reproductive capacity. Dental caries prevention for infants and children up to age 5 includes fluoride varnish and oral fluoride supplementation starting at age 6 months. Depression screening is available annually for adolescents aged 12 to 18 and the general adult population, including pregnant and postpartum women.\n\nDiabetes screening is offered annually for adults aged 40 to 70 who are overweight or obese, with counseling interventions for those with abnormal blood glucose. Fall prevention for older adults includes exercise interventions for those aged 65 and older at risk for falls. Folic acid supplementation is covered as prescribed for women planning or capable of pregnancy. Gestational diabetes mellitus screening is available for asymptomatic pregnant women after 24 weeks of gestation.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Four",
+      "global_page_num": 24
+    },
+    "9": {
+      "page_number": 9,
+      "original_name": "Reliant Care_page_009.jpg",
+      "original_path": "img/pages/Reliant Care_page_009.jpg",
+      "new_name": "09_reliant_care_health_insurance_plans_overview_with_wellness_and_care_1_to_5.jpg",
+      "new_path": "img/pages/09_reliant_care_health_insurance_plans_overview_with_wellness_and_care_1_to_5.jpg",
+      "page_title": "reliant_care_health_insurance_plans_overview_with_wellness_and_care_1_to_5",
+      "summary": "The Reliant Care Health Insurance Plans offer a variety of options tailored to meet diverse healthcare needs. There are six distinct plans available: Reliant Care Wellness, Reliant Care 1, Reliant Care 2, Reliant Care 3, Reliant Care 4, and Reliant Care 5. Each plan is designed to provide specific benefits and coverage levels, allowing individuals to select a plan that best aligns with their healthcare requirements and financial considerations.\n\nThe Reliant Care Wellness plan focuses on preventive care and wellness benefits, encouraging proactive health management. Plans 1 through 5 offer varying degrees of coverage, potentially including hospital stays, outpatient services, and other medical needs. These plans are structured to cater to different levels of healthcare demands, from basic to more comprehensive coverage.\n\nWhile the document does not provide detailed information on specific benefits, coverage limits, or cost structures, it highlights the availability of multiple plans, suggesting a tiered approach to healthcare coverage. This allows for flexibility and choice, enabling policyholders to select a plan that fits their lifestyle and budget. The emphasis on multiple plan options indicates a commitment to providing tailored healthcare solutions to meet a wide range of needs.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 9
+    },
+    "10": {
+      "page_number": 10,
+      "original_name": "Reliant Care_page_010.jpg",
+      "original_path": "img/pages/Reliant Care_page_010.jpg",
+      "new_name": "10_reliant_care_wellness_plan_with_physician_services_and_telemedicine_benefits.jpg",
+      "new_path": "img/pages/10_reliant_care_wellness_plan_with_physician_services_and_telemedicine_benefits.jpg",
+      "page_title": "reliant_care_wellness_plan_with_physician_services_and_telemedicine_benefits",
+      "summary": "The Reliant Care Wellness plan offers specific benefits focused on physician services and telemedicine. Under physician services, the plan provides one wellness exam per year with a co-pay of $25 and a maximum benefit of $150 per visit. This service utilizes the First Health Network, and outpatient physician services are limited to in-network providers only. Telemedicine services are available through providers like Kindly Human and Recuro Health, with a $0 consult fee and no maximum limit on visits. Additionally, the plan includes discount prescriptions available only at participating pharmacies through BestChoice RX.\n\nThe plan has specific provisions, including a 30-day waiting period for all sickness benefits before they become payable. It is important to note that the plan does not cover services unless they are listed in the Schedule of Benefits. The plan is primarily designed to cover preventive and wellness services as mandated by the Patient Protection and Affordable Care Act. Detailed information on copays, deductibles, and limitations is provided in the Summary Plan Description.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 10
+    },
+    "11": {
+      "page_number": 11,
+      "original_name": "Reliant Care_page_011.jpg",
+      "original_path": "img/pages/Reliant Care_page_011.jpg",
+      "new_name": "11_reliant_care_1_plan_features_with_physician_services_and_hospitalization_benefits.jpg",
+      "new_path": "img/pages/11_reliant_care_1_plan_features_with_physician_services_and_hospitalization_benefits.jpg",
+      "page_title": "reliant_care_1_plan_features_with_physician_services_and_hospitalization_benefits",
+      "summary": "The Reliant Care 1 plan offers a structured set of benefits focusing on physician services and hospitalization. Under physician services, the plan allows for three primary care office visits per year with a co-pay of $25 and a maximum charge of $150 per visit. Additionally, it covers one specialist or urgent care office visit annually, with a co-pay of $50 and a maximum charge of $300 per visit. The in-patient hospitalization benefit provides $1,000 per day, with a yearly maximum of $5,000. However, there is a 12-month pre-existing condition exclusion for hospitalization benefits.\n\nTelemedicine services are included with no consult fee and no maximum limit, enhancing accessibility to healthcare professionals. The plan also offers discount prescriptions through participating pharmacies only, which can help reduce medication costs. Advocacy services are available, including a hospital bill reducer, to assist members in managing healthcare expenses.\n\nThe plan has specific limitations, including a 30-day waiting period for sickness benefits and restrictions to in-network providers for outpatient services. Hospitalization benefits are not payable for pre-existing conditions within the first 12 months. The plan does not cover services outside the listed benefits, emphasizing the importance of reviewing the schedule of benefits for detailed coverage information.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 11
+    },
+    "12": {
+      "page_number": 12,
+      "original_name": "Reliant Care_page_012.jpg",
+      "original_path": "img/pages/Reliant Care_page_012.jpg",
+      "new_name": "12_reliant_care_2_plan_features_benefits_and_limitations_with_pharmacy_and_telemedicine_details.jpg",
+      "new_path": "img/pages/12_reliant_care_2_plan_features_benefits_and_limitations_with_pharmacy_and_telemedicine_details.jpg",
+      "page_title": "reliant_care_2_plan_features_benefits_and_limitations_with_pharmacy_and_telemedicine_details",
+      "summary": "The Reliant Care 2 plan offers a range of healthcare services with specific visit limits and copay structures. For physician services, the plan allows for four primary care office visits per year with a $25 copay and a maximum of $150 per visit. Specialist or urgent care visits are limited to two per year, with a $50 copay and a $300 maximum per visit. In-patient hospitalization benefits are provided at $1,000 per day, with a yearly maximum of $10,000, and are subject to a 12-month pre-existing condition exclusion. Telemedicine services are available with no consult fee and no maximum limit, enhancing accessibility to healthcare professionals remotely.\n\nPharmacy benefits include preventative and acute prescriptions, which are subject to a formulary but not a monthly maximum. For pharmacy retail, up to a 30-day supply requires member payment, with generic prescriptions having a $0 copay. For a 90-day supply of 200 generic maintenance drugs, members pay with a preferred generic copay of $5. The plan includes a prescription assistance program for specialty drugs, which are not covered, and offers mail-order options for generic and brand drugs.\n\nThe plan has several limitations, including a 30-day waiting period for sickness benefits and restrictions to in-network providers for outpatient services. Hospitalization benefits are not payable for pre-existing conditions within the first 12 months. The plan emphasizes preventive and wellness services as required by the Patient Protection and Affordable Care Act, with detailed information on copays, deductibles, and limitations provided in the Summary Plan Description.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 12
+    },
+    "13": {
+      "page_number": 13,
+      "original_name": "Reliant Care_page_013.jpg",
+      "original_path": "img/pages/Reliant Care_page_013.jpg",
+      "new_name": "13_reliant_care_3_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "new_path": "img/pages/13_reliant_care_3_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "page_title": "reliant_care_3_plan_features_benefits_and_coverage_details_with_limitations",
+      "summary": "The Reliant Care 3 plan offers a structured set of benefits focusing on physician services, telemedicine, and prescription coverage. Members are entitled to four primary care office visits per year with a co-pay of $25 and a maximum charge of $150 per visit. Specialist or urgent care visits are also limited to four per year, with a $50 co-pay and a $300 maximum per visit. In-patient hospitalization benefits are provided at $1,000 per day, with an annual maximum of $15,000, subject to a 12-month pre-existing condition exclusion period.\n\nTelemedicine services are available with no consult fee and no maximum usage limit, enhancing accessibility to healthcare professionals. Prescription benefits include preventive and acute prescriptions, with specific terms for pharmacy retail and mail-order supplies. Generic drugs have a $0 copay, while preferred generics incur a $5 copay. Non-preferred generics and brand drugs require member payment, with specific costs outlined for retail and mail-order options.\n\nThe plan includes several limitations and exclusions. All sickness benefits are subject to a 30-day waiting period before becoming payable. Hospitalization benefits are not available for pre-existing conditions within the first 12 months. The plan does not cover specialty drugs, and there are specific benefit limits for non-preventive maintenance prescriptions. Members must adhere to in-network provider requirements for outpatient services, and the plan does not cover services not listed in the Schedule of Benefits.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 13
+    },
+    "14": {
+      "page_number": 14,
+      "original_name": "Reliant Care_page_014.jpg",
+      "original_path": "img/pages/Reliant Care_page_014.jpg",
+      "new_name": "14_reliant_care_4_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "new_path": "img/pages/14_reliant_care_4_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "page_title": "reliant_care_4_plan_features_benefits_and_coverage_details_with_limitations",
+      "summary": "The Reliant Care 4 plan offers a range of healthcare services with specific visit limits and co-pays. Physician services are available through the First Health Network, including one wellness exam per year with a $25 co-pay and a maximum of $150 per visit. Primary care office visits are limited to four per year with a $50 co-pay, while specialist or urgent care visits also have a four-visit limit with a $75 co-pay and a $300 maximum per visit. In-patient hospitalization benefits provide $1,000 per day, capped at $10,000 annually, with a 12-month pre-existing condition exclusion. In/outpatient surgery is covered up to $2,000 per year, also subject to a 12-month pre-existing condition exclusion. Emergency room visits and ambulance services, if admitted, are covered at $1,000 and $500 per incident, respectively, with the same pre-existing condition clause.\n\nTelemedicine services are offered with no consultation fee and no maximum limit. The plan includes pharmacy benefits for acute and preventive generic prescriptions, with member payments required for retail and mail-order supplies. Preferred generics have a $5 co-pay, while non-preferred generics and brand drugs require member payments, with specific co-pays for mail-order options. Prescription terms specify that non-preventive maintenance prescriptions have a $150 benefit limit per person per month, and specialty drugs are not covered. The plan offers a Prescription Assistance Program for qualifying members.\n\nThe plan includes several limitations, such as a 30-day waiting period for sickness benefits and in-network provider requirements for outpatient services. Hospitalization benefits are not payable for pre-existing conditions within the first 12 months. The plan does not cover services unless listed in the Schedule of Benefits, emphasizing the importance of reviewing the list carefully.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 14
+    },
+    "15": {
+      "page_number": 15,
+      "original_name": "Reliant Care_page_015.jpg",
+      "original_path": "img/pages/Reliant Care_page_015.jpg",
+      "new_name": "15_reliant_care_5_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "new_path": "img/pages/15_reliant_care_5_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "page_title": "reliant_care_5_plan_features_benefits_and_coverage_details_with_limitations",
+      "summary": "The Reliant Care 5 plan offers a range of healthcare services with specific visit limits and co-pay amounts. For physician services, the plan includes one wellness exam per year with a $25 co-pay and a maximum of $150 per visit. Primary care office visits are limited to five per year, each with a $50 co-pay and a $150 maximum per visit. Specialist or urgent care office visits are also capped at five per year, with a $75 co-pay and a $300 maximum per visit. In-patient hospitalization benefits are provided at $1,500 per day, with a yearly maximum of $15,000, subject to a 12-month pre-existing condition exclusion. In/outpatient surgery is covered up to $1,500 per year, with a $4,500 yearly maximum, also subject to the same pre-existing condition exclusion. Emergency room visits, if admitted, incur a $1,000 per incident charge, and ambulance services, if admitted, are charged at $500 per incident, both with the 12-month pre-existing condition clause.\n\nTelemedicine services are available with no consult fee and no maximum limit. The plan includes pharmacy benefits for up to a 30-day supply of acute and preventive generic prescriptions, with member payments required. Preferred generics have a $5 co-pay, while non-preferred generics have a retail 30-day $5 and mail order 90-day $5 & $20 co-pay. Brand prescriptions require prior authorization, with retail 30-day costing $40 and mail order 90-day costing $80. Non-preventive maintenance prescriptions are subject to a $150 monthly benefit limit per person, and specialty drugs are not covered. The plan offers a Prescription Assistance Program for members who qualify.\n\nThe plan has several limitations, including a 30-day waiting period for all sickness benefits, in-network provider requirements for outpatient physician services, and a 12-month pre-existing condition exclusion for hospitalization benefits. The plan does not cover services unless listed in the Schedule of Benefits and is limited to preventive and wellness services as required by the Patient Protection and Affordable Care Act.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 15
+    },
+    "16": {
+      "page_number": 16,
+      "original_name": "Reliant Care_page_016.jpg",
+      "original_path": "img/pages/Reliant Care_page_016.jpg",
+      "new_name": "16_mec_preventative_health_services_summary_of_benefits_with_covered_benefits_and_requirements.jpg",
+      "new_path": "img/pages/16_mec_preventative_health_services_summary_of_benefits_with_covered_benefits_and_requirements.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_covered_benefits_and_requirements",
+      "summary": "This document outlines the preventive health services covered under the MEC/Preventative Health Services plan. Benefits are automatically subject to 29 CFR \u00a7 2590.715-2713(a), with amendments incorporated through legislative acts or regulations. The preventive services include medical services rated 'A' or 'B' by the United States Preventive Services Task Force, preventive care for infants, children, and adolescents as per guidelines from the Health Resources and Services Administration, and immunizations recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention.\n\nThe benefits include various screenings and preventive measures such as Abdominal Aortic Aneurysm Screening, which is available once per lifetime for men aged 65-75 who have smoked. Adult Annual Standard Physical is provided once per plan year for adults, offering one physical preventive exam. Alcohol Misuse Screening and Counseling is available once per plan year for adults 18 years or older, including pregnant women, to address unhealthy alcohol use. Aspirin is prescribed for adults aged 50 to 59 at high risk of cardiovascular diseases. Bacteriuria Screening is available once per plan year for pregnant women. BRCA Risk Assessment and Genetic Counseling/Testing is offered once per plan year for women with a family history of breast, ovarian, or related cancers. Breast Cancer Preventive Medications are prescribed for women at increased risk. Breast Cancer Screening is available once every two years for women aged 50 and older, limited to 2D mammograms.\n\nIt is important to note that none of these preventive health services are covered if provided at a hospital.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care",
+      "global_page_num": 16
+    },
+    "26": {
+      "page_number": 26,
+      "original_name": "Reliant Care Four_page_026.jpg",
+      "original_path": "img/pages/Reliant Care Four_page_026.jpg",
+      "new_name": "26_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling_requirements.jpg",
+      "new_path": "img/pages/26_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling_requirements.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling_requirements",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, detailing the benefits, intervals, and specific requirements for each service. Preeclampsia screening is available once per plan year for pregnant women with blood pressure monitoring throughout pregnancy. Rh incompatibility screening is provided during the first pregnancy visit and again at 24-28 weeks' gestation for unsensitized Rh (D)-negative women, unless the biological father is known to be Rh (D)-negative.\n\nSexually transmitted infections counseling is offered once per plan year for sexually active adolescents and adults at increased risk. Skin cancer behavioral counseling is available for young individuals aged 6 months to 24 years with fair skin types, focusing on minimizing ultraviolet radiation exposure. Statin preventive medication is prescribed for adults aged 40 to 75 years with specific cardiovascular risk factors.\n\nSyphilis screening is provided annually for non-pregnant persons at increased risk and all pregnant women. Tobacco use counseling and interventions are available twice per plan year, including behavioral interventions and FDA-approved pharmacotherapy for adults and pregnant women. Tuberculosis screening is offered annually for at-risk populations. Vision screening is available once every two plan years for children aged 3 to 5 years. Well-woman visits and well-child visits are covered annually, providing age-appropriate preventive services and prenatal care.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care Four",
+      "global_page_num": 26
+    },
+    "25": {
+      "page_number": 25,
+      "original_name": "Reliant Care Four_page_025.jpg",
+      "original_path": "img/pages/Reliant Care Four_page_025.jpg",
+      "new_name": "25_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/25_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "The document outlines the preventative health services covered under the MEC plan, detailing various screenings and counseling services available to plan members. Each benefit is listed with its interval and specific requirements for eligibility. For instance, gonorrhea prophylactic medication is provided as prescribed for all newborns to prevent gonococcal ophthalmia neonatorum. Gonorrhea screening is available once per plan year for sexually active women aged 24 years or younger and older women at increased risk.\n\nHealthy diet and physical activity counseling is offered once per plan year to adults who are overweight or obese with additional cardiovascular disease risk factors. Hemoglobinopathies screening is available for sickle cell disease in newborns, while hepatitis B and C screenings are provided once per plan year for non-pregnant adolescents and adults at high risk. High blood pressure screening is available for adults aged 18 or older.\n\nHIV preexposure prophylaxis is prescribed for individuals at high risk of HIV acquisition, and HIV screening is available once per plan year for adolescents and adults aged 15 to 65 years, including pregnant women. Hypothyroidism screening is conducted for newborns, and intimate partner violence screening is available for women of reproductive age.\n\nLung cancer screening is offered once per plan year for adults aged 55 to 80 years with a significant smoking history. Obesity screening and counseling are provided for children and adolescents aged 6 years and older, as well as adults with a BMI of 30 kg/m2 or higher. Osteoporosis screening is available for women aged 65 and older, and phenylketonuria screening is conducted for newborns.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care Four",
+      "global_page_num": 25
+    },
+    "28": {
+      "page_number": 28,
+      "original_name": "Reliant Care Four_page_028.jpg",
+      "original_path": "img/pages/Reliant Care Four_page_028.jpg",
+      "new_name": "28_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "new_path": "img/pages/28_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations for adults aged nineteen years or older. It outlines specific vaccines, including Influenza (IIV, RIV, LAIV), Tdap, MMR, Varicella, RZV, ZVL, HPV for both females and males, PCV13, and PPSV23. Each vaccine is accompanied by age requirements and limitations, such as the number of doses and specific age ranges for administration. For instance, the Influenza inactivated vaccine is recommended annually for ages 19 to 65, while the Tdap vaccine requires a booster every ten years for the same age group.\n\nThe document also includes a section on exclusions, listing specific conditions and scenarios where benefits are not applicable. These exclusions cover a range of areas, including office visits for non-medical reasons, cosmetic surgeries unless medically necessary, and treatments related to sports, employment, or legal proceedings. Additionally, it specifies that any medical service not explicitly provided by the plan document is excluded, along with any claims related to employment or worker's compensation policies.\n\nOverall, the document provides clear guidelines on the immunization benefits available under the plan, along with detailed exclusions that outline what is not covered, ensuring that participants are well-informed about the scope and limitations of their coverage.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Four",
+      "global_page_num": 28
+    },
+    "31": {
+      "page_number": 31,
+      "original_name": "Reliant Care Two_page_031.jpg",
+      "original_path": "img/pages/Reliant Care Two_page_031.jpg",
+      "new_name": "31_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "new_path": "img/pages/31_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details",
+      "summary": "This document outlines the preventive health services covered under the MEC/Preventative Health Services plan. Benefits are automatically subject to specific federal regulations, and any amendments through legislative acts are incorporated by reference. The preventive services include medical services rated 'A' or 'B' by the United States Preventive Services Task Force, preventive care for infants, children, and adolescents, and immunizations recommended by the Advisory Committee on Immunization Practices.\n\nThe plan covers a variety of screenings and preventive medications. Abdominal aortic aneurysm screening is available once per lifetime for men aged 65-75 who have smoked. An adult annual standard physical is covered once per plan year, providing one physical exam per year. Alcohol misuse screening and counseling are available once per plan year for adults 18 and older, including pregnant women. Aspirin is prescribed for adults aged 50-59 at risk of cardiovascular diseases. Bacteriuria screening is available once per plan year for pregnant women.\n\nBRCA risk assessment and genetic counseling/testing are covered once per plan year for women with a family history of certain cancers. Breast cancer preventive medications are prescribed for women at increased risk. Breast cancer screening is available once every two years for women aged 50 and older, limited to 2D mammograms. Notably, none of these preventive health services are covered if provided at a hospital.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Two",
+      "global_page_num": 31
+    },
+    "27": {
+      "page_number": 27,
+      "original_name": "Reliant Care Four_page_027.jpg",
+      "original_path": "img/pages/Reliant Care Four_page_027.jpg",
+      "new_name": "27_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations.jpg",
+      "new_path": "img/pages/27_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention. The immunizations are categorized by age groups, specifically from birth through six years old and from seven through eighteen years old. \n\nFor children from birth through six years old, the document lists vaccines such as Hepatitis B, Diphtheria, Tetanus, and Acellular Pertussis (DTap), Haemophilus Influenzae Type B (Hib), Pneumococcal 13-valent Conjugate (PCV13), Inactivated Poliovirus (IPV), Influenza, Measles, Mumps, and Rubella (MMR), Varicella, Hepatitis A, and Rotavirus. Each vaccine is associated with specific age requirements and limitations, such as the age range for administration and any special conditions, like the recommended age for the Rotavirus vaccine being between two months and six months.\n\nFor children from seven through eighteen years old, the document outlines vaccines including Influenza, Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Human Papillomavirus (HPV), and Meningococcal Serogroups A, C, W, Y (MenACWY). The HPV vaccine, for instance, is recommended for ages eleven to twelve, with a note that a three-shot series is needed for those with weakened immune systems or those starting the series at fifteen years or older. The MenACWY booster is recommended at age sixteen.\n\nThe document emphasizes the importance of adhering to these age-specific guidelines to ensure optimal health outcomes and compliance with public health recommendations.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Four",
+      "global_page_num": 27
+    },
+    "30": {
+      "page_number": 30,
+      "original_name": "Reliant Care Two_page_030.jpg",
+      "original_path": "img/pages/Reliant Care Two_page_030.jpg",
+      "new_name": "30_reliant_care_2_plan_features_benefits_and_limitations_with_pharmacy_and_telemedicine_details.jpg",
+      "new_path": "img/pages/30_reliant_care_2_plan_features_benefits_and_limitations_with_pharmacy_and_telemedicine_details.jpg",
+      "page_title": "reliant_care_2_plan_features_benefits_and_limitations_with_pharmacy_and_telemedicine_details",
+      "summary": "The Reliant Care 2 plan offers a structured set of benefits focusing on physician services, telemedicine, and prescription coverage. Under physician services, members are entitled to four primary care office visits per year with a $25 copay and a maximum charge of $150 per visit. Specialist or urgent care visits are limited to two per year, with a $50 copay and a $300 maximum per visit. In-patient hospitalization benefits provide $1,000 per day, capped at $10,000 annually, with a 12-month pre-existing condition exclusion period.\n\nTelemedicine services are available with no consult fee and no maximum limit, enhancing accessibility to healthcare professionals remotely. The prescription plan includes preventative and acute prescriptions, subject to a formulary but not a monthly maximum. Pharmacy retail options allow for up to a 30-day supply, with members paying for the medication and a $0 copay for generic drugs. Mail-order options extend to a 90-day supply for 200 generic maintenance drugs, with a $5 copay for preferred generics.\n\nThe plan includes several limitations and exclusions. All sickness benefits are subject to a 30-day waiting period before becoming payable. Outpatient services are restricted to in-network providers, while inpatient benefits are not payable for pre-existing conditions within the first 12 months. The plan does not cover services outside the listed benefits, emphasizing the importance of reviewing the Schedule of Benefits for detailed coverage information.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Two",
+      "global_page_num": 30
+    },
+    "32": {
+      "page_number": 32,
+      "original_name": "Reliant Care Two_page_032.jpg",
+      "original_path": "img/pages/Reliant Care Two_page_032.jpg",
+      "new_name": "32_mec_preventative_health_services_summary_of_benefits_with_intervals_and_requirements.jpg",
+      "new_path": "img/pages/32_mec_preventative_health_services_summary_of_benefits_with_intervals_and_requirements.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_intervals_and_requirements",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, detailing the intervals and specific requirements for each benefit. Breastfeeding support, supplies, and counseling are provided in conjunction with each birth, with interventions during pregnancy and after birth to support breastfeeding. Cervical cancer screening with cytology is available once every three plan years for women aged 21 to 65, while screening with HPV testing is offered once every five plan years for women aged 30 to 65. Chlamydia screening is provided annually for sexually active women aged 24 and younger, and older women at increased risk. Colorectal cancer screening is available once every five plan years for adults aged 50 to 75, with benefits for a colonoscopy if initial screening is positive.\n\nContraceptive methods and counseling are covered as prescribed, including FDA-approved methods and patient education. Dental caries prevention for infants and children up to age 5 is provided annually, with fluoride varnish application and oral fluoride supplementation starting at age 6 months. Depression screening is available annually for the general adult population, including pregnant and postpartum women, with systems in place for accurate diagnosis and follow-up. Diabetes screening is offered annually for adults aged 40 to 70 who are overweight or obese, with counseling interventions for those with abnormal blood glucose.\n\nFall prevention for older adults is provided annually for those aged 65 and older at increased risk for falls. Folic acid supplementation is covered as prescribed for women planning a pregnancy. Gestational diabetes mellitus screening is available annually for asymptomatic pregnant women after 24 weeks of gestation.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Two",
+      "global_page_num": 32
+    },
+    "29": {
+      "page_number": 29,
+      "original_name": "Reliant Care Four_page_029.jpg",
+      "original_path": "img/pages/Reliant Care Four_page_029.jpg",
+      "new_name": "29_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "new_path": "img/pages/29_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations",
+      "summary": "The document outlines the exclusions and limitations associated with the MEC/Preventative Health Services plan. It specifies that claims arising from service outside the United States are not covered, except for reasonable costs billed by the Veterans Administration or Department of Defense. Claims for services not medically necessary, as determined by the plan, or those exceeding customary rates without a PPO network contract, are excluded. Additionally, charges reimbursed by public health programs are not covered.\n\nThe plan excludes claims due to acts of war, terrorism, or illegal acts, and those related to cosmetic surgery not associated with mastectomy reconstruction. Claims for investigatory or experimental treatments, services related to weight control, and those for infertility treatments are also not covered. The document lists specific exclusions such as eyeglasses, hearing aids, custodial care, and services from non-healthcare providers unless specified in the schedule of benefits.\n\nFurther exclusions include claims for suicide attempts, injuries from dangerous activities like skydiving, and treatments for sexual dysfunction. The plan does not cover alternative medicine, chiropractic care, or routine adult care. It also excludes non-emergency care outside the U.S., pregnancy benefits, and routine newborn care while inpatient. The purpose of these exclusions is to clarify what is not covered under the plan, ensuring no assumptions of coverage are made.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Four",
+      "global_page_num": 29
+    },
+    "34": {
+      "page_number": 34,
+      "original_name": "Reliant Care Two_page_034.jpg",
+      "original_path": "img/pages/Reliant Care Two_page_034.jpg",
+      "new_name": "34_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "new_path": "img/pages/34_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, detailing various screenings and counseling services available to plan members. The plan includes preeclampsia screening once per plan year for pregnant women, focusing on blood pressure measurements throughout pregnancy. Rh incompatibility screening is provided during the first pregnancy visit and again between 24 to 28 weeks' gestation for unsensitized Rh (D)-negative women, unless the biological father is known to be Rh (D)-negative.\n\nSexually transmitted infections counseling is available once per plan year for sexually active adolescents and adults at increased risk. Skin cancer behavioral counseling is offered to young individuals, including children and parents, to minimize ultraviolet radiation exposure. Statin preventive medication is prescribed for adults without a history of cardiovascular disease but with certain risk factors, including age and calculated risk scores.\n\nSyphilis screening is provided annually for non-pregnant persons at increased risk and all pregnant women. Tobacco use counseling and interventions are available twice per plan year, with specific provisions for pregnant women and school-aged children. Tuberculosis screening is conducted annually for at-risk populations. Vision screening is available once every two plan years for children aged 3 to 5. Well-woman visits are covered annually for women under 65, and well-child visits are provided annually to ensure age-appropriate preventive services.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care Two",
+      "global_page_num": 34
+    },
+    "33": {
+      "page_number": 33,
+      "original_name": "Reliant Care Two_page_033.jpg",
+      "original_path": "img/pages/Reliant Care Two_page_033.jpg",
+      "new_name": "33_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/33_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, focusing on various screenings and counseling services. The benefits include Gonorrhea Prophylactic Medication, which is provided as prescribed for all newborns to prevent gonococcal ophthalmia neonatorum. Gonorrhea Screening is available once per plan year for sexually active women aged 24 years or younger and older women at increased risk. Healthy Diet and Physical Activity Counseling is offered once per plan year for adults who are overweight or obese with additional cardiovascular disease risk factors, aiming to promote a healthful diet and physical activity.\n\nHemoglobinopathies Screening is conducted once per plan year, specifically for sickle cell disease in newborns. Hepatitis B and C screenings are available once per plan year for pregnant women at their first prenatal visit and for persons at high risk, respectively. High Blood Pressure Screening is provided once per plan year for adults aged 18 or older. HIV Preexposure Prophylaxis is prescribed for individuals at high risk of HIV acquisition, while HIV Screening is available once per plan year for adolescents and adults aged 15 to 65 years, including pregnant women.\n\nAdditional screenings include Hypothyroidism Screening for newborns, Intimate Partner Violence Screening for women of reproductive age, and Lung Cancer Screening for adults aged 55 to 80 years with a significant smoking history. Obesity Screening and Counseling is offered once per plan year for children and adolescents aged 6 years and older, as well as adults with a BMI of 30 kg/m2 or higher. Osteoporosis Screening is available for women aged 65 and older, and Phenylketonuria Screening is conducted for newborns.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care Two",
+      "global_page_num": 33
+    },
+    "35": {
+      "page_number": 35,
+      "original_name": "Reliant Care Two_page_035.jpg",
+      "original_path": "img/pages/Reliant Care Two_page_035.jpg",
+      "new_name": "35_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations.jpg",
+      "new_path": "img/pages/35_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_limitations",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention. The immunizations are categorized by age groups, specifically from birth through six years old and from seven through eighteen years old. \n\nFor children from birth through six years old, the document lists vaccines such as Hepatitis B, Diphtheria, Tetanus, and Acellular Pertussis (DTap), Haemophilus Influenzae Type B (Hib), Pneumococcal 13-valent Conjugate (PCV13), Inactivated Poliovirus (IPV), Influenza, Measles, Mumps, and Rubella (MMR), Varicella, Hepatitis A, and Rotavirus. Each vaccine is associated with specific age requirements and limitations, such as the recommended age range for administration. For example, the Hepatitis B vaccine is recommended from ages 4 weeks to 2 months and again from 6 months to 18 months.\n\nFor children from seven through eighteen years old, the document includes vaccines like Influenza, Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Human Papillomavirus (HPV), and Meningococcal Serogroups A, C, W, Y (MenACWY). The HPV vaccine, for instance, is recommended for ages 11 to 12 years, with a note that a 3-shot series is needed for those with weakened immune systems or those starting the series at 15 years or older. The document outlines specific age requirements and limitations for each vaccine, ensuring clarity on the appropriate timing for immunizations.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Two",
+      "global_page_num": 35
+    },
+    "36": {
+      "page_number": 36,
+      "original_name": "Reliant Care Two_page_036.jpg",
+      "original_path": "img/pages/Reliant Care Two_page_036.jpg",
+      "new_name": "36_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "new_path": "img/pages/36_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions",
+      "summary": "This document provides a detailed summary of benefits related to immunizations for adults aged nineteen years or older under the MEC/Preventative Health Services plan. It outlines specific vaccines covered, including Influenza (inactivated and recombinant), Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Measles, Mumps, and Rubella (MMR), Varicella, Zoster (recombinant and live), Human Papillomavirus (HPV) for both females and males, and Pneumococcal vaccines (PCV13 and PPSV23). Each vaccine has specific age requirements and limitations, such as the number of doses and age ranges for administration. For example, the Influenza inactivated vaccine is recommended annually for ages 19 to 65, while the Tdap vaccine is administered once with a booster every ten years for the same age group.\n\nThe document also includes a section on exclusions, detailing services and treatments not covered under this plan. Exclusions encompass office visits for specific purposes like sports or employment, routine foot care, and cosmetic surgery unless deemed medically necessary. Other exclusions include dental procedures, any medical service not explicitly covered by the plan, and treatments related to congenital deformity correction unless within six years of birth. Additionally, claims related to injuries from employment or those covered by Worker\u2019s Compensation are not included.\n\nThe immunization guidelines are based on CDC recommendations, and further information can be obtained from the CDC schedules or by contacting the Plan Administrator.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Two",
+      "global_page_num": 36
+    },
+    "37": {
+      "page_number": 37,
+      "original_name": "Reliant Care Two_page_037.jpg",
+      "original_path": "img/pages/Reliant Care Two_page_037.jpg",
+      "new_name": "37_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "new_path": "img/pages/37_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations",
+      "summary": "The document outlines the exclusions and limitations associated with the MEC/Preventative Health Services plan. It specifies that claims arising from service outside the United States are not covered, except for reasonable costs billed by the Veterans Administration or Department of Defense. Claims for services not medically necessary or those exceeding customary rates are excluded. Public health program reimbursements are not covered, regardless of participant election.\n\nThe plan excludes claims related to acts of war, terrorism, and certain medical procedures like abortion services unless specified in the schedule of benefits. Custodial care, investigatory treatments, and services from non-healthcare providers are not covered. Claims due to self-inflicted injuries, illegal acts, or domestic violence are excluded unless resulting from a medical condition. The plan does not cover treatments for weight control, infertility, or cosmetic surgery unless specified.\n\nAdditional exclusions include claims for experimental treatments, personal convenience items, and services related to sexual dysfunction or biofeedback training. The plan also excludes coverage for chiropractic care, acupuncture, and alternative medicine. Routine care for adults and non-emergency care outside the U.S. are not covered. The document emphasizes that the exclusions are meant to clarify non-covered items and should not imply coverage.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Two",
+      "global_page_num": 37
+    },
+    "38": {
+      "page_number": 38,
+      "original_name": "Reliant Care Five_page_038.jpg",
+      "original_path": "img/pages/Reliant Care Five_page_038.jpg",
+      "new_name": "38_reliant_care_5_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "new_path": "img/pages/38_reliant_care_5_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "page_title": "reliant_care_5_plan_features_benefits_and_coverage_details_with_limitations",
+      "summary": "The Reliant Care 5 plan offers a range of healthcare services with specific co-pays and coverage limits. Physician services, utilizing the First Health Network, include a wellness exam with a $25 co-pay and a maximum of one visit per year, and primary care office visits with a $50 co-pay for up to five visits annually. Specialist or urgent care visits have a $75 co-pay, also limited to five visits per year. In-patient hospitalization benefits are provided at $1,500 per day, with a yearly maximum of $15,000, subject to a 12-month pre-existing condition exclusion. In/outpatient surgery is covered up to $4,500 per year, with similar pre-existing condition limitations. Emergency room visits, if admitted, incur a $1,000 per incident charge, and ambulance services are $500 per incident, both subject to the 12-month pre-existing condition clause.\n\nTelemedicine services are available with no consult fee and no maximum limit. Pharmacy benefits include a 30-day supply of acute and preventive generic prescriptions at member pricing, with generic drugs having a $0 co-pay. Preferred generics have a $5 co-pay, while non-preferred generics cost $5 for a 30-day supply and $20 for a 90-day mail order. Brand drugs require prior authorization, with costs of $40 for a 30-day supply and $80 for a 90-day mail order. Non-preventive maintenance prescriptions are subject to a $150 monthly benefit limit per person, with specialty drugs not covered.\n\nThe plan includes a 30-day waiting period for all sickness benefits and requires in-network providers for outpatient physician services and wellness benefits. Hospitalization benefits are not payable for pre-existing conditions within the first 12 months of coverage. The plan does not cover services unless listed in the Schedule of Benefits, emphasizing the importance of reviewing the list carefully.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Five",
+      "global_page_num": 38
+    },
+    "40": {
+      "page_number": 40,
+      "original_name": "Reliant Care Five_page_040.jpg",
+      "original_path": "img/pages/Reliant Care Five_page_040.jpg",
+      "new_name": "40_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "new_path": "img/pages/40_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, focusing on various screenings and counseling services. Breastfeeding support, supplies, and counseling are provided in conjunction with each birth, covering interventions during pregnancy and after birth, including equipment rental costs. Cervical cancer screenings are available for women aged 21 to 65, with cytology every three years, and for women aged 30 to 65 with high-risk HPV testing every five years. Chlamydia screening is offered annually for sexually active women aged 24 and younger, and older women at increased risk.\n\nColorectal cancer screening is available every five years for adults aged 50 to 75, with benefits for a colonoscopy if initial tests are positive. Contraceptive methods and counseling are provided as prescribed, covering FDA-approved methods and patient education. Dental caries prevention is available annually for infants and children up to age 5, with fluoride varnish applications and oral fluoride supplementation starting at age 6 months.\n\nDepression screening is offered annually for the general adult population, including pregnant and postpartum women, with systems in place for accurate diagnosis and treatment. Diabetes screening is available annually for adults aged 40 to 70 who are overweight or obese, with counseling for those with abnormal glucose levels. Fall prevention exercises are provided annually for adults aged 65 and older at risk for falls. Folic acid supplementation is prescribed for women planning pregnancy, and gestational diabetes screening is available for asymptomatic pregnant women after 24 weeks of gestation.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Five",
+      "global_page_num": 40
+    },
+    "39": {
+      "page_number": 39,
+      "original_name": "Reliant Care Five_page_039.jpg",
+      "original_path": "img/pages/Reliant Care Five_page_039.jpg",
+      "new_name": "39_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "new_path": "img/pages/39_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details",
+      "summary": "This document outlines the preventive health services covered under the MEC/Preventative Health Services plan. Benefits are automatically subject to 29 CFR \u00a7 2590.715-2713(a), with amendments incorporated through legislative acts or regulations. The preventive services include medical services rated 'A' or 'B' by the United States Preventive Services Task Force, preventive care for infants, children, and adolescents as per guidelines from the Health Resources and Services Administration, and immunizations recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention.\n\nThe plan covers various screenings and preventive medications. Abdominal Aortic Aneurysm Screening is available once per lifetime for men aged 65-75 who have smoked. Adult Annual Standard Physicals are covered once per plan year. Alcohol misuse screening and counseling are provided annually for adults 18 years or older. Aspirin is prescribed for adults aged 50 to 59 at risk of cardiovascular diseases. Bacteriuria Screening is available once per plan year for pregnant women. BRCA Risk Assessment and Genetic Counseling/Testing are covered annually for women with a family history of breast, ovarian, or related cancers. Breast Cancer Preventive Medications are prescribed for women at increased risk. Breast Cancer Screening is available once every two years for women aged 50 and older, limited to 2D mammograms.\n\nIt is important to note that none of these preventive health services are covered if provided at a hospital.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Five",
+      "global_page_num": 39
+    },
+    "41": {
+      "page_number": 41,
+      "original_name": "Reliant Care Five_page_041.jpg",
+      "original_path": "img/pages/Reliant Care Five_page_041.jpg",
+      "new_name": "41_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/41_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "This document provides a detailed summary of benefits under the MEC/Preventative Health Services plan, focusing on various screenings and counseling services. The plan includes Gonorrhea Prophylactic Medication, which is prescribed for all newborns to prevent gonococcal ophthalmia neonatorum. Gonorrhea Screening is available once per plan year for sexually active women aged 24 years or younger and older women at increased risk. Healthy Diet and Physical Activity Counseling is offered once per plan year for adults who are overweight or obese with cardiovascular disease risk factors, aiming to promote a healthful diet and physical activity. Hemoglobinopathies Screening is provided once per plan year for sickle cell disease in newborns. Hepatitis B and C screenings are available once per plan year for pregnant women and adults at high risk, respectively. High Blood Pressure Screening is offered annually for adults aged 18 or older. HIV Preexposure Prophylaxis is prescribed for individuals at high risk of HIV infection, while HIV Screening is available annually for adolescents and adults aged 15 to 65 years, including pregnant women. Hypothyroidism Screening is conducted for newborns, and Intimate Partner Violence Screening is available for women of reproductive age. Lung Cancer Screening is offered annually for adults aged 55 to 80 years with a significant smoking history. Obesity Screening and Counseling is provided for children and adolescents aged 6 years and older, as well as adults with a BMI of 30 kg/m2 or higher. Osteoporosis Screening is available annually for women aged 65 and older, and Phenylketonuria Screening is conducted for newborns.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care Five",
+      "global_page_num": 41
+    },
+    "42": {
+      "page_number": 42,
+      "original_name": "Reliant Care Five_page_042.jpg",
+      "original_path": "img/pages/Reliant Care Five_page_042.jpg",
+      "new_name": "42_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/42_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, detailing various screenings and counseling services available to plan members. Each benefit is listed with its interval and specific requirements, ensuring clarity on eligibility and coverage. Preeclampsia screening is available once per plan year for pregnant women, focusing on blood pressure measurements throughout pregnancy. Rh incompatibility screening is provided during the first pregnancy visit and again at 24-28 weeks' gestation for unsensitized Rh (D)-negative women, unless the biological father is known to be Rh (D)-negative.\n\nSexually transmitted infections counseling is offered once per plan year for sexually active adolescents and adults at increased risk. Skin cancer behavioral counseling is available for young individuals aged 6 months to 24 years with fair skin types, emphasizing ultraviolet radiation exposure minimization. Statin preventive medication is prescribed for adults without a history of cardiovascular disease but with certain risk factors, including age and calculated risk scores.\n\nSyphilis screening is provided annually for non-pregnant persons at increased risk and all pregnant women. Tobacco use counseling and interventions are covered twice per plan year, focusing on cessation support for adults and pregnant women, with additional interventions for school-aged children and adolescents. Tuberculosis screening is available annually for at-risk populations. Vision screening is offered once every two plan years for children aged 3 to 5 years. Well-woman visits and well-child visits are covered annually, providing age-appropriate preventive services and prenatal care.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care Five",
+      "global_page_num": 42
+    },
+    "43": {
+      "page_number": 43,
+      "original_name": "Reliant Care Five_page_043.jpg",
+      "original_path": "img/pages/Reliant Care Five_page_043.jpg",
+      "new_name": "43_mec_preventative_health_services_summary_of_benefits_with_immunization_details_and_age_requirements.jpg",
+      "new_path": "img/pages/43_mec_preventative_health_services_summary_of_benefits_with_immunization_details_and_age_requirements.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_details_and_age_requirements",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention. The immunizations are intended for routine use in children, adolescents, or adults. The document is divided into two main sections based on age groups: Birth Through Six Years Old and Children From Seven Through Eighteen Years Old. \n\nFor the age group Birth Through Six Years Old, the document lists several vaccines along with their abbreviations and specific age requirements. These include Hepatitis B (HepB) for ages 4 weeks to 2 months and 6 months to 18 months, Diphtheria, Tetanus, and Acellular Pertussis (DTap) for ages 15 months to 18 months, and Haemophilus Influenzae Type B (Hib) for ages 12 months to 15 months. Other vaccines include Pneumococcal 13-valent Conjugate (PCV13), Inactivated Poliovirus (IPV), Influenza (yearly), Measles, Mumps, and Rubella (MMR), Varicella (VAR), Hepatitis A (HepA), and Rotavirus (RV), each with specific age requirements and limitations.\n\nFor the age group Children From Seven Through Eighteen Years Old, the document specifies vaccines such as Influenza (yearly) for ages 7 to 18 years, Tetanus, Diphtheria, and Acellular Pertussis (Tdap) for ages 11 to 12 years, and Human Papillomavirus (HPV) for ages 11 to 12 years with additional notes for those with weakened immune systems. Meningococcal vaccines (MenACWY) are recommended for ages 11 to 12 years and a booster at age 16. The document provides a structured overview of the immunization schedule, ensuring clarity on age-specific requirements and limitations.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Five",
+      "global_page_num": 43
+    },
+    "44": {
+      "page_number": 44,
+      "original_name": "Reliant Care Five_page_044.jpg",
+      "original_path": "img/pages/Reliant Care Five_page_044.jpg",
+      "new_name": "44_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "new_path": "img/pages/44_mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_requirements_and_exclusions",
+      "summary": "This document provides a detailed summary of benefits related to immunizations for adults aged nineteen years or older under the MEC/Preventative Health Services plan. It outlines specific vaccines covered, including Influenza (inactivated and recombinant), Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Measles, Mumps, and Rubella (MMR), Varicella, Zoster (recombinant and live), Human Papillomavirus (HPV) for both females and males, and Pneumococcal vaccines (PCV13 and PPSV23). Each vaccine has specific age requirements and limitations, such as the number of doses and age ranges for administration. For example, the Influenza inactivated vaccine is recommended annually for ages 19 to 65, while the Tdap vaccine is administered once with a booster every ten years.\n\nThe document also includes a section on exclusions, detailing specific services and treatments not covered under this plan. Exclusions encompass office visits for routine care, cosmetic surgeries unless deemed medically necessary, and any medical service not explicitly provided by the plan. Additionally, treatments related to sports, employment, and legal proceedings are not covered. The exclusions section specifies that any claims related to injuries from employment or those covered by a Worker\u2019s Compensation policy are not included.\n\nOverall, the document provides clear guidelines on the immunization benefits available and the limitations and exclusions applicable to the plan, ensuring that participants are aware of the coverage specifics and restrictions.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Five",
+      "global_page_num": 44
+    },
+    "46": {
+      "page_number": 46,
+      "original_name": "Reliant Care One_page_046.jpg",
+      "original_path": "img/pages/Reliant Care One_page_046.jpg",
+      "new_name": "46_reliant_care_1_plan_details_with_benefits_comparison_and_limitations.jpg",
+      "new_path": "img/pages/46_reliant_care_1_plan_details_with_benefits_comparison_and_limitations.jpg",
+      "page_title": "reliant_care_1_plan_details_with_benefits_comparison_and_limitations",
+      "summary": "The Reliant Care 1 plan offers a structured set of benefits focusing on physician services, telemedicine, and advocacy. Under physician services, the plan allows for three primary care office visits per year with a co-pay of $25 and a maximum charge of $150 per visit. Additionally, it covers one specialist or urgent care office visit annually, with a co-pay of $50 and a maximum of $300 per visit. In-patient hospitalization benefits are provided at $1,000 per day, with a yearly maximum of $5,000, subject to a 12-month pre-existing condition exclusion.\n\nTelemedicine services are available with no consult fee and no maximum limit, enhancing accessibility to healthcare professionals remotely. The plan also includes a discount prescription program available only at participating pharmacies. Advocacy services are supported through a hospital bill reducer feature, assisting members in managing healthcare expenses.\n\nThe plan has specific limitations, including a 30-day waiting period for sickness benefits and restrictions to in-network providers for outpatient services. Hospitalization benefits are not payable for pre-existing conditions within the first 12 months. The plan does not cover services outside the listed benefits, emphasizing the importance of reviewing the schedule of benefits for detailed coverage information.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care One",
+      "global_page_num": 46
+    },
+    "45": {
+      "page_number": 45,
+      "original_name": "Reliant Care Five_page_045.jpg",
+      "original_path": "img/pages/Reliant Care Five_page_045.jpg",
+      "new_name": "45_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "new_path": "img/pages/45_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations",
+      "summary": "The document outlines the exclusions and limitations associated with the MEC/Preventative Health Services plan. It specifies that claims arising from service outside the United States are not covered, except for reasonable costs billed by the Veterans Administration or Department of Defense. Claims for services not medically necessary or those exceeding customary rates are excluded. Public health program reimbursements are not covered, regardless of participant election.\n\nThe plan excludes claims due to acts of war, terrorism, or illegal acts, and does not cover investigatory or experimental treatments unless approved. Claims related to self-inflicted injuries, weight control, and cosmetic surgery are also excluded. The document lists specific services not covered, such as eyeglasses, hearing aids, and abortion services unless specified in the schedule of benefits.\n\nAdditional exclusions include personal convenience items, recreational therapy, and services from non-healthcare providers. Claims for cosmetic surgery, chiropractic care, and alternative medicine are not covered. The document emphasizes that the exclusions are meant to clarify non-covered treatments and should not imply coverage under the plan.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care Five",
+      "global_page_num": 45
+    },
+    "47": {
+      "page_number": 47,
+      "original_name": "Reliant Care One_page_047.jpg",
+      "original_path": "img/pages/Reliant Care One_page_047.jpg",
+      "new_name": "47_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "new_path": "img/pages/47_mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_medication_details",
+      "summary": "This document outlines the preventive health services covered under the MEC/Preventative Health Services plan. Benefits are automatically subject to 29 CFR \u00a7 2590.715-2713(a), with amendments incorporated through legislative acts or regulations. The preventive services include medical services rated 'A' or 'B' by the United States Preventive Services Task Force, preventive care for infants, children, and adolescents, and immunizations recommended by the Advisory Committee on Immunization Practices of the CDC.\n\nThe plan covers a variety of screenings and preventive medications. Abdominal aortic aneurysm screening is available once per lifetime for men aged 65-75 who have smoked. An adult annual standard physical is covered once per plan year. Alcohol misuse screening and counseling are provided annually for adults 18 years or older. Aspirin is prescribed for adults aged 50 to 59 at risk of cardiovascular diseases. Bacteriuria screening is available annually for pregnant women. BRCA risk assessment and genetic counseling/testing are covered annually for women with a family history of certain cancers. Breast cancer preventive medications are prescribed for women at increased risk. Breast cancer screening is available once every two years for women aged 50 and older, limited to 2D mammograms.\n\nIt is important to note that none of these preventive health services are covered if provided at a hospital.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care One",
+      "global_page_num": 47
+    },
+    "48": {
+      "page_number": 48,
+      "original_name": "Reliant Care One_page_048.jpg",
+      "original_path": "img/pages/Reliant Care One_page_048.jpg",
+      "new_name": "48_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "new_path": "img/pages/48_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, focusing on various screenings and counseling services. Breastfeeding support, supplies, and counseling are provided in conjunction with each birth, covering interventions during pregnancy and after birth. Cervical cancer screenings are available every three to five years, depending on the type of test, with specific age and risk criteria for women. Chlamydia screening is offered annually for sexually active women under 24 and those at increased risk. Colorectal cancer screening is available every five years for adults starting at age 50, with benefits for a colonoscopy if initial tests are positive.\n\nContraceptive methods and counseling are covered as prescribed, including FDA-approved methods and patient education. Dental caries prevention for infants and children up to age 5 includes fluoride varnish applications and fluoride supplementation. Depression screening is available annually for the general adult population, including pregnant and postpartum women, with a focus on accurate diagnosis and follow-up. Diabetes screening is provided annually for adults aged 40 to 70 who are overweight or obese, with counseling interventions for those with abnormal glucose levels.\n\nFall prevention for older adults includes exercise interventions for those aged 65 and older at risk for falls. Folic acid supplementation is prescribed for women planning pregnancy. Gestational diabetes mellitus screening is available for asymptomatic pregnant women after 24 weeks of gestation. Each service has specific requirements and intervals, ensuring targeted and effective preventative care.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care One",
+      "global_page_num": 48
+    },
+    "50": {
+      "page_number": 50,
+      "original_name": "Reliant Care One_page_050.jpg",
+      "original_path": "img/pages/Reliant Care One_page_050.jpg",
+      "new_name": "50_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/50_mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "The document outlines the preventive health services covered under the MEC plan, detailing various screenings and counseling services available to plan members. Each benefit is listed with its interval and specific requirements for eligibility. Preeclampsia screening is available once per plan year for pregnant women with blood pressure monitoring throughout pregnancy. Rh incompatibility screening is provided during the first pregnancy visit and again at 24-28 weeks' gestation for unsensitized Rh (D)-negative women, unless the biological father is known to be Rh (D)-negative.\n\nSexually transmitted infections counseling is offered once per plan year for sexually active adolescents and adults at increased risk. Skin cancer behavioral counseling is available for young individuals aged 6 months to 24 years with fair skin types to minimize ultraviolet radiation exposure. Statin preventive medication is prescribed for adults aged 40 to 75 years with specific cardiovascular risk factors. Syphilis screening is provided annually for non-pregnant persons at increased risk and all pregnant women.\n\nTobacco use counseling and interventions are covered twice per plan year, including behavioral interventions and FDA-approved pharmacotherapy for adults and pregnant women. Tuberculosis screening is available annually for at-risk populations. Vision screening is provided once every two plan years for children aged 3 to 5 years. Well-woman visits are covered annually for women under 65, including preconception care and prenatal services. Well-child visits are also covered annually, with more frequent visits recommended for children under three years of age.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care One",
+      "global_page_num": 50
+    },
+    "49": {
+      "page_number": 49,
+      "original_name": "Reliant Care One_page_049.jpg",
+      "original_path": "img/pages/Reliant Care One_page_049.jpg",
+      "new_name": "49_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "new_path": "img/pages/49_mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_including_screenings_and_counseling",
+      "summary": "This document outlines the preventative health services covered under the MEC plan, focusing on various screenings and counseling services. The benefits include Gonorrhea Prophylactic Medication, which is provided as prescribed for newborns to prevent gonococcal ophthalmia neonatorum. Gonorrhea Screening is available once per plan year for sexually active women aged 24 years or younger and older women at increased risk. Healthy Diet and Physical Activity Counseling is offered once per plan year for adults who are overweight or obese with cardiovascular disease risk factors, aiming to promote a healthful diet and physical activity. Hemoglobinopathies Screening is provided once per plan year for sickle cell disease in newborns. Hepatitis B and C screenings are available once per plan year for pregnant women and adults at high risk, respectively.\n\nHigh Blood Pressure Screening is conducted once per plan year for adults aged 18 or older. HIV Preexposure Prophylaxis is prescribed for individuals at high risk of HIV infection, while HIV Screening is available once per plan year for adolescents and adults aged 15 to 65 years, including pregnant women. Hypothyroidism Screening is conducted for newborns once per plan year. Intimate Partner Violence Screening is available once per plan year for women of reproductive age. Lung Cancer Screening is offered once per plan year for adults aged 55 to 80 years with a significant smoking history. Obesity Screening and Counseling are provided once per plan year for children and adolescents aged 6 years and older, as well as adults with a BMI of 30 kg/m2 or higher. Osteoporosis Screening is available once per plan year for women aged 65 and older. Phenylketonuria Screening is conducted for newborns once per plan year.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": false
+      },
+      "pdf_source": "Reliant Care One",
+      "global_page_num": 49
+    },
+    "53": {
+      "page_number": 53,
+      "original_name": "Reliant Care One_page_053.jpg",
+      "original_path": "img/pages/Reliant Care One_page_053.jpg",
+      "new_name": "53_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "new_path": "img/pages/53_mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_exclusions_and_limitations",
+      "summary": "The document outlines the exclusions and limitations associated with the MEC/Preventative Health Services plan. It specifies that claims arising from service outside the United States are not covered, except for reasonable costs billed by the Veterans Administration or Department of Defense. Claims for services not deemed medically necessary or those exceeding customary rates are excluded. Public health program reimbursements are not covered, regardless of participant election.\n\nThe plan excludes claims related to acts of war, terrorism, and certain medical procedures such as abortion services unless specified in the schedule of benefits. Custodial care, investigatory treatments, and services not approved under clinical trials are also excluded. Claims due to self-inflicted injuries, illegal acts, or domestic violence are not covered unless resulting from a medical condition. The plan does not cover claims related to weight control, infertility, or cosmetic surgery unless specified.\n\nAdditional exclusions include claims for disability from sterilization reversal, personal convenience items, and non-emergency care outside the U.S. Routine care for adults and newborns, alternative medicine, and certain therapies are not covered. The document emphasizes that the exclusions are meant to clarify non-covered treatments and should not imply coverage under the plan.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care One",
+      "global_page_num": 53
+    },
+    "52": {
+      "page_number": 52,
+      "original_name": "Reliant Care One_page_052.jpg",
+      "original_path": "img/pages/Reliant Care One_page_052.jpg",
+      "new_name": "52_mec_preventative_health_services_summary_of_benefits_with_immunization_and_exclusion_details.jpg",
+      "new_path": "img/pages/52_mec_preventative_health_services_summary_of_benefits_with_immunization_and_exclusion_details.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_and_exclusion_details",
+      "summary": "This document provides a detailed summary of benefits related to immunizations for adults aged nineteen years or older under the MEC/Preventative Health Services plan. The immunizations covered include Influenza inactivated, Influenza recombinant, Influenza live attenuated, Tetanus, diphtheria, and acellular pertussis, Measles, mumps, and rubella, Varicella, Zoster recombinant, Zoster live, Human papillomavirus for both females and males, Pneumococcal 13-valent conjugate, and Pneumococcal 23-valent polysaccharide. Each vaccine has specific age requirements and limitations, such as the number of doses and age ranges for administration. For example, the Influenza inactivated vaccine is administered annually for ages 19 to 65, while the Tetanus, diphtheria, and acellular pertussis vaccine is given to ages 19 to 65 with a booster every 10 years.\n\nThe document also outlines exclusions applicable to the benefits offered under this plan. These exclusions include office visits, physical examinations, immunizations, and tests when required solely for activities such as sports, camp, employment, travel, and other non-medical purposes. Additionally, any medical service, treatment, or procedure not covered under this plan, as well as any other expenses, bills, charges, and monetary obligations, are excluded unless explicitly provided by the plan. Specific exclusions also cover cosmetic surgery unless medically necessary, treatment related to teeth or periodontium, and any claims related to employment or worker's compensation policies.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care One",
+      "global_page_num": 52
+    },
+    "51": {
+      "page_number": 51,
+      "original_name": "Reliant Care One_page_051.jpg",
+      "original_path": "img/pages/Reliant Care One_page_051.jpg",
+      "new_name": "51_mec_preventative_health_services_summary_of_benefits_with_immunization_details_and_age_requirements.jpg",
+      "new_path": "img/pages/51_mec_preventative_health_services_summary_of_benefits_with_immunization_details_and_age_requirements.jpg",
+      "page_title": "mec_preventative_health_services_summary_of_benefits_with_immunization_details_and_age_requirements",
+      "summary": "This document provides a detailed summary of benefits related to MEC/Preventative Health Services, focusing on immunizations recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention. The immunizations are intended for routine use in children, adolescents, or adults. The document is divided into two main sections based on age groups: Birth Through Six Years Old and Children From Seven Through Eighteen Years Old.\n\nFor the age group Birth Through Six Years Old, the document lists several vaccines along with their abbreviations and specific age requirements. These include Hepatitis B (HepB) for ages 4 weeks to 2 months and 6 months to 18 months, Diphtheria, tetanus, and acellular pertussis (DTap) for ages 15 months to 18 months, and Haemophilus influenzae type b (Hib) for ages 12 months to 15 months. Other vaccines include Pneumococcal 13-valent conjugate (PCV13), Inactivated poliovirus (IPV), Influenza (yearly), Measles, mumps, and rubella (MMR), Varicella (VAR), Hepatitis A (HepA), and Rotavirus (RV), each with specific age requirements and limitations.\n\nFor the age group Children From Seven Through Eighteen Years Old, the document specifies vaccines such as Influenza (yearly) for ages 7 to 18 years, Tetanus, diphtheria, and acellular pertussis (Tdap) for ages 11 to 12 years, and Human papillomavirus (HPV) for ages 11 to 12 years with additional notes for those with weakened immune systems. Meningococcal serogroups A,C,W,Y (MenACWY) is recommended for ages 11 to 12 years, with a booster at age 16. The document outlines specific age requirements and limitations for each vaccine, ensuring clarity on the recommended immunization schedule.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "Reliant Care One",
+      "global_page_num": 51
+    }
+  },
+  "extracted_tables": {},
+  "presentation": {
+    "content": "### Presentation Plan for Reliant Care Insurance Plans\n\n#### Cover (1 slide)\n- **Title:** Reliant Care\n- **Tagline:** \"Empowering Your Health Journey with Tailored Insurance Solutions\"\n\n#### Plan Overview (1 slide)\n- **Target Audience:** Individuals and families seeking flexible healthcare solutions.\n- **Offerings:** A range of plans focusing on preventive care, wellness, and varying levels of medical coverage.\n- **Key Benefits:** Accessibility to healthcare services, affordability, and personalized plan options to suit diverse needs.\n\n#### Core Plan Elements (2-3 slides)\n- **Coverage Areas:** \n  - Physician services, hospitalization, telemedicine, and prescription coverage.\n- **Plan Structure:** \n  - Tiered options with varying co-pays, visit limits, and annual maximums.\n- **Eligibility:** \n  - Designed for individuals and families, with a focus on affordability and accessibility.\n\n#### Common Service Features (2-3 slides)\n- **Provider Networks:** \n  - Utilizes the First Health Network for in-network services.\n- **Claims Management:** \n  - Efficient claims processing with support tools.\n- **Support Tools:** \n  - Wellness programs, advocacy services, and telemedicine access.\n\n#### Plan Tiers Breakdown (8-12 slides)\n- **Reliant Care Wellness:**\n  - Focus on preventive care and wellness benefits.\n  - Includes one wellness exam per year with a $25 co-pay.\n  - Telemedicine services with no consult fee.\n\n- **Reliant Care 1:**\n  - Three primary care visits per year, $25 co-pay, $150 max per visit.\n  - One specialist visit per year, $50 co-pay, $300 max per visit.\n  - Hospitalization: $1,000/day, $5,000 annual max, 12-month pre-existing exclusion.\n  - Telemedicine with no consult fee.\n\n- **Reliant Care 2:**\n  - Four primary care visits per year, $25 co-pay, $150 max per visit.\n  - Two specialist visits per year, $50 co-pay, $300 max per visit.\n  - Hospitalization: $1,000/day, $10,000 annual max, 12-month pre-existing exclusion.\n  - Telemedicine with no consult fee.\n\n- **Reliant Care 3:**\n  - Four primary care visits per year, $25 co-pay, $150 max per visit.\n  - Four specialist visits per year, $50 co-pay, $300 max per visit.\n  - Hospitalization: $1,000/day, $15,000 annual max, 12-month pre-existing exclusion.\n  - Telemedicine with no consult fee.\n\n- **Reliant Care 4:**\n  - Four primary care visits per year, $50 co-pay, $150 max per visit.\n  - Four specialist visits per year, $75 co-pay, $300 max per visit.\n  - Hospitalization: $1,000/day, $10,000 annual max, 12-month pre-existing exclusion.\n  - Telemedicine with no consult fee.\n\n- **Reliant Care 5:**\n  - Five primary care visits per year, $50 co-pay, $150 max per visit.\n  - Five specialist visits per year, $75 co-pay, $300 max per visit.\n  - Hospitalization: $1,500/day, $15,000 annual max, 12-month pre-existing exclusion.\n  - Telemedicine with no consult fee.\n\n#### Comparison Slides (Markdown Table)\n```markdown\n| Plan Tier       | Primary Care Visits | Specialist Visits | Hospitalization Benefit | Telemedicine | Co-pay Structure |\n|-----------------|---------------------|-------------------|-------------------------|--------------|------------------|\n| Wellness        | 1 per year          | N/A               | N/A                     | No fee       | $25 per visit    |\n| Reliant Care 1  | 3 per year          | 1 per year        | $1,000/day, $5,000 max  | No fee       | $25/$50 per visit|\n| Reliant Care 2  | 4 per year          | 2 per year        | $1,000/day, $10,000 max | No fee       | $25/$50 per visit|\n| Reliant Care 3  | 4 per year          | 4 per year        | $1,000/day, $15,000 max | No fee       | $25/$50 per visit|\n| Reliant Care 4  | 4 per year          | 4 per year        | $1,000/day, $10,000 max | No fee       | $50/$75 per visit|\n| Reliant Care 5  | 5 per year          | 5 per year        | $1,500/day, $15,000 max | No fee       | $50/$75 per visit|\n```\n\n#### Limitations and Exclusions (1-2 slides)\n- **Exclusions:** \n  - Pre-existing conditions for hospitalization (12-month exclusion).\n  - Specialty drugs not covered.\n  - Services not listed in the Schedule of Benefits.\n- **Limitations:** \n  - 30-day waiting period for sickness benefits.\n  - In-network provider requirements for outpatient services.\n\n#### Key Takeaways and Action Steps (1 slide)\n- **Flexibility:** \n  - Multiple plan options to suit different needs and budgets.\n- **Balance:** \n  - Cost-effective solutions with essential coverage.\n- **Next Steps:** \n  - Review plan details, consult with a representative, and enroll in the plan that best fits your needs.\n\n#### Thank You (1 slide)\n- **Message:** \n  - \"Thank you for considering Reliant Care. We are committed to supporting your health journey with tailored insurance solutions.\"",
+    "generated_at": "2025-02-10T22:48:51.508595"
+  },
+  "slides": {
+    "content": "---\nid: FEN_reliant_care\ntheme: ../../\ntitle: | \n  Reliant Care Plans\ninfo: |\n  ## Reliant Care Plans Review\n  A look at the Reliant Care Plans benefits and details.\nverticalCenter: true\nlayout: intro\nthemeConfig:\n  logoHeader: ./img/logos/FEN_logo.svg\n  audioEnabled: true\ntransition: fade-out\ndrawings:\n  persist: false\n---\n\n<SlideAudio deckKey=\"FEN_reliant_care\" />\n\n# Reliant Care Plans Review\n\nUnderstanding the details and benefits of the **Reliant Care Health Insurance Plans**\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Reliant Care Overview\n\n<v-clicks>\n\n- Comprehensive coverage through **Reliant Care**\n- **Preventive Care** for proactive health management\n- **Telemedicine Services** and support tools\n- **Prescription Coverage** through formulary\n- **Advocacy Services** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Features and Benefits\n\n<v-clicks>\n\n**Primary Care Visits**\n\n**Specialist Visits**\n\n**Hospitalization Benefits**\n\n**Telemedicine Services** (varies by plan)\n</v-clicks>\n\n<v-click>\n\n**Prescription Assistance** through BestChoice RX\n<div class=\"grid grid-cols-1 gap-4 items-center px-8 py-4\">\n  <img src=\"\" class=\"h-12 mix-blend-multiply\" alt=\"BestChoice RX Logo\">\n</div>\n\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Cost Management Tools\n\n<v-click>\n\n**Hospital Bill Reducer** (HBR)\n</v-click>\n\n<v-click>\n\n**Advocacy Services** System\n</v-click>\n\n<v-click>\n\n**Prescription Assistance** Support\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## How Hospital Bill Reducer Works\n\n<v-clicks>\n\n1. Enroll through **Reliant Care**\n2. Submit hospital bills\n3. Review and negotiate charges\n4. Receive adjusted bill **(HBR)**\n5. Pay reduced amount\n6. **Save on healthcare costs**\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Preventive Care and Wellness\n\n<v-clicks>\n\n- **Annual Physicals** Services\n- **Screening Programs** for early detection\n- **Kindly Human** provides telemedicine\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Telehealth Services\n\n<v-clicks>\n\n- **No Consult Fee**\n- **Unlimited Access**\n- **Remote Consultations** available\n- **24/7 Access** to care\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Advocacy and Support Services\n\n<v-clicks>\n\n- **Comprehensive** healthcare advocacy\n- **Bill Negotiation** assistance\n- **Prescription Assistance** options\n- **Telemedicine Support** services\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_1.jpg\n---\n\n## Reliant Care 1 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 3 visits per year\n- $25 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 1 visit per year\n- $50 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000 per day\n- $5,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_1.jpg\n---\n\n## Reliant Care 1 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Advocacy Services**\n- Hospital bill reducer\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_2.jpg\n---\n\n## Reliant Care 2 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 4 visits per year\n- $25 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 2 visits per year\n- $50 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000 per day\n- $10,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_2.jpg\n---\n\n## Reliant Care 2 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Coverage**\n- Preventive and acute\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_3.jpg\n---\n\n## Reliant Care 3 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 4 visits per year\n- $25 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 4 visits per year\n- $50 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000 per day\n- $15,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_3.jpg\n---\n\n## Reliant Care 3 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Coverage**\n- Preventive and acute\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_4.jpg\n---\n\n## Reliant Care 4 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 4 visits per year\n- $50 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 4 visits per year\n- $75 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000 per day\n- $10,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_4.jpg\n---\n\n## Reliant Care 4 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Coverage**\n- Preventive and acute\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_5.jpg\n---\n\n## Reliant Care 5 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 5 visits per year\n- $50 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 5 visits per year\n- $75 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,500 per day\n- $15,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_5.jpg\n---\n\n## Reliant Care 5 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Coverage**\n- Preventive and acute\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Comparing the Plans\n\n| **Feature** | **Reliant Care 1** | **Reliant Care 2** | **Reliant Care 3** | **Reliant Care 4** | **Reliant Care 5** |\n|---------|----------|----------|-----------|-----------|-----------|\n| Primary Care Visits | 3/year | 4/year | 4/year | 4/year | 5/year |\n| Specialist Visits | 1/year | 2/year | 4/year | 4/year | 5/year |\n| Hospitalization | $5,000 max | $10,000 max | $15,000 max | $10,000 max | $15,000 max |\n| Telemedicine | Unlimited | Unlimited | Unlimited | Unlimited | Unlimited |\n| Prescription Coverage | Discount | Formulary | Formulary | Formulary | Formulary |\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_definitions.jpg\n---\n\n## Definitions and Limitations\n\n<v-click>\n\n**Pre-existing Conditions**\n- 12-month exclusion\n- Applies to hospitalization\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Outpatient Services**\n- In-network only\n<Arrow v-bind=\"{{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Limits**\n- $150 monthly limit\n<Arrow v-bind=\"{{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialty Drugs**\n- Not covered\n<Arrow v-bind=\"{{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Takeaways and Reminders\n\n<v-clicks>\n\n- **Comprehensive Coverage** benefits\n- **Preventive Services** included\n- **Telemedicine Access** benefits\n- **In-network Providers** required\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: end\nline: Thank you for participating in the Reliant Care Plans Review. Continue to be great!\n---\n\n# Thank You!\n\nContinue to be great!\n\n<img src=\"./img/logos/FEN_logo.svg\" class=\"h-12 mt-32\" alt=\"FirstEnroll Logo\">",
+    "template_used": "---\nid: FEN_{{deck_key}}\ntheme: ../../\ntitle: | \n  {{ Plan Name }}\ninfo: |\n  ## {{ Plan Name }} Review\n  A look at the {{ Plan Name }} benefits and details.\nverticalCenter: true\nlayout: intro\nthemeConfig:\n  logoHeader: ./img/logos/FEN_logo.svg\n  audioEnabled: true\ntransition: fade-out\ndrawings:\n  persist: false\n---\n\n<SlideAudio deckKey=\"FEN_{{deck_key}}\" />\n\n# {{ Plan Name }} Review\n\nUnderstanding the details and benefits of the **{{ Plan Full Name }}**\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## {{ Plan Name }} Overview\n\n<v-clicks>\n\n- {{ Overview Point 1 }} through **{{ Organization }}**\n- **{{ Benefit Category 1 }}** for various situations\n- **{{ Benefit Category 2 }}** and support tools\n- **{{ Benefit Category 3 }}** through {{ Feature }}\n- **{{ Benefit Category 4 }}** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Features and Benefits\n\n<v-clicks>\n\n**{{ Benefit Type 1 }}**\n\n**{{ Benefit Type 2 }}**\n\n**{{ Benefit Type 3 }}**\n\n**{{ Benefit Type 4 }}** (varies by plan)\n</v-clicks>\n\n<v-click>\n\n**{{ Additional Benefit }}** through {{ Partner }}\n<div class=\"grid grid-cols-1 gap-4 items-center px-8 py-4\">\n  <img src=\"\" class=\"h-12 mix-blend-multiply\" alt=\"{{ Brand }} Logo\">\n</div>\n\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Cost Management Tools\n\n<v-click>\n\n**{{ Tool Name }}** ({{ Acronym }})\n</v-click>\n\n<v-click>\n\n**{{ Feature 1 }}** System\n</v-click>\n\n<v-click>\n\n**{{ Feature 2 }}** Support\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## How {{ Tool Name }} Works\n\n<v-clicks>\n\n1. Enroll through **{{ Organization }}**\n2. {{ Step 2 }}\n3. {{ Step 3 }}\n4. Receive {{ Document }} **({{ Acronym }})**\n5. {{ Step 5 }}\n6. **{{ Final Outcome }}**\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Preventive Care and Wellness\n\n<v-clicks>\n\n- **{{ Service 1 }}** Services\n- **{{ Service 2 }}** Programs\n- **{{ Partner }}** provides {{ service_type }}\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Telehealth Services\n\n<v-clicks>\n\n- **{{ Feature 1 }}**\n- **{{ Feature 2 }}**\n- **{{ Feature 3 }}** available\n- **{{ Feature 4 }}** to care\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Advocacy and Support Services\n\n<v-clicks>\n\n- **{{ Service Style }}** healthcare advocacy\n- **{{ Service 1 }}** assistance\n- **{{ Service 2 }}** options\n- **{{ Service 3 }}** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_1}}.jpg\n---\n\n## {{ Plan 1 Name }} (1/2)\n\n<v-click>\n\n**{{ Benefit Category 1 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n- {{ Detail 3 }}\n- {{ Detail 4 }}\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 2 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 3 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n- {{ Detail 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_1}}.jpg\n---\n\n## {{ Plan 1 Name }} (2/2)\n\n<v-click>\n\n**{{ Benefit Category 4 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 5 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<!-- Insert as many plans as needed. Make sure they are always returned as a two part section -->\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Comparing the Plans\n\n| **Feature** | **{{ Plan 1 }}** | **{{ Plan 2 }}** | **{{ Plan 3 }}** |\n|---------|----------|----------|-----------|\n| {{ Feature 1 }} | {{ Value 1.1 }} | {{ Value 1.2 }} | {{ Value 1.3 }} |\n| {{ Feature 2 }} | {{ Value 2.1 }} | {{ Value 2.2 }} | {{ Value 2.3 }} |\n| {{ Feature 3 }} | {{ Value 3.1 }} | {{ Value 3.2 }} | {{ Value 3.3 }} |\n| {{ Feature 4 }} | {{ Value 4.1 }} | {{ Value 4.2 }} | {{ Value 4.3 }} |\n| {{ Feature 5 }} | {{ Value 5.1 }} | {{ Value 5.2 }} | {{ Value 5.3 }} |\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_final}}.jpg\n---\n\n## Definitions and Limitations\n\n<v-click>\n\n**{{ Category 1 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n- {{ Limitation 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 2 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 3 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 4 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n- {{ Limitation 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Takeaways and Reminders\n\n<v-clicks>\n\n- **{{ Feature 1 }}** benefits\n- **{{ Feature 2 }}** included\n- **{{ Feature 3 }}** benefits\n- **{{ Requirement }}** required\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: end\nline: Thank you for participating in the {{ Plan Name }} Review. Continue to be great!\n---\n\n# Thank You!\n\nContinue to be great!\n\n<img src=\"./img/logos/FEN_logo.svg\" class=\"h-12 mt-32\" alt=\"FirstEnroll Logo\">\n\n"
+  },
+  "script": {
+    "content": "---- Cover ----\n\nHello, everyone! Thank you for joining today's session on the Reliant Care Health Insurance Plans. We'll walk through the features and benefits of these plans, designed to support your health and financial well-being. Let's get started!\n\n---- Reliant Care Overview ----\n\nThe Reliant Care plans offer a range of coverage options.\n\nThey provide preventive care to help you manage your health proactively.\n\nTelemedicine services and support tools are included for your convenience.\n\nPrescription coverage is available through a formulary system.\n\nAdvocacy services are also part of the package to support your healthcare journey.\n\n---- Key Features and Benefits ----\n\nLet's explore the key features and benefits of these plans.\n\nPrimary care visits are included to ensure you have access to essential healthcare.\n\nSpecialist visits are covered, allowing you to consult with experts when needed.\n\nHospitalization benefits are part of the plan to support you during hospital stays.\n\nTelemedicine services vary by plan, offering flexibility in how you access care.\n\nPrescription assistance is available through BestChoice RX, providing support for your medication needs.\n\n---- Cost Management Tools ----\n\nNow, let's discuss the cost management tools available with this plan.\n\nThe Hospital Bill Reducer, or HBR, is designed to help manage hospital expenses.\n\nAdvocacy services are in place to assist you with navigating healthcare costs.\n\nPrescription assistance support is also available to help manage medication expenses.\n\n---- How Hospital Bill Reducer Works ----\n\nHere's how the Hospital Bill Reducer works.\n\nFirst, you enroll through Reliant Care.\n\nNext, submit your hospital bills for review.\n\nThe charges are then reviewed and negotiated.\n\nYou will receive an adjusted bill through the HBR system.\n\nPay the reduced amount and save on healthcare costs.\n\n---- Preventive Care and Wellness ----\n\nLet's look at the preventive care and wellness services.\n\nAnnual physicals are included to help you maintain your health.\n\nScreening programs are available for early detection of potential health issues.\n\nKindly Human provides telemedicine services to support your wellness journey.\n\n---- Telehealth Services ----\n\nNow, let's discuss the telehealth services offered.\n\nThere is no consult fee, making it easy to access care.\n\nYou have unlimited access to telehealth services.\n\nRemote consultations are available for your convenience.\n\nYou can access care twenty-four hours a day, seven days a week.\n\n---- Advocacy and Support Services ----\n\nLet's explore the advocacy and support services.\n\nThese services offer broad healthcare advocacy to assist you.\n\nBill negotiation assistance is available to help manage costs.\n\nPrescription assistance options are provided to support your medication needs.\n\nTelemedicine support services are also included for comprehensive care.\n\n---- Reliant Care 1 (One of Two) ----\n\nLet's examine our first plan tier, Reliant Care 1.\n\nPrimary care visits include three visits per year with a twenty-five dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for one visit per year with a fifty dollar co-pay.\n\nHospitalization benefits provide one thousand dollars per day with a five thousand dollar annual maximum.\n\n---- Reliant Care 1 (Two of Two) ----\n\nContinuing with Reliant Care 1.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nAdvocacy services include the hospital bill reducer to help manage costs.\n\n---- Reliant Care 2 (One of Two) ----\n\nNow, let's look at our second plan tier, Reliant Care 2.\n\nPrimary care visits include four visits per year with a twenty-five dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for two visits per year with a fifty dollar co-pay.\n\nHospitalization benefits provide one thousand dollars per day with a ten thousand dollar annual maximum.\n\n---- Reliant Care 2 (Two of Two) ----\n\nContinuing with Reliant Care 2.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nPrescription coverage includes preventive and acute medications.\n\n---- Reliant Care 3 (One of Two) ----\n\nLet's move on to Reliant Care 3.\n\nPrimary care visits include four visits per year with a twenty-five dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for four visits per year with a fifty dollar co-pay.\n\nHospitalization benefits provide one thousand dollars per day with a fifteen thousand dollar annual maximum.\n\n---- Reliant Care 3 (Two of Two) ----\n\nContinuing with Reliant Care 3.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nPrescription coverage includes preventive and acute medications.\n\n---- Reliant Care 4 (One of Two) ----\n\nNow, let's explore Reliant Care 4.\n\nPrimary care visits include four visits per year with a fifty dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for four visits per year with a seventy-five dollar co-pay.\n\nHospitalization benefits provide one thousand dollars per day with a ten thousand dollar annual maximum.\n\n---- Reliant Care 4 (Two of Two) ----\n\nContinuing with Reliant Care 4.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nPrescription coverage includes preventive and acute medications.\n\n---- Reliant Care 5 (One of Two) ----\n\nFinally, let's look at Reliant Care 5.\n\nPrimary care visits include five visits per year with a fifty dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for five visits per year with a seventy-five dollar co-pay.\n\nHospitalization benefits provide one thousand five hundred dollars per day with a fifteen thousand dollar annual maximum.\n\n---- Reliant Care 5 (Two of Two) ----\n\nContinuing with Reliant Care 5.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nPrescription coverage includes preventive and acute medications.\n\n---- Comparing Plan Tiers ----\n\nLet's compare the different tiers available.\n\nReliant Care 1 offers three primary care visits per year, while Reliant Care 5 offers five.\n\nSpecialist visits range from one per year in Reliant Care 1 to five in Reliant Care 5.\n\nHospitalization benefits vary, with a maximum of five thousand dollars in Reliant Care 1 and fifteen thousand dollars in Reliant Care 5.\n\nAll plans offer unlimited telemedicine access.\n\nPrescription coverage ranges from discounts to formulary options.\n\n---- Definitions and Limitations ----\n\nLet's review important definitions and limitations.\n\nPre-existing conditions have a twelve-month exclusion and apply to hospitalization.\n\nOutpatient services are covered in-network only.\n\nPrescription limits are set at one hundred fifty dollars monthly.\n\nSpecialty drugs are not covered under these plans.\n\n---- Key Takeaways and Reminders ----\n\nHere are the key points to remember.\n\nThese plans offer broad coverage benefits.\n\nPreventive services are included to support your health.\n\nTelemedicine access provides convenient care options.\n\nIn-network providers are required for coverage.\n\n---- Closing ----\n\nThank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!",
+    "template_used": "---- Cover ----\n\nHello, everyone! Thank you for joining today's session. We'll walk through the plan's features and benefits that empower your health with financial peace of mind. Let's get started!\n\n---- Plan Overview ----\n\n{{ Generate script based on the slides content }}\n\n---- Key Features and Benefits ----\n\nLet's explore the key features and benefits of this plan.\n\n{{ Generate script based on the slides content }}\n\n---- Cost Management Tools ----\n\nNow, let's discuss the cost management tools available with this plan.\n\n{{ Generate script based on the slides content }}\n\n---- Provider Network Details ----\n\nHere's how the provider network works.\n\n{{ Generate script based on the slides content }}\n\n---- Preventive Care and Wellness ----\n\n{{ Generate script based on the slides content }}\n\n---- Telehealth Services ----\n\n{{ Generate script based on the slides content }}\n\n---- Advocacy and Support Services ----\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 1 (One of Two) ----\n\nLet's examine our first plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 1 (Two of Two) ----\n\nContinuing with our first plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 2 (One of Two) ----\n\nNow, let's look at our second plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 2 (Two of Two) ----\n\nContinuing with our second plan tier.\n\n{{ Generate script based on the slides content }}\n\n{{ Add as few or as many plan tiers as needed }}\n\n---- Comparing Plan Tiers ----\n\nLet's compare the different tiers available.\n\n{{ Generate script based on the slides content }}\n\n---- Definitions and Limitations ----\n\nLet's review important definitions and limitations.\n\n{{ Generate script based on the slides content }}\n\n---- Key Takeaways and Reminders ----\n\nHere are the key points to remember.\n\n{{ Generate script based on the slides content }}\n\n---- Closing ----\n\nThank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!"
+  },
+  "pages": {
+    "content": [
+      {
+        "slide": {
+          "header": "Reliant Care Plans Review",
+          "content": "<SlideAudio deckKey=\"FEN_reliant_care\" />\n\n# Reliant Care Plans Review\n\nUnderstanding the details and benefits of the **Reliant Care Health Insurance Plans**",
+          "frontmatter": "id: FEN_reliant_care\ntheme: ../../\ntitle: | \n  Reliant Care Plans\ninfo: |\n  ## Reliant Care Plans Review\n  A look at the Reliant Care Plans benefits and details.\nverticalCenter: true\nlayout: intro\nthemeConfig:\n  logoHeader: ./img/logos/FEN_logo.svg\n  audioEnabled: true\ntransition: fade-out\ndrawings:\n  persist: false"
+        },
+        "script": {
+          "header": "Cover",
+          "content": "Hello, everyone! Thank you for joining today's session on the Reliant Care Health Insurance Plans. We'll walk through the features and benefits of these plans, designed to support your health and financial well-being. Let's get started!"
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care Overview",
+          "content": "## Reliant Care Overview\n\n<v-clicks>\n\n- Comprehensive coverage through **Reliant Care**\n- **Preventive Care** for proactive health management\n- **Telemedicine Services** and support tools\n- **Prescription Coverage** through formulary\n- **Advocacy Services** support\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Reliant Care Overview",
+          "content": "The Reliant Care plans offer a range of coverage options.\n\nThey provide preventive care to help you manage your health proactively.\n\nTelemedicine services and support tools are included for your convenience.\n\nPrescription coverage is available through a formulary system.\n\nAdvocacy services are also part of the package to support your healthcare journey."
+        }
+      },
+      {
+        "slide": {
+          "header": "Key Features and Benefits",
+          "content": "## Key Features and Benefits\n\n<v-clicks>\n\n**Primary Care Visits**\n\n**Specialist Visits**\n\n**Hospitalization Benefits**\n\n**Telemedicine Services** (varies by plan)\n</v-clicks>\n\n<v-click>\n\n**Prescription Assistance** through BestChoice RX\n<div class=\"grid grid-cols-1 gap-4 items-center px-8 py-4\">\n  <img src=\"\" class=\"h-12 mix-blend-multiply\" alt=\"BestChoice RX Logo\">\n</div>\n\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Key Features and Benefits",
+          "content": "Let's explore the key features and benefits of these plans.\n\nPrimary care visits are included to ensure you have access to essential healthcare.\n\nSpecialist visits are covered, allowing you to consult with experts when needed.\n\nHospitalization benefits are part of the plan to support you during hospital stays.\n\nTelemedicine services vary by plan, offering flexibility in how you access care.\n\nPrescription assistance is available through BestChoice RX, providing support for your medication needs."
+        }
+      },
+      {
+        "slide": {
+          "header": "Cost Management Tools",
+          "content": "## Cost Management Tools\n\n<v-click>\n\n**Hospital Bill Reducer** (HBR)\n</v-click>\n\n<v-click>\n\n**Advocacy Services** System\n</v-click>\n\n<v-click>\n\n**Prescription Assistance** Support\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Cost Management Tools",
+          "content": "Now, let's discuss the cost management tools available with this plan.\n\nThe Hospital Bill Reducer, or HBR, is designed to help manage hospital expenses.\n\nAdvocacy services are in place to assist you with navigating healthcare costs.\n\nPrescription assistance support is also available to help manage medication expenses."
+        }
+      },
+      {
+        "slide": {
+          "header": "How Hospital Bill Reducer Works",
+          "content": "## How Hospital Bill Reducer Works\n\n<v-clicks>\n\n1. Enroll through **Reliant Care**\n2. Submit hospital bills\n3. Review and negotiate charges\n4. Receive adjusted bill **(HBR)**\n5. Pay reduced amount\n6. **Save on healthcare costs**\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "How Hospital Bill Reducer Works",
+          "content": "Here's how the Hospital Bill Reducer works.\n\nFirst, you enroll through Reliant Care.\n\nNext, submit your hospital bills for review.\n\nThe charges are then reviewed and negotiated.\n\nYou will receive an adjusted bill through the HBR system.\n\nPay the reduced amount and save on healthcare costs."
+        }
+      },
+      {
+        "slide": {
+          "header": "Preventive Care and Wellness",
+          "content": "## Preventive Care and Wellness\n\n<v-clicks>\n\n- **Annual Physicals** Services\n- **Screening Programs** for early detection\n- **Kindly Human** provides telemedicine\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Preventive Care and Wellness",
+          "content": "Let's look at the preventive care and wellness services.\n\nAnnual physicals are included to help you maintain your health.\n\nScreening programs are available for early detection of potential health issues.\n\nKindly Human provides telemedicine services to support your wellness journey."
+        }
+      },
+      {
+        "slide": {
+          "header": "Telehealth Services",
+          "content": "## Telehealth Services\n\n<v-clicks>\n\n- **No Consult Fee**\n- **Unlimited Access**\n- **Remote Consultations** available\n- **24/7 Access** to care\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Telehealth Services",
+          "content": "Now, let's discuss the telehealth services offered.\n\nThere is no consult fee, making it easy to access care.\n\nYou have unlimited access to telehealth services.\n\nRemote consultations are available for your convenience.\n\nYou can access care twenty-four hours a day, seven days a week."
+        }
+      },
+      {
+        "slide": {
+          "header": "Advocacy and Support Services",
+          "content": "## Advocacy and Support Services\n\n<v-clicks>\n\n- **Comprehensive** healthcare advocacy\n- **Bill Negotiation** assistance\n- **Prescription Assistance** options\n- **Telemedicine Support** services\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Advocacy and Support Services",
+          "content": "Let's explore the advocacy and support services.\n\nThese services offer broad healthcare advocacy to assist you.\n\nBill negotiation assistance is available to help manage costs.\n\nPrescription assistance options are provided to support your medication needs.\n\nTelemedicine support services are also included for comprehensive care."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 1 (1/2)",
+          "content": "## Reliant Care 1 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 3 visits per year\n- $25 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 1 visit per year\n- $50 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000 per day\n- $5,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_1.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 1 (One of Two)",
+          "content": "Let's examine our first plan tier, Reliant Care 1.\n\nPrimary care visits include three visits per year with a twenty-five dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for one visit per year with a fifty dollar co-pay.\n\nHospitalization benefits provide one thousand dollars per day with a five thousand dollar annual maximum."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 1 (2/2)",
+          "content": "## Reliant Care 1 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Advocacy Services**\n- Hospital bill reducer\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_1.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 1 (Two of Two)",
+          "content": "Continuing with Reliant Care 1.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nAdvocacy services include the hospital bill reducer to help manage costs."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 2 (1/2)",
+          "content": "## Reliant Care 2 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 4 visits per year\n- $25 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 2 visits per year\n- $50 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000 per day\n- $10,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_2.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 2 (One of Two)",
+          "content": "Now, let's look at our second plan tier, Reliant Care 2.\n\nPrimary care visits include four visits per year with a twenty-five dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for two visits per year with a fifty dollar co-pay.\n\nHospitalization benefits provide one thousand dollars per day with a ten thousand dollar annual maximum."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 2 (2/2)",
+          "content": "## Reliant Care 2 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Coverage**\n- Preventive and acute\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_2.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 2 (Two of Two)",
+          "content": "Continuing with Reliant Care 2.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nPrescription coverage includes preventive and acute medications."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 3 (1/2)",
+          "content": "## Reliant Care 3 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 4 visits per year\n- $25 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 4 visits per year\n- $50 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000 per day\n- $15,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_3.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 3 (One of Two)",
+          "content": "Let's move on to Reliant Care 3.\n\nPrimary care visits include four visits per year with a twenty-five dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for four visits per year with a fifty dollar co-pay.\n\nHospitalization benefits provide one thousand dollars per day with a fifteen thousand dollar annual maximum."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 3 (2/2)",
+          "content": "## Reliant Care 3 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Coverage**\n- Preventive and acute\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_3.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 3 (Two of Two)",
+          "content": "Continuing with Reliant Care 3.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nPrescription coverage includes preventive and acute medications."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 4 (1/2)",
+          "content": "## Reliant Care 4 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 4 visits per year\n- $50 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 4 visits per year\n- $75 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000 per day\n- $10,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_4.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 4 (One of Two)",
+          "content": "Now, let's explore Reliant Care 4.\n\nPrimary care visits include four visits per year with a fifty dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for four visits per year with a seventy-five dollar co-pay.\n\nHospitalization benefits provide one thousand dollars per day with a ten thousand dollar annual maximum."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 4 (2/2)",
+          "content": "## Reliant Care 4 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Coverage**\n- Preventive and acute\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_4.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 4 (Two of Two)",
+          "content": "Continuing with Reliant Care 4.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nPrescription coverage includes preventive and acute medications."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 5 (1/2)",
+          "content": "## Reliant Care 5 (1/2)\n\n<v-click>\n\n**Primary Care Visits**\n- 5 visits per year\n- $50 co-pay\n- $150 max per visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialist Visits**\n- 5 visits per year\n- $75 co-pay\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,500 per day\n- $15,000 annual max\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_5.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 5 (One of Two)",
+          "content": "Finally, let's look at Reliant Care 5.\n\nPrimary care visits include five visits per year with a fifty dollar co-pay and a one hundred fifty dollar maximum per visit.\n\nSpecialist visits are covered for five visits per year with a seventy-five dollar co-pay.\n\nHospitalization benefits provide one thousand five hundred dollars per day with a fifteen thousand dollar annual maximum."
+        }
+      },
+      {
+        "slide": {
+          "header": "Reliant Care 5 (2/2)",
+          "content": "## Reliant Care 5 (2/2)\n\n<v-click>\n\n**Telemedicine Services**\n- No consult fee\n- Unlimited access\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Coverage**\n- Preventive and acute\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_5.jpg"
+        },
+        "script": {
+          "header": "Reliant Care 5 (Two of Two)",
+          "content": "Continuing with Reliant Care 5.\n\nTelemedicine services are available with no consult fee and unlimited access.\n\nPrescription coverage includes preventive and acute medications."
+        }
+      },
+      {
+        "slide": {
+          "header": "Comparing the Plans",
+          "content": "## Comparing the Plans\n\n| **Feature** | **Reliant Care 1** | **Reliant Care 2** | **Reliant Care 3** | **Reliant Care 4** | **Reliant Care 5** |\n|---------|----------|----------|-----------|-----------|-----------|\n| Primary Care Visits | 3/year | 4/year | 4/year | 4/year | 5/year |\n| Specialist Visits | 1/year | 2/year | 4/year | 4/year | 5/year |\n| Hospitalization | $5,000 max | $10,000 max | $15,000 max | $10,000 max | $15,000 max |\n| Telemedicine | Unlimited | Unlimited | Unlimited | Unlimited | Unlimited |\n| Prescription Coverage | Discount | Formulary | Formulary | Formulary | Formulary |",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Comparing Plan Tiers",
+          "content": "Let's compare the different tiers available.\n\nReliant Care 1 offers three primary care visits per year, while Reliant Care 5 offers five.\n\nSpecialist visits range from one per year in Reliant Care 1 to five in Reliant Care 5.\n\nHospitalization benefits vary, with a maximum of five thousand dollars in Reliant Care 1 and fifteen thousand dollars in Reliant Care 5.\n\nAll plans offer unlimited telemedicine access.\n\nPrescription coverage ranges from discounts to formulary options."
+        }
+      },
+      {
+        "slide": {
+          "header": "Definitions and Limitations",
+          "content": "## Definitions and Limitations\n\n<v-click>\n\n**Pre-existing Conditions**\n- 12-month exclusion\n- Applies to hospitalization\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Outpatient Services**\n- In-network only\n<Arrow v-bind=\"{{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Limits**\n- $150 monthly limit\n<Arrow v-bind=\"{{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Specialty Drugs**\n- Not covered\n<Arrow v-bind=\"{{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/reliant_care_definitions.jpg"
+        },
+        "script": {
+          "header": "Definitions and Limitations",
+          "content": "Let's review important definitions and limitations.\n\nPre-existing conditions have a twelve-month exclusion and apply to hospitalization.\n\nOutpatient services are covered in-network only.\n\nPrescription limits are set at one hundred fifty dollars monthly.\n\nSpecialty drugs are not covered under these plans."
+        }
+      },
+      {
+        "slide": {
+          "header": "Key Takeaways and Reminders",
+          "content": "## Key Takeaways and Reminders\n\n<v-clicks>\n\n- **Comprehensive Coverage** benefits\n- **Preventive Services** included\n- **Telemedicine Access** benefits\n- **In-network Providers** required\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Key Takeaways and Reminders",
+          "content": "Here are the key points to remember.\n\nThese plans offer broad coverage benefits.\n\nPreventive services are included to support your health.\n\nTelemedicine access provides convenient care options.\n\nIn-network providers are required for coverage."
+        }
+      },
+      {
+        "slide": {
+          "header": "Thank You!",
+          "content": "# Thank You!\n\nContinue to be great!\n\n<img src=\"./img/logos/FEN_logo.svg\" class=\"h-12 mt-32\" alt=\"FirstEnroll Logo\">",
+          "frontmatter": "transition: fade-out\nlayout: end\nline: Thank you for participating in the Reliant Care Plans Review. Continue to be great!"
+        },
+        "script": {
+          "header": "Closing",
+          "content": "Thank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!"
+        }
+      }
+    ],
+    "count": 22
+  },
+  "validation_state": {
+    "current_page": 1,
+    "total_pages": 22,
+    "pages": {
+      "1": {
+        "page_number": 1,
+        "slide_valid": false,
+        "script_valid": false,
+        "slide_update_instructions": null,
+        "script_update_instructions": null,
+        "updated_slide": null,
+        "updated_script": null
+      }
+    },
+    "update_type": "both"
+  }
+}

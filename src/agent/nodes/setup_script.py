@@ -13,12 +13,12 @@ from typing import Any, Dict
 
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
-from langchain_openai import ChatOpenAI
 from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.setup_script import SCRIPT_WRITER_SYSTEM_PROMPT, SCRIPT_WRITER_HUMAN_PROMPT
 from agent.types import AgentState
+from agent.llm_config import llm
 
 
 class SetupScriptNode(BaseNode[AgentState]):
@@ -31,15 +31,20 @@ class SetupScriptNode(BaseNode[AgentState]):
     def __init__(self) -> None:
         """Initialize the node with GPT-4o model."""
         super().__init__()
-        # Initialize OpenAI client directly - no need to wrap for LangChain
-        self.model = ChatOpenAI(
-            model="gpt-4o",
-            max_tokens=8192,
-            temperature=0
-        )
+        # Use shared LLM instance
+        self.model = llm
     
     @traceable(name="generate_script_with_gpt4")
-    def _generate_script(self, template: str, processed_summaries: str, slides_content: str, extracted_tables: str) -> str:
+    def _generate_script(
+        self, 
+        template: str, 
+        processed_summaries: str, 
+        slides_content: str, 
+        extracted_tables: str,
+        deck_id: str,
+        deck_title: str,
+        instructions: str
+    ) -> str:
         """Generate script content using GPT-4o.
         
         Args:
@@ -47,29 +52,43 @@ class SetupScriptNode(BaseNode[AgentState]):
             processed_summaries: The processed content summaries
             slides_content: The generated slide content
             extracted_tables: The extracted tables content
+            deck_id: ID of the current deck
+            deck_title: Title of the current deck
+            instructions: Instructions from instructions.md
             
         Returns:
             Generated script content
         """
         try:
+            # Sanitize instructions to escape any curly braces that might interfere with formatting
+            instructions_safe = instructions.replace("{", "{{").replace("}", "}}")
+            
             # Create messages with system and human prompts
             messages = [
                 SystemMessage(
                     content=SCRIPT_WRITER_SYSTEM_PROMPT.format(
-                        template=template
+                        template=template,
+                        deck_id=deck_id,
+                        deck_title=deck_title,
+                        instructions=instructions_safe
                     )
                 ),
                 HumanMessage(
                     content=SCRIPT_WRITER_HUMAN_PROMPT.format(
                         processed_summaries=processed_summaries,
                         slides_content=slides_content,
-                        extracted_tables=extracted_tables
+                        extracted_tables=extracted_tables,
+                        deck_id=deck_id,
+                        deck_title=deck_title,
+                        instructions=instructions_safe
                     )
                 )
             ]
             
             # Get script content from GPT-4o
             self.logger.info("Generating script content")
+            self.logger.info(f"Deck ID: {deck_id}")
+            self.logger.info(f"Deck Title: {deck_title}")
             response = self.model.invoke(messages)
             
             return response.content
@@ -119,12 +138,21 @@ class SetupScriptNode(BaseNode[AgentState]):
                 self.logger.warning("Missing required content in state")
                 return state
             
-            # Generate script content with tables
+            # Get instructions from initial deck with proper validation
+            instructions = state.get("initial_deck", {}).get("instructions", "")
+            if not instructions:
+                self.logger.warning("No instructions found in state")
+                instructions = "No specific instructions provided"
+            
+            # Generate script content with deck info
             script_content = self._generate_script(
                 template, 
                 processed_summaries, 
                 slides_content,
-                tables_str
+                tables_str,
+                deck_id,
+                deck_title,
+                instructions
             )
             
             # Create updated state

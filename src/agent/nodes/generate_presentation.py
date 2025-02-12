@@ -39,12 +39,14 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             temperature=0
         )
     
-    @traceable(name="generate_presentation_with_gpt4")
+    @traceable(name="generate_presentation")
     def _generate_presentation(
         self,
         page_summaries: List[Dict[str, Any]],
         tables_list: List[Dict[str, Any]],
-        instructions: str
+        instructions: str,
+        deck_id: str,
+        deck_title: str
     ) -> str:
         """Generate presentation content using GPT-4o.
         
@@ -52,6 +54,8 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             page_summaries: List of page summaries
             tables_list: List of extracted tables
             instructions: Initial deck instructions
+            deck_id: ID of the current deck
+            deck_title: Title of the current deck
             
         Returns:
             Generated presentation content
@@ -66,12 +70,15 @@ class GeneratePresentationNode(BaseNode[AgentState]):
                 content=GENERATE_PRESENTATION_PROMPT.format(
                     page_summaries=summaries_text,
                     tables_list=tables_text,
-                    instructions=instructions or "No specific instructions provided"
+                    instructions=instructions or "No specific instructions provided",
+                    deck_id=deck_id,
+                    deck_title=deck_title
                 )
             )
             
             # Log the formatted prompt for debugging
-            self.logger.info(f"Instructions being used: {instructions}")
+            self.logger.info(f"Deck ID: {deck_id}")
+            self.logger.info(f"Deck Title: {deck_title}")
             
             # Get presentation content from GPT-4o
             self.logger.info("Generating presentation content")
@@ -83,7 +90,7 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             self.logger.error(f"Error generating presentation: {str(e)}")
             return f"Error generating presentation: {str(e)}"
     
-    @traceable(name="generate_presentation_with_gpt4")
+    @traceable(name="process_presentation")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """Process the analyzed data to generate presentation content.
         
@@ -138,7 +145,9 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             presentation_content = self._generate_presentation(
                 page_summaries, 
                 tables_list,
-                instructions
+                instructions,
+                deck_id,
+                deck_title
             )
             
             # Create updated state

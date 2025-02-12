@@ -1,0 +1,403 @@
+{
+  "deck_id": "FEN_TRU",
+  "deck_title": "True Health",
+  "processed_images": {
+    "1": {
+      "page_number": 1,
+      "original_name": "TrueHealth_Complete_2025_page_001.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_001.jpg",
+      "new_name": "01_true_health_summary_with_features_benefits_and_limitations_for_th1_th2_th3.jpg",
+      "new_path": "img/pages/01_true_health_summary_with_features_benefits_and_limitations_for_th1_th2_th3.jpg",
+      "page_title": "true_health_summary_with_features_benefits_and_limitations_for_th1_th2_th3",
+      "summary": "The True Health Summary outlines the features and benefits of three health plans: TH1, TH2, and TH3. Key benefits include telemedicine, the BestChoiceRX Group Discount Program, and the BestChoiceRX Plus, which offers non-preferred generic and brand medications with a co-pay up to $150 per month. Preventative care and specialty drugs through a prescription assistance program are also covered. The plans provide access to the Healthcare Ninja service, with primary care physician visits covered at varying levels: 3 visits for TH1, 4 for TH2, and 4 for TH3. Specialist and urgent care visits are covered with 1 visit for TH1, 2 for TH2, and 4 for TH3. Hospital indemnity benefits are included across all plans.\n\nThe document specifies several limitations and requirements. All sickness benefits are subject to a 30-day waiting period before they become payable. Outpatient physician services and wellness benefits require in-network providers, while inpatient hospital indemnity benefits do not. Hospitalization benefits are not payable for pre-existing conditions during the first twelve months of coverage. The plan does not cover services unless listed in the Schedule of Benefits, emphasizing the importance of reviewing this list. Preventive and wellness services are covered as required by the Patient Protection and Affordable Care Act. Additionally, colorectal cancer screening benefits are subject to a home test kit for initial screening, with further benefits provided if the test is positive.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 1
+    },
+    "3": {
+      "page_number": 3,
+      "original_name": "TrueHealth_Complete_2025_page_003.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_003.jpg",
+      "new_name": "03_true_health_2_plan_features_with_physician_services_and_prescription_benefits.jpg",
+      "new_path": "img/pages/03_true_health_2_plan_features_with_physician_services_and_prescription_benefits.jpg",
+      "page_title": "true_health_2_plan_features_with_physician_services_and_prescription_benefits",
+      "summary": "The True Health 2 plan offers a structured set of benefits focusing on physician services, telemedicine, and prescription coverage. Under physician services, members are entitled to four primary care office visits per year with a co-pay of $25 and a maximum charge of $150 per visit. Specialist or urgent care visits are limited to two per year, with a $50 co-pay and a $300 maximum per visit. In-patient hospitalization benefits provide $1,000 per day, capped at $10,000 annually, with a 12-month pre-existing condition exclusion period.\n\nTelemedicine services are provided through Opyn, with no consult fee and no maximum usage limit. Prescription benefits include preventive and acute prescriptions subject to a formulary, with no monthly maximum. For pharmacy retail, a 30-day supply of acute and preventive generic drugs requires member payment, while generic drugs have a $0 copay. A 90-day supply of maintenance drugs is available through mail order with a $5 copay for preferred generics.\n\nThe plan includes specific terms and conditions, such as a 30-day waiting period for sickness benefits and in-network provider requirements for outpatient services. Hospitalization benefits are not payable for pre-existing conditions within the first 12 months. The plan does not cover services outside the Schedule of Benefits, focusing on preventive and wellness services as per the Patient Protection and Affordable Care Act.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 3
+    },
+    "4": {
+      "page_number": 4,
+      "original_name": "TrueHealth_Complete_2025_page_004.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_004.jpg",
+      "new_name": "04_true_health_3_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "new_path": "img/pages/04_true_health_3_plan_features_benefits_and_coverage_details_with_limitations.jpg",
+      "page_title": "true_health_3_plan_features_benefits_and_coverage_details_with_limitations",
+      "summary": "The True Health 3 plan offers a range of healthcare services with specific visit limits and copay structures. For primary care office visits, members are allowed four visits per year with a copay of $25 and a maximum charge of $150 per visit. Specialist or urgent care office visits also have a limit of four visits per year, with a $50 copay and a $300 maximum per visit. In-patient hospitalization benefits provide $1,000 per day, with a yearly maximum of $15,000, subject to a 12-month pre-existing condition clause.\n\nTelemedicine services are available with no consult fee and no maximum limit, enhancing accessibility to healthcare professionals. Prescription benefits include preventive and acute prescriptions, with member payments required for retail pharmacy supplies. Generic drugs have a $0 copay, while preferred generics have a $5 copay. Non-preferred generics and brand drugs require member payments, with specific copay amounts for retail and mail-order options.\n\nThe plan includes prescription terms and conditions, highlighting that specialty drugs are not covered, and a $150 benefit limit per person per month applies to non-preventive maintenance prescriptions. Advocacy services such as hospital bill reduction are also part of the plan. Limitations include a 30-day waiting period for sickness benefits and restrictions on out-of-network services. The plan does not cover services not listed in the Schedule of Benefits, emphasizing the importance of reviewing the list carefully.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 4
+    },
+    "2": {
+      "page_number": 2,
+      "original_name": "TrueHealth_Complete_2025_page_002.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_002.jpg",
+      "new_name": "02_true_health_1_plan_with_physician_services_telemedicine_and_advocacy_benefits.jpg",
+      "new_path": "img/pages/02_true_health_1_plan_with_physician_services_telemedicine_and_advocacy_benefits.jpg",
+      "page_title": "true_health_1_plan_with_physician_services_telemedicine_and_advocacy_benefits",
+      "summary": "The True Health 1 plan offers a range of benefits focusing on physician services, telemedicine, and advocacy. Under physician services, the plan provides coverage for primary care office visits, allowing up to three visits per year with a co-pay of $25 and a maximum charge of $150 per visit. Specialist or urgent care office visits are limited to one visit per year, with a co-pay of $50 and a maximum of $300 per visit. In-patient hospitalization benefits are available at $1,000 per day, with a yearly maximum of $5,000, subject to a 12-month pre-existing condition clause.\n\nTelemedicine services are provided through Opyn Live, offering consultations with no consult fee and no maximum limit on usage. The plan also includes a discount prescription service through BestChoice RX, applicable at participating pharmacies only. Advocacy services are available via MyHealthcare Ninja, which acts as a hospital bill reducer.\n\nThe plan has specific limitations, including a 30-day waiting period for sickness benefits and restrictions to in-network providers for outpatient physician services and wellness benefits. Hospitalization benefits are not applicable for pre-existing conditions within the first 12 months of coverage. The plan is limited to preventive and wellness services as required by the Patient Protection and Affordable Care Act, with additional details outlined in the Summary Plan Description.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 2
+    },
+    "5": {
+      "page_number": 5,
+      "original_name": "TrueHealth_Complete_2025_page_005.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_005.jpg",
+      "new_name": "05_mec_preventive_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/05_mec_preventive_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventive_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "This document outlines the preventive health services covered under the MEC/Preventive Health Services plan. Benefits are automatically subject to specific federal regulations, and any legislative changes are incorporated by reference. The preventive services covered include those rated 'A' or 'B' by the United States Preventive Services Task Force, preventive care for infants, children, and adolescents, and immunizations recommended by the Advisory Committee on Immunization Practices. \n\nThe benefits include various screenings and counseling services. Abdominal aortic aneurysm screening is available once per lifetime for men aged 65-75 who have ever smoked. Adults are entitled to one annual standard physical exam per plan year. Alcohol misuse screening and counseling are provided once per plan year for adults 18 years or older. Aspirin is prescribed as preventive medication for adults aged 50 to 59 with high cardiovascular risk. Bacteriuria screening is available once per plan year for pregnant women. BRCA risk assessment and genetic counseling/testing are offered once per plan year for women with a family history of breast or ovarian cancer. Breast cancer preventive medications are prescribed for women at increased risk. Breast cancer screening is available once every two years for women aged 50 and older, limited to 2D mammograms.\n\nIt is important to note that none of these preventive health services are covered if provided at a hospital.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 5
+    },
+    "8": {
+      "page_number": 8,
+      "original_name": "TrueHealth_Complete_2025_page_008.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_008.jpg",
+      "new_name": "08_mec_preventive_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "new_path": "img/pages/08_mec_preventive_health_services_summary_of_benefits_with_screening_and_counseling_details.jpg",
+      "page_title": "mec_preventive_health_services_summary_of_benefits_with_screening_and_counseling_details",
+      "summary": "The document outlines the preventive health services covered under the MEC/Preventive Health Services plan, detailing various screenings and counseling services available to plan members. Each benefit is listed with its interval and specific requirements, ensuring clarity on eligibility and frequency. Preeclampsia screening is available once per plan year for pregnant women with blood pressure measurements throughout pregnancy. Rh incompatibility screening is offered once per plan year during the first pregnancy visit and again at 24-28 weeks' gestation for unsensitized Rh (D)-negative women. Sexually transmitted infections counseling is provided annually for sexually active adolescents and adults at increased risk. Skin cancer behavioral counseling is available once per plan year for young adults, adolescents, children, and parents of young children to minimize ultraviolet exposure.\n\nStatin preventive medication is prescribed for adults aged 40 to 75 without a history of cardiovascular disease but with risk factors. Syphilis screening is conducted annually for non-pregnant persons at risk and all pregnant women. Tobacco use counseling and interventions are offered twice per plan year for adults and pregnant women who use tobacco, including FDA-approved pharmacotherapy. Tuberculosis screening is available annually for at-risk populations. Vision screening is provided once every two plan years for children aged 3 to 5. Well-woman visits are covered annually for women under 65, and well-child visits are available once per plan year for children, with specific coverage for those under age 3.\n\nThese services are designed to promote preventive care and early detection of health issues, with specific intervals and requirements ensuring that members receive appropriate and timely care.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": false
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 8
+    },
+    "7": {
+      "page_number": 7,
+      "original_name": "TrueHealth_Complete_2025_page_007.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_007.jpg",
+      "new_name": "07_mec_preventive_health_services_summary_of_benefits_with_screening_intervals_and_requirements.jpg",
+      "new_path": "img/pages/07_mec_preventive_health_services_summary_of_benefits_with_screening_intervals_and_requirements.jpg",
+      "page_title": "mec_preventive_health_services_summary_of_benefits_with_screening_intervals_and_requirements",
+      "summary": "This document outlines the preventive health services covered under the MEC/Preventive Health Services plan, detailing the benefits, intervals, and specific requirements for each service. The plan includes a variety of screenings and preventive measures aimed at different age groups and risk categories. Gonorrhea prophylactic medication is provided as prescribed for all newborns to prevent gonococcal ophthalmia neonatorum. Gonorrhea screening is available once per plan year for sexually active women aged 24 years or younger and older women at increased risk. \n\nHealthy diet and physical activity counseling is offered once per plan year for adults who are overweight or have additional cardiovascular disease risk factors. Hemoglobinopathies screening is conducted once per plan year for sickle cell disease in newborns. Hepatitis B and C screenings are available once per plan year, with specific guidelines for non-pregnant adolescents, adults at high risk, and adults born between 1945 and 1965. High blood pressure screening is provided annually for adults aged 18 or older. \n\nHIV preexposure prophylaxis is prescribed for individuals at high risk, while HIV screening is conducted annually for adolescents and adults aged 15 to 65 years, with additional considerations for pregnant women. Hypothyroidism screening is available for newborns, and intimate partner violence screening is offered annually for women of reproductive age. Lung cancer screening is conducted annually for adults aged 55 to 80 years with a significant smoking history. Obesity screening and counseling are provided annually for children, adolescents, and adults. Osteoporosis screening is available annually for women aged 65 and older and younger postmenopausal women at increased risk. Phenylketonuria screening is conducted annually for newborns.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": false
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 7
+    },
+    "6": {
+      "page_number": 6,
+      "original_name": "TrueHealth_Complete_2025_page_006.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_006.jpg",
+      "new_name": "06_mec_preventive_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "new_path": "img/pages/06_mec_preventive_health_services_summary_of_benefits_including_screenings_and_counseling.jpg",
+      "page_title": "mec_preventive_health_services_summary_of_benefits_including_screenings_and_counseling",
+      "summary": "This document outlines the preventive health services covered under the MEC plan, detailing the benefits, intervals, and specific requirements for each service. Breastfeeding support, supplies, and counseling are provided in conjunction with each birth, with interventions during pregnancy and after birth to support breastfeeding. Cervical cancer screening with cytology is available once every three plan years for women aged 21 to 65 with cervical cytology alone. Cervical cancer screening with a combination of cytology and HPV testing is offered once every five plan years for women aged 30 to 65 with high-risk HPV testing alone or in combination with cytology.\n\nChlamydia screening is available once per plan year for sexually active women aged 24 and younger and older women at increased risk. Colorectal cancer screening is provided once every five plan years for adults aged 50 to 75. Contraceptive methods and counseling are offered as prescribed, including FDA-approved contraceptive methods and education for all women with reproductive capacity. Dental caries prevention for infants and children up to age 5 is available once per plan year, with fluoride varnish application and supplementation starting at age 6 months.\n\nDepression screening is available once per plan year for adolescents aged 12 to 18 and the general adult population, including pregnant and postpartum women. Diabetes screening is offered once per plan year for adults aged 40 to 70 who are overweight or obese. Fall prevention for older adults is available once per plan year for those aged 65 and older at increased risk. Folic acid supplementation is prescribed for women planning or capable of pregnancy. Gestational diabetes mellitus screening is available once per plan year for asymptomatic pregnant women after 24 weeks of gestation.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": false
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 6
+    },
+    "9": {
+      "page_number": 9,
+      "original_name": "TrueHealth_Complete_2025_page_009.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_009.jpg",
+      "new_name": "09_mec_preventive_health_services_summary_of_benefits_with_immunization_details_for_children.jpg",
+      "new_path": "img/pages/09_mec_preventive_health_services_summary_of_benefits_with_immunization_details_for_children.jpg",
+      "page_title": "mec_preventive_health_services_summary_of_benefits_with_immunization_details_for_children",
+      "summary": "This document provides a detailed summary of the Minimum Essential Coverage (MEC) and preventive health services focusing on immunizations for children. It outlines the recommended vaccines as per the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention. The page is divided into two main sections based on age groups: 'Birth Through Six Years Old' and 'Children From Seven Through Eighteen Years Old'.\n\nFor children from birth through six years old, the document lists vaccines such as Hepatitis B, Diphtheria, Tetanus, and Acellular Pertussis (DTaP), Haemophilus Influenzae type b (Hib), Pneumococcal 13-valent conjugate (PCV13), Inactivated Poliovirus (IPV), Influenza, Measles, Mumps, and Rubella (MMR), Varicella, Hepatitis A, and Rotavirus. Each vaccine is accompanied by specific age requirements and limitations, such as the age range for administration and any additional conditions.\n\nFor children from seven through eighteen years old, the document includes vaccines like Influenza, Tetanus, Diphtheria, and Acellular Pertussis (Tdap), Human Papillomavirus (HPV), and Meningococcal serogroups A, C, W, Y. The age requirements and limitations are clearly specified, including the recommended ages for each vaccine and any special notes, such as the need for a 3-shot series of the HPV vaccine for certain individuals.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 9
+    },
+    "10": {
+      "page_number": 10,
+      "original_name": "TrueHealth_Complete_2025_page_010.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_010.jpg",
+      "new_name": "10_mec_preventive_health_services_summary_of_benefits_with_immunization_and_exclusion_details.jpg",
+      "new_path": "img/pages/10_mec_preventive_health_services_summary_of_benefits_with_immunization_and_exclusion_details.jpg",
+      "page_title": "mec_preventive_health_services_summary_of_benefits_with_immunization_and_exclusion_details",
+      "summary": "This document provides a detailed summary of benefits under the MEC/Preventive Health Services plan, focusing on immunizations for adults aged nineteen years or older. The immunization schedule includes vaccines such as Influenza (IIV, RIV, LAIV), Tetanus (Tdap), Measles, Mumps, and Rubella (MMR), Varicella (VAR), Zoster (RZV, ZVL), Human Papillomavirus (HPV), and Pneumococcal (PCV13, PPSV23). Each vaccine has specific age requirements and limitations, such as the Influenza vaccine being administered annually for ages 19 to 65, and the Tdap booster required every 10 years for the same age group. The document emphasizes adherence to CDC recommendations for immunization schedules.\n\nAdditionally, the document outlines exclusions applicable to the benefits offered under this plan. Exclusions include office visits, physical examinations, immunizations, and tests required solely for purposes such as sports, camp, employment, and legal proceedings. Other exclusions cover routine foot care, dental procedures, cosmetic surgeries unless medically necessary, and any medical service not explicitly provided in the plan. The plan also excludes coverage for any injury related to employment or any claims covered by a Worker's Compensation policy. These exclusions are clearly defined to ensure participants understand the limitations of their coverage.",
+      "table_details": {
+        "hasBenefitsComparisonTable": true,
+        "hasLimitations": true
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 10
+    },
+    "11": {
+      "page_number": 11,
+      "original_name": "TrueHealth_Complete_2025_page_011.jpg",
+      "original_path": "img/pages/TrueHealth_Complete_2025_page_011.jpg",
+      "new_name": "11_mec_preventive_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "new_path": "img/pages/11_mec_preventive_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg",
+      "page_title": "mec_preventive_health_services_summary_of_benefits_with_exclusions_and_limitations",
+      "summary": "This document outlines the exclusions and limitations associated with the MEC/Preventive Health Services plan. It specifies that any claims for services received outside the United States are not covered, except for certain claims by veterans. Claims for services not deemed medically necessary or those not contracted within a PPO network are excluded. Additionally, any charges reimbursed by public health programs are not covered. Claims related to acts of war or terrorism, and those for eyeglasses, hearing aids, or abortion services are excluded unless specified in the schedule of benefits.\n\nThe document further details that claims for custodial care, experimental treatments, and services related to suicide or illegal acts are not covered. Procedures for changing one's physical anatomy, fertility treatments, and obesity-related surgeries are also excluded unless explicitly covered. Claims for services from non-healthcare providers, genetic testing, and organ transplants are not covered unless specified. The document lists several specific treatments and services, such as chiropractic care, dialysis, and acupuncture, that are excluded from coverage.\n\nThe exclusions extend to alternative medicine, dental and vision care for children, and non-emergency care outside the U.S. Pregnancy-related services and routine well-baby care are also not covered while inpatient. The purpose of these exclusions is to provide clarity on what is not covered under the plan, ensuring no assumptions are made about coverage based on the absence of exclusions.",
+      "table_details": {
+        "hasBenefitsComparisonTable": false,
+        "hasLimitations": true
+      },
+      "pdf_source": "TrueHealth_Complete_2025",
+      "global_page_num": 11
+    }
+  },
+  "extracted_tables": {},
+  "presentation": {
+    "content": "### Presentation Plan for \"True Health\" Insurance Plans\n\n---\n\n#### Cover (1 slide)\n- **Title:** True Health\n- **Tagline:** \"Empowering Your Health Journey with Accessible and Affordable Care\"\n\n---\n\n#### Plan Overview (1 slide)\n- **Target Audience:** Individuals and families seeking affordable healthcare solutions.\n- **Offerings:** Comprehensive healthcare services with a focus on accessibility and personal impact.\n- **Key Benefits:** Telemedicine access, prescription assistance, and wellness programs.\n\n---\n\n#### Core Plan Elements (2-3 slides)\n- **Coverage Areas:**\n  - Physician services, hospitalization, and virtual visits.\n- **Plan Structure:**\n  - Tiered options with varying co-pays and visit limits.\n- **Eligibility:**\n  - Designed for individuals and families with a focus on affordability.\n\n---\n\n#### Common Service Features (2-3 slides)\n- **Provider Networks:** Extensive network of in-network providers.\n- **Claims Management:** Efficient claims processing and management.\n- **Support Tools:** Access to wellness programs and advocacy services like MyHealthcare Ninja.\n\n---\n\n#### Plan Tiers Breakdown (8-12 slides)\n\n**True Health 1 (TH1)**\n- **Physician Services:** 3 primary care visits/year, $25 co-pay, $150 max/visit.\n- **Specialist/Urgent Care:** 1 visit/year, $50 co-pay, $300 max/visit.\n- **Hospitalization:** $1,000/day, $5,000 annual max.\n- **Telemedicine:** Unlimited access via Opyn Live, no consult fee.\n- **Prescriptions:** Discount service through BestChoice RX.\n- **Advocacy:** Hospital bill reduction via MyHealthcare Ninja.\n\n**True Health 2 (TH2)**\n- **Physician Services:** 4 primary care visits/year, $25 co-pay, $150 max/visit.\n- **Specialist/Urgent Care:** 2 visits/year, $50 co-pay, $300 max/visit.\n- **Hospitalization:** $1,000/day, $10,000 annual max.\n- **Telemedicine:** Unlimited access via Opyn, no consult fee.\n- **Prescriptions:** Preventive and acute prescriptions, $0 copay for generics.\n- **Advocacy:** Hospital bill reduction services.\n\n**True Health 3 (TH3)**\n- **Physician Services:** 4 primary care visits/year, $25 co-pay, $150 max/visit.\n- **Specialist/Urgent Care:** 4 visits/year, $50 co-pay, $300 max/visit.\n- **Hospitalization:** $1,000/day, $15,000 annual max.\n- **Telemedicine:** Unlimited access, no consult fee.\n- **Prescriptions:** Preventive and acute prescriptions, $0 copay for generics, $5 copay for preferred generics.\n- **Advocacy:** Hospital bill reduction services.\n\n---\n\n#### Comparison Slides (Markdown Table)\n\n```markdown\n| Feature                  | True Health 1 (TH1) | True Health 2 (TH2) | True Health 3 (TH3) |\n|--------------------------|---------------------|---------------------|---------------------|\n| Primary Care Visits      | 3/year              | 4/year              | 4/year              |\n| Specialist/Urgent Care   | 1/year              | 2/year              | 4/year              |\n| Hospitalization          | $5,000 max/year     | $10,000 max/year    | $15,000 max/year    |\n| Telemedicine             | Unlimited           | Unlimited           | Unlimited           |\n| Prescription Copay       | Discount service    | $0 for generics     | $0 for generics     |\n| Advocacy Services        | Yes                 | Yes                 | Yes                 |\n```\n\n---\n\n#### Limitations and Exclusions (1-2 slides)\n- **Exclusions:**\n  - Pre-existing conditions not covered in the first 12 months.\n  - Services not listed in the Schedule of Benefits.\n- **Limitations:**\n  - 30-day waiting period for sickness benefits.\n  - In-network provider requirement for outpatient services.\n\n---\n\n#### Key Takeaways and Action Steps (1 slide)\n- **Flexibility:** Multiple tiers to suit different needs and budgets.\n- **Balance:** Optimal balance between cost and coverage.\n- **Next Steps:** Contact support for enrollment assistance and further inquiries.\n\n---\n\n#### Thank You (1 slide)\n- **Message:** \"Thank you for considering True Health. We are committed to supporting your health journey.\"\n\n--- \n\nThis structured presentation plan ensures a clear and concise delivery of the True Health insurance plans, highlighting key features, benefits, and differences among the tiers.",
+    "generated_at": "2025-02-10T22:53:41.715560"
+  },
+  "slides": {
+    "content": "---\nid: FEN_TH\ntheme: ../../\ntitle: | \n  True Health Plans\ninfo: |\n  ## True Health Plans Review\n  A look at the True Health Plans benefits and details.\nverticalCenter: true\nlayout: intro\nthemeConfig:\n  logoHeader: ./img/logos/FEN_logo.svg\n  audioEnabled: true\ntransition: fade-out\ndrawings:\n  persist: false\n---\n\n<SlideAudio deckKey=\"FEN_TH\" />\n\n# True Health Plans Review\n\nUnderstanding the details and benefits of the **True Health Plans**\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## True Health Plans Overview\n\n<v-clicks>\n\n- Comprehensive coverage through **True Health**\n- **Telemedicine** for convenient access\n- **Prescription Benefits** and support tools\n- **Preventive Care** through various programs\n- **Advocacy Services** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Features and Benefits\n\n<v-clicks>\n\n**Telemedicine Services**\n\n**Prescription Benefits**\n\n**Preventive Care**\n\n**Advocacy Services** (varies by plan)\n</v-clicks>\n\n<v-click>\n\n**Discount Prescription Service** through BestChoice RX\n<div class=\"grid grid-cols-1 gap-4 items-center px-8 py-4\">\n  <img src=\"\" class=\"h-12 mix-blend-multiply\" alt=\"BestChoice RX Logo\">\n</div>\n\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Cost Management Tools\n\n<v-click>\n\n**BestChoiceRX Group Discount Program** (BCRX)\n</v-click>\n\n<v-click>\n\n**Opyn Live** System\n</v-click>\n\n<v-click>\n\n**MyHealthcare Ninja** Support\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## How BestChoiceRX Works\n\n<v-clicks>\n\n1. Enroll through **True Health**\n2. Access participating pharmacies\n3. Use discount card at checkout\n4. Receive **BCRX** benefits\n5. Save on prescriptions\n6. **Lower out-of-pocket costs**\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Preventive Care and Wellness\n\n<v-clicks>\n\n- **Screening** Services\n- **Counseling** Programs\n- **Opyn Live** provides telehealth services\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Telehealth Services\n\n<v-clicks>\n\n- **No consult fee**\n- **Unlimited access**\n- **Convenient scheduling** available\n- **Direct connection** to care\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Advocacy and Support Services\n\n<v-clicks>\n\n- **Personalized** healthcare advocacy\n- **Hospital bill reduction** assistance\n- **Insurance navigation** options\n- **Healthcare Ninja** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_1_plan_with_physician_services_telemedicine_and_advocacy_benefits.jpg\n---\n\n## True Health 1 (1/2)\n\n<v-click>\n\n**Physician Services**\n- 3 primary care visits/year\n- $25 copay, $150 max/visit\n- 1 specialist/urgent care visit/year\n- $50 copay, $300 max/visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Telemedicine**\n- Unlimited access\n- No consult fee\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Advocacy Services**\n- Hospital bill reduction\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_1_plan_with_physician_services_telemedicine_and_advocacy_benefits.jpg\n---\n\n## True Health 1 (2/2)\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000/day, $5,000 max/year\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Discounts**\n- BestChoice RX\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_2_plan_features_with_physician_services_and_prescription_benefits.jpg\n---\n\n## True Health 2 (1/2)\n\n<v-click>\n\n**Physician Services**\n- 4 primary care visits/year\n- $25 copay, $150 max/visit\n- 2 specialist/urgent care visits/year\n- $50 copay, $300 max/visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Telemedicine**\n- Unlimited access\n- No consult fee\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Benefits**\n- Preventive and acute prescriptions\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_2_plan_features_with_physician_services_and_prescription_benefits.jpg\n---\n\n## True Health 2 (2/2)\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000/day, $10,000 max/year\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Mail Order Prescriptions**\n- $5 copay for preferred generics\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_3_plan_features_benefits_and_coverage_details_with_limitations.jpg\n---\n\n## True Health 3 (1/2)\n\n<v-click>\n\n**Physician Services**\n- 4 primary care visits/year\n- $25 copay, $150 max/visit\n- 4 specialist/urgent care visits/year\n- $50 copay, $300 max/visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Telemedicine**\n- Unlimited access\n- No consult fee\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Benefits**\n- Non-preferred generics and brand drugs\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_3_plan_features_benefits_and_coverage_details_with_limitations.jpg\n---\n\n## True Health 3 (2/2)\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000/day, $15,000 max/year\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Advocacy Services**\n- Hospital bill reduction\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Comparing the Plans\n\n| **Feature** | **True Health 1 (TH1)** | **True Health 2 (TH2)** | **True Health 3 (TH3)** |\n|---------|----------|----------|-----------|\n| Primary Care Visits | 3/year | 4/year | 4/year |\n| Specialist Visits | 1/year | 2/year | 4/year |\n| Hospitalization | $5,000 max/year | $10,000 max/year | $15,000 max/year |\n| Telemedicine | Unlimited | Unlimited | Unlimited |\n| Prescription Benefits | BestChoice RX | Formulary | Non-preferred |\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/mec_preventive_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg\n---\n\n## Definitions and Limitations\n\n<v-click>\n\n**Waiting Periods**\n- 30-day for sickness benefits\n- 12-month for pre-existing conditions\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Network Requirements**\n- In-network for outpatient services\n<Arrow v-bind=\"{{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Exclusions**\n- Non-listed services not covered\n<Arrow v-bind=\"{{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Preventive Services**\n- As per ACA requirements\n<Arrow v-bind=\"{{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Takeaways and Reminders\n\n<v-clicks>\n\n- **Telemedicine** benefits\n- **Prescription Discounts** included\n- **Preventive Care** benefits\n- **In-network providers** required\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: end\nline: Thank you for participating in the True Health Plans Review. Continue to be great!\n---\n\n# Thank You!\n\nContinue to be great!\n\n<img src=\"./img/logos/FEN_logo.svg\" class=\"h-12 mt-32\" alt=\"FirstEnroll Logo\">",
+    "template_used": "---\nid: FEN_{{deck_key}}\ntheme: ../../\ntitle: | \n  {{ Plan Name }}\ninfo: |\n  ## {{ Plan Name }} Review\n  A look at the {{ Plan Name }} benefits and details.\nverticalCenter: true\nlayout: intro\nthemeConfig:\n  logoHeader: ./img/logos/FEN_logo.svg\n  audioEnabled: true\ntransition: fade-out\ndrawings:\n  persist: false\n---\n\n<SlideAudio deckKey=\"FEN_{{deck_key}}\" />\n\n# {{ Plan Name }} Review\n\nUnderstanding the details and benefits of the **{{ Plan Full Name }}**\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## {{ Plan Name }} Overview\n\n<v-clicks>\n\n- {{ Overview Point 1 }} through **{{ Organization }}**\n- **{{ Benefit Category 1 }}** for various situations\n- **{{ Benefit Category 2 }}** and support tools\n- **{{ Benefit Category 3 }}** through {{ Feature }}\n- **{{ Benefit Category 4 }}** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Features and Benefits\n\n<v-clicks>\n\n**{{ Benefit Type 1 }}**\n\n**{{ Benefit Type 2 }}**\n\n**{{ Benefit Type 3 }}**\n\n**{{ Benefit Type 4 }}** (varies by plan)\n</v-clicks>\n\n<v-click>\n\n**{{ Additional Benefit }}** through {{ Partner }}\n<div class=\"grid grid-cols-1 gap-4 items-center px-8 py-4\">\n  <img src=\"\" class=\"h-12 mix-blend-multiply\" alt=\"{{ Brand }} Logo\">\n</div>\n\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Cost Management Tools\n\n<v-click>\n\n**{{ Tool Name }}** ({{ Acronym }})\n</v-click>\n\n<v-click>\n\n**{{ Feature 1 }}** System\n</v-click>\n\n<v-click>\n\n**{{ Feature 2 }}** Support\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## How {{ Tool Name }} Works\n\n<v-clicks>\n\n1. Enroll through **{{ Organization }}**\n2. {{ Step 2 }}\n3. {{ Step 3 }}\n4. Receive {{ Document }} **({{ Acronym }})**\n5. {{ Step 5 }}\n6. **{{ Final Outcome }}**\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Preventive Care and Wellness\n\n<v-clicks>\n\n- **{{ Service 1 }}** Services\n- **{{ Service 2 }}** Programs\n- **{{ Partner }}** provides {{ service_type }}\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Telehealth Services\n\n<v-clicks>\n\n- **{{ Feature 1 }}**\n- **{{ Feature 2 }}**\n- **{{ Feature 3 }}** available\n- **{{ Feature 4 }}** to care\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Advocacy and Support Services\n\n<v-clicks>\n\n- **{{ Service Style }}** healthcare advocacy\n- **{{ Service 1 }}** assistance\n- **{{ Service 2 }}** options\n- **{{ Service 3 }}** support\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_1}}.jpg\n---\n\n## {{ Plan 1 Name }} (1/2)\n\n<v-click>\n\n**{{ Benefit Category 1 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n- {{ Detail 3 }}\n- {{ Detail 4 }}\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 2 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 3 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n- {{ Detail 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_1}}.jpg\n---\n\n## {{ Plan 1 Name }} (2/2)\n\n<v-click>\n\n**{{ Benefit Category 4 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Benefit Category 5 }}**\n- {{ Detail 1 }}\n- {{ Detail 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<!-- Insert as many plans as needed. Make sure they are always returned as a two part section -->\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Comparing the Plans\n\n| **Feature** | **{{ Plan 1 }}** | **{{ Plan 2 }}** | **{{ Plan 3 }}** |\n|---------|----------|----------|-----------|\n| {{ Feature 1 }} | {{ Value 1.1 }} | {{ Value 1.2 }} | {{ Value 1.3 }} |\n| {{ Feature 2 }} | {{ Value 2.1 }} | {{ Value 2.2 }} | {{ Value 2.3 }} |\n| {{ Feature 3 }} | {{ Value 3.1 }} | {{ Value 3.2 }} | {{ Value 3.3 }} |\n| {{ Feature 4 }} | {{ Value 4.1 }} | {{ Value 4.2 }} | {{ Value 4.3 }} |\n| {{ Feature 5 }} | {{ Value 5.1 }} | {{ Value 5.2 }} | {{ Value 5.3 }} |\n\n---\ntransition: fade-out\nlayout: one-half-img\nimage: img/pages/{{plan_brochure_image_final}}.jpg\n---\n\n## Definitions and Limitations\n\n<v-click>\n\n**{{ Category 1 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n- {{ Limitation 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 2 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 3 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n<Arrow v-bind=\"{{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**{{ Category 4 }}**\n- {{ Limitation 1 }}\n- {{ Limitation 2 }}\n- {{ Limitation 3 }}\n<Arrow v-bind=\"{{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n---\ntransition: fade-out\nlayout: default\n---\n\n## Key Takeaways and Reminders\n\n<v-clicks>\n\n- **{{ Feature 1 }}** benefits\n- **{{ Feature 2 }}** included\n- **{{ Feature 3 }}** benefits\n- **{{ Requirement }}** required\n\n</v-clicks>\n\n---\ntransition: fade-out\nlayout: end\nline: Thank you for participating in the {{ Plan Name }} Review. Continue to be great!\n---\n\n# Thank You!\n\nContinue to be great!\n\n<img src=\"./img/logos/FEN_logo.svg\" class=\"h-12 mt-32\" alt=\"FirstEnroll Logo\">\n\n"
+  },
+  "script": {
+    "content": "---- Cover ----\n\nHello, everyone! Thank you for joining today's session on the True Health Plans. We'll walk through the features and benefits of these plans, designed to empower your health with financial peace of mind. Let's get started!\n\n---- True Health Plans Overview ----\n\nThe True Health Plans offer a wide range of coverage options.\n\nThey include telemedicine for convenient access to healthcare professionals.\n\nPrescription benefits and support tools are also part of the package.\n\nPreventive care is emphasized through various programs.\n\nAdditionally, advocacy services are available to support your healthcare journey.\n\nNow, let's explore the key features and benefits of these plans.\n\n---- Key Features and Benefits ----\n\nThe True Health Plans provide several key features and benefits.\n\nTelemedicine services offer unlimited access with no consult fee.\n\nPrescription benefits include preventive and acute prescriptions.\n\nPreventive care is supported through various wellness programs.\n\nAdvocacy services vary by plan, providing personalized support.\n\nThere is also a discount prescription service available through BestChoice RX.\n\nLet's move on to discuss the cost management tools.\n\n---- Cost Management Tools ----\n\nThe True Health Plans include several cost management tools.\n\nThe BestChoiceRX Group Discount Program, or BCRX, offers savings on prescriptions.\n\nThe Opyn Live system provides additional support.\n\nMyHealthcare Ninja is available to assist with healthcare navigation.\n\nNext, we'll see how BestChoiceRX works.\n\n---- How BestChoiceRX Works ----\n\nHere's how you can benefit from BestChoiceRX.\n\nFirst, enroll through True Health to access the program.\n\nYou can then visit participating pharmacies.\n\nUse your discount card at checkout to receive BCRX benefits.\n\nThis helps you save on prescriptions and lower out-of-pocket costs.\n\nNow, let's discuss preventive care and wellness.\n\n---- Preventive Care and Wellness ----\n\nPreventive care and wellness are integral parts of the True Health Plans.\n\nScreening services are available to help detect health issues early.\n\nCounseling programs provide support for mental and physical well-being.\n\nOpyn Live offers telehealth services to enhance your care experience.\n\nLet's move on to telehealth services.\n\n---- Telehealth Services ----\n\nTelehealth services offer several advantages.\n\nThere is no consult fee, making it cost-effective.\n\nYou have unlimited access to healthcare professionals.\n\nConvenient scheduling is available to fit your lifestyle.\n\nThis service provides a direct connection to care when you need it.\n\nNow, let's explore advocacy and support services.\n\n---- Advocacy and Support Services ----\n\nAdvocacy and support services are designed to assist you.\n\nPersonalized healthcare advocacy is available to guide you.\n\nHospital bill reduction assistance can help manage costs.\n\nInsurance navigation options are provided for your convenience.\n\nHealthcare Ninja support is also part of the package.\n\nLet's examine our first plan tier, True Health 1.\n\n---- Plan Tier 1 (One of Two) ----\n\nLet's examine our first plan tier, True Health 1.\n\nPhysician services include three primary care visits per year with a twenty-five dollar copay and a one hundred fifty dollar maximum per visit. \n\nYou also have one specialist or urgent care visit per year with a fifty dollar copay and a three hundred dollar maximum per visit.\n\nTelemedicine offers unlimited access with no consult fee.\n\nAdvocacy services include hospital bill reduction.\n\nContinuing with True Health 1, let's look at hospitalization and prescription benefits.\n\n---- Plan Tier 1 (Two of Two) ----\n\nContinuing with True Health 1, let's look at hospitalization and prescription benefits.\n\nHospitalization benefits provide one thousand dollars per day, with a five thousand dollar maximum per year.\n\nPrescription discounts are available through BestChoice RX.\n\nNow, let's look at our second plan tier, True Health 2.\n\n---- Plan Tier 2 (One of Two) ----\n\nNow, let's look at our second plan tier, True Health 2.\n\nPhysician services include four primary care visits per year with a twenty-five dollar copay and a one hundred fifty dollar maximum per visit.\n\nYou also have two specialist or urgent care visits per year with a fifty dollar copay and a three hundred dollar maximum per visit.\n\nTelemedicine offers unlimited access with no consult fee.\n\nPrescription benefits cover preventive and acute prescriptions.\n\nContinuing with True Health 2, let's explore hospitalization and mail order prescriptions.\n\n---- Plan Tier 2 (Two of Two) ----\n\nContinuing with True Health 2, let's explore hospitalization and mail order prescriptions.\n\nHospitalization benefits provide one thousand dollars per day, with a ten thousand dollar maximum per year.\n\nMail order prescriptions have a five dollar copay for preferred generics.\n\nNow, let's look at our third plan tier, True Health 3.\n\n---- Plan Tier 3 (One of Two) ----\n\nNow, let's look at our third plan tier, True Health 3.\n\nPhysician services include four primary care visits per year with a twenty-five dollar copay and a one hundred fifty dollar maximum per visit.\n\nYou also have four specialist or urgent care visits per year with a fifty dollar copay and a three hundred dollar maximum per visit.\n\nTelemedicine offers unlimited access with no consult fee.\n\nPrescription benefits cover non-preferred generics and brand drugs.\n\nContinuing with True Health 3, let's explore hospitalization and advocacy services.\n\n---- Plan Tier 3 (Two of Two) ----\n\nContinuing with True Health 3, let's explore hospitalization and advocacy services.\n\nHospitalization benefits provide one thousand dollars per day, with a fifteen thousand dollar maximum per year.\n\nAdvocacy services include hospital bill reduction.\n\nLet's compare the different tiers available.\n\n---- Comparing Plan Tiers ----\n\nLet's compare the different tiers available.\n\nTrue Health 1 offers three primary care visits per year, while True Health 2 and 3 offer four.\n\nSpecialist visits are one per year for True Health 1, two for True Health 2, and four for True Health 3.\n\nHospitalization benefits range from a five thousand dollar maximum per year for True Health 1, to ten thousand for True Health 2, and fifteen thousand for True Health 3.\n\nAll plans offer unlimited telemedicine access.\n\nPrescription benefits vary, with BestChoice RX for True Health 1, formulary for True Health 2, and non-preferred for True Health 3.\n\nLet's review important definitions and limitations.\n\n---- Definitions and Limitations ----\n\nLet's review important definitions and limitations.\n\nThere is a thirty-day waiting period for sickness benefits and a twelve-month period for pre-existing conditions.\n\nNetwork requirements specify in-network providers for outpatient services.\n\nExclusions apply to non-listed services, which are not covered.\n\nPreventive services are provided as per the Affordable Care Act requirements.\n\nHere are the key points to remember.\n\n---- Key Takeaways and Reminders ----\n\nHere are the key points to remember.\n\nTelemedicine benefits offer unlimited access with no consult fee.\n\nPrescription discounts are included through BestChoice RX.\n\nPreventive care benefits are available through various programs.\n\nIn-network providers are required for outpatient services.\n\nThank you for your time today.\n\n---- Closing ----\n\nThank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!",
+    "template_used": "---- Cover ----\n\nHello, everyone! Thank you for joining today's session. We'll walk through the plan's features and benefits that empower your health with financial peace of mind. Let's get started!\n\n---- Plan Overview ----\n\n{{ Generate script based on the slides content }}\n\n---- Key Features and Benefits ----\n\nLet's explore the key features and benefits of this plan.\n\n{{ Generate script based on the slides content }}\n\n---- Cost Management Tools ----\n\nNow, let's discuss the cost management tools available with this plan.\n\n{{ Generate script based on the slides content }}\n\n---- Provider Network Details ----\n\nHere's how the provider network works.\n\n{{ Generate script based on the slides content }}\n\n---- Preventive Care and Wellness ----\n\n{{ Generate script based on the slides content }}\n\n---- Telehealth Services ----\n\n{{ Generate script based on the slides content }}\n\n---- Advocacy and Support Services ----\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 1 (One of Two) ----\n\nLet's examine our first plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 1 (Two of Two) ----\n\nContinuing with our first plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 2 (One of Two) ----\n\nNow, let's look at our second plan tier.\n\n{{ Generate script based on the slides content }}\n\n---- Plan Tier 2 (Two of Two) ----\n\nContinuing with our second plan tier.\n\n{{ Generate script based on the slides content }}\n\n{{ Add as few or as many plan tiers as needed }}\n\n---- Comparing Plan Tiers ----\n\nLet's compare the different tiers available.\n\n{{ Generate script based on the slides content }}\n\n---- Definitions and Limitations ----\n\nLet's review important definitions and limitations.\n\n{{ Generate script based on the slides content }}\n\n---- Key Takeaways and Reminders ----\n\nHere are the key points to remember.\n\n{{ Generate script based on the slides content }}\n\n---- Closing ----\n\nThank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!"
+  },
+  "pages": {
+    "content": [
+      {
+        "slide": {
+          "header": "True Health Plans Review",
+          "content": "<SlideAudio deckKey=\"FEN_TH\" />\n\n# True Health Plans Review\n\nUnderstanding the details and benefits of the **True Health Plans**",
+          "frontmatter": "id: FEN_TH\ntheme: ../../\ntitle: | \n  True Health Plans\ninfo: |\n  ## True Health Plans Review\n  A look at the True Health Plans benefits and details.\nverticalCenter: true\nlayout: intro\nthemeConfig:\n  logoHeader: ./img/logos/FEN_logo.svg\n  audioEnabled: true\ntransition: fade-out\ndrawings:\n  persist: false"
+        },
+        "script": {
+          "header": "Cover",
+          "content": "Hello, everyone! Thank you for joining today's session on the True Health Plans. We'll walk through the features and benefits of these plans, designed to empower your health with financial peace of mind. Let's get started!"
+        }
+      },
+      {
+        "slide": {
+          "header": "True Health Plans Overview",
+          "content": "## True Health Plans Overview\n\n<v-clicks>\n\n- Comprehensive coverage through **True Health**\n- **Telemedicine** for convenient access\n- **Prescription Benefits** and support tools\n- **Preventive Care** through various programs\n- **Advocacy Services** support\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "True Health Plans Overview",
+          "content": "The True Health Plans offer a wide range of coverage options.\n\nThey include telemedicine for convenient access to healthcare professionals.\n\nPrescription benefits and support tools are also part of the package.\n\nPreventive care is emphasized through various programs.\n\nAdditionally, advocacy services are available to support your healthcare journey.\n\nNow, let's explore the key features and benefits of these plans."
+        }
+      },
+      {
+        "slide": {
+          "header": "Key Features and Benefits",
+          "content": "## Key Features and Benefits\n\n<v-clicks>\n\n**Telemedicine Services**\n\n**Prescription Benefits**\n\n**Preventive Care**\n\n**Advocacy Services** (varies by plan)\n</v-clicks>\n\n<v-click>\n\n**Discount Prescription Service** through BestChoice RX\n<div class=\"grid grid-cols-1 gap-4 items-center px-8 py-4\">\n  <img src=\"\" class=\"h-12 mix-blend-multiply\" alt=\"BestChoice RX Logo\">\n</div>\n\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Key Features and Benefits",
+          "content": "The True Health Plans provide several key features and benefits.\n\nTelemedicine services offer unlimited access with no consult fee.\n\nPrescription benefits include preventive and acute prescriptions.\n\nPreventive care is supported through various wellness programs.\n\nAdvocacy services vary by plan, providing personalized support.\n\nThere is also a discount prescription service available through BestChoice RX.\n\nLet's move on to discuss the cost management tools."
+        }
+      },
+      {
+        "slide": {
+          "header": "Cost Management Tools",
+          "content": "## Cost Management Tools\n\n<v-click>\n\n**BestChoiceRX Group Discount Program** (BCRX)\n</v-click>\n\n<v-click>\n\n**Opyn Live** System\n</v-click>\n\n<v-click>\n\n**MyHealthcare Ninja** Support\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Cost Management Tools",
+          "content": "The True Health Plans include several cost management tools.\n\nThe BestChoiceRX Group Discount Program, or BCRX, offers savings on prescriptions.\n\nThe Opyn Live system provides additional support.\n\nMyHealthcare Ninja is available to assist with healthcare navigation.\n\nNext, we'll see how BestChoiceRX works."
+        }
+      },
+      {
+        "slide": {
+          "header": "How BestChoiceRX Works",
+          "content": "## How BestChoiceRX Works\n\n<v-clicks>\n\n1. Enroll through **True Health**\n2. Access participating pharmacies\n3. Use discount card at checkout\n4. Receive **BCRX** benefits\n5. Save on prescriptions\n6. **Lower out-of-pocket costs**\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "How BestChoiceRX Works",
+          "content": "Here's how you can benefit from BestChoiceRX.\n\nFirst, enroll through True Health to access the program.\n\nYou can then visit participating pharmacies.\n\nUse your discount card at checkout to receive BCRX benefits.\n\nThis helps you save on prescriptions and lower out-of-pocket costs.\n\nNow, let's discuss preventive care and wellness."
+        }
+      },
+      {
+        "slide": {
+          "header": "Preventive Care and Wellness",
+          "content": "## Preventive Care and Wellness\n\n<v-clicks>\n\n- **Screening** Services\n- **Counseling** Programs\n- **Opyn Live** provides telehealth services\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Preventive Care and Wellness",
+          "content": "Preventive care and wellness are integral parts of the True Health Plans.\n\nScreening services are available to help detect health issues early.\n\nCounseling programs provide support for mental and physical well-being.\n\nOpyn Live offers telehealth services to enhance your care experience.\n\nLet's move on to telehealth services."
+        }
+      },
+      {
+        "slide": {
+          "header": "Telehealth Services",
+          "content": "## Telehealth Services\n\n<v-clicks>\n\n- **No consult fee**\n- **Unlimited access**\n- **Convenient scheduling** available\n- **Direct connection** to care\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Telehealth Services",
+          "content": "Telehealth services offer several advantages.\n\nThere is no consult fee, making it cost-effective.\n\nYou have unlimited access to healthcare professionals.\n\nConvenient scheduling is available to fit your lifestyle.\n\nThis service provides a direct connection to care when you need it.\n\nNow, let's explore advocacy and support services."
+        }
+      },
+      {
+        "slide": {
+          "header": "Advocacy and Support Services",
+          "content": "## Advocacy and Support Services\n\n<v-clicks>\n\n- **Personalized** healthcare advocacy\n- **Hospital bill reduction** assistance\n- **Insurance navigation** options\n- **Healthcare Ninja** support\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Advocacy and Support Services",
+          "content": "Advocacy and support services are designed to assist you.\n\nPersonalized healthcare advocacy is available to guide you.\n\nHospital bill reduction assistance can help manage costs.\n\nInsurance navigation options are provided for your convenience.\n\nHealthcare Ninja support is also part of the package.\n\nLet's examine our first plan tier, True Health 1."
+        }
+      },
+      {
+        "slide": {
+          "header": "True Health 1 (1/2)",
+          "content": "## True Health 1 (1/2)\n\n<v-click>\n\n**Physician Services**\n- 3 primary care visits/year\n- $25 copay, $150 max/visit\n- 1 specialist/urgent care visit/year\n- $50 copay, $300 max/visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Telemedicine**\n- Unlimited access\n- No consult fee\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Advocacy Services**\n- Hospital bill reduction\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_1_plan_with_physician_services_telemedicine_and_advocacy_benefits.jpg"
+        },
+        "script": {
+          "header": "Plan Tier 1 (One of Two)",
+          "content": "Let's examine our first plan tier, True Health 1.\n\nPhysician services include three primary care visits per year with a twenty-five dollar copay and a one hundred fifty dollar maximum per visit. \n\nYou also have one specialist or urgent care visit per year with a fifty dollar copay and a three hundred dollar maximum per visit.\n\nTelemedicine offers unlimited access with no consult fee.\n\nAdvocacy services include hospital bill reduction.\n\nContinuing with True Health 1, let's look at hospitalization and prescription benefits."
+        }
+      },
+      {
+        "slide": {
+          "header": "True Health 1 (2/2)",
+          "content": "## True Health 1 (2/2)\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000/day, $5,000 max/year\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Discounts**\n- BestChoice RX\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_1_plan_with_physician_services_telemedicine_and_advocacy_benefits.jpg"
+        },
+        "script": {
+          "header": "Plan Tier 1 (Two of Two)",
+          "content": "Continuing with True Health 1, let's look at hospitalization and prescription benefits.\n\nHospitalization benefits provide one thousand dollars per day, with a five thousand dollar maximum per year.\n\nPrescription discounts are available through BestChoice RX.\n\nNow, let's look at our second plan tier, True Health 2."
+        }
+      },
+      {
+        "slide": {
+          "header": "True Health 2 (1/2)",
+          "content": "## True Health 2 (1/2)\n\n<v-click>\n\n**Physician Services**\n- 4 primary care visits/year\n- $25 copay, $150 max/visit\n- 2 specialist/urgent care visits/year\n- $50 copay, $300 max/visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Telemedicine**\n- Unlimited access\n- No consult fee\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Benefits**\n- Preventive and acute prescriptions\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_2_plan_features_with_physician_services_and_prescription_benefits.jpg"
+        },
+        "script": {
+          "header": "Plan Tier 2 (One of Two)",
+          "content": "Now, let's look at our second plan tier, True Health 2.\n\nPhysician services include four primary care visits per year with a twenty-five dollar copay and a one hundred fifty dollar maximum per visit.\n\nYou also have two specialist or urgent care visits per year with a fifty dollar copay and a three hundred dollar maximum per visit.\n\nTelemedicine offers unlimited access with no consult fee.\n\nPrescription benefits cover preventive and acute prescriptions.\n\nContinuing with True Health 2, let's explore hospitalization and mail order prescriptions."
+        }
+      },
+      {
+        "slide": {
+          "header": "True Health 2 (2/2)",
+          "content": "## True Health 2 (2/2)\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000/day, $10,000 max/year\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Mail Order Prescriptions**\n- $5 copay for preferred generics\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_2_plan_features_with_physician_services_and_prescription_benefits.jpg"
+        },
+        "script": {
+          "header": "Plan Tier 2 (Two of Two)",
+          "content": "Continuing with True Health 2, let's explore hospitalization and mail order prescriptions.\n\nHospitalization benefits provide one thousand dollars per day, with a ten thousand dollar maximum per year.\n\nMail order prescriptions have a five dollar copay for preferred generics.\n\nNow, let's look at our third plan tier, True Health 3."
+        }
+      },
+      {
+        "slide": {
+          "header": "True Health 3 (1/2)",
+          "content": "## True Health 3 (1/2)\n\n<v-click>\n\n**Physician Services**\n- 4 primary care visits/year\n- $25 copay, $150 max/visit\n- 4 specialist/urgent care visits/year\n- $50 copay, $300 max/visit\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Telemedicine**\n- Unlimited access\n- No consult fee\n<Arrow v-bind=\"{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Prescription Benefits**\n- Non-preferred generics and brand drugs\n<Arrow v-bind=\"{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_3_plan_features_benefits_and_coverage_details_with_limitations.jpg"
+        },
+        "script": {
+          "header": "Plan Tier 3 (One of Two)",
+          "content": "Now, let's look at our third plan tier, True Health 3.\n\nPhysician services include four primary care visits per year with a twenty-five dollar copay and a one hundred fifty dollar maximum per visit.\n\nYou also have four specialist or urgent care visits per year with a fifty dollar copay and a three hundred dollar maximum per visit.\n\nTelemedicine offers unlimited access with no consult fee.\n\nPrescription benefits cover non-preferred generics and brand drugs.\n\nContinuing with True Health 3, let's explore hospitalization and advocacy services."
+        }
+      },
+      {
+        "slide": {
+          "header": "True Health 3 (2/2)",
+          "content": "## True Health 3 (2/2)\n\n<v-click>\n\n**Hospitalization Benefits**\n- $1,000/day, $15,000 max/year\n<Arrow v-bind=\"{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Advocacy Services**\n- Hospital bill reduction\n<Arrow v-bind=\"{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/true_health_3_plan_features_benefits_and_coverage_details_with_limitations.jpg"
+        },
+        "script": {
+          "header": "Plan Tier 3 (Two of Two)",
+          "content": "Continuing with True Health 3, let's explore hospitalization and advocacy services.\n\nHospitalization benefits provide one thousand dollars per day, with a fifteen thousand dollar maximum per year.\n\nAdvocacy services include hospital bill reduction.\n\nLet's compare the different tiers available."
+        }
+      },
+      {
+        "slide": {
+          "header": "Comparing the Plans",
+          "content": "## Comparing the Plans\n\n| **Feature** | **True Health 1 (TH1)** | **True Health 2 (TH2)** | **True Health 3 (TH3)** |\n|---------|----------|----------|-----------|\n| Primary Care Visits | 3/year | 4/year | 4/year |\n| Specialist Visits | 1/year | 2/year | 4/year |\n| Hospitalization | $5,000 max/year | $10,000 max/year | $15,000 max/year |\n| Telemedicine | Unlimited | Unlimited | Unlimited |\n| Prescription Benefits | BestChoice RX | Formulary | Non-preferred |",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Comparing Plan Tiers",
+          "content": "Let's compare the different tiers available.\n\nTrue Health 1 offers three primary care visits per year, while True Health 2 and 3 offer four.\n\nSpecialist visits are one per year for True Health 1, two for True Health 2, and four for True Health 3.\n\nHospitalization benefits range from a five thousand dollar maximum per year for True Health 1, to ten thousand for True Health 2, and fifteen thousand for True Health 3.\n\nAll plans offer unlimited telemedicine access.\n\nPrescription benefits vary, with BestChoice RX for True Health 1, formulary for True Health 2, and non-preferred for True Health 3.\n\nLet's review important definitions and limitations."
+        }
+      },
+      {
+        "slide": {
+          "header": "Definitions and Limitations",
+          "content": "## Definitions and Limitations\n\n<v-click>\n\n**Waiting Periods**\n- 30-day for sickness benefits\n- 12-month for pre-existing conditions\n<Arrow v-bind=\"{{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Network Requirements**\n- In-network for outpatient services\n<Arrow v-bind=\"{{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Exclusions**\n- Non-listed services not covered\n<Arrow v-bind=\"{{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>\n\n<v-click>\n\n**Preventive Services**\n- As per ACA requirements\n<Arrow v-bind=\"{{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }}\" />\n</v-click>",
+          "frontmatter": "transition: fade-out\nlayout: one-half-img\nimage: img/pages/mec_preventive_health_services_summary_of_benefits_with_exclusions_and_limitations.jpg"
+        },
+        "script": {
+          "header": "Definitions and Limitations",
+          "content": "Let's review important definitions and limitations.\n\nThere is a thirty-day waiting period for sickness benefits and a twelve-month period for pre-existing conditions.\n\nNetwork requirements specify in-network providers for outpatient services.\n\nExclusions apply to non-listed services, which are not covered.\n\nPreventive services are provided as per the Affordable Care Act requirements.\n\nHere are the key points to remember."
+        }
+      },
+      {
+        "slide": {
+          "header": "Key Takeaways and Reminders",
+          "content": "## Key Takeaways and Reminders\n\n<v-clicks>\n\n- **Telemedicine** benefits\n- **Prescription Discounts** included\n- **Preventive Care** benefits\n- **In-network providers** required\n\n</v-clicks>",
+          "frontmatter": "transition: fade-out\nlayout: default"
+        },
+        "script": {
+          "header": "Key Takeaways and Reminders",
+          "content": "Here are the key points to remember.\n\nTelemedicine benefits offer unlimited access with no consult fee.\n\nPrescription discounts are included through BestChoice RX.\n\nPreventive care benefits are available through various programs.\n\nIn-network providers are required for outpatient services.\n\nThank you for your time today."
+        }
+      },
+      {
+        "slide": {
+          "header": "Thank You!",
+          "content": "# Thank You!\n\nContinue to be great!\n\n<img src=\"./img/logos/FEN_logo.svg\" class=\"h-12 mt-32\" alt=\"FirstEnroll Logo\">",
+          "frontmatter": "transition: fade-out\nlayout: end\nline: Thank you for participating in the True Health Plans Review. Continue to be great!"
+        },
+        "script": {
+          "header": "Closing",
+          "content": "Thank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!"
+        }
+      }
+    ],
+    "count": 18
+  },
+  "validation_state": {
+    "current_page": 1,
+    "total_pages": 18,
+    "pages": {
+      "1": {
+        "page_number": 1,
+        "slide_valid": false,
+        "script_valid": false,
+        "slide_update_instructions": null,
+        "script_update_instructions": null,
+        "updated_slide": null,
+        "updated_script": null
+      }
+    },
+    "update_type": "both"
+  }
+}

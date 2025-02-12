@@ -10,7 +10,11 @@ import logging
 from typing import Optional
 
 from langchain_core.messages import HumanMessage
-from langchain_openai import ChatOpenAI
+from langchain_core.runnables import RunnableConfig
+from langsmith import traceable
+
+from agent.nodes.base import BaseNode
+from agent.llm_config import llm
 
 
 class ScriptUpdater:
@@ -19,11 +23,8 @@ class ScriptUpdater:
     def __init__(self) -> None:
         """Initialize the updater with GPT-4o model."""
         self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
-        self.model = ChatOpenAI(
-            model="gpt-4o",
-            max_tokens=8192,
-            temperature=0
-        )
+        # Use shared LLM instance
+        self.model = llm
     
     def update(self, current_content: str, instructions: Optional[str]) -> str:
         """Update script content based on validation instructions.
