@@ -18,6 +18,10 @@ Guidelines for slide content:
 - Maintain all frontmatter exactly as provided
 - When showing tables, use the table layout and format them properly for Slidev
 
+Available Images:
+Brochure Pages: {pages_list}
+Logos: {logos_list}
+
 Use this template structure - maintain all formatting but adding the content as needed, especially on sections that give details of plan benefits:
 {template}
 
@@ -33,9 +37,29 @@ PROCESSED SUMMARIES:
 EXTRACTED TABLES:
 {extracted_tables}
 
-I am just putting the tables so you can see the information per each plan. 
+IMAGE USAGE GUIDELINES:
+1. Brochure Page Images:
+   - Available pages: {pages_list}
+   - These are the actual brochure page images
+   - Use these when referencing specific pages from the brochure
+   - Example usage: ![Page 1](/img/pages/page1.jpg)
+   - Always include descriptive alt text
 
-** RETURN THE SLIDES IN FULL, DONT SKIP ANY SECTIONS, ESSPECIALLY THE PLAN TIERS SECTIONS **
+2. Logo Images:
+   - Available logos: {logos_list}
+   - These are company and product logos
+   - Use these when mentioning company branding or products
+   - Example usage: ![Company Logo](/img/logos/logo.svg)
+   - Always include descriptive alt text
+
+Key Image Rules:
+- Brochure pages should ONLY be used when showing actual pages from the document
+- Logos should ONLY be used when mentioning company branding or specific products
+- Always use the exact paths provided in the lists above
+- Every image must include descriptive alt text for accessibility
+- Do not modify or alter the image paths in any way
+
+** RETURN THE SLIDES IN FULL, DONT SKIP ANY SECTIONS, ESPECIALLY THE PLAN TIERS SECTIONS **
 
 Final Instructions (VERY IMPORTANT):
 ----------------------------------------

@@ -1,10 +1,10 @@
 ---
-id: FEN_{{deck_key}}
+id: FEN_{{deck_id}}
 theme: ../../
 title: | 
   {{ Plan Name }}
 info: |
-  ## {{ Plan Name }} Review
+  ## {{ Plan Name }} Plan Overview
   A look at the {{ Plan Name }} benefits and details.
 verticalCenter: true
 layout: intro
@@ -16,9 +16,9 @@ drawings:
   persist: false
 ---
 
-<SlideAudio deckKey="FEN_{{deck_key}}" />
+<SlideAudio deckKey="FEN_{{deck_id}}" />
 
-# {{ Plan Name }} Review
+# {{ Plan Name }} Plan Overview
 
 Understanding the details and benefits of the **{{ Plan Full Name }}**
 
@@ -27,7 +27,7 @@ transition: fade-out
 layout: default
 ---
 
-## {{ Plan Name }} Overview
+## The {{ Plan Name }} Plan
 
 <v-clicks>
 
@@ -168,7 +168,6 @@ image: img/pages/{{plan_brochure_image_1}}.jpg
 - {{ Detail 2 }}
 - {{ Detail 3 }}
 - {{ Detail 4 }}
-<Arrow v-bind="{{ x1:480, y1:160, x2:560, y2:160, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 <v-click>
@@ -176,7 +175,6 @@ image: img/pages/{{plan_brochure_image_1}}.jpg
 **{{ Benefit Category 2 }}**
 - {{ Detail 1 }}
 - {{ Detail 2 }}
-<Arrow v-bind="{{ x1:480, y1:215, x2:560, y2:215, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 <v-click>
@@ -185,7 +183,6 @@ image: img/pages/{{plan_brochure_image_1}}.jpg
 - {{ Detail 1 }}
 - {{ Detail 2 }}
 - {{ Detail 3 }}
-<Arrow v-bind="{{ x1:480, y1:340, x2:560, y2:340, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 ---
@@ -201,7 +198,6 @@ image: img/pages/{{plan_brochure_image_1}}.jpg
 **{{ Benefit Category 4 }}**
 - {{ Detail 1 }}
 - {{ Detail 2 }}
-<Arrow v-bind="{{ x1:480, y1:370, x2:560, y2:370, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 <v-click>
@@ -209,7 +205,6 @@ image: img/pages/{{plan_brochure_image_1}}.jpg
 **{{ Benefit Category 5 }}**
 - {{ Detail 1 }}
 - {{ Detail 2 }}
-<Arrow v-bind="{{ x1:480, y1:410, x2:560, y2:410, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 <!-- Insert as many plans as needed. Make sure they are always returned as a two part section -->
@@ -243,7 +238,6 @@ image: img/pages/{{plan_brochure_image_final}}.jpg
 - {{ Limitation 1 }}
 - {{ Limitation 2 }}
 - {{ Limitation 3 }}
-<Arrow v-bind="{{ x1:480, y1:160, x2:550, y2:160, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 <v-click>
@@ -251,7 +245,6 @@ image: img/pages/{{plan_brochure_image_final}}.jpg
 **{{ Category 2 }}**
 - {{ Limitation 1 }}
 - {{ Limitation 2 }}
-<Arrow v-bind="{{ x1:480, y1:255, x2:550, y2:255, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 <v-click>
@@ -259,7 +252,6 @@ image: img/pages/{{plan_brochure_image_final}}.jpg
 **{{ Category 3 }}**
 - {{ Limitation 1 }}
 - {{ Limitation 2 }}
-<Arrow v-bind="{{ x1:480, y1:360, x2:550, y2:360, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 <v-click>
@@ -268,7 +260,6 @@ image: img/pages/{{plan_brochure_image_final}}.jpg
 - {{ Limitation 1 }}
 - {{ Limitation 2 }}
 - {{ Limitation 3 }}
-<Arrow v-bind="{{ x1:480, y1:420, x2:550, y2:420, color: 'var(--slidev-theme-accent)' }}" />
 </v-click>
 
 ---

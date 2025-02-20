@@ -62,6 +62,8 @@ Outline your plan for the full presentation plan. add extra detail to the plan t
 When creating tables or listing benefits, use the EXACT values and details from the provided tables.
 Do not make up or estimate values - only use what is explicitly provided in the tables.
 
+Always include the Deck ID and Deck Title at the top of the presentation.
+
 Very important instructions:
 ----------------------------------------
 {instructions}

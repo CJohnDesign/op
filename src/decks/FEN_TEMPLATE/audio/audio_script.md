@@ -82,4 +82,4 @@ Here are the key points to remember.
 
 ---- Closing ----
 
-Thank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!
+Thank you for your time today. We hope this information helps you assist members in making informed decisions about their health coverage. Continue to be great!

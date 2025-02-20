@@ -31,6 +31,53 @@ class InitNode(BaseNode[AgentState]):
     the initialization of deck information from input arguments.
     """
     
+    def _setup_directory_structure(self, src_dir: Path, dest_dir: Path, deck_id: str) -> None:
+        """Set up the directory structure for the new deck.
+        
+        Args:
+            src_dir: Source template directory
+            dest_dir: Destination directory
+            deck_id: ID of the current deck
+        """
+        # Create base directories
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        img_dir = dest_dir / "img"
+        img_dir.mkdir(exist_ok=True)
+        
+        # Create empty pages directory
+        pages_dir = img_dir / "pages"
+        pages_dir.mkdir(exist_ok=True)
+        self.logger.info("Created empty pages directory")
+        
+        # Copy logos directory with all contents
+        src_logos = src_dir / "img" / "logos"
+        dest_logos = img_dir / "logos"
+        if src_logos.exists():
+            if dest_logos.exists():
+                shutil.rmtree(dest_logos)
+            shutil.copytree(src_logos, dest_logos)
+            self.logger.info("Copied logos directory with all contents")
+        else:
+            dest_logos.mkdir(exist_ok=True)
+            self.logger.warning("Source logos directory not found, created empty directory")
+            
+        # Copy only the relevant PDF
+        src_pdf_dir = src_dir / "img" / "pdfs" / deck_id
+        if src_pdf_dir.exists():
+            dest_pdf_dir = img_dir / "pdfs"
+            dest_pdf_dir.mkdir(exist_ok=True)
+            
+            # Copy all PDFs from the deck-specific folder
+            pdf_files = list(src_pdf_dir.glob("*.pdf"))
+            if pdf_files:
+                for pdf_file in pdf_files:
+                    shutil.copy2(pdf_file, dest_pdf_dir / pdf_file.name)
+                self.logger.info(f"Copied {len(pdf_files)} PDF files for deck {deck_id}")
+            else:
+                self.logger.warning(f"No PDF files found for deck {deck_id}")
+        else:
+            self.logger.warning(f"PDF directory not found for deck {deck_id}")
+    
     def _get_instructions(self, deck_id: str, template_dir: Path) -> str:
         """Get instructions for the deck.
         
@@ -87,26 +134,19 @@ class InitNode(BaseNode[AgentState]):
             deck_dir: Path to the deck directory
         """
         # Set up paths
-        template_dir = Path("src/decks/FEN_TEMPLATE")
-        pdf_base_dir = template_dir / "img" / "pdfs"
+        pdf_dir = deck_dir / "img" / "pdfs"
         pages_dir = deck_dir / "img" / "pages"
-        
-        # Get deck ID from deck_dir path
-        deck_id = deck_dir.name
-        
-        # Look in carrier-specific folder using full deck_id
-        pdf_dir = pdf_base_dir / deck_id
         
         # Create pages directory if it doesn't exist
         pages_dir.mkdir(exist_ok=True)
         
-        # Find all PDFs in carrier folder
+        # Find all PDFs in the pdfs directory
         pdf_files = list(pdf_dir.glob("*.pdf")) if pdf_dir.exists() else []
         if not pdf_files:
-            self.logger.info(f"No PDF files found in carrier folder {pdf_dir}")
+            self.logger.info(f"No PDF files found in {pdf_dir}")
             return
             
-        self.logger.info(f"Found {len(pdf_files)} PDF files to convert in {deck_id} folder")
+        self.logger.info(f"Found {len(pdf_files)} PDF files to convert")
         
         # Track global page number across all PDFs
         global_page_num = 1
@@ -215,14 +255,19 @@ class InitNode(BaseNode[AgentState]):
             if not src_dir.exists():
                 raise ValueError(f"Template directory not found at {src_dir}")
                 
-            # Check if destination already exists
-            if dest_dir.exists():
-                self.logger.warning(f"Destination directory {dest_dir} already exists. Skipping copy.")
-            else:
-                self.logger.info(f"Copying template from {src_dir} to {dest_dir}")
-                # Copy template excluding instructions directory
-                shutil.copytree(src_dir, dest_dir, ignore=shutil.ignore_patterns('instructions', 'instructions/*'))
-                self.logger.info("Template directory copied successfully")
+            # Set up directory structure
+            self._setup_directory_structure(src_dir, dest_dir, deck_id)
+            
+            # Copy non-image template files
+            for item in src_dir.iterdir():
+                if item.name not in ["img", "instructions"]:
+                    dest_item = dest_dir / item.name
+                    if item.is_file():
+                        shutil.copy2(item, dest_item)
+                    elif item.is_dir():
+                        if dest_item.exists():
+                            shutil.rmtree(dest_item)
+                        shutil.copytree(item, dest_item)
             
             # Copy appropriate instruction file
             self._copy_instruction_file(deck_id, src_dir, dest_dir)

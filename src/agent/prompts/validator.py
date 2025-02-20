@@ -70,13 +70,13 @@ Script:
 
 The Transforming Data Through Knowledge plan
 
-is brought to you by America's Choice Health Care,
+is provided to your members by America's Choice Health Care,
 
 with Administration by Detego Health.
 
 Notice how:
 1. Each v-click has its own script line
-2. Extra line introduces the section
+2. Extra line introduces the section 
 3. Formatting is preserved
 4. Sections are properly separated
 

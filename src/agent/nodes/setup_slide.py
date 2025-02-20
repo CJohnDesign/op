@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 import logging
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, List, Tuple
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
@@ -34,6 +34,41 @@ class SetupSlideNode(BaseNode[AgentState]):
         # Use shared LLM instance
         self.model = llm
     
+    def _get_image_lists(self, deck_dir: Path) -> Tuple[List[str], List[str]]:
+        """Get separate lists of page images and logo images.
+        
+        Args:
+            deck_dir: Path to the deck directory
+            
+        Returns:
+            Tuple containing (pages_list, logos_list)
+        """
+        img_dir = deck_dir / "img"
+        pages_list = []
+        logos_list = []
+        
+        # Get pages images
+        pages_dir = img_dir / "pages"
+        if pages_dir.exists():
+            pages_list = [
+                str(f.relative_to(img_dir))
+                for f in pages_dir.glob("*")
+                if f.suffix.lower() in [".jpg", ".jpeg", ".png", ".gif"]
+            ]
+            self.logger.info(f"Found {len(pages_list)} brochure page images")
+            
+        # Get logos images
+        logos_dir = img_dir / "logos"
+        if logos_dir.exists():
+            logos_list = [
+                str(f.relative_to(img_dir))
+                for f in logos_dir.glob("*")
+                if f.suffix.lower() in [".jpg", ".jpeg", ".png", ".gif", ".svg"]
+            ]
+            self.logger.info(f"Found {len(logos_list)} logo images")
+            
+        return pages_list, logos_list
+    
     @traceable(name="generate_slides_with_gpt4")
     def _generate_slides(
         self, 
@@ -42,7 +77,9 @@ class SetupSlideNode(BaseNode[AgentState]):
         extracted_tables: str,
         deck_id: str,
         deck_title: str,
-        instructions: str
+        instructions: str,
+        pages_list: List[str],
+        logos_list: List[str]
     ) -> str:
         """Generate slide content using GPT-4o.
         
@@ -53,6 +90,8 @@ class SetupSlideNode(BaseNode[AgentState]):
             deck_id: ID of the current deck
             deck_title: Title of the current deck
             instructions: Instructions from instructions.md
+            pages_list: List of brochure page image paths
+            logos_list: List of logo image paths
             
         Returns:
             Generated slide content
@@ -67,7 +106,9 @@ class SetupSlideNode(BaseNode[AgentState]):
                     template=template,
                     deck_id=deck_id,
                     deck_title=deck_title,
-                    instructions=instructions_safe
+                    instructions=instructions_safe,
+                    pages_list=json.dumps(pages_list, indent=2),
+                    logos_list=json.dumps(logos_list, indent=2)
                 )),
                 HumanMessage(
                     content=SETUP_SLIDES_HUMAN_TEMPLATE.format(
@@ -75,7 +116,9 @@ class SetupSlideNode(BaseNode[AgentState]):
                         extracted_tables=extracted_tables,
                         deck_id=deck_id,
                         deck_title=deck_title,
-                        instructions=instructions_safe
+                        instructions=instructions_safe,
+                        pages_list=json.dumps(pages_list, indent=2),
+                        logos_list=json.dumps(logos_list, indent=2)
                     )
                 )
             ]
@@ -84,6 +127,8 @@ class SetupSlideNode(BaseNode[AgentState]):
             self.logger.info("Generating slide content")
             self.logger.info(f"Deck ID: {deck_id}")
             self.logger.info(f"Deck Title: {deck_title}")
+            self.logger.info(f"Number of brochure pages: {len(pages_list)}")
+            self.logger.info(f"Number of logos: {len(logos_list)}")
             response = self.model.invoke(messages)
             
             return response.content
@@ -159,6 +204,9 @@ class SetupSlideNode(BaseNode[AgentState]):
             # Get instructions from initial deck
             instructions = state.get("initial_deck", {}).get("instructions", "")
             
+            # Get image lists
+            pages_list, logos_list = self._get_image_lists(deck_dir)
+            
             # Generate slide content with deck info
             slide_content = self._generate_slides(
                 template, 
@@ -166,14 +214,18 @@ class SetupSlideNode(BaseNode[AgentState]):
                 extracted_tables_str,
                 deck_id,
                 deck_title,
-                instructions
+                instructions,
+                pages_list,
+                logos_list
             )
             
             # Create updated state
             updated_state = dict(state)
             updated_state["slides"] = {
                 "content": slide_content,
-                "template_used": template
+                "template_used": template,
+                "pages_list": pages_list,
+                "logos_list": logos_list
             }
             
             # Save slide content to file
