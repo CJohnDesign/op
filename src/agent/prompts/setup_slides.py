@@ -31,6 +31,9 @@ Use this template structure - maintain all formatting but adding the content as 
 SETUP_SLIDES_HUMAN_TEMPLATE = """
 Generate a complete Slidev markdown presentation using:
 
+GENERATED PRESENTATION CONTENT (MOST IMPORTANT - USE THIS AS YOUR PRIMARY SOURCE):
+{presentation_content}
+
 PROCESSED SUMMARIES:
 {processed_summaries}
 
@@ -58,6 +61,13 @@ Key Image Rules:
 - Always use the exact paths provided in the lists above
 - Every image must include descriptive alt text for accessibility
 - Do not modify or alter the image paths in any way
+
+Content Generation Rules:
+- Use the generated presentation content as your primary source of information
+- Maintain the exact structure and flow from the generated presentation
+- Keep all benefit details, values, and limits exactly as specified
+- Format the content to match the Slidev template structure
+- Ensure all plan tiers are included with their complete details
 
 ** RETURN THE SLIDES IN FULL, DONT SKIP ANY SECTIONS, ESPECIALLY THE PLAN TIERS SECTIONS **
 

@@ -75,6 +75,7 @@ class SetupSlideNode(BaseNode[AgentState]):
         template: str, 
         processed_summaries: str, 
         extracted_tables: str,
+        presentation_content: str,
         deck_id: str,
         deck_title: str,
         instructions: str,
@@ -87,6 +88,7 @@ class SetupSlideNode(BaseNode[AgentState]):
             template: The slide template to use
             processed_summaries: The processed content summaries
             extracted_tables: The extracted table data
+            presentation_content: The generated presentation content
             deck_id: ID of the current deck
             deck_title: Title of the current deck
             instructions: Instructions from instructions.md
@@ -114,6 +116,7 @@ class SetupSlideNode(BaseNode[AgentState]):
                     content=SETUP_SLIDES_HUMAN_TEMPLATE.format(
                         processed_summaries=processed_summaries,
                         extracted_tables=extracted_tables,
+                        presentation_content=presentation_content,
                         deck_id=deck_id,
                         deck_title=deck_title,
                         instructions=instructions_safe,
@@ -204,6 +207,12 @@ class SetupSlideNode(BaseNode[AgentState]):
             # Get instructions from initial deck
             instructions = state.get("initial_deck", {}).get("instructions", "")
             
+            # Get generated presentation content
+            presentation_content = state.get("presentation", {}).get("content", "")
+            if not presentation_content:
+                self.logger.warning("No generated presentation content found in state")
+                presentation_content = "No presentation content available"
+            
             # Get image lists
             pages_list, logos_list = self._get_image_lists(deck_dir)
             
@@ -212,6 +221,7 @@ class SetupSlideNode(BaseNode[AgentState]):
                 template, 
                 processed_summaries, 
                 extracted_tables_str,
+                presentation_content,
                 deck_id,
                 deck_title,
                 instructions,
