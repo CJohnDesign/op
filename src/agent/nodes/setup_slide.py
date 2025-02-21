@@ -17,7 +17,7 @@ from langsmith import traceable
 
 from agent.nodes.base import BaseNode
 from agent.prompts.setup_slides import SETUP_SLIDES_PROMPT, SETUP_SLIDES_HUMAN_TEMPLATE
-from agent.types import AgentState
+from agent.types import AgentState, ProcessedImage
 from agent.llm_config import llm
 
 
@@ -34,18 +34,21 @@ class SetupSlideNode(BaseNode[AgentState]):
         # Use shared LLM instance
         self.model = llm
     
-    def _get_image_lists(self, deck_dir: Path) -> Tuple[List[str], List[str]]:
+    def _get_image_lists(self, deck_dir: Path, processed_images: Dict[str, ProcessedImage]) -> Tuple[List[str], List[str], List[str], List[str]]:
         """Get separate lists of page images and logo images.
         
         Args:
             deck_dir: Path to the deck directory
+            processed_images: Dictionary of processed images from state
             
         Returns:
-            Tuple containing (pages_list, logos_list)
+            Tuple containing (pages_list, logos_list, pages_with_tables_list, pages_with_limitations_list)
         """
         img_dir = deck_dir / "img"
         pages_list = []
         logos_list = []
+        pages_with_tables = []
+        pages_with_limitations = []
         
         # Get pages images
         pages_dir = img_dir / "pages"
@@ -57,6 +60,19 @@ class SetupSlideNode(BaseNode[AgentState]):
             ]
             self.logger.info(f"Found {len(pages_list)} brochure page images")
             
+            # Extract pages with tables and limitations
+            for page_path in pages_list:
+                page_name = Path(page_path).name
+                for _, page_data in processed_images.items():
+                    if page_data["new_name"] == page_name:
+                        if page_data.get("tableDetails", {}).get("hasBenefitsComparisonTable", False):
+                            pages_with_tables.append(page_path)
+                        if page_data.get("tableDetails", {}).get("hasLimitations", False):
+                            pages_with_limitations.append(page_path)
+            
+            self.logger.info(f"Found {len(pages_with_tables)} pages with benefit tables")
+            self.logger.info(f"Found {len(pages_with_limitations)} pages with limitations")
+            
         # Get logos images
         logos_dir = img_dir / "logos"
         if logos_dir.exists():
@@ -67,7 +83,7 @@ class SetupSlideNode(BaseNode[AgentState]):
             ]
             self.logger.info(f"Found {len(logos_list)} logo images")
             
-        return pages_list, logos_list
+        return pages_list, logos_list, pages_with_tables, pages_with_limitations
     
     @traceable(name="generate_slides_with_gpt4")
     def _generate_slides(
@@ -80,7 +96,8 @@ class SetupSlideNode(BaseNode[AgentState]):
         deck_title: str,
         instructions: str,
         pages_list: List[str],
-        logos_list: List[str]
+        logos_list: List[str],
+        processed_images: Dict[str, ProcessedImage]
     ) -> str:
         """Generate slide content using GPT-4o.
         
@@ -94,6 +111,7 @@ class SetupSlideNode(BaseNode[AgentState]):
             instructions: Instructions from instructions.md
             pages_list: List of brochure page image paths
             logos_list: List of logo image paths
+            processed_images: Dictionary of processed images from state
             
         Returns:
             Generated slide content
@@ -101,6 +119,12 @@ class SetupSlideNode(BaseNode[AgentState]):
         try:
             # Sanitize instructions to escape any curly braces that might interfere with formatting
             instructions_safe = instructions.replace("{", "{{").replace("}", "}}")
+            
+            # Get special purpose page lists
+            _, _, pages_with_tables, pages_with_limitations = self._get_image_lists(
+                Path("src/decks") / deck_id,
+                processed_images
+            )
             
             # Create messages with system and human prompts
             messages = [
@@ -110,7 +134,9 @@ class SetupSlideNode(BaseNode[AgentState]):
                     deck_title=deck_title,
                     instructions=instructions_safe,
                     pages_list=json.dumps(pages_list, indent=2),
-                    logos_list=json.dumps(logos_list, indent=2)
+                    logos_list=json.dumps(logos_list, indent=2),
+                    pages_with_tables_list=json.dumps(pages_with_tables, indent=2),
+                    pages_with_limitations_list=json.dumps(pages_with_limitations, indent=2)
                 )),
                 HumanMessage(
                     content=SETUP_SLIDES_HUMAN_TEMPLATE.format(
@@ -121,7 +147,9 @@ class SetupSlideNode(BaseNode[AgentState]):
                         deck_title=deck_title,
                         instructions=instructions_safe,
                         pages_list=json.dumps(pages_list, indent=2),
-                        logos_list=json.dumps(logos_list, indent=2)
+                        logos_list=json.dumps(logos_list, indent=2),
+                        pages_with_tables_list=json.dumps(pages_with_tables, indent=2),
+                        pages_with_limitations_list=json.dumps(pages_with_limitations, indent=2)
                     )
                 )
             ]
@@ -132,6 +160,8 @@ class SetupSlideNode(BaseNode[AgentState]):
             self.logger.info(f"Deck Title: {deck_title}")
             self.logger.info(f"Number of brochure pages: {len(pages_list)}")
             self.logger.info(f"Number of logos: {len(logos_list)}")
+            self.logger.info(f"Number of pages with tables: {len(pages_with_tables)}")
+            self.logger.info(f"Number of pages with limitations: {len(pages_with_limitations)}")
             response = self.model.invoke(messages)
             
             return response.content
@@ -157,6 +187,7 @@ class SetupSlideNode(BaseNode[AgentState]):
             # Get parameters from state
             deck_id = state["deck_id"]
             deck_title = state["deck_title"]
+            processed_images = state.get("processed_images", {})
             
             # Get template and processed content
             deck_dir = Path("src/decks") / deck_id
@@ -170,9 +201,6 @@ class SetupSlideNode(BaseNode[AgentState]):
             template = template_file.read_text()
             
             # Get processed images and extracted tables from state
-            processed_images = state.get("processed_images", {})
-            extracted_tables = state.get("extracted_tables", {})
-            
             if not processed_images:
                 self.logger.warning("No processed images found in state")
                 return state
@@ -192,17 +220,9 @@ class SetupSlideNode(BaseNode[AgentState]):
             # Convert to string format for the template
             processed_summaries = json.dumps(content_summary, indent=2)
             
-            # Handle extracted tables with proper type conversion
-            tables_list = []
-            table_nums = sorted([int(k) if isinstance(k, str) else k for k in extracted_tables.keys()])
-            for page_num in table_nums:
-                table_data = extracted_tables[str(page_num) if isinstance(page_num, int) else page_num]
-                if isinstance(table_data, dict):
-                    tables_list.append({
-                        "page_number": page_num,
-                        "tables": table_data.get("tables", [])
-                    })
-            extracted_tables_str = json.dumps(tables_list, indent=2)
+            # Handle extracted tables
+            extracted_tables = state.get("extracted_tables", {})
+            extracted_tables_str = json.dumps(extracted_tables, indent=2)
             
             # Get instructions from initial deck
             instructions = state.get("initial_deck", {}).get("instructions", "")
@@ -214,7 +234,7 @@ class SetupSlideNode(BaseNode[AgentState]):
                 presentation_content = "No presentation content available"
             
             # Get image lists
-            pages_list, logos_list = self._get_image_lists(deck_dir)
+            pages_list, logos_list, _, _ = self._get_image_lists(deck_dir, processed_images)
             
             # Generate slide content with deck info
             slide_content = self._generate_slides(
@@ -226,7 +246,8 @@ class SetupSlideNode(BaseNode[AgentState]):
                 deck_title,
                 instructions,
                 pages_list,
-                logos_list
+                logos_list,
+                processed_images
             )
             
             # Create updated state

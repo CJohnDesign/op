@@ -8,6 +8,9 @@ from __future__ import annotations
 
 import json
 import logging
+import csv
+import base64
+from io import StringIO
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
@@ -39,6 +42,86 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             temperature=0
         )
     
+    def _encode_image(self, image_path: Path) -> str:
+        """Encode image to base64 string.
+        
+        Args:
+            image_path: Path to the image file
+            
+        Returns:
+            Base64 encoded image string
+        """
+        with open(image_path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode()
+
+    def _get_table_page_images(self, processed_images: Dict[str, Any], deck_dir: Path) -> List[Dict[str, Any]]:
+        """Get images of pages that contain limitations but not benefits comparison tables.
+        
+        Args:
+            processed_images: Dictionary of processed images
+            deck_dir: Path to the deck directory
+            
+        Returns:
+            List of image message contents
+        """
+        image_messages = []
+        pages_dir = deck_dir / "img" / "pages"
+        
+        for page_num, page_data in processed_images.items():
+            table_details = page_data.get("tableDetails", {})
+            # Filter for pages that have limitations but not benefit comparison tables
+            if (not table_details.get("hasBenefitsComparisonTable", False) and 
+                table_details.get("hasLimitations", False)):
+                image_path = pages_dir / page_data["new_name"]
+                if image_path.exists():
+                    try:
+                        image_data = self._encode_image(image_path)
+                        image_messages.append({
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/jpeg;base64,{image_data}",
+                                "detail": "high"
+                            }
+                        })
+                        self.logger.info(f"Added limitations page image: {image_path.name}")
+                    except Exception as e:
+                        self.logger.error(f"Error encoding image {image_path}: {str(e)}")
+                else:
+                    self.logger.warning(f"Limitations page image not found: {image_path}")
+        
+        return image_messages
+
+    def _convert_tables_to_csv(self, tables_list: List[Dict[str, Any]]) -> str:
+        """Convert tables data to CSV format.
+        
+        Args:
+            tables_list: List of table dictionaries
+            
+        Returns:
+            CSV formatted string of tables data
+        """
+        output = StringIO()
+        for table in tables_list:
+            # Write table metadata
+            output.write(f"Table from Page {table['page_number']}\n")
+            output.write(f"Title: {table['table_title']}\n")
+            
+            # Create CSV writer
+            writer = csv.writer(output)
+            
+            # Write headers
+            if 'headers' in table:
+                writer.writerow(table['headers'])
+            
+            # Write rows
+            if 'rows' in table:
+                writer.writerows(table['rows'])
+            
+            # Add spacing between tables
+            output.write("\n\n")
+        
+        return output.getvalue()
+    
     @traceable(name="generate_presentation")
     def _generate_presentation(
         self,
@@ -46,7 +129,8 @@ class GeneratePresentationNode(BaseNode[AgentState]):
         tables_list: List[Dict[str, Any]],
         instructions: str,
         deck_id: str,
-        deck_title: str
+        deck_title: str,
+        processed_images: Dict[str, Any]
     ) -> str:
         """Generate presentation content using GPT-4o.
         
@@ -56,6 +140,7 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             instructions: Initial deck instructions
             deck_id: ID of the current deck
             deck_title: Title of the current deck
+            processed_images: Dictionary of processed images
             
         Returns:
             Generated presentation content
@@ -63,22 +148,38 @@ class GeneratePresentationNode(BaseNode[AgentState]):
         try:
             # Format the input data
             summaries_text = json.dumps(page_summaries, indent=2)
-            tables_text = json.dumps(tables_list, indent=2)
             
-            # Create message with formatted data and instructions
-            message = HumanMessage(
-                content=GENERATE_PRESENTATION_PROMPT.format(
-                    page_summaries=summaries_text,
-                    tables_list=tables_text,
-                    instructions=instructions or "No specific instructions provided",
-                    deck_id=deck_id,
-                    deck_title=deck_title
-                )
-            )
+            # Convert tables to CSV format
+            tables_text = self._convert_tables_to_csv(tables_list)
+            
+            # Get table page images
+            deck_dir = Path("src/decks") / deck_id
+            image_messages = self._get_table_page_images(processed_images, deck_dir)
+            
+            # Create message content list starting with the text prompt
+            message_content = [
+                {
+                    "type": "text",
+                    "text": GENERATE_PRESENTATION_PROMPT.format(
+                        page_summaries=summaries_text,
+                        tables_list=tables_text,
+                        instructions=instructions or "No specific instructions provided",
+                        deck_id=deck_id,
+                        deck_title=deck_title
+                    )
+                }
+            ]
+            
+            # Add image messages if any were found
+            message_content.extend(image_messages)
+            
+            # Create message with formatted data, instructions, and images
+            message = HumanMessage(content=message_content)
             
             # Log the formatted prompt for debugging
             self.logger.info(f"Deck ID: {deck_id}")
             self.logger.info(f"Deck Title: {deck_title}")
+            self.logger.info(f"Number of table page images included: {len(image_messages)}")
             
             # Get presentation content from GPT-4o
             self.logger.info("Generating presentation content")
@@ -122,7 +223,7 @@ class GeneratePresentationNode(BaseNode[AgentState]):
                     "page_number": page_num,
                     "page_title": page_data["page_title"],
                     "summary": page_data["summary"],
-                    "table_details": page_data["table_details"]
+                    "tableDetails": page_data["tableDetails"]
                 })
             
             # Convert extracted tables to list format for the template
@@ -141,13 +242,14 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             # Get instructions from initial deck
             instructions = state.get("initial_deck", {}).get("instructions", "")
             
-            # Generate presentation content
+            # Generate presentation content with processed_images for table page access
             presentation_content = self._generate_presentation(
                 page_summaries, 
                 tables_list,
                 instructions,
                 deck_id,
-                deck_title
+                deck_title,
+                processed_images
             )
             
             # Create updated state

@@ -18,10 +18,6 @@ Guidelines for slide content:
 - Maintain all frontmatter exactly as provided
 - When showing tables, use the table layout and format them properly for Slidev
 
-Available Images:
-Brochure Pages: {pages_list}
-Logos: {logos_list}
-
 Use this template structure - maintain all formatting but adding the content as needed, especially on sections that give details of plan benefits:
 {template}
 
@@ -34,9 +30,6 @@ Generate a complete Slidev markdown presentation using:
 GENERATED PRESENTATION CONTENT (MOST IMPORTANT - USE THIS AS YOUR PRIMARY SOURCE):
 {presentation_content}
 
-PROCESSED SUMMARIES:
-{processed_summaries}
-
 EXTRACTED TABLES:
 {extracted_tables}
 
@@ -48,7 +41,14 @@ IMAGE USAGE GUIDELINES:
    - Example usage: ![Page 1](/img/pages/page1.jpg)
    - Always include descriptive alt text
 
-2. Logo Images:
+2. Special Purpose Pages:
+   - Pages with benefit tables: {pages_with_tables_list}
+   - Pages with limitations: {pages_with_limitations_list}
+   - Use benefit table pages for plan comparisons and tier details
+   - Use limitation pages when discussing restrictions and exclusions
+   - Match the appropriate page to the content being discussed
+
+3. Logo Images:
    - Available logos: {logos_list}
    - These are company and product logos
    - Use these when mentioning company branding or products
@@ -57,6 +57,8 @@ IMAGE USAGE GUIDELINES:
 
 Key Image Rules:
 - Brochure pages should ONLY be used when showing actual pages from the document
+- Use benefit table pages specifically when showing plan comparisons
+- Use limitation pages when discussing restrictions and exclusions
 - Logos should ONLY be used when mentioning company branding or specific products
 - Always use the exact paths provided in the lists above
 - Every image must include descriptive alt text for accessibility
@@ -69,7 +71,25 @@ Content Generation Rules:
 - Format the content to match the Slidev template structure
 - Ensure all plan tiers are included with their complete details
 
+Comparison Tables:
+- these may look like they have a lot of v-clicks, but they don't
+- only return the results of the comparison table in one continous paragraph
+
 ** RETURN THE SLIDES IN FULL, DONT SKIP ANY SECTIONS, ESPECIALLY THE PLAN TIERS SECTIONS **
+
+Image Directory Information:
+----------------------------------------
+Image directories for pages with benefits tables: {pages_with_tables_list}
+(Use these pages when showing benefit plan tier details)
+
+Image directories for pages with limitations: {pages_with_limitations_list}
+(Use these pages when showing exclusions, restrictions, or coverage limits)
+
+Image directories for logos: {logos_list}
+
+Here are the page summaries so you can get a better understanding of the content: 
+{processed_summaries}
+----------------------------------------
 
 Final Instructions (VERY IMPORTANT):
 ----------------------------------------

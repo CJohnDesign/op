@@ -20,12 +20,13 @@ You MUST output a valid JSON object with this exact structure:
 # Rules for JSON object fields:
 
 page_title:
+- Always include the plan names in the page title
+-- Examples: "group_fixed_indemnity_plan_details_with_benefits_for_plan_100_200_300_400"
 - Must be descriptive and summarize the main content and benefits
 - Use underscores between words, all lowercase
 - Include specific benefits mentioned in the page/slide
 - Should be unique and clearly identify the content
-- Length should be 15-20 words
-- Examples: "group_fixed_indemnity_plan_details_with_benefit_comparison_and_limitations_for_plan_100_plan_200_plan_300_plan_400"
+- Length should be 15-30 words
 
 summary:
 - Must be detailed and cover all key content
@@ -76,4 +77,16 @@ hasLimitations:
 **NEVER USE THE WORD COMPREHENSIVE**
 
 Format the summary in clear, professional language suitable for presentation to stakeholders.
+
+APPENDIX - Special Page Types:
+For cover pages, closing pages, or auxiliary content that don't contain specific insurance information:
+- Use the same JSON structure
+- page_title should describe what type of page it is (e.g., "cover_page_for_[plan_name]" or "closing_page_with_contact_information")
+- summary should describe what you see on the page (branding elements, imagery, contact information, etc.)
+- Both tableDetails fields should be false
+- Examples:
+  - Cover: "cover_page_for_advanced_wellness_plus_insurance_plan"
+  - Closing: "closing_page_with_contact_information_and_next_steps"
+  - Auxiliary: "member_portal_login_instructions_and_online_access_details"
+
 YOUR RESPONSE MUST BE A VALID JSON OBJECT.''' 

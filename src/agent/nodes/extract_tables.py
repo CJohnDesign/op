@@ -96,7 +96,9 @@ class ExtractTablesNode(ParallelProcessingNode[AgentState]):
             # Parse JSON response
             try:
                 response_text = response.content
-                return json.loads(response_text)
+                table_data = json.loads(response_text)
+                self.logger.info(f"Successfully parsed table data from {image_path.name}")
+                return table_data
                     
             except json.JSONDecodeError as e:
                 self.logger.error(f"Error parsing JSON response for {image_path.name}: {str(e)}")
@@ -120,13 +122,16 @@ class ExtractTablesNode(ParallelProcessingNode[AgentState]):
         try:
             # Extract table data
             table_data = self._extract_table(image_path, None)
-            extracted_table = {
-                "page_number": index + 1,
-                "page_title": page.get("page_title", ""),
-                "table_data": table_data
-            }
-            self.logger.info(f"Found and processed table from {image_path.name}")
-            return (index, extracted_table, page)
+            if table_data.get("tables"):
+                extracted_table = {
+                    "page_number": index,  # Use original index
+                    "tables": table_data["tables"]  # Use tables array directly
+                }
+                self.logger.info(f"Found and processed {len(table_data['tables'])} tables from {image_path.name}")
+                return (index, extracted_table, page)
+            else:
+                self.logger.warning(f"No tables found in {image_path.name}")
+                return None
         except Exception as e:
             self.logger.error(f"Error processing table from {image_path.name}: {str(e)}")
             return None
@@ -195,9 +200,8 @@ class ExtractTablesNode(ParallelProcessingNode[AgentState]):
             # Find pages with tables
             table_items = []
             for page_num, page_data in processed_images.items():
-                if page_data.get("table_details", {}).get("hasBenefitsComparisonTable", False):
-                    # Construct image path with .jpg extension
-                    image_path = pages_dir / f"{page_data['new_name']}.jpg"
+                if page_data.get("tableDetails", {}).get("hasBenefitsComparisonTable", False):
+                    image_path = pages_dir / page_data["new_name"]
                     self.logger.info(f"Found table in page {page_num}, looking for image at {image_path}")
                     if image_path.exists():
                         table_items.append((page_num, page_data, image_path))
@@ -221,15 +225,17 @@ class ExtractTablesNode(ParallelProcessingNode[AgentState]):
                 
                 # Extract tables and pages
                 for page_num, table, page_data in results:
-                    extracted_tables[page_num] = table
-                    self.logger.info(f"Extracted {len(table['tables'])} tables from page {page_num}")
+                    if table.get("tables"):  # Only add if tables were found
+                        extracted_tables[page_num] = table
+                        self.logger.info(f"Extracted {len(table['tables'])} tables from page {page_num}")
             
             # Create updated state by deep merging with existing state
             updated_state = dict(state)  # Start with existing state
-            if "extracted_tables" in updated_state and isinstance(updated_state["extracted_tables"], dict):
-                updated_state["extracted_tables"].update(extracted_tables)  # Update existing tables
+            if extracted_tables:  # Only update if we found tables
+                updated_state["extracted_tables"] = extracted_tables
+                self.logger.info(f"Added {len(extracted_tables)} pages with tables to state")
             else:
-                updated_state["extracted_tables"] = extracted_tables  # Add new tables
+                self.logger.warning("No tables were extracted from any pages")
             
             return updated_state
             

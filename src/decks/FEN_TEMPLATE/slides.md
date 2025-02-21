@@ -16,7 +16,7 @@ drawings:
   persist: false
 ---
 
-<SlideAudio deckKey="FEN_{{deck_id}}" />
+<SlideAudio deckKey="{{deck_id}}" />
 
 # {{ Plan Name }} Plan Overview
 
@@ -29,15 +29,34 @@ layout: default
 
 ## The {{ Plan Name }} Plan
 
-<v-clicks>
+<v-click>
 
 - {{ Overview Point 1 }} through **{{ Organization }}**
-- **{{ Benefit Category 1 }}** for various situations
-- **{{ Benefit Category 2 }}** and support tools
-- **{{ Benefit Category 3 }}** through {{ Feature }}
-- **{{ Benefit Category 4 }}** support
 
-</v-clicks>
+</v-click>
+
+<v-click>
+
+- **{{ Benefit Category 1 }}** for various situations
+
+</v-click>
+
+<v-click>
+
+- **{{ Benefit Category 2 }}** and support tools
+
+</v-click>
+
+<v-click>
+
+- **{{ Benefit Category 3 }}** through {{ Feature }}
+
+</v-click>
+
+<v-click>
+
+- **{{ Benefit Category 4 }}** support
+</v-click>
 
 ---
 transition: fade-out
@@ -46,16 +65,23 @@ layout: default
 
 ## Key Features and Benefits
 
-<v-clicks>
+<v-click>  
 
 **{{ Benefit Type 1 }}**
 
+</v-click>
+
+<v-click>
+
 **{{ Benefit Type 2 }}**
 
-**{{ Benefit Type 3 }}**
+</v-click>
+
+<v-click>
 
 **{{ Benefit Type 4 }}** (varies by plan)
-</v-clicks>
+
+</v-click>
 
 <v-click>
 
@@ -63,7 +89,6 @@ layout: default
 <div class="grid grid-cols-1 gap-4 items-center px-8 py-4">
   <img src="" class="h-12 mix-blend-multiply" alt="{{ Brand }} Logo">
 </div>
-
 </v-click>
 
 ---
@@ -95,16 +120,30 @@ layout: default
 
 ## How {{ Tool Name }} Works
 
-<v-clicks>
+<v-click>
 
 1. Enroll through **{{ Organization }}**
-2. {{ Step 2 }}
-3. {{ Step 3 }}
-4. Receive {{ Document }} **({{ Acronym }})**
-5. {{ Step 5 }}
-6. **{{ Final Outcome }}**
+</v-click>
 
-</v-clicks>
+<v-click>
+
+2. {{ Step 2 }}
+</v-click>
+
+<v-click>
+
+3. {{ Step 3 }}
+</v-click>
+
+<v-click>
+
+4. Receive {{ Document }} **({{ Acronym }})**
+</v-click>
+
+<v-click>
+
+5. {{ Step 5 }}
+</v-click>
 
 ---
 transition: fade-out
@@ -113,13 +152,20 @@ layout: default
 
 ## Preventive Care and Wellness
 
-<v-clicks>
+<v-click>  
 
 - **{{ Service 1 }}** Services
-- **{{ Service 2 }}** Programs
-- **{{ Partner }}** provides {{ service_type }}
+</v-click>
 
-</v-clicks>
+<v-click>
+
+- **{{ Service 2 }}** Programs
+</v-click>
+
+<v-click>
+
+- **{{ Partner }}** provides {{ service_type }}
+</v-click>
 
 ---
 transition: fade-out
@@ -128,14 +174,29 @@ layout: default
 
 ## Telehealth Services
 
-<v-clicks>
+<v-click>
 
 - **{{ Feature 1 }}**
+
+</v-click>
+
+<v-click>
+
 - **{{ Feature 2 }}**
+
+</v-click>
+
+<v-click>
+
 - **{{ Feature 3 }}** available
+
+</v-click>
+
+<v-click>
+
 - **{{ Feature 4 }}** to care
 
-</v-clicks>
+</v-click>
 
 ---
 transition: fade-out
@@ -144,14 +205,29 @@ layout: default
 
 ## Advocacy and Support Services
 
-<v-clicks>
+<v-click>
 
 - **{{ Service Style }}** healthcare advocacy
+
+</v-click>
+
+<v-click>
+
 - **{{ Service 1 }}** assistance
+
+</v-click>
+
+<v-click>
+
 - **{{ Service 2 }}** options
+
+</v-click>
+
+<v-click>
+
 - **{{ Service 3 }}** support
 
-</v-clicks>
+</v-click>
 
 ---
 transition: fade-out
@@ -269,14 +345,25 @@ layout: default
 
 ## Key Takeaways and Reminders
 
-<v-clicks>
+<v-click>
 
 - **{{ Feature 1 }}** benefits
-- **{{ Feature 2 }}** included
-- **{{ Feature 3 }}** benefits
-- **{{ Requirement }}** required
+</v-click>  
 
-</v-clicks>
+<v-click>
+
+- **{{ Feature 2 }}** included
+</v-click>
+
+<v-click>
+
+- **{{ Feature 3 }}** benefits
+</v-click>
+
+<v-click>
+
+- **{{ Requirement }}** required
+</v-click>
 
 ---
 transition: fade-out

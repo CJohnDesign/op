@@ -96,15 +96,30 @@ layout: default
 
 ## Plan Overview
 
-<v-clicks>
+<v-click>
 
 - Provided by **America's Choice Health Care**
-- Administration by **Detego Health**
-- **Accessibility** for Individuals and Families
-- **Emphasizes** Personal impact
-- **Ensures** Vital services within reach
+</v-click>
 
-</v-clicks>
+<v-click>
+
+- Administration by **Detego Health**
+</v-click>
+
+<v-click>
+
+- **Accessibility** for Individuals and Families
+</v-click>
+
+<v-click>
+
+- **Emphasizes** Personal impact
+</v-click>
+
+<v-click>
+
+- **Ensures** Vital services within reach
+</v-click>
 
 ---
 transition: fade-out
@@ -183,6 +198,8 @@ Eligibility is focused on individuals and families who value affordability and h
 ```
 
 **Notice that the script is broken up into sections that match the slides and the is always one extra line before the v-click points that speaks to the section title**
+
+Always put everything in individual v-click tags. Never use <v-clicks>
 
 Allow for one sentence to be broken up into two lines if it is a long sentence the cover multiple benefits, like in the above example.
 

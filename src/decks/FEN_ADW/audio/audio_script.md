@@ -1,196 +1,276 @@
 ---- Cover ----
 
-Hello, everyone! Thank you for joining today's session on the Advanced Wellness Plus plan. We'll walk through this plan's unique features and benefits, designed to provide accessible healthcare solutions for your members. Let's dive right in!
+Hello, everyone! Thank you for joining today's session on the Advanced Wellness Plus plan. We'll walk through this plan's features and benefits, designed to empower your health journey with financial peace of mind. Let's get started!
 
----- The Advanced Wellness Plus Plan ----
+---- Plan Overview ----
 
-The Advanced Wellness Plus plan offers a range of benefits.
+The Advanced Wellness Plus plan is designed to empower your health journey with tailored benefits through American Financial Security Life Insurance Co.
 
-It provides coverage through the National Congress of Employers, or NCE. 
+This plan targets individuals and families seeking supplemental health coverage.
 
-This plan includes Hospital Indemnity Insurance, which means you receive a set payment amount for various situations. 
+It offers limited medical coverage with a focus on affordability and accessibility.
 
-It also offers Limited Medical Coverage and support tools to assist members. 
+Key benefits include daily hospital benefits, office visit coverage, and supplemental accident benefits.
 
-The GapAfford Plus Program is available, providing pre-negotiated rates to help manage costs. 
+---- Core Plan Elements ----
 
-Additionally, there are Membership Benefits to support your members.
+Let's explore the core elements of the Advanced Wellness Plus plan.
 
----- Key Features and Benefits ----
+Coverage areas include physician services, hospitalization, and virtual visits.
 
-Let's explore the key features and benefits of this plan.
-
-The plan includes Hospital Indemnity Insurance, providing financial support during hospital stays. 
-
-Limited Medical Coverage is available to help with everyday healthcare needs. 
-
-The GapAfford Plus Program offers additional savings through pre-negotiated rates. 
-
-Membership Benefits vary by plan, offering tailored support to members.
-
-Vision and Prescription Discounts are available through the Aetna Dental Access Network, enhancing the value of the plan.
-
----- Cost Management Tools ----
-
-Now, let's discuss the cost management tools available with this plan.
-
-The GapAfford Plus Program, or GAPP, is a key component. 
-
-It includes a Pre-negotiated Rates System to help manage healthcare expenses. 
-
-Prescription Discounts Support is also provided, offering savings on medications.
-
----- How GapAfford Plus Works ----
-
-Here's how the GapAfford Plus Program works.
-
-First, members enroll through NCE. 
-
-They then gain access to pre-negotiated rates for various services. 
-
-Prescription discounts are available to further reduce costs. 
-
-Members receive a Purchase Confirmation E-mail as part of the GAPP process. 
-
-They can register on the Member Services Portal for additional support. 
-
-Overall, this program helps reduce out-of-pocket expenses for members.
-
----- Preventive Care and Wellness ----
-
-Let's discuss the preventive care and wellness options available.
-
-The plan includes Dental Services to support oral health. 
-
-Vision Programs are also available to help maintain eye health. 
-
-The Aetna Dental Access Network provides discounts on dental services, enhancing the plan's value.
-
----- Telehealth Services ----
-
-Now, let's look at the telehealth services offered.
-
-Members have access to a 24/7 Health Information Line for immediate support. 
-
-A Nurse Help Line is available to provide guidance and assistance. 
-
-Medical Assistance is accessible to address various health concerns. 
-
-Overall, these services ensure Access to Care whenever needed.
-
----- Advocacy and Support Services ----
-
-Let's explore the advocacy and support services included in the plan.
-
-The plan offers comprehensive healthcare advocacy to assist members. 
-
-Medical Bill Negotiations are available to help manage expenses. 
-
-Alternative Medicine options provide additional healthcare choices. 
-
-Chiropractic Care support is also included, enhancing the plan's offerings.
-
----- Advanced Wellness Plus Membership (1/2) ----
-
-Let's examine the first part of the Advanced Wellness Plus membership.
-
-Membership Benefits include reliable services and superior customer service. 
-
-There are various enrollment opportunities available for members. 
-
-Members receive a Purchase Confirmation E-mail upon enrollment.
-
-Limited Medical Coverage provides basic insurance coverage with specific caps for services.
+The plan structure offers tiered options with varying daily benefits and visit limits.
 
 Eligibility is open to adults aged eighteen to sixty-five and dependent children aged one to twenty-five.
 
----- Advanced Wellness Plus Membership (2/2) ----
+---- Common Service Features ----
 
-Continuing with the Advanced Wellness Plus membership details.
+Now, let's discuss the common service features of this plan.
 
-Payment Options include credit cards and bank automatic drafts for convenience. 
+Provider networks offer access to national networks for medical, dental, and vision services.
 
-Members receive a Fulfillment Packet, which includes a hard copy of the handbook. 
+Claims management is efficient, with streamlined claims processing and support.
 
-A Personalized Certificate of Insurance is also provided to each member.
+Support tools include a member services portal, a twenty-four/seven nurse helpline, and wellness programs.
 
----- GapAfford Plus Program (1/2) ----
+---- Plan Tier 1 (One of Two) ----
 
-Now, let's look at the first part of the GapAfford Plus Program.
+Let's examine our first plan tier, Plan 100A.
 
-Prescription Discounts offer fifteen percent off brand-name and fifty-five percent off generic medications. 
+The hospital confinement benefit provides one hundred dollars per day, with a maximum of thirty days.
 
-Dental and Vision Savings range from fifteen to fifty percent on dental services and ten to fifty percent on eyeglasses and lenses. 
+The primary care visit benefit offers fifty dollars per day, with a maximum of three visits.
 
-Additional Benefits include pet prescription discounts and savings on alternative medicine.
+The specialty care visit benefit also provides fifty dollars per day, with a maximum of three visits.
 
----- GapAfford Plus Program (2/2) ----
+The accidental death benefit is ten thousand dollars.
 
-Continuing with the GapAfford Plus Program details.
+The critical illness benefit is one thousand dollars.
 
-Medical Bill Negotiations help members save on medical bills and offer discounts on medical supplies. 
+---- Plan Tier 1 (Two of Two) ----
 
-Laboratory and Physical Therapy Savings provide affordable lab tests and a twenty percent discount on physical therapy.
+Continuing with Plan 100.
 
----- Hospital Indemnity Insurance (1/2) ----
+The hospital confinement benefit remains at one hundred dollars per day, with a maximum of thirty days.
 
-Let's review the first part of the Hospital Indemnity Insurance details.
+The primary care visit benefit offers fifty dollars per day, with a maximum of five visits.
 
-There are Limitations and Exclusions, such as no coverage for non-medically necessary services. 
+The specialty care visit benefit also provides fifty dollars per day, with a maximum of five visits.
 
-Services provided by immediate family members are also excluded. 
+The emergency room benefit is fifty dollars per day, with a maximum of one visit.
 
-Specific Exclusions include dental procedures unless they are accidental and elective or cosmetic surgery.
+The accidental death benefit is ten thousand dollars.
 
-Injury and Sickness Exclusions apply to situations resulting from felonies or related to war or terrorism.
+The critical illness benefit is one thousand dollars.
 
----- Hospital Indemnity Insurance (2/2) ----
+---- Plan Tier 2 (One of Two) ----
 
-Continuing with the Hospital Indemnity Insurance details.
+Now, let's look at Plan 200.
 
-There are Waiting Periods, including a thirty-day waiting period for sickness benefits. 
+The hospital confinement benefit increases to two hundred dollars per day, with a maximum of thirty days.
 
-Voluntary abortion is not covered unless it is life-threatening. 
+The primary care and specialty care visit benefits remain at fifty dollars per day, with a maximum of five visits each.
 
-Pre-existing Conditions are not covered for twelve months, with exceptions for newborns or newly adopted children.
+The emergency room benefit is fifty dollars per day, with a maximum of one visit.
 
----- Comparing the Plans ----
+Basic pathology and radiology benefits, as well as advance studies benefits, are fifty dollars per day, with a maximum of three days each.
 
-Let's compare the different tiers available.
+The accidental death benefit is ten thousand dollars, and the critical illness benefit is one thousand dollars.
 
-The table shows the benefits for each plan tier: one hundred A, two hundred, and three hundred.
+---- Plan Tier 3 (One of Two) ----
 
-Hospital Confinement benefits range from one hundred dollars per day to three hundred dollars per day.
+Moving on to Plan 200+.
 
-Office Visit and Emergency Room benefits vary from fifty dollars per day to seventy-five dollars per day.
+The hospital confinement benefit increases to three hundred dollars per day, with a maximum of thirty days.
 
-Surgery benefits range from four hundred dollars per day to one thousand five hundred dollars per day.
+Primary care and specialty care visit benefits remain at fifty dollars per day, with a maximum of five visits each.
 
-Anesthesia is covered at twenty percent per day across all tiers.
+The emergency room benefit is fifty dollars per day, with a maximum of two visits.
 
----- Definitions and Limitations ----
+Basic pathology and radiology benefits, as well as advance studies benefits, are fifty dollars per day, with a maximum of three days each.
+
+---- Plan Tier 3 (Two of Two) ----
+
+Continuing with Plan 200+.
+
+The surgery benefit is four hundred dollars per day, with a maximum of three days.
+
+The anesthesia benefit is twenty percent of the surgery benefit, with a maximum of three days.
+
+Mental health benefits include inpatient coverage at one hundred fifty dollars per day for up to sixty days, and outpatient coverage at fifty dollars per day for up to twenty days.
+
+Supplemental accident benefits include five hundred dollars per day for inpatient admission and two hundred fifty dollars for emergency room visits.
+
+The accidental death benefit is ten thousand dollars, and the critical illness benefit is one thousand dollars.
+
+---- Plan Tier 4 (One of Three) ----
+
+Let's examine Plan 300.
+
+The hospital confinement benefit remains at three hundred dollars per day, with a maximum of thirty days.
+
+Primary care and specialty care visit benefits are fifty dollars per day, with a maximum of five visits each.
+
+The emergency room benefit is fifty dollars per day, with a maximum of one visit.
+
+The surgery benefit is four hundred dollars per day, with a maximum of three days.
+
+The anesthesia benefit is twenty percent of the surgery benefit, with a maximum of three days.
+
+---- Plan Tier 4 (Two of Three) ----
+
+Continuing with Plan 300.
+
+Mental health benefits include inpatient coverage at one hundred fifty dollars per day for up to sixty days.
+
+The outpatient mental health benefit is fifty dollars per day for up to twenty days.
+
+---- Plan Tier 4 (Three of Three) ----
+
+Completing Plan 300.
+
+The supplemental accident inpatient admission benefit is five hundred dollars per day, with a maximum of one day.
+
+The supplemental accident emergency room benefit is two hundred fifty dollars per day.
+
+The accidental death benefit is ten thousand dollars, and the critical illness benefit is one thousand dollars.
+
+---- Plan Tier 5 (One of Three) ----
+
+Moving to Plan 500.
+
+The hospital confinement benefit increases to five hundred dollars per day, with a maximum of thirty days.
+
+Primary care and specialty care visit benefits remain at fifty dollars per day, with a maximum of five visits each.
+
+Basic pathology and radiology benefits, as well as advance studies benefits, are fifty dollars per day.
+
+---- Plan Tier 5 (Two of Three) ----
+
+Continuing with Plan 500.
+
+The emergency room benefit is fifty dollars per day, with a maximum of one visit.
+
+The surgery benefit increases to seven hundred fifty dollars per day, with a maximum of three days.
+
+The anesthesia benefit is twenty percent of the surgery benefit, with a maximum of three days.
+
+---- Plan Tier 5 (Three of Three) ----
+
+Completing Plan 500.
+
+The mental health inpatient benefit increases to two hundred fifty dollars per day, with a maximum of sixty days.
+
+The mental health outpatient benefit is fifty dollars per day, with a maximum of twenty days.
+
+The supplemental accident benefits remain consistent with previous tiers.
+
+The accidental death and critical illness benefits remain at ten thousand and one thousand dollars respectively.
+
+---- Plan Tier 6 (One of Three) ----
+
+Let's look at Plan 750.
+
+The hospital confinement benefit increases to seven hundred fifty dollars per day, with a maximum of thirty days.
+
+Primary care and specialty care visit benefits remain at fifty dollars per day, with a maximum of five visits.
+
+The emergency room benefit increases to seventy-five dollars per day, with a maximum of one visit.
+
+Basic pathology and radiology benefits, as well as advance studies benefits, are fifty dollars per day, with a maximum of two days each.
+
+---- Plan Tier 6 (Two of Three) ----
+
+Continuing with Plan 750.
+
+The surgery benefit increases to one thousand dollars per day, with a maximum of three days.
+
+The anesthesia benefit remains at twenty percent of the surgery benefit.
+
+The mental health inpatient benefit increases to three hundred seventy-five dollars per day, with a maximum of sixty days.
+
+The mental health outpatient benefit remains at fifty dollars per day, with a maximum of twenty days.
+
+The supplemental accident inpatient benefit increases to allow for two days of coverage.
+
+The supplemental accident emergency room benefit remains at two hundred fifty dollars per day, with a maximum of one day.
+
+---- Plan Tier 7 (One of Three) ----
+
+Finally, let's explore Plan 1000.
+
+The hospital confinement benefit increases to one thousand dollars per day, with a maximum of thirty days.
+
+Primary care and specialty care visit benefits increase to seventy-five dollars per day, with a maximum of five visits.
+
+The emergency room benefit increases to one hundred dollars per day, with a maximum of one visit.
+
+Basic pathology and radiology benefits, as well as advance studies benefits, increase to seventy-five dollars per day, with a maximum of three days each.
+
+---- Plan Tier 7 (Two of Three) ----
+
+Continuing with Plan 1000.
+
+The surgery benefit increases to one thousand five hundred dollars per day, with a maximum of three days.
+
+The anesthesia benefit remains at twenty percent of the surgery benefit.
+
+The mental health inpatient benefit increases to five hundred dollars per day, with a maximum of sixty days.
+
+The mental health outpatient benefit remains at fifty dollars per day, with a maximum of twenty days.
+
+The supplemental accident inpatient benefit allows for three days of coverage.
+
+The supplemental accident emergency room benefit remains at two hundred fifty dollars per day, with a maximum of one day.
+
+---- Plan Tier 7 (Three of Three) ----
+
+Completing Plan 1000.
+
+All other benefits remain consistent with standard maximums.
+
+The accidental death benefit remains at ten thousand dollars.
+
+The critical illness benefit remains at one thousand dollars.
+
+---- Comparing Plan Tiers ----
+
+Let's compare the key differences across all plan tiers.
+
+Hospital confinement benefits range from one hundred dollars in Plan 100A to one thousand dollars in Plan 1000.
+
+Office visit benefits remain consistent at fifty dollars for most plans, increasing to seventy-five dollars in Plan 1000.
+
+Emergency room benefits start at fifty dollars and increase up to one hundred dollars in higher tiers.
+
+Surgery benefits range from four hundred to one thousand five hundred dollars in applicable tiers.
+
+Mental health benefits and supplemental accident coverage increase progressively with higher tiers.
+
+Accidental death and critical illness benefits remain consistent across qualifying plans.
+
+---- Limitations and Exclusions ----
 
 Let's review important definitions and limitations.
 
-Coverage Limits include a thirty-day waiting period and pre-existing conditions not covered for twelve months.
+Exclusions include non-medically necessary services, experimental treatments, and services by family members.
 
-Exclusions apply to non-medically necessary services and services by immediate family members.
+Dental procedures are excluded unless due to accidental injury, as well as elective and cosmetic surgeries unless trauma-related.
 
-Specific Exclusions include dental procedures unless accidental and elective or cosmetic surgery.
+Injuries from felonies, illegal occupations, war, riots, or terrorism are also excluded.
 
-Injury and Sickness Exclusions apply to situations resulting from felonies or related to war or terrorism.
+Limitations include a thirty-day waiting period for sickness benefits.
+
+There is a twelve-month exclusion for pre-existing conditions, with exceptions for newborns and adopted children.
 
 ---- Key Takeaways and Reminders ----
 
 Here are the key points to remember.
 
-The plan offers broad coverage benefits to support members' healthcare needs.
+The plan offers flexibility with a range of benefits tailored to individual needs.
 
-Membership Benefits are included to enhance the plan's value.
+It balances affordability with essential health benefits.
 
-Cost Management Tools are available to help manage healthcare expenses.
-
-Enrollment is required to access these benefits and services.
+Next steps include enrolling through the Member Services Portal and contacting support for assistance.
 
 ---- Closing ----
 
