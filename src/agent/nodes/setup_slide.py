@@ -11,7 +11,7 @@ import logging
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
 from langsmith import traceable
 
@@ -87,9 +87,9 @@ class SetupSlideNode(BaseNode[AgentState]):
     
     @traceable(name="generate_slides_with_gpt4")
     def _generate_slides(
-        self, 
-        template: str, 
-        processed_summaries: str, 
+        self,
+        template: str,
+        processed_summaries: str,
         extracted_tables: str,
         presentation_content: str,
         deck_id: str,
@@ -117,6 +117,14 @@ class SetupSlideNode(BaseNode[AgentState]):
             Generated slide content
         """
         try:
+            self.logger.info("Starting slide generation")
+            self.logger.info(f"Template length: {len(template)}")
+            self.logger.info(f"Processed summaries length: {len(processed_summaries)}")
+            self.logger.info(f"Extracted tables length: {len(extracted_tables)}")
+            self.logger.info(f"Presentation content type: {type(presentation_content)}")
+            self.logger.info(f"Presentation content length: {len(str(presentation_content))}")
+            self.logger.info(f"Presentation content preview: {str(presentation_content)[:100]}...")
+            
             # Sanitize instructions to escape any curly braces that might interfere with formatting
             instructions_safe = instructions.replace("{", "{{").replace("}", "}}")
             
@@ -126,10 +134,24 @@ class SetupSlideNode(BaseNode[AgentState]):
                 processed_images
             )
             
+            self.logger.info(f"Pages with tables count: {len(pages_with_tables)}")
+            self.logger.info(f"Pages with limitations count: {len(pages_with_limitations)}")
+            
             # Create messages with system and human prompts
-            messages = [
-                HumanMessage(content=SETUP_SLIDES_PROMPT.format(
+            try:
+                # Format the system prompt
+                system_prompt = SETUP_SLIDES_PROMPT.format(
                     template=template,
+                    presentation_content=presentation_content,
+                    extracted_tables=extracted_tables
+                )
+                self.logger.info(f"System prompt length: {len(system_prompt)}")
+                
+                # Format the human prompt
+                human_prompt = SETUP_SLIDES_HUMAN_TEMPLATE.format(
+                    processed_summaries=processed_summaries,
+                    extracted_tables=extracted_tables,
+                    presentation_content=presentation_content,
                     deck_id=deck_id,
                     deck_title=deck_title,
                     instructions=instructions_safe,
@@ -137,38 +159,49 @@ class SetupSlideNode(BaseNode[AgentState]):
                     logos_list=json.dumps(logos_list, indent=2),
                     pages_with_tables_list=json.dumps(pages_with_tables, indent=2),
                     pages_with_limitations_list=json.dumps(pages_with_limitations, indent=2)
-                )),
-                HumanMessage(
-                    content=SETUP_SLIDES_HUMAN_TEMPLATE.format(
-                        processed_summaries=processed_summaries,
-                        extracted_tables=extracted_tables,
-                        presentation_content=presentation_content,
-                        deck_id=deck_id,
-                        deck_title=deck_title,
-                        instructions=instructions_safe,
-                        pages_list=json.dumps(pages_list, indent=2),
-                        logos_list=json.dumps(logos_list, indent=2),
-                        pages_with_tables_list=json.dumps(pages_with_tables, indent=2),
-                        pages_with_limitations_list=json.dumps(pages_with_limitations, indent=2)
-                    )
                 )
-            ]
-            
-            # Get slide content from GPT-4o
-            self.logger.info("Generating slide content")
-            self.logger.info(f"Deck ID: {deck_id}")
-            self.logger.info(f"Deck Title: {deck_title}")
-            self.logger.info(f"Number of brochure pages: {len(pages_list)}")
-            self.logger.info(f"Number of logos: {len(logos_list)}")
-            self.logger.info(f"Number of pages with tables: {len(pages_with_tables)}")
-            self.logger.info(f"Number of pages with limitations: {len(pages_with_limitations)}")
-            response = self.model.invoke(messages)
-            
-            return response.content
+                self.logger.info(f"Human prompt length: {len(human_prompt)}")
+                
+                # Create messages
+                messages = [
+                    SystemMessage(content=system_prompt),
+                    HumanMessage(content=human_prompt)
+                ]
+                
+                # Get slide content from GPT-4o
+                self.logger.info("Generating slide content")
+                self.logger.info(f"Deck ID: {deck_id}")
+                self.logger.info(f"Deck Title: {deck_title}")
+                self.logger.info(f"Number of brochure pages: {len(pages_list)}")
+                self.logger.info(f"Number of logos: {len(logos_list)}")
+                self.logger.info(f"Number of pages with tables: {len(pages_with_tables)}")
+                self.logger.info(f"Number of pages with limitations: {len(pages_with_limitations)}")
+                response = self.model.invoke(messages)
+                
+                # Log the response for debugging
+                self.logger.info(f"Response type: {type(response)}")
+                if hasattr(response, 'content'):
+                    self.logger.info(f"Response content length: {len(response.content)}")
+                    self.logger.info(f"Response content preview: {response.content[:100]}...")
+                    return response.content
+                else:
+                    self.logger.error("No content attribute in response")
+                    self.logger.error(f"Response attributes: {dir(response)}")
+                    return "Error: No content found in response"
+                
+            except Exception as e:
+                self.logger.error(f"Error in _generate_slides: {str(e)}")
+                self.logger.error(f"Exception type: {type(e)}")
+                import traceback
+                self.logger.error(f"Traceback: {traceback.format_exc()}")
+                raise
             
         except Exception as e:
-            self.logger.error(f"Error generating slides: {str(e)}")
-            return f"Error generating slides: {str(e)}"
+            self.logger.error(f"Error in _generate_slides: {str(e)}")
+            self.logger.error(f"Exception type: {type(e)}")
+            import traceback
+            self.logger.error(f"Traceback: {traceback.format_exc()}")
+            raise
     
     @traceable(name="setup_slides_with_gpt4")
     def process(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
@@ -229,6 +262,18 @@ class SetupSlideNode(BaseNode[AgentState]):
             
             # Get generated presentation content
             presentation_content = state.get("presentation", {}).get("content", "")
+            self.logger.info(f"State keys: {list(state.keys())}")
+            if "presentation" in state:
+                self.logger.info(f"Presentation keys: {list(state['presentation'].keys())}")
+                if "content" in state["presentation"]:
+                    self.logger.info(f"Presentation content type: {type(state['presentation']['content'])}")
+                    self.logger.info(f"Presentation content length: {len(str(state['presentation']['content']))}")
+                    self.logger.info(f"Presentation content preview: {str(state['presentation']['content'])[:100]}...")
+                else:
+                    self.logger.error("No 'content' key in presentation dictionary")
+            else:
+                self.logger.error("No 'presentation' key in state dictionary")
+                
             if not presentation_content:
                 self.logger.warning("No generated presentation content found in state")
                 presentation_content = "No presentation content available"
@@ -237,18 +282,36 @@ class SetupSlideNode(BaseNode[AgentState]):
             pages_list, logos_list, _, _ = self._get_image_lists(deck_dir, processed_images)
             
             # Generate slide content with deck info
-            slide_content = self._generate_slides(
-                template, 
-                processed_summaries, 
-                extracted_tables_str,
-                presentation_content,
-                deck_id,
-                deck_title,
-                instructions,
-                pages_list,
-                logos_list,
-                processed_images
-            )
+            try:
+                self.logger.info("Attempting to generate slides with the following parameters:")
+                self.logger.info(f"- Template length: {len(template)}")
+                self.logger.info(f"- Processed summaries length: {len(processed_summaries)}")
+                self.logger.info(f"- Extracted tables length: {len(extracted_tables_str)}")
+                self.logger.info(f"- Presentation content length: {len(str(presentation_content))}")
+                self.logger.info(f"- Deck ID: {deck_id}")
+                self.logger.info(f"- Deck title: {deck_title}")
+                self.logger.info(f"- Instructions length: {len(instructions)}")
+                self.logger.info(f"- Pages list count: {len(pages_list)}")
+                self.logger.info(f"- Logos list count: {len(logos_list)}")
+                
+                slide_content = self._generate_slides(
+                    template, 
+                    processed_summaries, 
+                    extracted_tables_str,
+                    presentation_content,
+                    deck_id,
+                    deck_title,
+                    instructions,
+                    pages_list,
+                    logos_list,
+                    processed_images
+                )
+            except Exception as e:
+                self.logger.error(f"Error in _generate_slides: {str(e)}")
+                self.logger.error(f"Exception type: {type(e)}")
+                import traceback
+                self.logger.error(f"Traceback: {traceback.format_exc()}")
+                raise
             
             # Create updated state
             updated_state = dict(state)

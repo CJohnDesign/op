@@ -62,10 +62,32 @@ class ProcessImagesNode(ParallelProcessingNode[AgentState]):
     def _analyze_image(self, image_path: Path, config: RunnableConfig) -> ProcessedImage:
         """Analyze a single image using GPT-4o."""
         try:
-            # Extract PDF name from image filename
+            # Extract PDF name and page number from image filename
+            # Modified to handle different filename formats
+            pdf_source = "unknown"
+            page_num = 0
+            
+            # Try standard format first (e.g., AccessHealthBrochure_page_001.jpg)
             parts = image_path.stem.split('_page_')
-            pdf_source = parts[0] if len(parts) == 2 else "unknown"
-            page_num = int(parts[1]) if len(parts) == 2 else 0
+            if len(parts) == 2:
+                pdf_source = parts[0]
+                try:
+                    page_num = int(parts[1])
+                except ValueError:
+                    # If we can't convert to int, try other format
+                    pass
+            
+            # Try renamed format (e.g., 01_cover_page_...)
+            if page_num == 0:
+                parts = image_path.stem.split('_')
+                if parts and parts[0].isdigit():
+                    try:
+                        page_num = int(parts[0])
+                        # Use the rest as pdf_source if standard format failed
+                        if pdf_source == "unknown":
+                            pdf_source = "_".join(parts[1:])
+                    except ValueError:
+                        pass
             
             # Encode image
             image_data = self._encode_image(image_path)
@@ -230,9 +252,24 @@ class ProcessImagesNode(ParallelProcessingNode[AgentState]):
                 return state
             
             # Get all jpg files and sort by page number
+            # Modified to handle filenames without "_page_" separator
+            def get_page_num(p):
+                # First try to extract from standard format (e.g., AccessHealthBrochure_page_001.jpg)
+                parts = p.stem.split('_page_')
+                if len(parts) == 2 and parts[1].isdigit():
+                    return int(parts[1])
+                
+                # Then try to extract from renamed format (e.g., 01_cover_page_...)
+                parts = p.stem.split('_')
+                if parts and parts[0].isdigit():
+                    return int(parts[0])
+                
+                # Default to 0 if no page number found
+                return 0
+                
             image_files = sorted(
                 pages_dir.glob("*.jpg"),
-                key=lambda p: int(p.stem.split('_page_')[1]) if len(p.stem.split('_page_')) == 2 else 0
+                key=get_page_num
             )
             
             if not image_files:

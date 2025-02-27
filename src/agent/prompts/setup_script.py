@@ -5,11 +5,11 @@ Guidelines for script content:
 - Each section should be marked with ---- Section Title ----
 - The first line of each section should talk about the section title
 - Each v-click point should have its own line
--- One sentence can be broken up into two lines if it is a long sentence that covers multiple benefits (v-clicks)
+-- That means there should be one line for the header and one for each v-click.
+- One sentence can be broken up into two lines if it is a long sentence that covers multiple benefits (v-clicks)
 - Maintain natural transitions between sections
 - Include clear verbal cues at the beginning of each section
 - A new line in the script indicates the presentation will advance to the next v-click.
--- Ensure timing aligns with slide animations
 - Balance detail with engagement
 - Use active voice and clear language
 - Maintain consistent pacing throughout

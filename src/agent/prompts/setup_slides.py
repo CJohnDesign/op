@@ -21,17 +21,17 @@ Guidelines for slide content:
 Use this template structure - maintain all formatting but adding the content as needed, especially on sections that give details of plan benefits:
 {template}
 
-** ALWAYS INCLUDE THE PLAN TIERS SECTION IN FULL **
-"""
-
-SETUP_SLIDES_HUMAN_TEMPLATE = """
-Generate a complete Slidev markdown presentation using:
-
 GENERATED PRESENTATION CONTENT (MOST IMPORTANT - USE THIS AS YOUR PRIMARY SOURCE):
 {presentation_content}
 
 EXTRACTED TABLES:
 {extracted_tables}
+
+** ALWAYS INCLUDE THE PLAN TIERS SECTION IN FULL **
+"""
+
+SETUP_SLIDES_HUMAN_TEMPLATE = """
+Generate a complete Slidev markdown presentation using:
 
 IMAGE USAGE GUIDELINES:
 1. Brochure Page Images:

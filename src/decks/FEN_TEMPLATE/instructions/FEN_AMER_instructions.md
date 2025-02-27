@@ -1,4 +1,7 @@
-# Instructions
+# Instructions 
+
+DeckId: FEN_AMER (or DeckKey)
+Title: Ameritas Dental
 
 ## Plan Tiers Overview
 

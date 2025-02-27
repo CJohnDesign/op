@@ -146,15 +146,23 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             Generated presentation content
         """
         try:
+            self.logger.info("Starting presentation generation")
+            self.logger.info(f"Page summaries count: {len(page_summaries)}")
+            self.logger.info(f"Tables list count: {len(tables_list)}")
+            self.logger.info(f"Instructions length: {len(instructions)}")
+            
             # Format the input data
             summaries_text = json.dumps(page_summaries, indent=2)
+            self.logger.info(f"Summaries text length: {len(summaries_text)}")
             
             # Convert tables to CSV format
             tables_text = self._convert_tables_to_csv(tables_list)
+            self.logger.info(f"Tables text length: {len(tables_text)}")
             
             # Get table page images
             deck_dir = Path("src/decks") / deck_id
             image_messages = self._get_table_page_images(processed_images, deck_dir)
+            self.logger.info(f"Image messages count: {len(image_messages)}")
             
             # Create message content list starting with the text prompt
             message_content = [
@@ -185,10 +193,26 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             self.logger.info("Generating presentation content")
             response = self.model.invoke([message])
             
-            return response.content
+            # Log the response for debugging
+            self.logger.info(f"Response type: {type(response)}")
+            self.logger.info(f"Response keys: {list(response.keys()) if hasattr(response, 'keys') else 'No keys'}")
             
+            # Extract the content from the response
+            if hasattr(response, 'choices') and response.choices:
+                content = response.choices[0].message.content
+                self.logger.info(f"Content length: {len(content)}")
+                self.logger.info(f"Content preview: {content[:100]}...")
+                return content
+            else:
+                self.logger.error("No content found in response")
+                self.logger.error(f"Full response: {response}")
+                return "Error: No content found in response"
+                
         except Exception as e:
-            self.logger.error(f"Error generating presentation: {str(e)}")
+            self.logger.error(f"Error in _generate_presentation: {str(e)}")
+            self.logger.error(f"Exception type: {type(e)}")
+            import traceback
+            self.logger.error(f"Traceback: {traceback.format_exc()}")
             return f"Error generating presentation: {str(e)}"
     
     @traceable(name="process_presentation")
@@ -211,6 +235,10 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             processed_images = state.get("processed_images", {})
             extracted_tables = state.get("extracted_tables", {})
             
+            self.logger.info(f"State keys: {list(state.keys())}")
+            self.logger.info(f"Processed images count: {len(processed_images)}")
+            self.logger.info(f"Extracted tables count: {len(extracted_tables)}")
+            
             if not processed_images:
                 self.logger.warning("No processed images found in state")
                 return state
@@ -226,6 +254,10 @@ class GeneratePresentationNode(BaseNode[AgentState]):
                     "tableDetails": page_data["tableDetails"]
                 })
             
+            self.logger.info(f"Page summaries count: {len(page_summaries)}")
+            if page_summaries:
+                self.logger.info(f"First page summary: {page_summaries[0]}")
+            
             # Convert extracted tables to list format for the template
             tables_list = []
             for page_num in sorted(extracted_tables.keys()):
@@ -239,8 +271,14 @@ class GeneratePresentationNode(BaseNode[AgentState]):
                             "rows": table["rows"]
                         })
             
+            self.logger.info(f"Tables list count: {len(tables_list)}")
+            if tables_list:
+                self.logger.info(f"First table title: {tables_list[0]['table_title']}")
+            
             # Get instructions from initial deck
             instructions = state.get("initial_deck", {}).get("instructions", "")
+            self.logger.info(f"Instructions length: {len(instructions)}")
+            self.logger.info(f"Instructions preview: {instructions[:100]}...")
             
             # Generate presentation content with processed_images for table page access
             presentation_content = self._generate_presentation(
@@ -259,6 +297,10 @@ class GeneratePresentationNode(BaseNode[AgentState]):
                 "generated_at": datetime.now().isoformat()
             }
             
+            self.logger.info(f"Presentation content type: {type(presentation_content)}")
+            self.logger.info(f"Presentation content length: {len(str(presentation_content))}")
+            self.logger.info(f"Presentation content preview: {str(presentation_content)[:100]}...")
+            
             # Save state to file
             deck_dir = Path("src/decks") / deck_id
             state_file = deck_dir / "state.json"
@@ -269,4 +311,7 @@ class GeneratePresentationNode(BaseNode[AgentState]):
             
         except Exception as e:
             self.logger.error(f"Error generating presentation: {str(e)}")
+            self.logger.error(f"Exception type: {type(e)}")
+            import traceback
+            self.logger.error(f"Traceback: {traceback.format_exc()}")
             raise 

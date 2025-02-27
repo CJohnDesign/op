@@ -67,4 +67,6 @@ Always include the Deck ID and Deck Title at the top of the presentation.
 Very important instructions:
 ----------------------------------------
 {instructions}
-----------------------------------------''' 
+----------------------------------------
+
+**NEVER USE THE WORD COMPREHENSIVE in anything you return**''' 

@@ -14,7 +14,7 @@ Update Instructions:
 
 Rules for updating:
 1. Maintain ---- Section Title ---- format
-2. Each v-click point needs a corresponding script line
+2. Each headline and v-click needs a corresponding script line
 3. Keep natural transitions between sections
 4. Ensure all slide points are covered
 5. Maintain engaging and conversational tone

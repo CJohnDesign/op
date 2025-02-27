@@ -16,7 +16,7 @@ drawings:
   persist: false
 ---
 
-<SlideAudio deckKey="ADW" />
+<SlideAudio deckKey="FEN_ADW" />
 
 # Advanced Wellness Plus Plan Overview
 
@@ -31,25 +31,19 @@ layout: default
 
 <v-click>
 
-- Empowering your health journey with tailored benefits through **American Financial Security Life Insurance Co.**
+- Targeted at **Individuals and families** through **American Financial Security Life Insurance Co.**
 
 </v-click>
 
 <v-click>
 
-- **Target Audience:** Individuals and families seeking supplemental health coverage
+- **Limited medical coverage** and wellness programs
 
 </v-click>
 
 <v-click>
 
-- **Offerings:** Limited medical coverage with a focus on affordability and accessibility
-
-</v-click>
-
-<v-click>
-
-- **Key Benefits:** Daily hospital benefits, office visit coverage, and supplemental accident benefits
+- **Accessibility, affordability, and personal impact** benefits
 
 </v-click>
 
@@ -64,7 +58,9 @@ layout: default
 
 **Coverage Areas**
 
-- Physician services, hospitalization, virtual visits
+- Physician services
+- Hospitalization
+- Virtual visits
 
 </v-click>
 
@@ -72,7 +68,7 @@ layout: default
 
 **Plan Structure**
 
-- Tiered options with varying daily benefits and visit limits
+- Tiered options with specific co-pays and visit limits
 
 </v-click>
 
@@ -80,7 +76,8 @@ layout: default
 
 **Eligibility**
 
-- Adults aged 18-65, dependent children aged 1-25
+- Adults aged 18-65
+- Dependent children aged 1-25
 
 </v-click>
 
@@ -95,7 +92,7 @@ layout: default
 
 **Provider Networks**
 
-- Access to national networks for medical, dental, and vision services
+- Extensive access through Aetna Dental Access and OUTLOOK Vision Network
 
 </v-click>
 
@@ -111,14 +108,16 @@ layout: default
 
 **Support Tools**
 
-- Member services portal, 24/7 nurse helpline, wellness programs
+- Wellness programs
+- 24/7 Health Information Line
+- Nurse Help Line
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 100A
@@ -126,21 +125,21 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Hospital Confinement Benefit**
-- $100/day, max 30 days
+- $100 per day, max 30 days
 
 </v-click>
 
 <v-click>
 
 **Primary Care Visit Benefit**
-- $50/day, max 3 visits
+- $50 per day, max 3 days
 
 </v-click>
 
 <v-click>
 
 **Specialty Care Visit Benefit**
-- $50/day, max 3 visits
+- $50 per day, max 3 days
 
 </v-click>
 
@@ -153,7 +152,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 
 <v-click>
 
-**Critical Illness Benefit**
+**Critical Illness Coverage**
 - $1,000
 
 </v-click>
@@ -161,7 +160,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 100
@@ -169,28 +168,28 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Hospital Confinement Benefit**
-- $100/day, max 30 days
+- $100 per day, max 30 days
 
 </v-click>
 
 <v-click>
 
 **Primary Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 <v-click>
 
 **Specialty Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 <v-click>
 
 **Emergency Room Benefit**
-- $50/day, max 1 visit
+- 1 day
 
 </v-click>
 
@@ -203,7 +202,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 
 <v-click>
 
-**Critical Illness Benefit**
+**Critical Illness Coverage**
 - $1,000
 
 </v-click>
@@ -211,7 +210,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 200 (1/2)
@@ -219,50 +218,43 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Hospital Confinement Benefit**
-- $200/day, max 30 days
+- $200 per day, max 30 days
 
 </v-click>
 
 <v-click>
 
 **Primary Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 <v-click>
 
 **Specialty Care Visit Benefit**
-- $50/day, max 5 visits
-
-</v-click>
-
-<v-click>
-
-**Emergency Room Benefit**
-- $50/day, max 1 visit
+- $50 per day, max 5 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 200 (2/2)
 
 <v-click>
 
-**Basic Pathology & Radiology Benefit**
-- $50/day, max 3 days
+**Emergency Room Benefit**
+- 1 day
 
 </v-click>
 
 <v-click>
 
 **Advance Studies Benefit**
-- $50/day, max 3 days
+- $50 per day, max 3 days
 
 </v-click>
 
@@ -275,7 +267,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 
 <v-click>
 
-**Critical Illness Benefit**
+**Critical Illness Coverage**
 - $1,000
 
 </v-click>
@@ -283,7 +275,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 200+ (1/2)
@@ -291,92 +283,43 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Hospital Confinement Benefit**
-- $300/day, max 30 days
+- $200 per day, max 30 days
 
 </v-click>
 
 <v-click>
 
 **Primary Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 <v-click>
 
 **Specialty Care Visit Benefit**
-- $50/day, max 5 visits
-
-</v-click>
-
-<v-click>
-
-**Emergency Room Benefit**
-- $50/day, max 2 visits
-
-</v-click>
-
-<v-click>
-
-**Basic Pathology & Radiology Benefit**
-- $50/day, max 3 days
-
-</v-click>
-
-<v-click>
-
-**Advance Studies Benefit**
-- $50/day, max 3 days
+- $50 per day, max 5 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 200+ (2/2)
 
 <v-click>
 
+**Emergency Room Benefit**
+- $50 per day, max 2 days
+
+</v-click>
+
+<v-click>
+
 **Surgery Benefit**
-- $400/day, max 3 days
-
-</v-click>
-
-<v-click>
-
-**Anesthesia Benefit**
-- 20% of surgery benefit, max 3 days
-
-</v-click>
-
-<v-click>
-
-**Mental Health Inpatient Benefit**
-- $150/day, max 60 days
-
-</v-click>
-
-<v-click>
-
-**Mental Health Outpatient Benefit**
-- $50/day, max 20 days
-
-</v-click>
-
-<v-click>
-
-**Supplemental Accident Inpatient Admission Benefit**
-- $500/day, max 1 day
-
-</v-click>
-
-<v-click>
-
-**Supplemental Accident Emergency Room Benefit**
-- $250/day, max 1 day
+- $400 per day, max 3 days
 
 </v-click>
 
@@ -389,7 +332,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 
 <v-click>
 
-**Critical Illness**
+**Critical Illness Coverage**
 - $1,000
 
 </v-click>
@@ -397,7 +340,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 300 (1/3)
@@ -405,28 +348,28 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Hospital Confinement Benefit**
-- $300/day, max 30 days
+- $300 per day, max 30 days
 
 </v-click>
 
 <v-click>
 
 **Primary Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 <v-click>
 
 **Specialty Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 300 (2/3)
@@ -434,36 +377,36 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Emergency Room Benefit**
-- $50/day, max 1 visit
+- $50 per day, max 1 day
 
 </v-click>
 
 <v-click>
 
-**Mental Health Inpatient Benefit**
-- $150/day, max 60 days
+**Surgery Benefit**
+- $400 per day, max 3 days
 
 </v-click>
 
 <v-click>
 
-**Mental Health Outpatient Benefit**
-- $50/day, max 20 days
+**Anesthesia Benefit**
+- 20% per day, max 3 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 300 (3/3)
 
 <v-click>
 
-**Supplemental Accident Inpatient Admission Benefit**
-- $500/day, max 1 day
+**Mental Health Inpatient Benefit**
+- $250 per day, max 60 days
 
 </v-click>
 
@@ -476,7 +419,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 
 <v-click>
 
-**Critical Illness Benefit**
+**Critical Illness Coverage**
 - $1,000
 
 </v-click>
@@ -484,7 +427,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 500 (1/3)
@@ -492,28 +435,28 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Hospital Confinement Benefit**
-- $500/day, max 30 days
+- $500 per day, max 30 days
 
 </v-click>
 
 <v-click>
 
 **Primary Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 <v-click>
 
 **Specialty Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 500 (2/3)
@@ -521,28 +464,28 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Emergency Room Benefit**
-- $50/day, max 1 visit
+- $50 per day, max 1 day
 
 </v-click>
 
 <v-click>
 
 **Surgery Benefit**
-- $750/day, max 3 days
+- $750 per day, max 3 days
 
 </v-click>
 
 <v-click>
 
 **Anesthesia Benefit**
-- 20% of surgery benefit
+- 20% per day, max 3 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 500 (3/3)
@@ -550,7 +493,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Mental Health Inpatient Benefit**
-- $250/day, max 60 days
+- $375 per day, max 60 days
 
 </v-click>
 
@@ -563,7 +506,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 
 <v-click>
 
-**Critical Illness Benefit**
+**Critical Illness Coverage**
 - $1,000
 
 </v-click>
@@ -571,7 +514,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 750 (1/3)
@@ -579,102 +522,67 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Hospital Confinement Benefit**
-- $750/day, max 30 days
+- $750 per day, max 30 days
 
 </v-click>
 
 <v-click>
 
 **Primary Care Visit Benefit**
-- $50/day, max 5 visits
+- $50 per day, max 5 days
 
 </v-click>
 
 <v-click>
 
 **Specialty Care Visit Benefit**
-- $50/day, max 5 visits
-
-</v-click>
-
-<v-click>
-
-**Emergency Room Benefit**
-- $75/day, max 1 visit
-
-</v-click>
-
-<v-click>
-
-**Basic Pathology & Radiology Benefit**
-- $50/day, max 2 days
-
-</v-click>
-
-<v-click>
-
-**Advance Studies Benefit**
-- $50/day, max 2 days
+- $50 per day, max 5 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 750 (2/3)
 
 <v-click>
 
+**Emergency Room Benefit**
+- $75 per day, max 1 day
+
+</v-click>
+
+<v-click>
+
 **Surgery Benefit**
-- $1000/day, max 3 days
+- $1000 per day, max 3 days
 
 </v-click>
 
 <v-click>
 
 **Anesthesia Benefit**
-- 20% of surgery benefit, max 3 days
-
-</v-click>
-
-<v-click>
-
-**Mental Health Inpatient Benefit**
-- $375/day, max 60 days
-
-</v-click>
-
-<v-click>
-
-**Mental Health Outpatient Benefit**
-- $50/day, max 20 days
-
-</v-click>
-
-<v-click>
-
-**Supplemental Accident Inpatient Admission Benefit**
-- $500/day, max 2 days
-
-</v-click>
-
-<v-click>
-
-**Supplemental Accident Emergency Room Benefit**
-- $250/day, max 1 day
+- 20% per day, max 3 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 750 (3/3)
+
+<v-click>
+
+**Mental Health Inpatient Benefit**
+- $500 per day, max 60 days
+
+</v-click>
 
 <v-click>
 
@@ -685,7 +593,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 
 <v-click>
 
-**Critical Illness**
+**Critical Illness Coverage**
 - $1,000
 
 </v-click>
@@ -693,7 +601,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 1000 (1/3)
@@ -701,99 +609,57 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 <v-click>
 
 **Hospital Confinement Benefit**
-- $1000/day, max 30 days
+- $1000 per day, max 30 days
 
 </v-click>
 
 <v-click>
 
 **Primary Care Visit Benefit**
-- $75/day, max 5 visits
+- $75 per day, max 5 days
 
 </v-click>
 
 <v-click>
 
 **Specialty Care Visit Benefit**
-- $75/day, max 5 visits
-
-</v-click>
-
-<v-click>
-
-**Emergency Room Benefit**
-- $100/day, max 1 visit
-
-</v-click>
-
-<v-click>
-
-**Basic Pathology & Radiology Benefit**
-- $75/day, max 3 days
-
-</v-click>
-
-<v-click>
-
-**Advance Studies Benefit**
-- $75/day, max 3 days
+- $75 per day, max 5 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 1000 (2/3)
 
 <v-click>
 
+**Emergency Room Benefit**
+- $100 per day, max 1 day
+
+</v-click>
+
+<v-click>
+
 **Surgery Benefit**
-- $1500/day, max 3 days
+- $1500 per day, max 3 days
 
 </v-click>
 
 <v-click>
 
 **Anesthesia Benefit**
-- 20% of surgery benefit, max 3 days
-
-</v-click>
-
-<v-click>
-
-**Mental Health Inpatient Benefit**
-- $500/day, max 60 days
-
-</v-click>
-
-<v-click>
-
-**Mental Health Outpatient Benefit**
-- $50/day, max 20 days
-
-</v-click>
-
-<v-click>
-
-**Supplemental Accident Inpatient Admission Benefit**
-- $500/day, max 3 days
-
-</v-click>
-
-<v-click>
-
-**Supplemental Accident Emergency Room Benefit**
-- $250/day, max 1 day
+- 20% per day, max 3 days
 
 </v-click>
 
 ---
 transition: fade-out
 layout: one-half-img
-image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300_500_750_1000.jpg
+image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100a_100_200_200plus_300_500_750_1000.jpg
 ---
 
 ## Plan 1000 (3/3)
@@ -807,7 +673,7 @@ image: img/pages/02_advanced_wellness_plus_benefit_details_for_plans_100_200_300
 
 <v-click>
 
-**Critical Illness**
+**Critical Illness Coverage**
 - $1,000
 
 </v-click>
@@ -819,22 +685,14 @@ layout: default
 
 ## Comparing the Plans
 
-| **Benefit Description** | **100A** | **100** | **200** | **200+** | **300** | **500** | **750** | **1000** |
-|------------------------|----------|----------|----------|-----------|----------|----------|----------|-----------|
-| Hospital Confinement Per Day | $100 | $100 | $200 | $300 | $300 | $500 | $750 | $1000 |
-| Primary Care Doctors Office Visit Per Day | $50 | $50 | $50 | $50 | $50 | $50 | $50 | $75 |
-| Specialty Care Doctors' Office Visit Per Day | $50 | $50 | $50 | $50 | $50 | $50 | $50 | $75 |
-| Emergency Room Benefit Per Day | - | $50 | $50 | $50 | $50 | $50 | $75 | $100 |
-| Basic Pathology & Radiology Per Day | - | - | $50 | $50 | - | $50 | $50 | $75 |
-| Advance Studies Benefit Per Day | - | - | $50 | $50 | - | $50 | $50 | $75 |
+| **Feature** | **Plan 100A** | **Plan 100** | **Plan 200** | **Plan 200+** | **Plan 300** | **Plan 500** | **Plan 750** | **Plan 1000** |
+|---------|----------|----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| Hospital Confinement Benefit Per Day | $100 | $100 | $200 | $200 | $300 | $500 | $750 | $1000 |
+| Primary Care Visit Benefit Per Day | $50 | $50 | $50 | $50 | $50 | $50 | $50 | $75 |
+| Specialty Care Visit Benefit Per Day | $50 | $50 | $50 | $50 | $50 | $50 | $50 | $75 |
+| Emergency Room Benefit Per Day | - | - | - | $50 | $50 | $50 | $75 | $100 |
 | Surgery Benefit Per Day | - | - | - | $400 | $400 | $750 | $1000 | $1500 |
-| Anesthesia Benefit Per Day | - | - | - | 20% | 20% | 20% | 20% | 20% |
-| Mental Health Inpatient Per Day | - | - | - | $150 | $150 | $250 | $375 | $500 |
-| Mental Health Outpatient Per Day | - | - | - | $50 | $50 | $50 | $50 | $50 |
-| Supplemental Accident Inpatient Per Day | - | - | - | $500 | $500 | $500 | $500 | $500 |
-| Supplemental Accident ER Per Day | - | - | - | $250 | $250 | $250 | $250 | $250 |
-| Accidental Death Maximum Benefit | - | $10,000 | $10,000 | $10,000 | $10,000 | $10,000 | $10,000 | $10,000 |
-| Critical Illness | - | $1,000 | $1,000 | $1,000 | $1,000 | $1,000 | $1,000 | $1,000 |
+| Accidental Death Benefit | $10,000 | $10,000 | $10,000 | $10,000 | $10,000 | $10,000 | $10,000 | $10,000 |
 
 ---
 transition: fade-out
@@ -847,9 +705,9 @@ image: img/pages/05_hospital_indemnity_insurance_limitations_exclusions_for_adva
 <v-click>
 
 **Exclusions**
-- Non-medically necessary services, experimental treatments, and services by family members
-- Dental procedures unless due to accidental injury, elective and cosmetic surgeries unless trauma-related
-- Injuries from felonies, illegal occupations, war, riots, or terrorism
+- Pre-existing conditions for 12 months
+- Elective surgeries
+- Dental procedures not due to injury
 
 </v-click>
 
@@ -857,7 +715,7 @@ image: img/pages/05_hospital_indemnity_insurance_limitations_exclusions_for_adva
 
 **Limitations**
 - 30-day waiting period for sickness benefits
-- 12-month exclusion for pre-existing conditions, with exceptions for newborns/adopted children
+- No coverage for experimental treatments
 
 </v-click>
 
@@ -870,19 +728,19 @@ layout: default
 
 <v-click>
 
-- **Flexibility:** Offers a range of benefits tailored to individual needs
+- **Flexibility:** Multiple tiers to suit different needs
+
+</v-click>  
+
+<v-click>
+
+- **Balance:** Affordable options with essential coverage
 
 </v-click>
 
 <v-click>
 
-- **Cost vs. Coverage:** Balances affordability with essential health benefits
-
-</v-click>
-
-<v-click>
-
-- **Next Steps:** Enroll through the Member Services Portal, contact support for assistance
+- **Next Steps:** Contact for enrollment and support
 
 </v-click>
 
@@ -894,6 +752,6 @@ line: Thank you for participating in the Advanced Wellness Plus Review. Continue
 
 # Thank You!
 
-Continue to be great!
+Thank you for considering Advanced Wellness Plus. Your health, our priority.
 
 <img src="./img/logos/FEN_logo.svg" class="h-12 mt-32" alt="FirstEnroll Logo">

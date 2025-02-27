@@ -1,0 +1,184 @@
+2025-02-26 21:20:48,799 - agent.cli - INFO - Running graph with state: {'deck_id': 'FEN_AH', 'deck_title': 'Access Health'}
+2025-02-26 21:20:48,803 - agent.nodes.base.InitNode - INFO - Initializing deck information
+2025-02-26 21:20:48,803 - agent.nodes.base.InitNode - INFO - Deck Information:
+2025-02-26 21:20:48,803 - agent.nodes.base.InitNode - INFO -   ID: FEN_AH
+2025-02-26 21:20:48,803 - agent.nodes.base.InitNode - INFO -   Title: Access Health
+2025-02-26 21:20:48,803 - agent.nodes.base.InitNode - INFO - Created empty pages directory
+2025-02-26 21:20:48,853 - agent.nodes.base.InitNode - INFO - Copied logos directory with all contents
+2025-02-26 21:20:48,856 - agent.nodes.base.InitNode - INFO - Copied 1 PDF files for deck FEN_AH
+2025-02-26 21:20:49,011 - agent.nodes.base.InitNode - INFO - Copied deck-specific instructions: FEN_AH_instructions.md
+2025-02-26 21:20:49,011 - agent.nodes.base.InitNode - INFO - Converting PDF files to images
+2025-02-26 21:20:49,011 - agent.nodes.base.InitNode - INFO - Found 1 PDF files to convert
+2025-02-26 21:20:49,011 - agent.nodes.base.InitNode - INFO - Converting AccessHealthBrochure.pdf
+2025-02-26 21:20:51,359 - agent.nodes.base.InitNode - INFO - Saved page 1 from AccessHealthBrochure as AccessHealthBrochure_page_001.jpg
+2025-02-26 21:20:51,965 - agent.nodes.base.InitNode - INFO - Saved page 2 from AccessHealthBrochure as AccessHealthBrochure_page_002.jpg
+2025-02-26 21:20:52,659 - agent.nodes.base.InitNode - INFO - Saved page 3 from AccessHealthBrochure as AccessHealthBrochure_page_003.jpg
+2025-02-26 21:20:53,207 - agent.nodes.base.InitNode - INFO - Saved page 4 from AccessHealthBrochure as AccessHealthBrochure_page_004.jpg
+2025-02-26 21:20:53,766 - agent.nodes.base.InitNode - INFO - Saved page 5 from AccessHealthBrochure as AccessHealthBrochure_page_005.jpg
+2025-02-26 21:20:54,325 - agent.nodes.base.InitNode - INFO - Saved page 6 from AccessHealthBrochure as AccessHealthBrochure_page_006.jpg
+2025-02-26 21:20:54,867 - agent.nodes.base.InitNode - INFO - Saved page 7 from AccessHealthBrochure as AccessHealthBrochure_page_007.jpg
+2025-02-26 21:20:55,425 - agent.nodes.base.InitNode - INFO - Saved page 8 from AccessHealthBrochure as AccessHealthBrochure_page_008.jpg
+2025-02-26 21:20:55,987 - agent.nodes.base.InitNode - INFO - Saved page 9 from AccessHealthBrochure as AccessHealthBrochure_page_009.jpg
+2025-02-26 21:20:57,000 - agent.nodes.base.InitNode - INFO - Using deck-specific instructions: src/decks/FEN_TEMPLATE/instructions/FEN_AH_instructions.md
+2025-02-26 21:20:57,002 - agent.nodes.base.InitNode - INFO - Initialized state saved to src/decks/FEN_AH/state.json
+2025-02-26 21:20:57,012 - agent.nodes.base.ProcessImagesNode - INFO - Processing images
+2025-02-26 21:20:57,012 - agent.nodes.base.ProcessImagesNode - INFO - Found 9 images to process
+2025-02-26 21:20:57,013 - agent.nodes.base.ProcessImagesNode - INFO - Processing batch 1
+2025-02-26 21:20:57,018 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_001.jpg
+2025-02-26 21:20:57,033 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_003.jpg
+2025-02-26 21:20:57,036 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_002.jpg
+2025-02-26 21:20:57,069 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_004.jpg
+2025-02-26 21:21:04,537 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:04,564 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_001.jpg to 01_cover_page_for_access_health_limited_duration_group_short_term_medical_insurance.jpg
+2025-02-26 21:21:04,566 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_001.jpg
+2025-02-26 21:21:04,571 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_005.jpg
+2025-02-26 21:21:06,020 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:06,025 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_003.jpg to 03_insurance_plan_comparison_with_benefits_for_plan_1_2_3_including_deductibles_and_coinsurance.jpg
+2025-02-26 21:21:06,027 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_003.jpg
+2025-02-26 21:21:06,034 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_006.jpg
+2025-02-26 21:21:06,940 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:06,945 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_002.jpg to 02_product_summary_with_deductible_and_coinsurance_options_and_pre_existing_waiver_rider.jpg
+2025-02-26 21:21:06,947 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_002.jpg
+2025-02-26 21:21:06,952 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_007.jpg
+2025-02-26 21:21:09,770 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:09,775 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_004.jpg to 04_benefits_continued_other_covered_expenses_for_plan_1_2_3.jpg
+2025-02-26 21:21:09,776 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_004.jpg
+2025-02-26 21:21:09,781 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_008.jpg
+2025-02-26 21:21:10,964 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:10,968 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_005.jpg to 05_limitations_and_exclusions_for_insurance_plan_with_pre_existing_conditions_and_excluded_services.jpg
+2025-02-26 21:21:10,969 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_005.jpg
+2025-02-26 21:21:12,745 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:12,750 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_007.jpg to 07_additional_plan_provisions_with_waiting_period_and_termination_details.jpg
+2025-02-26 21:21:12,752 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_007.jpg
+2025-02-26 21:21:13,239 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:13,244 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_006.jpg to 06_limitations_and_exclusions_for_short_term_medical_plan.jpg
+2025-02-26 21:21:13,245 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_006.jpg
+2025-02-26 21:21:16,312 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:16,317 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_008.jpg to 08_additional_plan_provisions_and_coverage_details_for_dependants.jpg
+2025-02-26 21:21:16,318 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_008.jpg
+2025-02-26 21:21:16,320 - agent.nodes.base.ProcessImagesNode - INFO - Processing batch 2
+2025-02-26 21:21:16,330 - agent.nodes.base.ProcessImagesNode - INFO - Analyzing AccessHealthBrochure_page_009.jpg
+2025-02-26 21:21:23,535 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:23,540 - agent.nodes.base.ProcessImagesNode - INFO - Renamed AccessHealthBrochure_page_009.jpg to 09_phcs_network_and_nce_membership_benefits_with_dentachoice_discount_prescription_and_rx_mail_order.jpg
+2025-02-26 21:21:23,542 - agent.nodes.base.ProcessImagesNode - INFO - Successfully analyzed AccessHealthBrochure_page_009.jpg
+2025-02-26 21:21:23,549 - agent.nodes.base.ExtractTablesNode - INFO - Extracting tables from analyzed pages
+2025-02-26 21:21:23,549 - agent.nodes.base.ExtractTablesNode - INFO - Found table in page 3, looking for image at src/decks/FEN_AH/img/pages/03_insurance_plan_comparison_with_benefits_for_plan_1_2_3_including_deductibles_and_coinsurance.jpg
+2025-02-26 21:21:23,549 - agent.nodes.base.ExtractTablesNode - INFO - Found table in page 4, looking for image at src/decks/FEN_AH/img/pages/04_benefits_continued_other_covered_expenses_for_plan_1_2_3.jpg
+2025-02-26 21:21:23,549 - agent.nodes.base.ExtractTablesNode - INFO - Found 2 pages with tables to process
+2025-02-26 21:21:23,549 - agent.nodes.base.ExtractTablesNode - INFO - Processing batch 1 (pages 1-2)
+2025-02-26 21:21:23,556 - agent.nodes.base.ExtractTablesNode - INFO - Extracting tables from 03_insurance_plan_comparison_with_benefits_for_plan_1_2_3_including_deductibles_and_coinsurance.jpg
+2025-02-26 21:21:23,558 - agent.nodes.base.ExtractTablesNode - INFO - Extracting tables from 04_benefits_continued_other_covered_expenses_for_plan_1_2_3.jpg
+2025-02-26 21:21:39,770 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:39,774 - agent.nodes.base.ExtractTablesNode - INFO - Successfully parsed table data from 03_insurance_plan_comparison_with_benefits_for_plan_1_2_3_including_deductibles_and_coinsurance.jpg
+2025-02-26 21:21:39,776 - agent.nodes.base.ExtractTablesNode - INFO - Extracted 5 tables from 03_insurance_plan_comparison_with_benefits_for_plan_1_2_3_including_deductibles_and_coinsurance.jpg
+2025-02-26 21:21:43,527 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:21:43,531 - agent.nodes.base.ExtractTablesNode - INFO - Successfully parsed table data from 04_benefits_continued_other_covered_expenses_for_plan_1_2_3.jpg
+2025-02-26 21:21:43,534 - agent.nodes.base.ExtractTablesNode - INFO - Extracted 1 tables from 04_benefits_continued_other_covered_expenses_for_plan_1_2_3.jpg
+2025-02-26 21:21:43,534 - agent.nodes.base.ExtractTablesNode - INFO - Extracted 5 tables from page 3
+2025-02-26 21:21:43,534 - agent.nodes.base.ExtractTablesNode - INFO - Extracted 1 tables from page 4
+2025-02-26 21:21:43,534 - agent.nodes.base.ExtractTablesNode - INFO - Added 2 pages with tables to state
+2025-02-26 21:21:43,544 - agent.nodes.base.GeneratePresentationNode - INFO - Generating presentation from analyzed data
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - State keys: ['deck_id', 'deck_title', 'deck_info', 'initial_deck', 'processed_images', 'extracted_tables']
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - Processed images count: 9
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - Extracted tables count: 2
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - Page summaries count: 9
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - First page summary: {'page_number': '1', 'page_title': 'cover_page_for_access_health_limited_duration_group_short_term_medical_insurance', 'summary': 'This cover page introduces the Access Health Limited Duration Group Short Term Medical Insurance. It features a family walking in a field during sunset, symbolizing health and well-being. The page prominently displays the name of the insurance plan and indicates that it is underwritten by American Financial Security Life Insurance Company. The document is applicable in several states, including AL, AR, AZ, KY, MS, NE, NV, OH, OK, TX, WI, GA, IL, IN, and VA. The bottom of the page includes branding elements and the logo of the underwriter, AFSLIC.', 'tableDetails': {'hasBenefitsComparisonTable': False, 'hasLimitations': False}}
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - Tables list count: 6
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - First table title: Plan Options and Features
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - Instructions length: 1002
+2025-02-26 21:21:43,545 - agent.nodes.base.GeneratePresentationNode - INFO - Instructions preview: # Access Health Instructions
+
+## Key Plan Features
+- **Duration**: Short-term coverage lasting up to...
+2025-02-26 21:21:43,546 - agent.nodes.base.GeneratePresentationNode - INFO - Starting presentation generation
+2025-02-26 21:21:43,546 - agent.nodes.base.GeneratePresentationNode - INFO - Page summaries count: 9
+2025-02-26 21:21:43,546 - agent.nodes.base.GeneratePresentationNode - INFO - Tables list count: 6
+2025-02-26 21:21:43,546 - agent.nodes.base.GeneratePresentationNode - INFO - Instructions length: 1002
+2025-02-26 21:21:43,546 - agent.nodes.base.GeneratePresentationNode - INFO - Summaries text length: 14364
+2025-02-26 21:21:43,546 - agent.nodes.base.GeneratePresentationNode - INFO - Tables text length: 11158
+2025-02-26 21:21:43,551 - agent.nodes.base.GeneratePresentationNode - INFO - Added limitations page image: 02_product_summary_with_deductible_and_coinsurance_options_and_pre_existing_waiver_rider.jpg
+2025-02-26 21:21:43,556 - agent.nodes.base.GeneratePresentationNode - INFO - Added limitations page image: 05_limitations_and_exclusions_for_insurance_plan_with_pre_existing_conditions_and_excluded_services.jpg
+2025-02-26 21:21:43,559 - agent.nodes.base.GeneratePresentationNode - INFO - Added limitations page image: 07_additional_plan_provisions_with_waiting_period_and_termination_details.jpg
+2025-02-26 21:21:43,563 - agent.nodes.base.GeneratePresentationNode - INFO - Added limitations page image: 06_limitations_and_exclusions_for_short_term_medical_plan.jpg
+2025-02-26 21:21:43,565 - agent.nodes.base.GeneratePresentationNode - INFO - Added limitations page image: 08_additional_plan_provisions_and_coverage_details_for_dependants.jpg
+2025-02-26 21:21:43,565 - agent.nodes.base.GeneratePresentationNode - INFO - Image messages count: 5
+2025-02-26 21:21:43,566 - agent.nodes.base.GeneratePresentationNode - INFO - Deck ID: FEN_AH
+2025-02-26 21:21:43,566 - agent.nodes.base.GeneratePresentationNode - INFO - Deck Title: Access Health
+2025-02-26 21:21:43,566 - agent.nodes.base.GeneratePresentationNode - INFO - Number of table page images included: 5
+2025-02-26 21:21:43,566 - agent.nodes.base.GeneratePresentationNode - INFO - Generating presentation content
+2025-02-26 21:22:05,667 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:22:05,670 - agent.nodes.base.GeneratePresentationNode - INFO - Response type: <class 'langchain_core.messages.ai.AIMessage'>
+2025-02-26 21:22:05,671 - agent.nodes.base.GeneratePresentationNode - INFO - Response keys: No keys
+2025-02-26 21:22:05,671 - agent.nodes.base.GeneratePresentationNode - ERROR - No content found in response
+2025-02-26 21:22:05,671 - agent.nodes.base.GeneratePresentationNode - ERROR - Full response: content='# Access Health Presentation Plan\n\n## Cover (1 slide)\n- **Plan Name**: Access Health Limited Duration Group Short Term Medical Insurance\n- **Tagline**: "Flexible, Short-Term Health Solutions for Your Transitional Needs"\n\n## Plan Overview (1 slide)\n- **Target Audience**: Individuals and families between jobs, recently graduated, or lacking adequate health insurance.\n- **Offerings**: Short-term medical coverage with flexible deductible options and network access.\n- **Key Benefits**: Accessibility, affordability, and immediate coverage options.\n\n## Core Plan Elements (2-3 slides)\n- **Coverage Areas**: Physician services, hospitalization, virtual visits.\n- **Plan Structure**: Tiered options with deductibles ranging from $500 to $10,000, coinsurance at 80/20.\n- **Eligibility**: Individuals aged 18 to 64 1/2, child policies for ages 2 to 17.\n\n## Common Service Features (2-3 slides)\n- **Provider Networks**: Access to PHCS network with negotiated rates.\n- **Claims Management**: Efficient processing with up to 150% of Medicare allowable charges.\n- **Support Tools**: Wellness programs, advocacy services, and telemedicine options.\n\n## Plan Tiers Breakdown (8-12 slides)\n\n### Plan 1\n- **Deductible Options**: $500, $1,000, $2,000, $2,500, $5,000, $7,500, $10,000\n- **Coinsurance**: 80/20 with limits of $2,000 or $4,000\n- **Doctor Office Consultation**: $25 copay, maximum 2 visits\n- **Inpatient Hospital**: $1,500 per day for standard room, $2,000 for intensive care\n- **Surgical Services**: Up to $5,000 per surgery\n\n### Plan 2\n- **Deductible Options**: Same as Plan 1\n- **Coinsurance**: 80/20 with limits of $2,000 or $4,000\n- **Doctor Office Consultation**: $15 copay, unlimited visits\n- **Inpatient Hospital**: Subject to deductible and coinsurance\n- **Surgical Services**: Subject to deductible and coinsurance\n\n### Plan 3\n- **Deductible Options**: Same as Plan 1\n- **Coinsurance**: 80/20 with limits of $2,000 or $4,000\n- **Doctor Office Consultation**: $25 copay, maximum 2 visits\n- **Inpatient Hospital**: Subject to deductible and coinsurance\n- **Surgical Services**: Subject to deductible and coinsurance\n\n## Comparison Slides (Markdown Table)\n\n```markdown\n| Feature                        | Plan 1                      | Plan 2                      | Plan 3                      |\n|--------------------------------|-----------------------------|-----------------------------|-----------------------------|\n| Deductible Options             | $500 - $10,000              | $500 - $10,000              | $500 - $10,000              |\n| Coinsurance                    | 80/20                       | 80/20                       | 80/20                       |\n| Coinsurance Limit              | $2,000 or $4,000            | $2,000 or $4,000            | $2,000 or $4,000            |\n| Doctor Office Copay            | $25, max 2 visits           | $15, unlimited              | $25, max 2 visits           |\n| Inpatient Hospital             | $1,500/day standard room    | Subject to deductible       | Subject to deductible       |\n| Surgical Services              | Up to $5,000 per surgery    | Subject to deductible       | Subject to deductible       |\n```\n\n## Limitations and Exclusions (1-2 slides)\n- **Exclusions**: Cosmetic surgery, infertility treatments, experimental procedures.\n- **Waiting Periods**: 5 days for general illness, 30 days for cancer.\n- **Pre-existing Conditions**: 12-month exclusion period unless waiver purchased.\n\n## Key Takeaways and Action Steps (1 slide)\n- **Flexibility**: Tailored for transitional periods with various deductible options.\n- **Balance**: Cost-effective coverage with essential health benefits.\n- **Next Steps**: Contact a representative for enrollment and support.\n\n## Thank You (1 slide)\n- **Message**: "Thank you for considering Access Health for your short-term medical needs. We are here to support your health journey."' additional_kwargs={'refusal': None} response_metadata={'token_usage': {'completion_tokens': 932, 'prompt_tokens': 9677, 'total_tokens': 10609, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_4691090a87', 'finish_reason': 'stop', 'logprobs': None} id='run-56c49296-d0ae-42a0-8805-c7e476d7eb38-0' usage_metadata={'input_tokens': 9677, 'output_tokens': 932, 'total_tokens': 10609, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}
+2025-02-26 21:22:05,673 - agent.nodes.base.GeneratePresentationNode - INFO - Presentation content type: <class 'str'>
+2025-02-26 21:22:05,673 - agent.nodes.base.GeneratePresentationNode - INFO - Presentation content length: 35
+2025-02-26 21:22:05,674 - agent.nodes.base.GeneratePresentationNode - INFO - Presentation content preview: Error: No content found in response...
+2025-02-26 21:22:05,682 - agent.nodes.base.SetupSlideNode - INFO - Setting up slides
+2025-02-26 21:22:05,683 - agent.nodes.base.SetupSlideNode - INFO - State keys: ['deck_id', 'deck_title', 'deck_info', 'initial_deck', 'processed_images', 'extracted_tables', 'presentation']
+2025-02-26 21:22:05,683 - agent.nodes.base.SetupSlideNode - INFO - Presentation keys: ['content', 'generated_at']
+2025-02-26 21:22:05,683 - agent.nodes.base.SetupSlideNode - INFO - Presentation content type: <class 'str'>
+2025-02-26 21:22:05,683 - agent.nodes.base.SetupSlideNode - INFO - Presentation content length: 35
+2025-02-26 21:22:05,683 - agent.nodes.base.SetupSlideNode - INFO - Presentation content preview: Error: No content found in response...
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - Found 9 brochure page images
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - Found 2 pages with benefit tables
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - Found 7 pages with limitations
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - Found 11 logo images
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - Attempting to generate slides with the following parameters:
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Template length: 5226
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Processed summaries length: 13437
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Extracted tables length: 14665
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Presentation content length: 35
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Deck ID: FEN_AH
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Deck title: Access Health
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Instructions length: 1002
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Pages list count: 9
+2025-02-26 21:22:05,684 - agent.nodes.base.SetupSlideNode - INFO - - Logos list count: 11
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Starting slide generation
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Template length: 5226
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Processed summaries length: 13437
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Extracted tables length: 14665
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Presentation content type: <class 'str'>
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Presentation content length: 35
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Presentation content preview: Error: No content found in response...
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Found 9 brochure page images
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Found 2 pages with benefit tables
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Found 7 pages with limitations
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Found 11 logo images
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Pages with tables count: 2
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Pages with limitations count: 7
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - System prompt length: 20859
+2025-02-26 21:22:05,685 - agent.nodes.base.SetupSlideNode - INFO - Human prompt length: 20345
+2025-02-26 21:22:05,686 - agent.nodes.base.SetupSlideNode - INFO - Generating slide content
+2025-02-26 21:22:05,686 - agent.nodes.base.SetupSlideNode - INFO - Deck ID: FEN_AH
+2025-02-26 21:22:05,686 - agent.nodes.base.SetupSlideNode - INFO - Deck Title: Access Health
+2025-02-26 21:22:05,686 - agent.nodes.base.SetupSlideNode - INFO - Number of brochure pages: 9
+2025-02-26 21:22:05,686 - agent.nodes.base.SetupSlideNode - INFO - Number of logos: 11
+2025-02-26 21:22:05,686 - agent.nodes.base.SetupSlideNode - INFO - Number of pages with tables: 2
+2025-02-26 21:22:05,686 - agent.nodes.base.SetupSlideNode - INFO - Number of pages with limitations: 7
+2025-02-26 21:22:57,336 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:22:57,356 - agent.nodes.base.SetupSlideNode - INFO - Response type: <class 'langchain_core.messages.ai.AIMessage'>
+2025-02-26 21:22:57,356 - agent.nodes.base.SetupSlideNode - INFO - Response content length: 7777
+2025-02-26 21:22:57,356 - agent.nodes.base.SetupSlideNode - INFO - Response content preview: ---
+id: FEN_001
+theme: ../../
+title: | 
+  Access Health Plan
+info: |
+  ## Access Health Plan Overvie...
+2025-02-26 21:22:57,363 - agent.nodes.base.SetupScriptNode - INFO - Setting up script
+2025-02-26 21:22:57,364 - agent.nodes.base.SetupScriptNode - INFO - Generating script content
+2025-02-26 21:22:57,364 - agent.nodes.base.SetupScriptNode - INFO - Deck ID: FEN_AH
+2025-02-26 21:22:57,364 - agent.nodes.base.SetupScriptNode - INFO - Deck Title: Access Health
+2025-02-26 21:23:22,161 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 21:23:22,168 - agent.nodes.page_parser - INFO - Parsing slides and script into pages
+2025-02-26 21:23:22,169 - agent.nodes.page_parser - INFO - Parsed 18 slides
+2025-02-26 21:23:22,169 - agent.nodes.page_parser - INFO - Parsed 18 script sections
+2025-02-26 21:23:22,169 - agent.nodes.page_parser - INFO - Created 18 pages
+2025-02-26 21:23:22,174 - agent.nodes.base.ValidatorNode - ERROR - Error validating page: '\n    "is_valid"'
+2025-02-26 21:23:22,174 - agent.nodes.base.ValidatorNode - INFO - Page 1 validation complete
+2025-02-26 21:23:22,174 - agent.nodes.base.ValidatorNode - INFO - Next action: both
+2025-02-26 21:23:22,178 - agent.graph - INFO - Routing based on validation results: {}
+2025-02-26 21:23:22,178 - agent.graph - WARNING - No specific updates needed but validation failed. Ending to avoid loop.
+2025-02-26 21:23:22,178 - Workflow - INFO - Conditional routing from validator -> __end__
+2025-02-26 21:23:22,180 - agent.cli - INFO - Final state saved to src/decks/FEN_AH/final_state.json

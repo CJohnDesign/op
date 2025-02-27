@@ -1,199 +1,199 @@
 ---- Cover ----
 
-Hello, everyone! Thank you for joining today's session on the FUSION Plan. We'll walk through the details and benefits of this plan, which combines dental and eye care to support your health needs. Let's get started!
+Hello, everyone! Thank you for joining today's session on the Ameritas Dental Plan. We'll walk through the plan's features and benefits that empower your health with financial peace of mind. Let's get started!
 
 ---- Plan Overview ----
 
-The FUSION Plan offers a unique combination of dental and eye care benefits through Ameritas. 
+Understanding the details and benefits of the Ameritas Dental Plan
 
-It includes Type 1 Preventive care for routine exams and cleanings, 
+begins with its comprehensive coverage through Ameritas. 
 
-Type 2 Basic restorative and nonsurgical procedures, 
+The plan includes preventive care for routine check-ups, 
 
-and Type 3 Major surgical and prosthodontic services. 
+as well as basic and major services with extensive support. 
 
-Additionally, the Vision Plan provides support with network savings. 
+Additionally, vision benefits are available through the integrated FUSION plan, 
 
-Now, let's explore the key features and benefits of this plan.
+and network savings support is also provided.
 
 ---- Key Features and Benefits ----
 
-The FUSION Plan's key features include Type 1 Preventive care, 
+Let's explore the key features and benefits of this plan.
 
-Type 2 Basic services, 
+The plan offers preventive care, 
 
-Type 3 Major services, 
+basic services, 
 
-and a Vision Plan that varies by plan. 
+and major services, which vary by plan. 
 
-Moreover, you can enjoy prescription savings through the National Congress of Employers. 
-
-Let's move on to the cost management tools available with this plan.
+Vision benefits are also available through Ameritas.
 
 ---- Cost Management Tools ----
 
-The FUSION Plan includes a Dental Rewards Program, or DRP, 
+Now, let's discuss the cost management tools available with this plan.
 
-a Network Savings System, 
+The Dental Rewards Program, or DRP, 
 
-and Late Entrant Provisions support. 
+is a key feature, along with the annual maximum system, 
 
-Next, we'll discuss how the Dental Rewards Program works.
+and network savings support.
 
 ---- How Dental Rewards Program Works ----
 
-To participate in the Dental Rewards Program, enroll through Ameritas. 
+Here's how the Dental Rewards Program works.
 
-Submit at least one dental claim each year. 
+First, you enroll through Ameritas. 
 
-If the benefits paid are under five hundred dollars, you qualify for rewards. 
+Then, submit at least one dental claim per year. 
 
-You'll receive two hundred fifty dollars in rewards through the DRP. 
+If benefits paid are under five hundred dollars, you can carry over two hundred fifty dollars in rewards. 
 
-There's an additional one hundred dollar PPO bonus for network visits. 
+Additional rewards are available for using network providers, 
 
-You can accumulate up to one thousand dollars in rewards. 
-
-Now, let's look at preventive care and wellness.
+and you can accumulate up to one thousand dollars in rewards.
 
 ---- Preventive Care and Wellness ----
 
-The plan offers routine exams services, 
+Preventive care and wellness are essential components of the plan.
 
-prophylaxis programs, 
+Routine exams services are included, 
 
-and Ameritas provides both dental and vision care. 
+along with cleaning and X-rays programs. 
 
-Let's move on to telehealth services.
+The Ameritas Network provides extensive coverage.
 
 ---- Telehealth Services ----
 
-Telehealth services include prescription savings, 
+Telehealth services are an important part of the plan.
 
-vision discounts, 
+Virtual consultations are available, 
 
-eyewear savings, 
+with twenty-four seven access. 
 
-and access to care. 
+Prescription services are also available, 
 
-Now, let's discuss advocacy and support services.
+and you have remote access to care.
 
 ---- Advocacy and Support Services ----
 
-The plan provides healthcare advocacy, 
+Advocacy and support services are here to assist you.
 
-customer service assistance, 
+The plan offers comprehensive healthcare advocacy, 
 
-flexible provider options, 
+claims assistance support, 
 
-and network savings support. 
+provider options flexibility, 
 
-Let's examine our first plan tier, Type 1 Preventive.
+and customer service support.
 
 ---- Plan Tier 1 (One of Two) ----
 
-Type 1 Preventive includes routine exams with one hundred percent coverage and no deductible. 
+Let's examine our first plan tier.
 
-Bitewing X-rays are also covered at one hundred percent with no deductible. 
+Type 1 Preventive includes preventive care, 
 
-Cleanings are covered at one hundred percent with no deductible. 
+such as routine exams, bitewing X-rays, and cleaning. 
 
-Continuing with our first plan tier.
+Coverage is one hundred percent for all services.
 
 ---- Plan Tier 1 (Two of Two) ----
 
-There is no waiting period for Type 1 Preventive, offering immediate coverage. 
+Continuing with our first plan tier.
 
-The annual maximum is one thousand dollars per person. 
+The deductible is zero dollars for Type 1 services, 
 
-Now, let's look at our second plan tier, Type 2 Basic.
+and the benefit year maximum is one thousand dollars per person, per calendar year.
 
 ---- Plan Tier 2 (One of Two) ----
 
-Type 2 Basic covers restorative amalgams at one hundred percent with a fifty dollar deductible. 
+Now, let's look at our second plan tier.
 
-Composites are also covered at one hundred percent with a fifty dollar deductible. 
+Type 2 Basic includes basic services, 
 
-Nonsurgical endodontics are covered at one hundred percent with a fifty dollar deductible. 
+such as restorative amalgams, restorative composites, endodontics (nonsurgical), and simple extractions. 
 
-Continuing with our second plan tier.
+Coverage is one hundred percent for all services.
 
 ---- Plan Tier 2 (Two of Two) ----
 
-Simple extractions are covered at one hundred percent with a fifty dollar deductible. 
+Continuing with our second plan tier.
 
-The annual maximum is one thousand dollars per person. 
+The deductible is fifty dollars per person, per calendar year, 
 
-Now, let's look at our third plan tier, Type 3 Major.
+and the family maximum is one hundred fifty dollars per calendar year.
 
 ---- Plan Tier 3 (One of Two) ----
 
-Type 3 Major includes surgical extractions with one hundred percent coverage and a fifty dollar deductible. 
+Let's examine our third plan tier.
 
-Crowns are covered at one hundred percent with a fifty dollar deductible. 
+Type 3 Major includes major services, 
 
-Prosthodontics are covered at one hundred percent with a fifty dollar deductible. 
+such as surgical extractions, periodontics (nonsurgical), and crowns (one in ten years per tooth). 
 
-Continuing with our third plan tier.
+Coverage is one hundred percent for all services.
 
 ---- Plan Tier 3 (Two of Two) ----
 
-Surgical periodontics are covered at one hundred percent with a fifty dollar deductible. 
+Continuing with our third plan tier.
 
-The annual maximum is one thousand dollars per person. 
+The deductible is fifty dollars per person, per calendar year, 
 
-Now, let's look at the Vision Plan.
+and the benefit year maximum is one thousand dollars per person, per calendar year.
 
 ---- Vision Plan (One of Two) ----
 
-The Vision Plan covers exams and lenses with no deductible and maximum allowances. 
+Now, let's look at the vision plan.
 
-Frames are covered with no deductible and maximum allowances. 
+Vision benefits include exams, lenses, frames, bifocal, trifocal, and progressive lenses. 
 
-Progressive lenses have maximum allowances. 
-
-Continuing with the Vision Plan.
+Coverage is subject to maximums.
 
 ---- Vision Plan (Two of Two) ----
 
-Network savings offer thirty-five percent on eyewear at Walmart. 
+Continuing with the vision plan.
 
-There is a lifetime deductible of one hundred dollars for other services. 
+The lifetime deductible is zero dollars for certain services, 
 
-Let's compare the different tiers available.
+and network savings can be up to thirty percent below regional averages.
 
 ---- Comparing Plan Tiers ----
 
-In this table, you can see the comparison of features across the plan tiers. 
+Let's compare the different tiers available.
 
-Type 1 Preventive, Type 2 Basic, and Type 3 Major all offer one hundred percent coverage with varying deductibles. 
+Type 1 Preventive, Type 2 Basic, and Type 3 Major all offer one hundred percent coverage, 
 
-The Vision Plan provides maximum allowances with no deductible. 
+while the vision plan coverage is subject to maximums. 
 
-Each plan tier has an annual maximum of one thousand dollars, except for the Vision Plan. 
+The deductible for Type 1 is zero dollars, while Type 2 and 3 have a fifty-dollar deductible per person. 
 
-Network savings are available across all tiers, and there are no waiting periods. 
+The benefit year maximum is one thousand dollars for dental plans, and the vision plan is integrated with dental. 
 
-Let's review important definitions and limitations.
+Network savings are up to thirty percent for all plans, and there are no waiting periods.
 
 ---- Definitions and Limitations ----
 
-Coverage limits include a one thousand dollar maximum combined for dental and vision, with no exceedance. 
+Let's review important definitions and limitations.
 
-Late entrant provisions require a twelve-month waiting period with limited benefits. 
+Preventive care includes routine exams and cleanings, as well as bitewing X-rays. 
 
-Network savings offer thirty percent below average for in-network services. 
+Basic services cover restorative procedures and simple extractions. 
 
-Claims must be submitted within ninety days to ensure benefits. 
+Major services include surgical procedures, crowns, and prosthodontics. 
 
-Here are the key points to remember.
+Vision services cover exams, lenses, and frame allowances.
 
 ---- Key Takeaways and Reminders ----
 
-The FUSION Plan offers broad benefits with network savings included. 
+Here are the key points to remember.
 
-There are flexible provider options available. 
+The plan offers broad coverage benefits, 
 
-Remember, claim submission is required to access benefits. 
+with no waiting periods included. 
 
-Thank you for your time today. We hope this information helps you make informed decisions about your health coverage. Continue to be great!
+Network savings benefits are available, 
+
+and enrollment is required.
+
+---- Closing ----
+
+Thank you for your time today. We hope this information helps you assist members in making informed decisions about their health coverage. Continue to be great!
