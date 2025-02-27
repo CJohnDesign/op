@@ -31,13 +31,16 @@ class InitNode(BaseNode[AgentState]):
     the initialization of deck information from input arguments.
     """
     
-    def _setup_directory_structure(self, src_dir: Path, dest_dir: Path, deck_id: str) -> None:
+    def _setup_directory_structure(self, src_dir: Path, dest_dir: Path, deck_id: str) -> List[Path]:
         """Set up the directory structure for the new deck.
         
         Args:
             src_dir: Source template directory
             dest_dir: Destination directory
             deck_id: ID of the current deck
+            
+        Returns:
+            List of copied PDF file paths
         """
         # Create base directories
         dest_dir.mkdir(parents=True, exist_ok=True)
@@ -61,22 +64,41 @@ class InitNode(BaseNode[AgentState]):
             dest_logos.mkdir(exist_ok=True)
             self.logger.warning("Source logos directory not found, created empty directory")
             
-        # Copy only the relevant PDF
+        # Create destination PDF directory
+        dest_pdf_dir = img_dir / "pdfs"
+        dest_pdf_dir.mkdir(exist_ok=True)
+        
+        # Track copied PDF files
+        copied_pdfs = []
+            
+        # Copy only the relevant PDFs from the deck-specific folder
         src_pdf_dir = src_dir / "img" / "pdfs" / deck_id
         if src_pdf_dir.exists():
-            dest_pdf_dir = img_dir / "pdfs"
-            dest_pdf_dir.mkdir(exist_ok=True)
-            
-            # Copy all PDFs from the deck-specific folder
+            # Copy all PDFs from the deck-specific folder directly to the destination PDF folder
             pdf_files = list(src_pdf_dir.glob("*.pdf"))
             if pdf_files:
                 for pdf_file in pdf_files:
-                    shutil.copy2(pdf_file, dest_pdf_dir / pdf_file.name)
+                    dest_pdf_path = dest_pdf_dir / pdf_file.name
+                    shutil.copy2(pdf_file, dest_pdf_path)
+                    copied_pdfs.append(dest_pdf_path)
                 self.logger.info(f"Copied {len(pdf_files)} PDF files for deck {deck_id}")
             else:
                 self.logger.warning(f"No PDF files found for deck {deck_id}")
         else:
             self.logger.warning(f"PDF directory not found for deck {deck_id}")
+            
+        # Also look for PDFs that match the deck ID pattern in the main PDF directory
+        main_pdf_dir = src_dir / "img" / "pdfs"
+        if main_pdf_dir.exists():
+            for pdf_file in main_pdf_dir.glob("*.pdf"):
+                if deck_id in pdf_file.stem:
+                    dest_pdf_path = dest_pdf_dir / pdf_file.name
+                    if not dest_pdf_path.exists():  # Avoid duplicates
+                        shutil.copy2(pdf_file, dest_pdf_path)
+                        copied_pdfs.append(dest_pdf_path)
+                        self.logger.info(f"Copied deck-related PDF: {pdf_file.name}")
+        
+        return copied_pdfs
     
     def _get_instructions(self, deck_id: str, template_dir: Path) -> str:
         """Get instructions for the deck.
@@ -127,23 +149,21 @@ class InitNode(BaseNode[AgentState]):
             self.logger.error(f"Error reading {file_path}: {str(e)}")
             return ""
     
-    def _convert_pdfs_to_images(self, deck_dir: Path) -> None:
-        """Convert all PDFs in img/pdfs to images in img/pages.
+    def _convert_pdfs_to_images(self, deck_dir: Path, pdf_files: List[Path]) -> None:
+        """Convert specific PDFs to images in img/pages.
         
         Args:
             deck_dir: Path to the deck directory
+            pdf_files: List of PDF files to convert
         """
         # Set up paths
-        pdf_dir = deck_dir / "img" / "pdfs"
         pages_dir = deck_dir / "img" / "pages"
         
         # Create pages directory if it doesn't exist
         pages_dir.mkdir(exist_ok=True)
         
-        # Find all PDFs in the pdfs directory
-        pdf_files = list(pdf_dir.glob("*.pdf")) if pdf_dir.exists() else []
         if not pdf_files:
-            self.logger.info(f"No PDF files found in {pdf_dir}")
+            self.logger.info(f"No PDF files to convert")
             return
             
         self.logger.info(f"Found {len(pdf_files)} PDF files to convert")
@@ -255,8 +275,8 @@ class InitNode(BaseNode[AgentState]):
             if not src_dir.exists():
                 raise ValueError(f"Template directory not found at {src_dir}")
                 
-            # Set up directory structure
-            self._setup_directory_structure(src_dir, dest_dir, deck_id)
+            # Set up directory structure and get copied PDF files
+            copied_pdfs = self._setup_directory_structure(src_dir, dest_dir, deck_id)
             
             # Copy non-image template files
             for item in src_dir.iterdir():
@@ -274,7 +294,7 @@ class InitNode(BaseNode[AgentState]):
             
             # Convert PDFs to images
             self.logger.info("Converting PDF files to images")
-            self._convert_pdfs_to_images(dest_dir)
+            self._convert_pdfs_to_images(dest_dir, copied_pdfs)
             
             # Read markdown files
             slides_content = self._read_file_content(dest_dir / "slides.md")
@@ -293,7 +313,8 @@ class InitNode(BaseNode[AgentState]):
                     "slides": slides_content,
                     "scripts": script_content,
                     "instructions": instructions
-                }
+                },
+                "pdf_files": [str(pdf.name) for pdf in copied_pdfs]
             }
             
             # Create updated state by deep merging with existing state
